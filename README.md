@@ -9,7 +9,7 @@ reservar habitaciones disponibles y al administrador gestionar las habitaciones 
 ## Librerias y Framewroks
 
 - [NodeJS 20.11.0](https://nodejs.org/en)
-- [Bootstraps 5 v2.10.0](https://react-bootstrap.netlify.app) 
+- [React Bootstraps v2.10.2](https://react-bootstrap.netlify.app/) 
 
 
 ## Clonar y probar el proyecto
