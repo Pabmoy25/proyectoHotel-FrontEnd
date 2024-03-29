@@ -1,0 +1,22 @@
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainpage{
+  flex-grow: 1;
+}
+
+
+.bg-violeta{
+  background-color: #82376B;
+}
+
+
+
+
+
+
+
+
