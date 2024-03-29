@@ -1,6 +1,5 @@
 
-
-const Navbar = () => {
+const Menu = () => {
     return (
         <div>
             <h1>Aqui va el navbar del proyecto</h1>
@@ -8,4 +7,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Menu;
