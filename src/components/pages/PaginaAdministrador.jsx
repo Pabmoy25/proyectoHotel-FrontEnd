@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { Button } from "react-bootstrap/lib/InputGroup";
-import { Link } from "react-bootstrap/lib/Navbar";
+import { Button } from "react-bootstrap";
+//import { Link } from "react-bootstrap/lib/Navbar";
 
 
 const PaginaAdministrador = () => {
@@ -9,9 +9,9 @@ const PaginaAdministrador = () => {
     <section>
       <div className="d-flex justify-content-between align-items-center">
         <h1 className="my-4">Habitaciones</h1>
-        <Button as={Link} to={"/administrador/crear"}>
-          <i className="bi bi-file-earmark-plus-fill"></i>
-        </Button>
+        {/*<Button as={Link} to={"/administrador/crear"}>*/}
+          <Button><i className="bi bi-file-earmark-plus-fill"></i></Button>
+        
       </div>
       <Table striped bordered hover>
         <thead className="text-center">
