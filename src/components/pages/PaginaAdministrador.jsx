@@ -1,6 +1,8 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
+
 
 const PaginaAdministrador = () => {
   return (
@@ -10,8 +12,8 @@ const PaginaAdministrador = () => {
         {/*<Button as={Link} to={"/administrador/crear"}>
           <i className="bi bi-file-earmark-plus-fill"></i>
         </Button>*/}
-        <Button>
-          <i className="bi bi-file-earmark-plus-fill">Agregar habitación</i>
+        <Button variant="outline-dark">
+          <i className="bi bi-file-earmark-plus"> Agregar habitación</i>
         </Button>
       </div>
       <Table striped bordered hover>
@@ -39,8 +41,8 @@ const PaginaAdministrador = () => {
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="my-4">Huéspedes</h2>
 
-        <Button>
-          <i className="bi bi-file-earmark-plus-fill">Agregar huésped</i>
+        <Button variant="outline-dark">
+          <i className="bi bi-file-earmark-plus"> Agregar huésped</i>
         </Button>
       </div>
       <Table striped bordered hover>
