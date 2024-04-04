@@ -1,5 +1,7 @@
-import { Container, Nav, NavLink, Navbar, NavbarBrand } from "react-bootstrap";
+import { Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
+
 import logoHotel from "../../assets/logoHotel.png";
+import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
     return (

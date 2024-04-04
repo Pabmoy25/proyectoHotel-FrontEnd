@@ -6,6 +6,8 @@ import Menu from './components/common/Menu'
 import PaginaPrincipal from './components/pages/PaginaPrincipal'
 import PaginaAdministrador from './components/pages/PaginaAdministrador';
 import { Container } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 
 
@@ -13,14 +15,21 @@ function App() {
   
 
   return (
-    <>
+    <BrowserRouter>
     <Menu></Menu>
-    <PaginaPrincipal></PaginaPrincipal>
+    <Routes>
+      <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}> </Route>
+      <Route exact path="/administrador" element={<PaginaAdministrador></PaginaAdministrador>}> </Route>
+    
+    {/*
     <Container className="container-fluid">
-    <PaginaAdministrador></PaginaAdministrador>
+    
     </Container>
+  */}
+  
+    </Routes>
     <Footer></Footer>
-    </>
+    </BrowserRouter>
   )
 }
 

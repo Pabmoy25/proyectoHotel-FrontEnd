@@ -12,7 +12,7 @@ const PaginaAdministrador = () => {
         {/*<Button as={Link} to={"/administrador/crear"}>
           <i className="bi bi-file-earmark-plus-fill"></i>
         </Button>*/}
-        <Button variant="outline-dark">
+        <Button variant="outline-dark" id="btnAdmin">
           <i className="bi bi-file-earmark-plus"> Agregar habitación</i>
         </Button>
       </div>
@@ -41,7 +41,7 @@ const PaginaAdministrador = () => {
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="my-4">Huéspedes</h2>
 
-        <Button variant="outline-dark">
+        <Button variant="outline-dark" id="btnAdmin">
           <i className="bi bi-file-earmark-plus"> Agregar huésped</i>
         </Button>
       </div>
