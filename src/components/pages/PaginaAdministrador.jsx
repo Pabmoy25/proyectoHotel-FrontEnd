@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 const PaginaAdministrador = () => {
   return (
     <section>
-      <div><h1 className="mt-3">Administrador</h1><hr /></div>
+      <div><h1 className="mt-3 bold">Administrador</h1><hr /></div>
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="my-4">Habitaciones</h2>
-        <Button variant="outline-light" id="btnAdmin" as={Link} to={"/administrador/agregarhabitacion"}>
+        <Button variant="outline-secondary" id="btnAdmin" as={Link} to={"/administrador/agregarhabitacion"}>
           <i className="bi bi-file-earmark-plus"> Agregar habitación</i>
         </Button>
       </div>
@@ -21,7 +21,7 @@ const PaginaAdministrador = () => {
             <th>Descripción</th>
             <th>Tipo</th>
             <th>Url Imagen</th>
-            <th>Categoria</th>
+            <th>Categoría</th>
             <th>Tarifa</th>
             <th>Estado</th>
             <th>Opciones</th>
@@ -43,8 +43,8 @@ const PaginaAdministrador = () => {
             <td></td>
             <td>$</td>
             <td>Libre</td>
-            <td className="flex justify-content-between"><Button className="btnEditar"><i className="bi bi-pencil-square"></i></Button>
-            <Button className="btnBorrar"><i className="bi bi-trash-fill"></i></Button>
+            <td className="d-flex justify-content-center"><Button id="btnEditar"><i className="bi bi-pencil-square"></i></Button>
+            <Button id="btnBorrar"><i className="bi bi-trash-fill"></i></Button>
             </td>
           </tr>
         </tbody>
@@ -83,8 +83,8 @@ const PaginaAdministrador = () => {
             <td>11111111</td>
             <td></td>
             <td></td>
-            <td className="flex justify-content-between"><Button className="btnEditar"><i className="bi bi-pencil-square"></i></Button>
-            <Button className="btnBorrar"><i className="bi bi-trash-fill"></i></Button>
+            <td className="d-flex justify-content-center"><Button id="btnEditar"><i className="bi bi-pencil-square"></i></Button>
+            <Button id="btnBorrar"><i className="bi bi-trash-fill"></i></Button>
             </td>
           </tr>
         </tbody>
