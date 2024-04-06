@@ -7,16 +7,14 @@ import { Link } from "react-router-dom";
 const PaginaAdministrador = () => {
   return (
     <section>
+      <div><h1 className="mt-3">Administrador</h1><hr /></div>
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="my-4">Habitaciones</h2>
-        {/*<Button as={Link} to={"/administrador/crear"}>
-          <i className="bi bi-file-earmark-plus-fill"></i>
-        </Button>*/}
-        <Button variant="outline-dark" id="btnAdmin">
+        <Button variant="outline-light" id="btnAdmin" as={Link} to={"/administrador/agregarhabitacion"}>
           <i className="bi bi-file-earmark-plus"> Agregar habitación</i>
         </Button>
       </div>
-      <Table striped bordered hover>
+      <Table responsive="sm" striped bordered hover>
         <thead className="text-center">
           <tr>
             <th>N° de habitación</th>
@@ -24,28 +22,41 @@ const PaginaAdministrador = () => {
             <th>Tipo</th>
             <th>Url Imagen</th>
             <th>Categoria</th>
+            <th>Tarifa</th>
             <th>Estado</th>
             <th>Opciones</th>
           </tr>
         </thead>
         <tbody>
-          {/*{productos.map((producto) => (
-            <ItemProducto
-              key={producto.id}
-              producto={producto}
-              setProductos={setProductos}
-            ></ItemProducto>
+          {/*{habitaciones.map((habitacion) => (
+            <ItemHabitacion
+              key={habitacion.id}
+             habitacion={habitacion}
+              setHabitacion={setHabitacion}
+            ></ItemHabitacion>
           ))}*/}
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>Individual</td>
+            <td>1</td>
+            <td></td>
+            <td>$</td>
+            <td>Libre</td>
+            <td className="flex justify-content-between"><Button className="btnEditar"><i className="bi bi-pencil-square"></i></Button>
+            <Button className="btnBorrar"><i className="bi bi-trash-fill"></i></Button>
+            </td>
+          </tr>
         </tbody>
       </Table>
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="my-4">Huéspedes</h2>
 
-        <Button variant="outline-dark" id="btnAdmin">
+        <Button variant="outline-secondary" id="btnAdmin" as={Link} to={"/administrador/agregarhuesped"}>
           <i className="bi bi-file-earmark-plus"> Agregar huésped</i>
         </Button>
       </div>
-      <Table striped bordered hover>
+      <Table responsive="sm" striped bordered hover>
         <thead className="text-center">
           <tr>
             <th>N° de habitación</th>
@@ -58,13 +69,24 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-          {/*{productos.map((producto) => (
-            <ItemProducto
-              key={producto.id}
-              producto={producto}
-              setProductos={setProductos}
-            ></ItemProducto>
+          {/*{huespedes.map((huesped) => (
+            <ItemHuesped
+              key={huesped.id}
+              huesped={huesped}
+              setHuesped={setHuesped}
+            ></ItemHuesped>
           ))}*/}
+          <tr>
+            <td>1</td>
+            <td>Juan Perez</td>
+            <td>juanp@gmail.com</td>
+            <td>11111111</td>
+            <td></td>
+            <td></td>
+            <td className="flex justify-content-between"><Button className="btnEditar"><i className="bi bi-pencil-square"></i></Button>
+            <Button className="btnBorrar"><i className="bi bi-trash-fill"></i></Button>
+            </td>
+          </tr>
         </tbody>
       </Table>
     </section>

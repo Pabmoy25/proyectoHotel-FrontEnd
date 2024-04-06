@@ -8,7 +8,7 @@ const Menu = () => {
         
         <Navbar expand="lg" className="bg-violeta">
           <Container>
-            <NavbarBrand href="#home">
+            <NavbarBrand as={Link} to={"/"} >
             <img src={logoHotel} alt="logo Hotel Haki Wasi" className="img-fluid" width={130}></img>
             </NavbarBrand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
