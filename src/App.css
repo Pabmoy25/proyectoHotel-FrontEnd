@@ -9,24 +9,29 @@
 
 .mainpage {
   flex-grow: 1;
-  
 }
 
 .bg-violeta {
   background-color: #82376b;
 }
 
-
 body {
   background: #f7f6df;
 }
 
+.tituloAdmin,
+.subtAdmin {
+  color: #7c127b;
+}
+
+.tabla {
+  background-color: #f7f6df;
+}
 
 h1,
 h2,
 thead {
   font-family: "montserrat alternates";
-
 }
 h1 {
   color: #7c127b;
