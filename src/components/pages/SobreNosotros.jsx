@@ -58,6 +58,14 @@ const SobreNosotros = () => {
             </div>
             </div>
         </section>
+
+        <section class="container">
+        <h2 class="text-center tituloAdmin">Nuestro Equipo</h2>
+        <p class="text-center ">
+        Compuesto por individuos talentosos y apasionados, nuestro equipo está dedicado a hacer que cada momento de tu estadía sea inolvidable.
+        </p>
+        </section>
+        
         </>
     );
 };
