@@ -124,3 +124,86 @@ tbody {
   transition: left 1s ;
 }
 
+.cardEquipo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 360px;
+  height: 480px;
+  background-color: #333;
+}
+
+.cardEquipo .imageEquipo{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cardEquipo .imageEquipo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: .5s;
+
+}
+
+.cardEquipo:hover .imageEquipo img{
+  opacity: .5;
+  transform: translateX(30%);
+}
+
+.cardEquipo .detailsEquipo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: #E09AD0;
+  transition: all .5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+
+.cardEquipo:hover .detailsEquipo{
+  transform: perspective(2000px) rotateY(0deg);
+}
+
+.cardEquipo .detailsEquipo .centerEquipo {
+  padding: 20px;
+  text-align: center;
+  background-color: #E09AD0;
+  line-height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.social-buttons {
+  text-align: center;
+}
+
+.btnequipo {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-linkedin {
+  background-color: #82376b;
+  color: #fff;
+  margin-right: 10px; /* Espacio entre botones */
+}
+
+.btn-github {
+  background-color: #82376b;
+  color: #fff;
+}
+
+
