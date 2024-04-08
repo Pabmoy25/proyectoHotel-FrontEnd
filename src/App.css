@@ -58,3 +58,15 @@ tbody {
 #btnEditar {
   background-color: #d9abff;
 }
+
+/*Pagina sobre NOsotros*/
+
+.cuadroNosotros {
+  background-color: rgba(128, 0, 128, 0.3);
+  border: 2px solid rgba(128, 0, 128, 0.5);
+  border-radius: 15px; 
+  padding: 20px; 
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.5);
+}
