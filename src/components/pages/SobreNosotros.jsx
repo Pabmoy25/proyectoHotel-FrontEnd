@@ -1,12 +1,13 @@
 import Menu from "../common/Menu";
 import Footer from "../common/Footer";
 import { Link } from "react-router-dom";
+import NosotrosHistoria from "../../assets/NosotrosHistoria.jpg";
 
 const SobreNosotros = () => {
     return (
         <>
         <section class="container cuadroNosotros mt-4">
-              <h2 class="text-center mt-4">Bienvenido a Haku Wasi - Tu Refugio de Cinco Estrellas</h2>
+              <h2 class="text-center mt-4 tituloAdmin">Bienvenido a Haku Wasi - Tu Refugio de Cinco Estrellas</h2>
               <p className="text-center ">
               En Haku Wasi, nos enorgullece ofrecerte una experiencia excepcional de relajación y descanso en un entorno de lujo incomparable. Situado en medio de exuberantes paisajes naturales, nuestro hotel boutique de cinco estrellas está diseñado para ser tu refugio ideal lejos del bullicio de la vida cotidiana. Desde nuestro impecable servicio hasta nuestras instalaciones de primer nivel, todo en Haku Wasi está cuidadosamente diseñado para garantizar que cada momento de tu estancia sea inolvidable.
               </p>
@@ -14,7 +15,7 @@ const SobreNosotros = () => {
 
         <section>
         <h2 class=" text-center mt-4 tituloAdmin mb-4">Nuestros Servicios</h2>
-            <section className="container-fluid">
+            <section className="container">
                 < div className="row">
                     <div className="col-lg-4 col-md-4 col-sm-12">
                     <div className="itemcard">
@@ -44,6 +45,18 @@ const SobreNosotros = () => {
                     </div>
                 </div>
             </section>
+        </section>
+
+        <section>
+        <div class="row align-items-center my-4">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <h2 className="tituloAdmin text-center">Nuestra Historia</h2>
+                <p className="text-center">Fundado con una pasión por ofrecer experiencias inolvidables y un compromiso con la excelencia, Haku Wasi ha sido un destino de primer nivel para viajeros exigentes desde su apertura.Nuestra historia está marcada por un legado de hospitalidad excepcional y un enfoque inquebrantable en la satisfacción del cliente.</p>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center ">
+            <img src={NosotrosHistoria} alt="logo Hotel Haki Wasi" className="img-fluid " width={350}></img>
+            </div>
+            </div>
         </section>
         </>
     );
