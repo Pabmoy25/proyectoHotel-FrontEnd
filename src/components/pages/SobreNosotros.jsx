@@ -1,5 +1,3 @@
-import Menu from "../common/Menu";
-import Footer from "../common/Footer";
 import { Link } from "react-router-dom";
 import NosotrosHistoria from "../../assets/NosotrosHistoria.jpg";
 import FotoAnto from "../../assets/FotoAnto.jpg";
