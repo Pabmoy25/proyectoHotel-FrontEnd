@@ -70,3 +70,56 @@ tbody {
   max-width: 800px;
   box-shadow: 0 0 20px rgba(128, 0, 128, 0.5);
 }
+
+.itemcard:hover::after{
+  filter: drop-shadow(5px 0 4px 
+  #0000001a);
+}
+
+.itemcard:hover .layer{
+  left: 50px;
+}
+
+
+.itemcard {
+  --color: #FFBBF2;
+
+  background-color: var(--color);
+  border-radius: 10px;
+  box-shadow: #3c40434d 0px 1px 2px 0px,#3c404326 0px 1px 3px 1px;
+  position: relative;
+  cursor: pointer;
+}
+
+.itemcard::after{
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  z-index: 2;
+  height: 80%;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: transparent
+  transparent transparent var(--color);
+  border-width: 40px 40px 40px 40px;
+  filter: drop-shadow(5px 0 4px #00000094);
+  transition: filter .5s;
+}
+
+.layer{
+  background-color: #F2F2F2 ;
+  border: 1PX solid #fff;
+  border-radius: inherit;
+  padding: 20px;
+  box-shadow:
+  #00000012 0px 1px 2px
+  #00000012 0px 2px 4px
+  #00000012 0px 4px 8px
+  #00000012 0px 8px 16px
+  #00000012 0px 16px 32px
+  #00000012 0px 32px 64px;
+  position: relative;
+  left: 10px;
+  transition: left 1s ;
+}
