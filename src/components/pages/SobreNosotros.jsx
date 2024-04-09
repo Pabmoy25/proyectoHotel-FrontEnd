@@ -102,43 +102,63 @@ const SobreNosotros = () => {
       </section>
 
       <section className="container">
-        <section className="row">
-          <div className="col-lg-6">
-            <div className="cardEquipo">
-              <div className="imageEquipo">
-                <img
+  <section className="row justify-content-center align-items-center">
+    <div className="col-lg-6">
+      <div className="card cardEquipo">
+        <div className="imageEquipo">
+          <img
+            src={FotoAnto}
+            alt="Hotel"
+            className="img-fluid"
+            width={350}
+          />
+        </div>
+        <div className="detailsEquipo">
+          <div className="centerEquipo">
+            <h2>Ortega Antonella</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
+              accusantium ea quibusdam aspernatur voluptas cumque aut eos vel
+              saepe adipisci.
+            </p>
+            <div class="social-buttons">
+              <a
+                href=""
+                target="_blank"
+                class="btnequipo btn-linkedin my-4"
+              >
+                LinkedIn
+              </a>
+              <a href="" target="_blank" class="btnequipo btn-github">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+      <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+              <img
                   src={FotoAnto}
                   alt="Hotel"
                   className="img-fluid "
                   width={350}
                 ></img>
-              </div>
-              <div className="detailsEquipo">
-                <div className="centerEquipo">
-                  <h2>Ortega Antonella</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Atque accusantium ea quibusdam aspernatur voluptas cumque
-                    aut eos vel saepe adipisci.
-                  </p>
-                  <div class="social-buttons">
-                    <a
-                      href=""
-                      target="_blank"
-                      class="btnequipo btn-linkedin my-4"
-                    >
-                      LinkedIn
-                    </a>
-                    <a href="" target="_blank" class="btnequipo btn-github">
-                      GitHub
-                    </a>
-                  </div>
+                <div class="card-body">
+                  <h5 class="card-title">Dylan Santiago Díaz</h5>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </section>
+
+          </div>
+</div>
     </>
   );
 };
