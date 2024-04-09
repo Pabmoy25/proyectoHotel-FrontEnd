@@ -125,10 +125,15 @@ tbody {
 }
 
 .cardEquipo {
-  width: 360px;
-  height: 480px;
+  width: 200px; /* Ajusta el ancho de la tarjeta según tu preferencia */
+  height: 250px; /* Ajusta la altura de la tarjeta según tu preferencia */
   background-color: #333;
+  margin-bottom: 5px; /* Espacio entre las tarjetas */
+  position: relative; /* Agrega posición relativa para que los elementos absolutamente posicionados se basen en esta tarjeta */
+  overflow: hidden;
+  margin: 0 auto; /* Oculta cualquier contenido que se desborde de la tarjeta */
 }
+
 
 .cardEquipo .imageEquipo {
   width: 100%;
@@ -153,25 +158,30 @@ tbody {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70%;
-  height: 100%;
+  width: 100%; /* Cambia el ancho para que coincida con el ancho de la tarjeta */
+  height: 100%; /* Ajusta la altura según sea necesario */
   background: #e09ad0;
   transition: all 0.5s;
   transform-origin: left;
   transform: perspective(2000px) rotateY(-90deg);
 }
 
+
 .cardEquipo:hover .detailsEquipo {
   transform: perspective(2000px) rotateY(0deg);
 }
 
 .cardEquipo .detailsEquipo .centerEquipo {
-  padding: 20px;
+  padding: 5px;
   text-align: center;
   background-color: #e09ad0;
-  line-height: 20px;
-  font-size: 20px;
+  line-height: 15px;
+  font-size: 15px;
   text-transform: uppercase;
+}
+
+.tituloequipo{
+  font-size: 20px;
 }
 
 .social-buttons {
@@ -180,7 +190,7 @@ tbody {
 
 .btnequipo {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 16px;
   text-align: center;
   text-decoration: none;
