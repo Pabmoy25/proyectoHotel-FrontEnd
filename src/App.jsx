@@ -7,6 +7,7 @@ import PaginaPrincipal from "./components/pages/PaginaPrincipal";
 import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SobreNosotros from "./components/pages/SobreNosotros";
 
 function App() {
   return (
@@ -22,6 +23,14 @@ function App() {
             exact
             path="/administrador"
             element={<PaginaAdministrador></PaginaAdministrador>}
+          >
+            {" "}
+          </Route>
+
+          <Route
+            exact
+            path="/nosotros"
+            element={<SobreNosotros></SobreNosotros>}
           >
             {" "}
           </Route>

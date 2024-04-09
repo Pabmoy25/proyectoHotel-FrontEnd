@@ -58,3 +58,158 @@ tbody {
 #btnEditar {
   background-color: #d9abff;
 }
+
+/*Pagina sobre NOsotros*/
+
+.cuadroNosotros {
+  background-color: rgba(128, 0, 128, 0.3);
+  border: 2px solid rgba(128, 0, 128, 0.5);
+  border-radius: 15px; 
+  padding: 20px; 
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.5);
+}
+
+.itemcard:hover::after{
+  filter: drop-shadow(5px 0 4px 
+  #0000001a);
+}
+
+.itemcard:hover .layer{
+  left: 50px;
+}
+
+
+.itemcard {
+  --color: #FFBBF2;
+
+  background-color: var(--color);
+  border-radius: 10px;
+  box-shadow: #3c40434d 0px 1px 2px 0px,#3c404326 0px 1px 3px 1px;
+  position: relative;
+  cursor: pointer;
+}
+
+.itemcard::after{
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  z-index: 2;
+  height: 80%;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: transparent
+  transparent transparent var(--color);
+  border-width: 40px 40px 40px 40px;
+  filter: drop-shadow(5px 0 4px #00000094);
+  transition: filter .5s;
+}
+
+.layer{
+  background-color: #F2F2F2 ;
+  border: 1PX solid #fff;
+  border-radius: inherit;
+  padding: 20px;
+  box-shadow:
+  #00000012 0px 1px 2px
+  #00000012 0px 2px 4px
+  #00000012 0px 4px 8px
+  #00000012 0px 8px 16px
+  #00000012 0px 16px 32px
+  #00000012 0px 32px 64px;
+  position: relative;
+  left: 10px;
+  transition: left 1s ;
+}
+
+.cardEquipo {
+  width: 200px; /* Ajusta el ancho de la tarjeta según tu preferencia */
+  height: 250px; /* Ajusta la altura de la tarjeta según tu preferencia */
+  background-color: #333;
+  margin-bottom: 5px; /* Espacio entre las tarjetas */
+  position: relative; /* Agrega posición relativa para que los elementos absolutamente posicionados se basen en esta tarjeta */
+  overflow: hidden;
+  margin: 0 auto; /* Oculta cualquier contenido que se desborde de la tarjeta */
+}
+
+
+.cardEquipo .imageEquipo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cardEquipo .imageEquipo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s;
+}
+
+.cardEquipo:hover .imageEquipo img {
+  opacity: 0.5;
+  transform: translateX(30%);
+}
+
+.cardEquipo .detailsEquipo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cambia el ancho para que coincida con el ancho de la tarjeta */
+  height: 100%; /* Ajusta la altura según sea necesario */
+  background: #e09ad0;
+  transition: all 0.5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+
+
+.cardEquipo:hover .detailsEquipo {
+  transform: perspective(2000px) rotateY(0deg);
+}
+
+.cardEquipo .detailsEquipo .centerEquipo {
+  padding: 5px;
+  text-align: center;
+  background-color: #e09ad0;
+  line-height: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.tituloequipo{
+  font-size: 20px;
+}
+
+.social-buttons {
+  text-align: center;
+}
+
+.btnequipo {
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-linkedin {
+  background-color: #82376b;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.btn-github {
+  background-color: #82376b;
+  color: #fff;
+}
+
+
+
