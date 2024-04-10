@@ -15,7 +15,7 @@ const Menu = () => {
               <Nav className="ms-auto">
                 <NavLink end className=" nav-link text-light" to={'/'}>Inicio</NavLink>
                 <NavLink end className="nav-link text-light" to={'/nosotros'}>Nosotros</NavLink>
-                <NavLink end className="nav-link text-light" to={'/contacto'}>Contacto</NavLink>
+                <NavLink end className="nav-link text-light" to={'/error404'}>Contacto</NavLink>
                 <NavLink end className="nav-link text-light" to={'/administrador'}>Administrador</NavLink>
                 <NavLink end className="nav-link text-light" to={'/login'}>Login</NavLink>
                 <NavLink end className="nav-link text-light" to={'/registro'}>Registro</NavLink>
