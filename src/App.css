@@ -62,8 +62,8 @@ tbody {
 
 .galeria-moviles{
   display: flex;
-  width: 600px;
-  height: 430px;
+  width: 500px;
+  height: 400px;
 }
 
 .galeria-moviles img{
@@ -71,13 +71,12 @@ tbody {
   flex-grow: 1;
   object-fit: cover;
   opacity: .8;
-  transition: flex 0.6 ease-in;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
 }
 
 .galeria-moviles img:hover { 
   cursor: crosshair;
-  width: 150px;
+  width: 200px;
   opacity: 1;
   filter: contrast(120%);
-
 }
