@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Footer from "./components/common/Footer";
 import Menu from "./components/common/Menu";
-import PaginaPrincipal from "./components/pages/PaginaPrincipal";
+import PaginaPrincipal from "./components/pages/PaginaPrincipal/PaginaPrincipal";
 import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
