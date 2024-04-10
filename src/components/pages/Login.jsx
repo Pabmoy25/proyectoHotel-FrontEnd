@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 const Login = () => {
   return (
     <section>
-      <div className="mt-5"><h1>Iniciar sesión</h1></div>
+      <div className="mt-5"><h1>Iniciar sesión</h1><hr /></div>
       <Form>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
@@ -18,7 +18,7 @@ const Login = () => {
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Button variant="primary" type="submit" className="mb-5">
-          Submit
+          Ingresar
         </Button>
       </Form>
     </section>
