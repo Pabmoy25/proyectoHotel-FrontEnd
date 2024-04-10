@@ -7,6 +7,7 @@ import PaginaPrincipal from "./components/pages/PaginaPrincipal";
 import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GaleriaImagenes from "./components/pages/GaleriaImagenes";
 
 function App() {
   return (
@@ -25,6 +26,15 @@ function App() {
           >
             {" "}
           </Route>
+
+          <Route
+            exact
+            path="/galeria"
+            element={<GaleriaImagenes></GaleriaImagenes>}
+          >
+            {" "}
+          </Route>
+
         </Routes>
       </Container>
       <Footer></Footer>
