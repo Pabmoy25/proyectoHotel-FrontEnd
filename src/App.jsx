@@ -8,6 +8,7 @@ import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,7 +18,7 @@ function App() {
           <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
             {" "}
           </Route>
-
+         
           <Route
             exact
             path="/administrador"
