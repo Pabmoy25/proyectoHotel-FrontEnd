@@ -17,6 +17,28 @@ const PaginaPrincipal = () => {
         </aside>
       </div> 
         </section>
+
+        
+        <div className="card-section">
+        <div className="card">
+        <img src="assets/main-image.jpeg" alt="Main Image" />
+          <h2>Card 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div className="card">
+        <img src="assets/main-image.jpeg" alt="Main Image" />
+          <h2>Card 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div className="card">
+        <img src="assets/main-image.jpeg" alt="Main Image" />
+          <h2>Card 3</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+      </div>
+        
+
+
     </>
     )
 };
