@@ -58,3 +58,26 @@ tbody {
 #btnEditar {
   background-color: #d9abff;
 }
+
+
+.galeria-moviles{
+  display: flex;
+  width: 600px;
+  height: 430px;
+}
+
+.galeria-moviles img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: flex 0.6 ease-in;
+}
+
+.galeria-moviles img:hover { 
+  cursor: crosshair;
+  width: 150px;
+  opacity: 1;
+  filter: contrast(120%);
+
+}
