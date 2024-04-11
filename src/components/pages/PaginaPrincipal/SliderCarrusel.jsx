@@ -11,7 +11,7 @@ const SliderCarrusel = () => {
 
         {
             Imagen:"https://images.pexels.com/photos/3649209/pexels-photo-3649209.jpeg?auto=compress&cs=tinysrgb&w1280=&h=960&dpr=1",
-            Nombre: "Tu escape al relax" ,
+            Nombre: "" ,
         },
         
         {
@@ -30,13 +30,14 @@ const SliderCarrusel = () => {
     ];
     
  return (
-    <Carousel className="Carrusel w-100">
+    <Carousel className="Carrusel">
     {ArraydeImagenes.map((Element) => {
     return (
         <Carousel.Item className="ItemCarrusel">
             <img className="ImagenCarrusel" src={Element.Imagen}/>
         <Carousel.Caption>
-            <h1>{Element.Nombre}</h1>
+        <div className="texto-superpuesto">
+         TU ESCAPE A LA NATURALEZA</div>
         </Carousel.Caption>
     </Carousel.Item>
       );
