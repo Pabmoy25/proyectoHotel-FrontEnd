@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 .Carrusel{
-   width: max-content;
+  padding: 0%;
 
 }
 
@@ -12,6 +12,9 @@
 
 .ImagenCarrusel{
 
+
+
+
 }
 
 .carousel-indicators [data-bs-target] {
@@ -20,9 +23,14 @@
     height: 10px;
 }
 
-h5{
+h1{
     font-family: Montserrat Alternates;
-    font-size: x-large;
+    font-size:80px;
+    text-align:right;
+    color: black;
+    background-color: rgba(240, 248, 255, 0.248);
+  
+   
 }
 
 .quicksand-uniquifier {
@@ -35,4 +43,10 @@ h5{
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 500;
     font-style: normal;
+  }
+
+  .PaginaPrincipal{
+    width:100%;
+
+
   }
