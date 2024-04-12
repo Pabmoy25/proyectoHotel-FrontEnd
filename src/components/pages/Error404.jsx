@@ -22,7 +22,7 @@ const Error404 = () => {
               recibirte 😊 <br></br>
               Tal parece que la página que buscas no existe pero, no te
               preocupes, te invitamos a seguir navegando por el resto de
-              nuestras secciones. ¡El mejor alojamiento para tu próximo viaje te
+              nuestras secciones. <br></br>¡El mejor alojamiento para tu próximo viaje te
               espera en nuestro hotel!
             </p>
             <div className="text-center">
