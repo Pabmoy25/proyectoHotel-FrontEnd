@@ -213,3 +213,13 @@ tbody {
 
 
 
+.btn-volver {
+  background-color: #7c127b; /* Aplicar el color deseado al botón */
+  border-color: #7c127b; /* Cambiar el color del borde si es necesario */
+  color: #fff; /* Cambiar el color del texto */
+}
+
+.btn-volver:hover {
+  background-color: #82376b; /* Cambiar el color al pasar el cursor sobre el botón */
+  border-color: #82376b; /* Cambiar el color del borde al pasar el cursor sobre el botón */
+}

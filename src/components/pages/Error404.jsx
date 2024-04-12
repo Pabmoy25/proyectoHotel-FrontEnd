@@ -20,12 +20,12 @@ const Error404 = () => {
               Tal parece que la página que buscas no existe pero, no te preocupes, te invitamos a seguir navegando por el resto de nuestras secciones. ¡El mejor alojamiento para tu próximo viaje te espera en nuestro hotel! 
             </p>
             <div className="text-center">
-              <Link to="/" className="btn btn-pink">Volver al inicio</Link>
-            </div>
+            <Link to="/" className="btnequipo btn-volver">Volver al inicio</Link>
+          </div>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center ">
             <img
-              src={error404} // Utilizar la variable que contiene la ruta de la imagen
+              src={error404}
               alt="Error 404"
               className="img-fluid "
               width={350}
