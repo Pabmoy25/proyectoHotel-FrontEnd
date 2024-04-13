@@ -9,6 +9,7 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Error404 from "./components/pages/Error404";
+import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 
 function App() {
   return (
@@ -41,6 +42,13 @@ function App() {
           >
             {" "}
           </Route>
+          <Route
+              exact
+              path="/administrador/agregarHabitacion"
+              element={
+                <FormularioHabitacion></FormularioHabitacion>
+              }
+            ></Route>
 
         </Routes>
       </Container>

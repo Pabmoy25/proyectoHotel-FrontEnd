@@ -2,6 +2,8 @@ import React from "react";
 import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
+
 const PaginaAdministrador = () => {
   return (
     <section>
@@ -15,7 +17,7 @@ const PaginaAdministrador = () => {
           variant="outline-secondary"
           id="btnAdmin"
           as={Link}
-          to={"/administrador/agregarhabitacion"}
+          to={"/administrador/agregarHabitacion"}
         >
           <i className="bi bi-file-earmark-plus"> Habitación</i>
         </Button>
