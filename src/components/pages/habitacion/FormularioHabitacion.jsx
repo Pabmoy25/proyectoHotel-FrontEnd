@@ -1,6 +1,14 @@
-import { Form, Button } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Form, Button, Row, Col } from "react-bootstrap";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 
 const FormularioHabitacion = () => {
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
+
   return (
     <section className="container mainpage">
       <h1 className="display-4 mt-5 titulo-administrador">Nueva Habitación</h1>
@@ -26,6 +34,7 @@ const FormularioHabitacion = () => {
           <Form.Select>
             <option value="">Seleccione una opcion</option>
             <option value="Estándar">Estándar</option>
+            <option value="Doble">Doble</option>
             <option value="Deluxe">Deluxe</option>
             <option value="Suite">Suite</option>
           </Form.Select>
@@ -59,11 +68,45 @@ const FormularioHabitacion = () => {
           <Form.Text className="text-danger">prueba de error</Form.Text>
         </Form.Group>
 
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3" controlId="formFechaEntrada">
+              <Form.Label>Fecha de Entrada *</Form.Label>
+              <DatePicker
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+                selectsStart
+                startDate={startDate}
+                endDate={endDate}
+                dateFormat="dd/MM/yyyy"
+                className="form-control"
+              />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group className="mb-3" controlId="formFechaSalida">
+              <Form.Label>Fecha de Salida *</Form.Label>
+              <DatePicker
+                selected={endDate}
+                onChange={date => setEndDate(date)}
+                selectsEnd
+                startDate={startDate}
+                endDate={endDate}
+                minDate={startDate}
+                dateFormat="dd/MM/yyyy"
+                className="form-control"
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
         <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Precio por noche*</Form.Label>
+          <Form.Label>Tarifa por noche*</Form.Label>
           <Form.Control type="number" placeholder="20000" />
           <Form.Text className="text-danger">prueba de error</Form.Text>
         </Form.Group>
+
+
         <Button type="submit" variant="outline-secondary"
           id="btnAdmin">
           Guardar
