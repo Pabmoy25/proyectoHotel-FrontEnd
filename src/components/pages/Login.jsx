@@ -2,7 +2,6 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-
 const Login = () => {
   const {
     register,
@@ -10,20 +9,22 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const onSubmit = (dato) => {};
+
   return (
-    <section>
-      <div className="mt-5">
-        <h1>Iniciar sesión</h1>
+    <section className="contenLogin my-5">
+      <div className="mt-3">
+        <h1 className="tituloAdmin">Iniciar sesión</h1>
         <hr />
       </div>
-      <Form>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>E-mail</Form.Label>
           <Form.Control
             type="email"
             placeholder="name@example.com"
             {...register("email", {
-              required: "El email es obligatorio",
+              required: "El e-mail es obligatorio",
               minLength: {
                 value: 15,
                 message: "El email debe tener al menos 15 caracteres",
@@ -49,27 +50,47 @@ const Login = () => {
             placeholder="Password"
             {...register("password", {
               required: "La contraseña es obligatoria",
-              minLength: { value: 6, message: "Ingrese un mínimo de 6 caracteres" },
-              maxLength: { value: 10, message: "Ingrese un máximo de 10 caracteres" },
+              minLength: {
+                value: 6,
+                message: "Ingrese un mínimo de 6 caracteres",
+              },
+              maxLength: {
+                value: 10,
+                message: "Ingrese un máximo de 10 caracteres",
+              },
               pattern: {
                 value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                message: "Mayusc, minusc y num",
+                message:
+                  "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
               },
             })}
           />
         </Form.Group>
-        <Form.Group className="d-flex justify-content-center">
-          <h6 className="mb-4 subtAdmin" as={Link} to={""}>
+        <Form.Group className="d-flex justify-content-center subtAdmin my-4">
+          <h6 className="text-center" as={Link} to={""}>
             Recuperar contraseña
           </h6>{" "}
-          <h6 className="mb-4 subtAdmin" as={Link} to={"/registro"}>
+          <div className=" px-3">
+            <h6> | </h6>
+          </div>
+          <h6 className="text-center" as={Link} to={"/registro"}>
             {" "}
-            | Registrarme
+            Registrarme
           </h6>
         </Form.Group>
-        <Button variant="primary" type="submit" className="mb-5">
-          Ingresar
-        </Button>
+        <div className="d-flex justify-content-center">
+          <Button type="submit" className="mb-3" id="btnIngresar">
+            Ingresar
+          </Button>
+        </div>
+        <div className="d-flex justify-content-center">
+          <Button id="btnRedes">
+            <i className="bi bi-google"></i>
+          </Button>
+          <Button id="btnRedes">
+            <i className="bi bi-facebook"></i>
+          </Button>
+        </div>
       </Form>
     </section>
   );
