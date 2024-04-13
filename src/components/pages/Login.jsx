@@ -13,11 +13,11 @@ const Login = () => {
 
   return (
     <section className="contenLogin my-5">
-      <div className="mt-3">
+      <div>
         <h1 className="tituloAdmin">Iniciar sesión</h1>
         <hr />
       </div>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)} id="formLogin">
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>E-mail</Form.Label>
           <Form.Control
@@ -84,10 +84,10 @@ const Login = () => {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button id="btnRedes">
+          <Button id="btnGoogle">
             <i className="bi bi-google"></i>
           </Button>
-          <Button id="btnRedes">
+          <Button id="btnFaceb">
             <i className="bi bi-facebook"></i>
           </Button>
         </div>

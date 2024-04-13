@@ -20,7 +20,7 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Habitación</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover className="tabla mb-5">
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center ">
           <tr>
             <th>N° de habitación</th>
@@ -74,7 +74,7 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover className="tabla mb-5">
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center">
           <tr>
             <th>N° de habitación</th>
