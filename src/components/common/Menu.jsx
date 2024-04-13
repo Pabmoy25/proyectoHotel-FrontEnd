@@ -2,13 +2,14 @@ import { Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import logoHotel from "../../assets/logoHotel.png";
 import { Link, NavLink } from "react-router-dom";
 
+
 const Menu = () => {
     return (
         
-        <Navbar expand="lg">
+        <Navbar expand="lg" className="menu">
           <Container>
             <NavbarBrand as={Link} to={"/"} >
-            <img src={logoHotel} alt="logo Hotel Haki Wasi" className="img-fluid" width={160}></img>
+            <img src={logoHotel} alt="logo Hotel Haki Wasi" className="img-fluid" width={170}></img>
             </NavbarBrand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
