@@ -211,3 +211,10 @@ tbody {
   background-color: #82376b;
   border-color: #82376b;
 }
+
+
+.menu {
+    font-weight: bold;
+    border: 2px solid #82376b;
+}
+
