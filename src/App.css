@@ -15,16 +15,12 @@
   background-color: #82376b;
 }
 
-body {
-  background: #f7f6df;
-}
-
 .tituloAdmin,
 .subtAdmin {
   color: #7c127b;
 }
 
-.tabla {
+#tabla table thead {
   background-color: #f7f6df;
 }
 
@@ -39,6 +35,7 @@ h1 {
 tbody {
   font-family: "quicksand";
 }
+/*Administrador y login*/
 
 #btnAdmin {
   font-weight: bold;
@@ -52,11 +49,45 @@ tbody {
   font-weight: bold;
   font-size: larger;
 }
+
+#btnIngresar {
+  font-family: "montserrat alternates";
+  color: #ffffff;
+  font-weight: normal;
+  background-color: #9a2a99;
+  border: 2px outset #edefec;
+  width: 150px;
+}
+
 #btnBorrar {
   background-color: #ffbbf2;
 }
 #btnEditar {
   background-color: #d9abff;
+}
+#btnGoogle,
+#btnFaceb {
+  color: #646363;
+  width: 60px;
+  margin: 8px;
+  border: 2px outset #edefec;
+  background-color: #ffffff;
+}
+.contenLogin {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #7c127b;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#formLogin input {
+  background-color: #f7f6df;
+}
+#formLogin input:focus {
+  border-color: #ffbbf2;
+  outline: none;
+  box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
 }
 
 /*Pagina sobre NOsotros*/
@@ -201,6 +232,7 @@ tbody {
   color: #fff;
 }
 
+
 .btn-volver {
   background-color: #7c127b;
   border-color: #7c127b;
@@ -217,4 +249,5 @@ tbody {
     font-weight: bold;
     border: 2px solid #82376b;
 }
+
 

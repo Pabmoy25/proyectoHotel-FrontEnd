@@ -8,8 +8,10 @@ import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SobreNosotros from "./components/pages/SobreNosotros";
+import Login from "./components/pages/Login";
 import Error404 from "./components/pages/Error404";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
+
 
 function App() {
   return (
@@ -18,6 +20,10 @@ function App() {
       <Container className="container-fluid">
         <Routes>
           <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
+            {" "}
+          </Route>
+
+          <Route exact path="/login" element={<Login></Login>}>
             {" "}
           </Route>
 
