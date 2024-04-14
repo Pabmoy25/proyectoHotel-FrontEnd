@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 
-
 const FormularioHabitacion = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-      
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  
 
   return (
     <section className="container mainpage">
@@ -68,7 +66,7 @@ const FormularioHabitacion = () => {
           <Form.Select
             {...register("tipoDeHabitacion", {
               required: "Debe seleccionar una categoria",
-            })} 
+            })}
           >
             <option value="">Seleccione una opcion</option>
             <option value="Estándar">Estándar</option>
@@ -150,9 +148,6 @@ const FormularioHabitacion = () => {
                 endDate={endDate}
                 dateFormat="dd/MM/yyyy"
                 className="form-control"
-                {...register("fechaEntrada", {
-                    required: "Debe seleccionar una fecha valida",
-                  })} 
               />
             </Form.Group>
           </Col>
@@ -168,9 +163,6 @@ const FormularioHabitacion = () => {
                 minDate={startDate}
                 dateFormat="dd/MM/yyyy"
                 className="form-control"
-                {...register("fechaSalida", {
-                    required: "Debe seleccionar una fecha valida",
-                  })} 
               />
             </Form.Group>
           </Col>
@@ -190,14 +182,16 @@ const FormularioHabitacion = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.precio?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.precio?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label>Estado de la Habitación*</Form.Label>
           <Form.Select
             {...register("estado", {
               required: "Debe seleccionar un estado",
-            })} 
+            })}
           >
             <option value="">Seleccione una opcion</option>
             <option value="Libre">Libre</option>
@@ -207,8 +201,6 @@ const FormularioHabitacion = () => {
             {errors.estado?.message}
           </Form.Text>
         </Form.Group>
-
-
         <Button type="submit" variant="outline-secondary" id="btnAdmin">
           Guardar
         </Button>
