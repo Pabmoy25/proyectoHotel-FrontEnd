@@ -180,8 +180,8 @@ tbody {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Cambia el ancho para que coincida con el ancho de la tarjeta */
-  height: 100%; /* Ajusta la altura según sea necesario */
+  width: 100%;
+  height: 100%;
   background: #e09ad0;
   transition: all 0.5s;
   transform-origin: left;
@@ -231,3 +231,23 @@ tbody {
   background-color: #82376b;
   color: #fff;
 }
+
+
+.btn-volver {
+  background-color: #7c127b;
+  border-color: #7c127b;
+  color: #fff;
+}
+
+.btn-volver:hover {
+  background-color: #82376b;
+  border-color: #82376b;
+}
+
+
+.menu {
+    font-weight: bold;
+    border: 2px solid #82376b;
+}
+
+

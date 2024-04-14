@@ -9,6 +9,8 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Login from "./components/pages/Login";
+import Error404 from "./components/pages/Error404";
+
 
 function App() {
   return (
@@ -39,6 +41,13 @@ function App() {
           >
             {" "}
           </Route>
+          <Route
+           path="/error404" 
+           element={<Error404 />}
+          >
+            {" "}
+          </Route>
+
         </Routes>
       </Container>
       <Footer></Footer>
