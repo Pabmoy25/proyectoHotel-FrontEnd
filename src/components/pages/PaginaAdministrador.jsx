@@ -2,11 +2,13 @@ import React from "react";
 import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
+
 const PaginaAdministrador = () => {
   return (
     <section>
       <div>
-        <h1 className="mt-3 bold tituloAdmin">Administrador</h1>
+        <h1 className="mt-5 bold tituloAdmin">Administrador</h1>
         <hr />
       </div>
       <div className="d-flex justify-content-between align-items-center subtAdmin">
@@ -15,12 +17,12 @@ const PaginaAdministrador = () => {
           variant="outline-secondary"
           id="btnAdmin"
           as={Link}
-          to={"/administrador/agregarhabitacion"}
+          to={"/administrador/agregarHabitacion"}
         >
           <i className="bi bi-file-earmark-plus"> Habitación</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover>
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center ">
           <tr>
             <th>N° de habitación</th>
@@ -74,7 +76,7 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover className="tabla">
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center">
           <tr>
             <th>N° de habitación</th>
