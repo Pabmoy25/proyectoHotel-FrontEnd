@@ -112,7 +112,7 @@ h1{
   p{
     font-family: "Quicksand", sans-serif;
     color: black;
-    font-size: x-large;
+    font-size: 19px;
     text-align: justify;
 
   }
@@ -130,6 +130,10 @@ h1{
     .descripcion {
       margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
       margin-left: 0;
-      margin-bottom: 20px; /* Espacio entre la imagen y el aside en dispositivos móviles */
+      margin-bottom: 20px; /* Espacio entre la imagen y el aside en dispositivos móviles */}
+     
     }
-  }
+
+    .TextoDescripcion{
+
+    }
