@@ -65,6 +65,34 @@ tbody {
 #btnEditar {
   background-color: #d9abff;
 }
+
+.galeria-moviles{
+  display: flex;
+  width: 400px;
+  height: 350px;
+}
+
+.galeria-moviles img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
+}
+
+.galeria-moviles img:hover { 
+  cursor: crosshair;
+  width: 200px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+@media (max-width: 576px) {
+  .galeria-moviles {
+    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
+  }
+}
+
 #btnGoogle,
 #btnFaceb {
   color: #646363;
@@ -249,5 +277,4 @@ tbody {
     font-weight: bold;
     border: 2px solid #82376b;
 }
-
 

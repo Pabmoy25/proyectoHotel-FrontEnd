@@ -14,12 +14,22 @@ const Menu = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
+
+                <NavLink end className=" nav-link text-light" to={'/'}>Inicio</NavLink>
+                <NavLink end className="nav-link text-light" to={'/nosotros'}>Nosotros</NavLink>
+                <NavLink end className="nav-link text-light" to={'/contacto'}>Contacto</NavLink>
+                <NavLink end className="nav-link text-light" to={'/administrador'}>Administrador</NavLink>
+                <NavLink end className="nav-link text-light" to={'/galeria'}>Galeria</NavLink>
+                <NavLink end className="nav-link text-light" to={'/login'}>Login</NavLink>
+                <NavLink end className="nav-link text-light" to={'/registro'}>Registro</NavLink>
+
                 <NavLink end className="nav-link" to={'/'}>Inicio</NavLink>
                 <NavLink end className="nav-link" to={'/nosotros'}>Nosotros</NavLink>
                 <NavLink end className="nav-link" to={'/error404'}>Contacto</NavLink>
                 <NavLink end className="nav-link" to={'/administrador'}>Administrador</NavLink>
                 <NavLink end className="nav-link" to={'/login'}>Login</NavLink>
                 <NavLink end className="nav-link" to={'/registro'}>Registro</NavLink>
+
               </Nav>
             </Navbar.Collapse>
           </Container>

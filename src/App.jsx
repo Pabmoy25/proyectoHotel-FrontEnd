@@ -7,6 +7,9 @@ import PaginaPrincipal from "./components/pages/PaginaPrincipal";
 import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import GaleriaImagenes from "./components/pages/GaleriaImagenes";
+
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Login from "./components/pages/Login";
 import Error404 from "./components/pages/Error404";
@@ -37,6 +40,13 @@ function App() {
 
           <Route
             exact
+
+            path="/galeria"
+            element={<GaleriaImagenes></GaleriaImagenes>}
+          >
+            {" "}
+          </Route>
+
             path="/nosotros"
             element={<SobreNosotros></SobreNosotros>}
           >
