@@ -9,7 +9,9 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (dato) => {};
+  const onSubmit = (usuario) => {
+    console.log(usuario)
+  };
 
   return (
     <section className="contenLogin my-5">
