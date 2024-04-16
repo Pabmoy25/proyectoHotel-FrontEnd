@@ -104,16 +104,26 @@ h1{
      
     }
 
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
     .card {
       background-color: transparent;
       border: none;
       border-radius: 0;
       box-shadow: none;
+      justify-content: center;
+      align-items: center;
+      max-width: 300px;
     }
 
     .card-image {
-      height: auto;
       width: 100%;
+   
     }
     
     .card-title {
@@ -121,7 +131,7 @@ h1{
       font-family:"Montserrat Alternates", sans-serif;
       font-size: 1.2rem;
       margin: 10px 0;
-      text-align: center;
+      
     }
     
     .card-text{
