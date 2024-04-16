@@ -2,6 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
+import Swal from "sweetalert2";
 
 const Login = ({ setLogueado }) => {
   const {
@@ -16,11 +17,19 @@ const Login = ({ setLogueado }) => {
     console.log(usuario);
 
     if (login(usuario)) {
-      console.log("usuario logueado");
+      Swal.fire({
+        title: "Usuario logueado",
+        text: `El usuario ${usuario.email} fue logueado correctamente`,
+        icon: "success",
+      });
       setLogueado(usuario.email);
       navegacion("/administrador");
     } else {
-      console.log("usuario NO logueado");
+      Swal.fire({
+        title: "Error en login",
+        text: "El email o password son incorrectos",
+        icon: "error",
+      });
     }
   };
 
