@@ -3,7 +3,7 @@ import "./PaginaPrincipal.css";
 import 'react-responsive-image';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import CardsInfo from "./CardsInfo";
-import CardOK from "./CardOK";
+
 
 
 const PaginaPrincipal = () => {
@@ -30,7 +30,7 @@ const PaginaPrincipal = () => {
 </section>
 
 
-    <CardOK/>
+    <CardsInfo/>
   
 
 
