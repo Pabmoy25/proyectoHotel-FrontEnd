@@ -1,6 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { login } from "../../helpers/queriesUsuarios.js";
 
 const Login = () => {
   const {
@@ -10,7 +11,13 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (usuario) => {
-    console.log(usuario)
+    console.log(usuario);
+
+    if (login(usuario)) {
+      console.log("usuario logueado");
+    } else {
+      console.log("usuario NO logueado");
+    }
   };
 
   return (
