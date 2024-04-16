@@ -1,20 +1,24 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 
-const Login = () => {
+const Login = ({ setLogueado }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const navegacion = useNavigate();
+
   const onSubmit = (usuario) => {
     console.log(usuario);
 
     if (login(usuario)) {
       console.log("usuario logueado");
+      setLogueado(usuario.email);
+      navegacion("/administrador");
     } else {
       console.log("usuario NO logueado");
     }
