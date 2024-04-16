@@ -9,8 +9,14 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Login from "./components/pages/Login";
+import { useState } from "react";
+
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
+
+  const [logueado, setLogueado] = useState(usuario);
+
   return (
     <BrowserRouter>
       <Menu></Menu>
@@ -20,7 +26,11 @@ function App() {
             {" "}
           </Route>
 
-          <Route exact path="/login" element={<Login></Login>}>
+          <Route
+            exact
+            path="/login"
+            element={<Login setLogueado={setLogueado}></Login>}
+          >
             {" "}
           </Route>
 
