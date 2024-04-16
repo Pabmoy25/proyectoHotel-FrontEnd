@@ -78,6 +78,9 @@ const Login = ({ setLogueado }) => {
               },
             })}
           />
+          <Form.Text className="text-danger">
+            {errors.password?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="d-flex justify-content-center subtAdmin my-4">
           <h6 className="text-center" as={Link} to={""}>
