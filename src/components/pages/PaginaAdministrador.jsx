@@ -1,10 +1,27 @@
-import React from "react";
+
 import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import { useEffect, useState } from "react";
+import Habitacion from "./habitacion/Habitacion";
+import { leerHabitaciones } from "../../helpers/queriesHabitaciones";
 
 
 const PaginaAdministrador = () => {
+  const [habitacion, setHabitaciones] = useState([]);
+    useEffect(() => {
+      traerHabitaciones();
+    }, []);
+
+    const traerHabitaciones = async ()=> {
+        try {
+         const listaHabitaciones = await leerHabitaciones()
+         setHabitaciones (listaHabitaciones);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
   return (
     <section>
       <div>
@@ -53,6 +70,9 @@ const PaginaAdministrador = () => {
             <td></td>
             <td>$</td>
             <td>Libre</td>
+            {
+            habitacion.map((habitacion)=><Habitacion key={habitacion._id} receta={habitacion}></Habitacion>)
+          }
             <td className="d-flex justify-content-center">
               <Button id="btnEditar">
                 <i className="bi bi-pencil-square"></i>

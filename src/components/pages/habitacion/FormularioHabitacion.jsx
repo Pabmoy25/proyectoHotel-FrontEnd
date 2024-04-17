@@ -125,7 +125,7 @@ const FormularioHabitacion = () => {
                   "Debe ingresar como minimo 50 caracteres para la descripcion amplia",
               },
               maxLength: {
-                value: 500,
+                value: 900,
                 message:
                   "Debe ingresar como maximo 500 caracteres para la descripcion amplia",
               },
