@@ -12,11 +12,17 @@ import GaleriaImagenes from "./components/pages/GaleriaImagenes";
 
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Login from "./components/pages/Login";
+import { useState } from "react";
 import Error404 from "./components/pages/Error404";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 
 
+
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
+
+  const [logueado, setLogueado] = useState(usuario);
+
   return (
     <BrowserRouter>
       <Menu></Menu>
@@ -26,7 +32,11 @@ function App() {
             {" "}
           </Route>
 
-          <Route exact path="/login" element={<Login></Login>}>
+          <Route
+            exact
+            path="/login"
+            element={<Login setLogueado={setLogueado}></Login>}
+          >
             {" "}
           </Route>
 

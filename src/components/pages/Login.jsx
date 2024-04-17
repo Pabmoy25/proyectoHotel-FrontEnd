@@ -1,15 +1,37 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../helpers/queriesUsuarios.js";
+import Swal from "sweetalert2";
 
-const Login = () => {
+const Login = ({ setLogueado }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (dato) => {};
+  const navegacion = useNavigate();
+
+  const onSubmit = (usuario) => {
+    console.log(usuario);
+
+    if (login(usuario)) {
+      Swal.fire({
+        title: "Usuario logueado",
+        text: `El usuario ${usuario.email} fue logueado correctamente`,
+        icon: "success",
+      });
+      setLogueado(usuario.email);
+      navegacion("/administrador");
+    } else {
+      Swal.fire({
+        title: "Error en login",
+        text: "El email o password son incorrectos",
+        icon: "error",
+      });
+    }
+  };
 
   return (
     <section className="contenLogin my-5">
@@ -65,6 +87,9 @@ const Login = () => {
               },
             })}
           />
+          <Form.Text className="text-danger">
+            {errors.password?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="d-flex justify-content-center subtAdmin my-4">
           <h6 className="text-center" as={Link} to={""}>
