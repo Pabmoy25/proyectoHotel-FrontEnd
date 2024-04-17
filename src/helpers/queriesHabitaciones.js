@@ -13,3 +13,18 @@ export const leerHabitaciones = async () => {
     }
   };
 
+  
+  export const crearHabitacion = async (nuevaHabitacion) => {
+    try {
+      const respuesta = await fetch(URI_HABITACIONES, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(nuevaHabitacion),
+      });
+      console.log(respuesta);
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
