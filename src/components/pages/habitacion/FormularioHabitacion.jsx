@@ -3,23 +3,47 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { crearHabitacion } from "../../../helpers/queriesHabitaciones";
+
 
 const FormularioHabitacion = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+
+  const habitacionValidada = async(habitacion) => {
+
+    const respuesta = await crearHabitacion(habitacion);
+    if(respuesta.status === 201){
+      Swal.fire({
+        title: "Habitación creada",
+        text: `La Habitación: ${habitacion.habitacion} fue creada con exito`,
+        icon: "success",
+      });
+      reset();
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: "Intente crear la habitación en unos minutos",
+        icon: "error",
+      });
+    }
+  };
+
 
   return (
     <section className="container mainpage">
       <h1 className="display-4 mt-5 titulo-administrador">Nueva Habitación</h1>
       <hr />
 
-      <Form className="my-4" onSubmit={handleSubmit()}>
+      <Form className="my-4" onSubmit={handleSubmit(habitacionValidada)}>
         <Form.Group className="mb-3" controlId="formNumeroHabitacion">
           <Form.Label>Numero de Habitación*</Form.Label>
           <Form.Control
