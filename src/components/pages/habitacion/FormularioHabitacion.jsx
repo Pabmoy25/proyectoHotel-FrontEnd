@@ -39,11 +39,11 @@ const FormularioHabitacion = () => {
 
 
   return (
-    <section className="container mainpage">
+    <section className="container mainpage contenFormHabitacion mt-5">
       <h1 className="display-4 mt-5 titulo-administrador">Nueva Habitación</h1>
       <hr />
 
-      <Form className="my-4" onSubmit={handleSubmit(habitacionValidada)}>
+      <Form className="my-4" onSubmit={handleSubmit(habitacionValidada)} id="formHabitacion">
         <Form.Group className="mb-3" controlId="formNumeroHabitacion">
           <Form.Label>Numero de Habitación*</Form.Label>
           <Form.Control
@@ -89,7 +89,7 @@ const FormularioHabitacion = () => {
           <Form.Label>Tipo de Habitación*</Form.Label>
           <Form.Select
             {...register("tipoDeHabitacion", {
-              required: "Debe seleccionar una categoria",
+              required: "Debe seleccionar una categoria de habitación",
             })}
           >
             <option value="">Seleccione una opcion</option>
@@ -214,7 +214,7 @@ const FormularioHabitacion = () => {
           <Form.Label>Estado de la Habitación*</Form.Label>
           <Form.Select
             {...register("estado", {
-              required: "Debe seleccionar un estado",
+              required: "Debe seleccionar un estado (Ocupada o Libre)",
             })}
           >
             <option value="">Seleccione una opcion</option>
