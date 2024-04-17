@@ -7,9 +7,7 @@ import PaginaPrincipal from "./components/pages/PaginaPrincipal";
 import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import GaleriaImagenes from "./components/pages/GaleriaImagenes";
-
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Login from "./components/pages/Login";
 import { useState } from "react";
@@ -25,6 +23,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <>
       <Menu></Menu>
       <Container className="container-fluid">
         <Routes>
@@ -56,7 +55,7 @@ function App() {
           >
             {" "}
           </Route>
-
+          <Route
             path="/nosotros"
             element={<SobreNosotros></SobreNosotros>}
           >
@@ -79,7 +78,9 @@ function App() {
         </Routes>
       </Container>
       <Footer></Footer>
+      </>
     </BrowserRouter>
+
   );
 }
 
