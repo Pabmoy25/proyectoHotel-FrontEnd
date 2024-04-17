@@ -65,6 +65,34 @@ tbody {
 #btnEditar {
   background-color: #d9abff;
 }
+
+.galeria-moviles{
+  display: flex;
+  width: 400px;
+  height: 350px;
+}
+
+.galeria-moviles img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
+}
+
+.galeria-moviles img:hover { 
+  cursor: crosshair;
+  width: 200px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+@media (max-width: 576px) {
+  .galeria-moviles {
+    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
+  }
+}
+
 #btnGoogle,
 #btnFaceb {
   color: #646363;
@@ -180,8 +208,8 @@ tbody {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Cambia el ancho para que coincida con el ancho de la tarjeta */
-  height: 100%; /* Ajusta la altura según sea necesario */
+  width: 100%;
+  height: 100%;
   background: #e09ad0;
   transition: all 0.5s;
   transform-origin: left;
@@ -231,3 +259,22 @@ tbody {
   background-color: #82376b;
   color: #fff;
 }
+
+
+.btn-volver {
+  background-color: #7c127b;
+  border-color: #7c127b;
+  color: #fff;
+}
+
+.btn-volver:hover {
+  background-color: #82376b;
+  border-color: #82376b;
+}
+
+
+.menu {
+    font-weight: bold;
+    border: 2px solid #82376b;
+}
+
