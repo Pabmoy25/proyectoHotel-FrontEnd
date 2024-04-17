@@ -24,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
     <>
-      <Menu></Menu>
+      <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
       <Container className="container-fluid">
         <Routes>
           <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
