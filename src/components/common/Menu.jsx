@@ -1,13 +1,14 @@
-import { Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import logoHotel from "../../assets/logoHotel.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
 
 const Menu = ({ logueado, setLogueado }) => {
 
   const navegacion = useNavigate();
 
   const logout = () => {
-    sessionStorage.removeItem("usuarioHakuHuasi");
+    sessionStorage.removeItem("InicioSesionHaku");
 
     setLogueado({});
 
@@ -37,15 +38,30 @@ const Menu = ({ logueado, setLogueado }) => {
             <NavLink end className="nav-link" to={"/error404"}>
               Contacto
             </NavLink>
-            <NavLink end className="nav-link" to={"/administrador"}>
-              Administrador
-            </NavLink>
             <NavLink end className="nav-link" to={"/galeria"}>
               Galeria
             </NavLink>
-            <NavLink end className="nav-link" to={"/login"}>
+            {/*<NavLink end className="nav-link" to={"/administrador"}>
+              Administrador
+            </NavLink>*/}
+            {logueado.length > 0 ? (
+              <>
+                <NavLink end className="nav-link" to={"/administrador"}>
+                  Administrador
+                </NavLink>
+                <Button variant="nav-link" onClick={logout} className="text-start">
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <NavLink end className="nav-link" to={"/login"}>
+                Login
+              </NavLink>
+            )}
+
+            {/*<NavLink end className="nav-link" to={"/login"}>
               Login
-            </NavLink>
+          </NavLink>*/}
             <NavLink end className="nav-link" to={"/registro"}>
               Registro
             </NavLink>
