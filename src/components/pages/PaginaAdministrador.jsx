@@ -45,9 +45,8 @@ const PaginaAdministrador = () => {
             <th>Descripción Breve</th>
             <th>Tipo</th>
             <th>Url Imagen</th>
-            <th>Categoría</th>
-            <th>Tarifa</th>
             <th>Estado</th>
+            <th>Tarifa</th>
             <th>Opciones</th>
           </tr>
         </thead>
