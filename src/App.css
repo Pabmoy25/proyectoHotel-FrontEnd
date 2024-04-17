@@ -110,13 +110,33 @@ tbody {
   box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
 }
 #formLogin input {
-  background-color: #f7f6df;
+  background-color: hsl(58, 60%, 92%);
 }
 #formLogin input:focus {
   border-color: #ffbbf2;
   outline: none;
   box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
 }
+
+
+.contenFormHabitacion {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #7c127b;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#formHabitacion input {
+  background-color: hsl(58, 60%, 92%);
+}
+#formHabitacion input:focus {
+  border-color: #ffbbf2;
+  outline: none;
+  box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
+}
+
+
 
 /*Pagina sobre NOsotros*/
 
