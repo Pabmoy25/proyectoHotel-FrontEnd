@@ -41,7 +41,7 @@ function App() {
 
           <Route
             exact
-            path="/administrador"
+            path="/administrador/*"
             element={<PaginaAdministrador></PaginaAdministrador>}
           >
             {" "}
@@ -67,13 +67,13 @@ function App() {
           >
             {" "}
           </Route>
-          <Route
+          {/*<Route
               exact
-              path="/administrador/agregarHabitacion"
+              path="/agregarHabitacion"
               element={
                 <FormularioHabitacion></FormularioHabitacion>
               }
-            ></Route>
+            ></Route>*/}
 
         </Routes>
       </Container>
