@@ -1,8 +1,7 @@
-import SliderCarrusel from "./SliderCarrusel";
+import SliderCarrusel from "../PaginaPrincipal/SliderCarrusel";
 import "./PaginaPrincipal.css";
-import 'react-responsive-image';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import CardsInfo from "./CardsInfo";
+
+import CardsInfo from "../PaginaPrincipal/CardsInfo";
 
 
 
