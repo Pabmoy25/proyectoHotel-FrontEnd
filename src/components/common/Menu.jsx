@@ -48,7 +48,7 @@ const Menu = ({ logueado, setLogueado }) => {
                 <NavLink end className="nav-link" to={"/administrador"}>
                   Administrador
                 </NavLink>
-                <Button variant="link" onClick={logout} className="nav-link text-start end">
+                <Button variant="link" onClick={logout} className="nav-link text-start">
                   Logout
                 </Button>
               </>

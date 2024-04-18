@@ -18,7 +18,7 @@ const Login = ({ setLogueado }) => {
 
     if (login(usuario)) {
       Swal.fire({
-        title: "Usuario logueado",
+        title: "Sesión iniciada",
         text: `El usuario ${usuario.email} fue logueado correctamente`,
         icon: "success",
       });
@@ -27,7 +27,7 @@ const Login = ({ setLogueado }) => {
     } else {
       Swal.fire({
         title: "Error en login",
-        text: "El email o password son incorrectos",
+        text: "E-mail o password incorrectos",
         icon: "error",
       });
     }
@@ -49,11 +49,11 @@ const Login = ({ setLogueado }) => {
               required: "El e-mail es obligatorio",
               minLength: {
                 value: 15,
-                message: "El email debe tener al menos 15 caracteres",
+                message: "El e-mail debe tener al menos 15 caracteres",
               },
               maxLength: {
                 value: 40,
-                message: "El email no debe superar los 40 caracteres",
+                message: "El e-mail no debe superar los 40 caracteres",
               },
               pattern: {
                 value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
