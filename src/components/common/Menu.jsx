@@ -2,7 +2,6 @@ import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import logoHotel from "../../assets/logoHotel.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-
 const Menu = ({ logueado, setLogueado }) => {
 
   const navegacion = useNavigate();
@@ -21,7 +20,7 @@ const Menu = ({ logueado, setLogueado }) => {
         <NavbarBrand as={Link} to={"/"}>
           <img
             src={logoHotel}
-            alt="logo Hotel Haki Wasi"
+            alt="logo Hotel Haku Wasi"
             className="img-fluid"
             width={170}
           ></img>
@@ -49,7 +48,7 @@ const Menu = ({ logueado, setLogueado }) => {
                 <NavLink end className="nav-link" to={"/administrador"}>
                   Administrador
                 </NavLink>
-                <Button variant="nav-link" onClick={logout} className="menu text-start">
+                <Button variant="link" onClick={logout} className="nav-link text-start end">
                   Logout
                 </Button>
               </>

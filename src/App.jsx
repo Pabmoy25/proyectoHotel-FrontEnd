@@ -4,7 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Footer from "./components/common/Footer";
 import Menu from "./components/common/Menu";
 import PaginaPrincipal from "./components/pages/PaginaPrincipal";
-import PaginaAdministrador from "./components/pages/PaginaAdministrador";
+//import PaginaAdministrador from "./components/pages/PaginaAdministrador";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GaleriaImagenes from "./components/pages/GaleriaImagenes";
