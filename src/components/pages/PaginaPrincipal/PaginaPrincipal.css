@@ -71,13 +71,13 @@ h1{
 
   h2{
     text-align: center;
-    color: #64167a;
+    color: #6D0D3D;
   }
 
   h3{
     font-family: "Montserrat Alternates", sans-serif;
     text-align: center;
-    color: #64167a;
+    color: #6D0D3D;
   }
   p{
     font-family: "Quicksand", sans-serif;
@@ -107,9 +107,10 @@ h1{
 
     .card-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+     justify-content: center;
       width: 100%;
+      gap: 10px;
+      margin-left: 0 px;
     }
     .card {
       background-color: transparent;
@@ -119,10 +120,14 @@ h1{
       justify-content: center;
       align-items: center;
       max-width: 300px;
+      flex: 1 0 100%; 
+      margin-left: 0px;
+      margin-right: 10px;
     }
 
     .card-image {
       width: 100%;
+      justify-content: center;
    
     }
     
@@ -139,7 +144,7 @@ h1{
     }
 
 
-    @media (max-width: 768px) {
+  /*  @media (max-width: 768px) {
       .card {
         width: calc(33.333% - 20px);
       }
@@ -149,4 +154,12 @@ h1{
       .card {
         width: calc(50% - 20px);
       }
+    }*/
+
+    @media (max-width: 600px) {
+      .card-container {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
+  

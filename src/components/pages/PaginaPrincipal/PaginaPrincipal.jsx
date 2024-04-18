@@ -14,7 +14,7 @@ const PaginaPrincipal = () => {
         
 <section>
  <div className="Informacion">
- <div className="ImagenPetFriendly">
+ <div className="ImagenPetFriendly img-fluid">
  <img src="https://images.pexels.com/photos/8939517/pexels-photo-8939517.jpeg"className="PetfriendlyImg"/>
  </div>
 

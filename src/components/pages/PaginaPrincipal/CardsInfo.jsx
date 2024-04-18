@@ -34,7 +34,7 @@ const ArrayCards = [
   {
     id: 5,
     image: IconoPerson,
-    title: 'Personal',
+    title: 'Personal Capacitado',
   },
   {
     id: 6,
@@ -48,13 +48,13 @@ const ArrayCards = [
 
 function CardsInfo () {
   return (
-    <div className='container d-flex justify-content-center w-100'>
+    <div className='container d-flex justify-content-center align-items-center'>
       <div className='row'>
         {
           ArrayCards.map(card => (
           <div className='col-md-4' key={card.id}>
            <CardOK title={card.title} imageURL={card.image}/>
-  </div>
+           </div>
 
           ))
         }
