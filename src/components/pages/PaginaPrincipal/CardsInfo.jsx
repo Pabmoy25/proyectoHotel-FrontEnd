@@ -1,14 +1,12 @@
 import React from 'react';
 import CardOK from './CardOK';
-import { Card } from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
 import IconoFood from '../../../assets/ImgPagPrincipal/Icono_Food.png';
 import IconoLugar from '../../../assets/ImgPagPrincipal/Icono_Lugar.png';
 import IconoWifi from '../../../assets/ImgPagPrincipal/Icono_Wifi.png';
 import IconoGym from '../../../assets/ImgPagPrincipal/Icono_Gym.png'
 import IconoPerson from '../../../assets/ImgPagPrincipal/Icono_Person.png';
 import IconoAuto from '../../../assets/ImgPagPrincipal/Icono_Auto.png';
-
-
 
 const ArrayCards = [
   {
@@ -48,18 +46,18 @@ const ArrayCards = [
 
 function CardsInfo () {
   return (
-    <div className='container d-flex justify-content-center align-items-center'>
-      <div className='row'>
+    //<div className='container d-flex justify-content-center align-items-center'>
+      <Row className='w-100 px-5'>
         {
           ArrayCards.map(card => (
-          <div className='col-md-4' key={card.id}>
-           <CardOK title={card.title} imageURL={card.image}/>
-           </div>
+          //<div className='col-md-4' key={card.id}>
+           <CardOK title={card.title} imageURL={card.image} key={card.id} />
+           //</div>
 
           ))
         }
-       </div>
-     </div>
+       </Row>
+     //</div>
 
      
   );

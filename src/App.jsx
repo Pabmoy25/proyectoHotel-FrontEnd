@@ -16,7 +16,6 @@ import Error404 from "./components/pages/Error404";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 
-
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
 
@@ -24,58 +23,58 @@ function App() {
 
   return (
     <BrowserRouter>
-      <>
-        <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
-       
-          <Routes>
-            <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
-              {" "}
-            </Route>
-          
-            <Route
-              exact
-              path="/login"
-              element={<Login setLogueado={setLogueado}></Login>}
-            >
-              {" "}
-            </Route>
+      <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
 
-            <Route
-              exact
-              path="/administrador/*"
-              element={ //reemplazo {<PaginaAdministrador></PaginaAdministrador>} por
-                <RutasProtegidas>
-                  <RutasAdmin></RutasAdmin>
-                </RutasProtegidas>
-              } 
-            >
-              {" "}
-            </Route>
+      <Routes>
+        <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
+          {" "}
+        </Route>
 
-            <Route
-              exact
-              path="/galeria"
-              element={<GaleriaImagenes></GaleriaImagenes>}
-            >
-              {" "}
-            </Route>
-            <Route path="/nosotros" element={<SobreNosotros></SobreNosotros>}>
-              {" "}
-            </Route>
-            <Route path="/error404" element={<Error404 />}>
-              {" "}
-            </Route>
-            {/*<Route
+        <Route
+          exact
+          path="/login"
+          element={<Login setLogueado={setLogueado}></Login>}
+        >
+          {" "}
+        </Route>
+
+        <Route
+          exact
+          path="/administrador/*"
+          element={
+            //reemplazo {<PaginaAdministrador></PaginaAdministrador>} por
+            <RutasProtegidas>
+              <RutasAdmin></RutasAdmin>
+            </RutasProtegidas>
+          }
+        >
+          {" "}
+        </Route>
+
+        <Route
+          exact
+          path="/galeria"
+          element={<GaleriaImagenes></GaleriaImagenes>}
+        >
+          {" "}
+        </Route>
+        <Route path="/nosotros" element={<SobreNosotros></SobreNosotros>}>
+          {" "}
+        </Route>
+        <Route path="/error404" element={<Error404 />}>
+          {" "}
+        </Route>
+
+        {/*<Route
               exact
               path="/agregarHabitacion"
               element={
                 <FormularioHabitacion></FormularioHabitacion>
               }
             ></Route>*/}
-          </Routes>
-        {/*</Container>*/}
-        <Footer></Footer>
-      </>
+      </Routes>
+      {/*</Container>*/}
+      <Footer></Footer>
     </BrowserRouter>
   );
 }

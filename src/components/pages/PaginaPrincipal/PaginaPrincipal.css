@@ -21,7 +21,13 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/*.ItemCarrusel{
+  height: 600px;
+}
 
+.ImagenCarrusel{
+  object-fit: cover;
+}*/
 
 .carousel-indicators [data-bs-target] {
     border-radius: 100%;
@@ -30,14 +36,14 @@
 }
 
 
-h1{
+/*h1{
     font-family: Montserrat Alternates;
     font-size: 4rem;
     color: white;
     top: 60%;
     right: 10%;
     transform: translateY(-50%);
-  }
+  }*/
 
 .quicksand-uniquifier {
     font-family: "Quicksand", sans-serif;
@@ -100,14 +106,8 @@ h1{
     .Informacion {
       flex-direction: column; /* Cambiar a diseño de columna en dispositivos móviles */
     }
-  
-    /*.PetfriendlyImg,
-    .descripcion {
-      margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
-      /*margin-left: 0;
-      margin-bottom: 20px; /* Espacio entre la imagen y el aside en dispositivos móviles */
      
-    }*/
+    }
 
 
     .card-container {
@@ -126,12 +126,12 @@ h1{
       align-items: center;
       max-width: 300px;
       flex: 1 0 100%; 
-      margin-left: 0px;
-      margin-right: 10px;
+     /* margin-left: 0px;
+      margin-right: 10px;*/
     }
 
     .card-image {
-      width: 100%;
+      width: 70%;
       justify-content: center;
    
     }
@@ -139,7 +139,7 @@ h1{
     .card-title {
       color: #6D0D3D;
       font-family:"Montserrat Alternates", sans-serif;
-      font-size: 1.2rem;
+      
       margin: 10px 0;
       
     }

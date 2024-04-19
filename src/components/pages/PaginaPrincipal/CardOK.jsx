@@ -1,12 +1,11 @@
-import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const CardOK = ({title, imageURL}) => {
     return (
-        <div className='card text-center'>
-            <img src={imageURL} width="200" height="200"  alt=''/>
+        <div className='card text-center mx-auto'>
+            <img src={imageURL} className='card-image'  alt='icono'/>
             <div className='card-body'>
-            <h4 className='card-title text-center'>{title}</h4>
+            <h3 className='card-title text-center'>{title}</h3>
            
             </div>
             
