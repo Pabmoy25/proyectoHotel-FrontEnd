@@ -26,12 +26,12 @@ function App() {
     <BrowserRouter>
       <>
         <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
-        <Container className="container-fluid">
+       
           <Routes>
             <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
               {" "}
             </Route>
-
+          
             <Route
               exact
               path="/login"
@@ -73,7 +73,7 @@ function App() {
               }
             ></Route>*/}
           </Routes>
-        </Container>
+        {/*</Container>*/}
         <Footer></Footer>
       </>
     </BrowserRouter>

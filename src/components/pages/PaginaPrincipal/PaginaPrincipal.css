@@ -64,22 +64,27 @@ h1{
   }
   
   .PetfriendlyImg {
-    flex: 1; /* La imagen ocupará 1 parte de las 2 partes disponibles */
-    margin-right: 20px; /* Espacio entre la imagen y el aside */
-    max-width: 380px;
+    /*flex: 1; /* La imagen ocupará 1 parte de las 2 partes disponibles */
+    /* margin-right: 20px; Espacio entre la imagen y el aside */
+    /*max-width: 380px;*/
+    width: 100%;
+    object-fit: cover;
   }
-
-  h2{
+  .fila{
+    width: 100%;
+  }
+  
+  .TextoDescripcion h2{
     text-align: center;
     color: #6D0D3D;
   }
 
-  h3{
+  .TextoDescripcion h3{
     font-family: "Montserrat Alternates", sans-serif;
     text-align: center;
     color: #6D0D3D;
   }
-  p{
+  .TextoDescripcion p{
     font-family: "Quicksand", sans-serif;
     color: black;
     font-size: 19px;
@@ -96,13 +101,13 @@ h1{
       flex-direction: column; /* Cambiar a diseño de columna en dispositivos móviles */
     }
   
-    .PetfriendlyImg,
+    /*.PetfriendlyImg,
     .descripcion {
       margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
-      margin-left: 0;
-      margin-bottom: 20px; /* Espacio entre la imagen y el aside en dispositivos móviles */}
+      /*margin-left: 0;
+      margin-bottom: 20px; /* Espacio entre la imagen y el aside en dispositivos móviles */
      
-    }
+    }*/
 
 
     .card-container {
