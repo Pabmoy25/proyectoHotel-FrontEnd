@@ -5,7 +5,7 @@ import Footer from "./components/common/Footer";
 import Menu from "./components/common/Menu";
 import PaginaPrincipal from "./components/pages/PaginaPrincipal/PaginaPrincipal";
 //import PaginaAdministrador from "./components/pages/PaginaAdministrador";
-import { Container } from "react-bootstrap";
+//import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GaleriaImagenes from "./components/pages/GaleriaImagenes";
 import SobreNosotros from "./components/pages/SobreNosotros";

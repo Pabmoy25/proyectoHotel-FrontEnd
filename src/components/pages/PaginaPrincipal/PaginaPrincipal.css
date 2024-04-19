@@ -52,8 +52,8 @@
    
   .Informacion {
     display: flex;
-    flex-direction: row; /* Alinear elementos horizontalmente */
-    margin-top: 100px; /* Ajusta el margen superior según sea necesario */
+    flex-direction: row; 
+    margin-top: 100px; 
     margin-bottom: 100px;
   }
   
@@ -92,7 +92,7 @@
   
   @media screen and (max-width: 768px) {
     .Informacion {
-      flex-direction: column; /* Cambiar a diseño de columna en dispositivos móviles */
+      flex-direction: column; 
     }
      
     }
@@ -146,10 +146,10 @@
       }
     }*/
 
-    @media (max-width: 600px) {
+    /*@media (max-width: 600px) {
       .card-container {
         flex-wrap: wrap;
         justify-content: center;
       }
-    }
+    }*/
   
