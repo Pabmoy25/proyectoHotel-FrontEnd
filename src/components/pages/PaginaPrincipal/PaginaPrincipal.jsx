@@ -11,7 +11,7 @@ const PaginaPrincipal = () => {
       <section className="w-100 my-3 ">
         <Row className="fila mx-0">
           <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="col p-0">
-            <div className="ImagenPetFriendly p-3">
+            <div className="ImagenPetFriendly p-4">
               <img
                 src="https://images.pexels.com/photos/8939517/pexels-photo-8939517.jpeg"
                 className="PetfriendlyImg mb-3"
@@ -19,11 +19,11 @@ const PaginaPrincipal = () => {
             </div>
           </Col>
           <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="col p-0">
-            <div className="TextoDescripcion p-3">
+            <div className="TextoDescripcion px-5">
               
-                <h2>HAKU HUASI HOTEL</h2>
+                <h1 className="my-3">HAKU HUASI HOTEL</h1>
                 <h3>SOMOS PET-FRIENDLY</h3>
-                <p>
+                <p className="mt-4">
                   {" "}
                   Te contamos que Haku Huasi es un hotel pet friendly. Todo su
                   espacio, tanto interior como exterior, está pensado y diseñado

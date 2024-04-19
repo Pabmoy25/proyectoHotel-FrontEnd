@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import error404 from "../../assets/error404.jpg"; // Importar la imagen
+import error404 from "../../assets/error404.jpg";
+import { Container } from "react-bootstrap";
 
 const Error404 = () => {
   return (
-    <>
+    <Container className="container-fluid">
       <section className="container cuadroNosotros mt-4">
         <h2 className="text-center mt-4 tituloAdmin">
           ¡Ups! La página que estás buscando no existe 😔
@@ -22,10 +23,10 @@ const Error404 = () => {
               recibirte 😊 <br></br>
               Tal parece que la página que buscas no existe pero, no te
               preocupes, te invitamos a seguir navegando por el resto de
-              nuestras secciones. <br></br>¡El mejor alojamiento para tu próximo viaje te
-              espera en nuestro hotel!
+              nuestras secciones. <br></br>¡El mejor alojamiento para tu próximo
+              viaje te espera en nuestro hotel!
             </p>
-            <div className="text-center">
+            <div className="text-center mb-4">
               <Link to="/" className="btnequipo btn-volver">
                 Volver al inicio
               </Link>
@@ -41,7 +42,7 @@ const Error404 = () => {
           </div>
         </div>
       </section>
-    </>
+    </Container>
   );
 };
 
