@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import NosotrosHistoria from "../../assets/NosotrosHistoria.jpg";
 import FotoAnto from "../../assets/FotoAnto.jpg";
-import Pablo from "../../assets/Pablo.jpg"
+import Pablo from "../../assets/Pablo.jpg";
+import { Container } from "react-bootstrap";
 
 const SobreNosotros = () => {
   return (
-    <>
+    <Container className="container-fluid">
       <section className="container cuadroNosotros mt-4">
         <h2 className="text-center mt-4 tituloAdmin">
           Bienvenido a Haku Wasi - Tu Refugio de Cinco Estrellas
@@ -23,7 +24,9 @@ const SobreNosotros = () => {
       </section>
 
       <section>
-        <h2 className=" text-center mt-4 tituloAdmin mb-4">Nuestros Servicios</h2>
+        <h2 className=" text-center mt-4 tituloAdmin mb-4">
+          Nuestros Servicios
+        </h2>
         <section className="container">
           <div className="row">
             <div className="col-lg-4 col-md-4 col-sm-12">
@@ -103,149 +106,150 @@ const SobreNosotros = () => {
       </section>
 
       <section className="container">
-  <section className="row justify-content-center">
-    <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className="card cardEquipo">
-        <div className="imageEquipo">
-          <img
-            src={FotoAnto}
-            alt="Hotel"
-            className="img-fluid"
-            width={350}
-          />
-        </div>
-        <div className="detailsEquipo">
-          <div className="centerEquipo">
-            <h2 className="tituloequipo">Ortega Antonella</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, debitis?.
-            </p>
-            <div className="social-buttons">
-              <a
-                href="https://ar.linkedin.com"
-                target="_blank"
-                className="btnequipo btn-linkedin my-4"
-              >
-                LinkedIn
-              </a>
-              <a href="https://github.com/antoortega18072023" target="_blank" className="btnequipo btn-github">
-                GitHub
-              </a>
+        <section className="row justify-content-center">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card cardEquipo">
+              <div className="imageEquipo">
+                <img
+                  src={FotoAnto}
+                  alt="Hotel"
+                  className="img-fluid"
+                  width={350}
+                />
+              </div>
+              <div className="detailsEquipo">
+                <div className="centerEquipo">
+                  <h2 className="tituloequipo">Ortega Antonella</h2>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Repellat, debitis?.
+                  </p>
+                  <div className="social-buttons">
+                    <a
+                      href="https://ar.linkedin.com"
+                      target="_blank"
+                      className="btnequipo btn-linkedin my-4"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      href="https://github.com/antoortega18072023"
+                      target="_blank"
+                      className="btnequipo btn-github"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className="card cardEquipo">
-        <div className="imageEquipo">
-          <img
-            src={Pablo}
-            alt="Miembro Plablo Moyano"
-            className="img-fluid"
-            width={350}
-          />
-        </div>
-        <div className="detailsEquipo">
-          <div className="centerEquipo">
-            <h2 className="tituloequipo">Pablo Moyano</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-              accusantium ea quibusdam aspernatur voluptas cumque aut eos vel
-              saepe adipisci.
-            </p>
-            <div className="social-buttons">
-              <a
-                href=""
-                target="_blank"
-                className="btnequipo btn-linkedin my-4"
-              >
-                LinkedIn
-              </a>
-              <a href="" target="_blank" className="btnequipo btn-github">
-                GitHub
-              </a>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card cardEquipo">
+              <div className="imageEquipo">
+                <img
+                  src={Pablo}
+                  alt="Miembro Plablo Moyano"
+                  className="img-fluid"
+                  width={350}
+                />
+              </div>
+              <div className="detailsEquipo">
+                <div className="centerEquipo">
+                  <h2 className="tituloequipo">Pablo Moyano</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Atque accusantium ea quibusdam aspernatur voluptas cumque
+                    aut eos vel saepe adipisci.
+                  </p>
+                  <div className="social-buttons">
+                    <a
+                      href=""
+                      target="_blank"
+                      className="btnequipo btn-linkedin my-4"
+                    >
+                      LinkedIn
+                    </a>
+                    <a href="" target="_blank" className="btnequipo btn-github">
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className="card cardEquipo">
-        <div className="imageEquipo">
-          <img
-            src={FotoAnto}
-            alt="Hotel"
-            className="img-fluid"
-            width={350}
-          />
-        </div>
-        <div className="detailsEquipo">
-          <div className="centerEquipo">
-            <h2 className="tituloequipo">Ortega Antonella</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-              accusantium ea quibusdam aspernatur voluptas cumque aut eos vel
-              saepe adipisci.
-            </p>
-            <div className="social-buttons">
-              <a
-                href=""
-                target="_blank"
-                className="btnequipo btn-linkedin my-4"
-              >
-                LinkedIn
-              </a>
-              <a href="" target="_blank" className="btnequipo btn-github">
-                GitHub
-              </a>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card cardEquipo">
+              <div className="imageEquipo">
+                <img
+                  src={FotoAnto}
+                  alt="Hotel"
+                  className="img-fluid"
+                  width={350}
+                />
+              </div>
+              <div className="detailsEquipo">
+                <div className="centerEquipo">
+                  <h2 className="tituloequipo">Ortega Antonella</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Atque accusantium ea quibusdam aspernatur voluptas cumque
+                    aut eos vel saepe adipisci.
+                  </p>
+                  <div className="social-buttons">
+                    <a
+                      href=""
+                      target="_blank"
+                      className="btnequipo btn-linkedin my-4"
+                    >
+                      LinkedIn
+                    </a>
+                    <a href="" target="_blank" className="btnequipo btn-github">
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className="card cardEquipo">
-        <div className="imageEquipo">
-          <img
-            src={FotoAnto}
-            alt="Hotel"
-            className="img-fluid"
-            width={350}
-          />
-        </div>
-        <div className="detailsEquipo">
-          <div className="centerEquipo">
-            <h2 className="tituloequipo">Ortega Antonella</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-              accusantium ea quibusdam aspernatur voluptas cumque aut eos vel
-              saepe adipisci.
-            </p>
-            <div className="social-buttons">
-              <a
-                href=""
-                target="_blank"
-                className="btnequipo btn-linkedin my-4"
-              >
-                LinkedIn
-              </a>
-              <a href="" target="_blank" className="btnequipo btn-github">
-                GitHub
-              </a>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card cardEquipo">
+              <div className="imageEquipo">
+                <img
+                  src={FotoAnto}
+                  alt="Hotel"
+                  className="img-fluid"
+                  width={350}
+                />
+              </div>
+              <div className="detailsEquipo">
+                <div className="centerEquipo">
+                  <h2 className="tituloequipo">Ortega Antonella</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Atque accusantium ea quibusdam aspernatur voluptas cumque
+                    aut eos vel saepe adipisci.
+                  </p>
+                  <div className="social-buttons">
+                    <a
+                      href=""
+                      target="_blank"
+                      className="btnequipo btn-linkedin my-4"
+                    >
+                      LinkedIn
+                    </a>
+                    <a href="" target="_blank" className="btnequipo btn-github">
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-
-     
-
-    </>
+        </section>
+      </section>
+    </Container>
   );
 };
 

@@ -16,7 +16,8 @@
 }
 
 .tituloAdmin,
-.subtAdmin {
+.subtAdmin,
+.titulo-administrador {
   color: #7c127b;
 }
 
@@ -29,12 +30,15 @@ h2,
 thead {
   font-family: "montserrat alternates";
 }
+
 h1 {
   color: #7c127b;
 }
+
 tbody {
   font-family: "quicksand";
 }
+
 /*Administrador y login*/
 
 #btnAdmin {
@@ -66,33 +70,6 @@ tbody {
   background-color: #d9abff;
 }
 
-.galeria-moviles{
-  display: flex;
-  width: 400px;
-  height: 350px;
-}
-
-.galeria-moviles img{
-  width: 0px;
-  flex-grow: 1;
-  object-fit: cover;
-  opacity: .8;
-  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
-}
-
-.galeria-moviles img:hover { 
-  cursor: crosshair;
-  width: 200px;
-  opacity: 1;
-  filter: contrast(120%);
-}
-
-@media (max-width: 576px) {
-  .galeria-moviles {
-    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
-  }
-}
-
 #btnGoogle,
 #btnFaceb {
   color: #646363;
@@ -118,7 +95,6 @@ tbody {
   box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
 }
 
-
 .contenFormHabitacion {
   width: 80%;
   margin: auto;
@@ -135,8 +111,6 @@ tbody {
   outline: none;
   box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
 }
-
-
 
 /*Pagina sobre NOsotros*/
 
@@ -280,7 +254,6 @@ tbody {
   color: #fff;
 }
 
-
 .btn-volver {
   background-color: #7c127b;
   border-color: #7c127b;
@@ -292,9 +265,35 @@ tbody {
   border-color: #82376b;
 }
 
-
 .menu {
-    font-weight: bold;
-    border: 2px solid #82376b;
+  font-weight: bold;
+  border: 2px solid #82376b;
 }
 
+.galeria-moviles {
+  display: flex;
+  width: 400px;
+  height: 350px;
+}
+
+.galeria-moviles img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
+}
+
+.galeria-moviles img:hover {
+  cursor: crosshair;
+  width: 200px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+@media (max-width: 576px) {
+  .galeria-moviles {
+    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
+  }
+}
