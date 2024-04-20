@@ -77,7 +77,7 @@ const Login = ({ setLogueado }) => {
                 message: "Ingrese un mínimo de 6 caracteres",
               },
               maxLength: {
-                value: 10,
+                value: 60,
                 message: "Ingrese un máximo de 10 caracteres",
               },
               pattern: {
