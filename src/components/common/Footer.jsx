@@ -93,13 +93,13 @@ const Footer = () => {
             Habitaciones
           </Link>
           <Link
-            to="/error404"
+            to="/galeria"
             className="footer-link text-decoration-none mb-2 fs-5"
           >
             Galería
           </Link>
           <Link
-            to="/error404"
+            to="/nosotros"
             className="footer-link text-decoration-none mb-2 fs-5"
           >
             Quiénes somos
@@ -117,7 +117,7 @@ const Footer = () => {
             Ubicación
           </Link>
           <Link
-            to="/error404"
+            to="/login"
             className="footer-link text-decoration-none mb-2 fs-5"
           >
             Login
