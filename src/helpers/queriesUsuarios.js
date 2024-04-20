@@ -9,3 +9,13 @@ export const login = (usuario) => {
     return true;
   } else return false;
 };
+
+export const leerUsuarios = async () => {
+  try {
+    const respuesta = await fetch(URI_USUARIOS);
+    const listaUsuarios = await respuesta.json();
+    return listaUsuarios;
+  } catch (error) {
+    console.log(error);
+  }
+};
