@@ -9,14 +9,12 @@ import PaginaPrincipal from "./components/pages/PaginaPrincipal/PaginaPrincipal"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GaleriaImagenes from "./components/pages/GaleriaImagenes";
 import SobreNosotros from "./components/pages/SobreNosotros";
-import Registro from "./components/pages/Registro";
 import Login from "./components/pages/Login";
 import { useState } from "react";
 import Error404 from "./components/pages/Error404";
 //import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
-
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
@@ -25,40 +23,6 @@ function App() {
 
   return (
     <BrowserRouter>
-
-      <Menu></Menu>
-      <Container className="container-fluid">
-        <Routes>
-          <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
-            {" "}
-          </Route>
-
-          <Route
-            exact
-            path="/administrador"
-            element={<PaginaAdministrador></PaginaAdministrador>}
-          >
-            {" "}
-          </Route>
-
-          <Route
-            exact
-            path="/nosotros"
-            element={<SobreNosotros></SobreNosotros>}
-          >
-            {" "}
-          </Route>
-
-          <Route
-            exact
-            path="/registro"
-            element={<Registro></Registro>}
-          >
-            {" "}
-          </Route>
-        </Routes>
-      </Container>
-
       <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
 
       <Routes>
@@ -110,7 +74,6 @@ function App() {
             ></Route>*/}
       </Routes>
       {/*</Container>*/}
-
       <Footer></Footer>
     </BrowserRouter>
   );
