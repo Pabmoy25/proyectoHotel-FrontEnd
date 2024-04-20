@@ -50,7 +50,7 @@ const Footer = () => {
       <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
         <h4>Seguínos</h4>
         <div className="d-flex flex-row justify-content-center">
-          <Link to="/error404" className="icono-link mx-2">
+          <Link to="https://www.instagram.com/hakuhuasihotel?igsh=NHI5eDhod24zaTdz" className="icono-link mx-2">
             <FaInstagram
               className="icono-instagram"
               style={{ fontSize: "30px" }}
