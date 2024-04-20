@@ -1,7 +1,7 @@
-const admin = {
+/*const admin = {
   email: "admin@hakuhuasi.com.ar",
   password: "Haku123h",
-};
+};*/
 
 /*export const login = (usuario) => {
   if (usuario.email === admin.email && usuario.password === admin.password) {

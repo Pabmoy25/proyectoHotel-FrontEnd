@@ -43,7 +43,7 @@ const Menu = ({ logueado, setLogueado }) => {
             {/*<NavLink end className="nav-link" to={"/administrador"}>
               Administrador
             </NavLink>*/}
-            {logueado.length > 0 ? (
+            {logueado.email ? (//logueado.length > 0  por logueado.email
               <>
                 <NavLink end className="nav-link" to={"/administrador"}>
                   Administrador

@@ -19,7 +19,7 @@ export const leerHabitaciones = async () => {
       const respuesta = await fetch(URI_HABITACIONES, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        //'x-token': JSON.parse(sessionStorage.getItem()).token}, antes de crear habitacion se ingresara token
+        //'x-token': JSON.parse(sessionStorage.getItem()).token}, antes de crear, editar, borrar habitacion se ingresara token
         body: JSON.stringify(nuevaHabitacion),
       });
       console.log(respuesta);
