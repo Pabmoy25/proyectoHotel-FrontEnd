@@ -126,8 +126,8 @@ const Footer = () => {
       </div>
       <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
         <h4>Sitios relacionados</h4>
-        <div className="d-flex flex-wrap justify-content-center">
-          <a href="https://www.tripadvisor.com.ar" className="my-1 col-lg-6">
+        <div className="d-flex flex-wrap justify-content-center text-center">
+          <a href="https://www.tripadvisor.com.ar" className="m-1">
             <img
               src={logoTripAdvisor}
               alt="logo de trip advisor"
@@ -135,7 +135,7 @@ const Footer = () => {
               width={120}
             />
           </a>
-          <a href="https://www.tucumanturismo.gob.ar" className="my-1 col-lg-6">
+          <a href="https://www.tucumanturismo.gob.ar" className="m-1">
             <img
               src={logoTucuman}
               alt="logo de Tucumán turismo"
@@ -143,7 +143,7 @@ const Footer = () => {
               width={120}
             />
           </a>
-          <a href="https://www.booking.com" className="my-1 col-lg-6">
+          <a href="https://www.booking.com" className="m-1">
             <img
               src={logobooking}
               alt="logo de booking"
@@ -151,7 +151,7 @@ const Footer = () => {
               width={120}
             />
           </a>
-          <a href="https://www.destinoargentina.com.ar" className="my-1 col-lg-6">
+          <a href="https://www.destinoargentina.com.ar" className="m-1">
             <img
               src={destinoArgentino}
               alt="logo destino Argentino"
@@ -163,7 +163,7 @@ const Footer = () => {
       </div>
     </section>
   </div>
-  <h5 className="text-center">&copy; Todos los derechos reservados</h5>
+  <p className="text-center">&copy; Todos los derechos reservados</p>
 </footer>
   );
 };
