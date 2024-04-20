@@ -254,6 +254,105 @@ tbody {
   color: #fff;
 }
 
+/*Registro*/
+/* Estilos base */
+.FondoPagina {
+  background-image: url('./assets/Registr.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.form-box {
+  position: relative;
+  width: 380px;
+  max-width: 90%; /* Ancho máximo */
+  height: auto;
+  background: rgba(0, 0, 0, 0.5); /* Fondo transparente */
+  border: 2px solid rgba(255, 37, 215, 0.56);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  padding: 20px;
+  backdrop-filter: blur(10px); /* Desenfoque para un aspecto más nítido */
+}
+
+.inputbox, .inputboxAyN {
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+  border-bottom: 2px solid #ffffff;
+}
+
+.inputbox label, .inputboxAyN label {
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  color: #ffffff;
+  font-size: 1em;
+  transition: 0.8s;
+}
+
+.inputbox input, .inputboxAyN input {
+  width: calc(100% - 40px); /* Ancho ajustado para compensar el icono */
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #ffffff;
+  padding: 5px;
+}
+
+input:focus~label, input:valid~label {
+  top: -25px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Espacio superior para el botón */
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: #ed21ff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.titulo-registro {
+  color: #ed21ff;
+  font-size: 3em;
+}
+
+/* Consulta de medios para dispositivos móviles */
+@media (max-width: 768px) {
+  .form-box {
+    width: 90%; /* Ajustar el ancho según tu diseño */
+  }
+  
+  .titulo-registro {
+    font-size: 1.5em; /* Tamaño de letra más grande */
+  }
+}
+=======
 .btn-volver {
   background-color: #7c127b;
   border-color: #7c127b;
@@ -313,3 +412,4 @@ tbody {
 {
   color: yellow;
 }
+
