@@ -297,3 +297,19 @@ tbody {
     display: none; /* Oculta la galería de móviles en dispositivos pequeños */
   }
 }
+
+
+/* Footer */
+.footer-link {
+  color: #fff;
+}
+.icono-link {
+  color: #fff;
+}
+.btn-entidades {
+  color: #fff;
+}
+.sutbtitulofooter
+{
+  color: yellow;
+}

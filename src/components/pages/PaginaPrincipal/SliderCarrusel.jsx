@@ -30,9 +30,10 @@ const SliderCarrusel = () => {
 
   return (
     <Carousel className="Carrusel">
-      {ArraydeImagenes.map((Element) => {
+      {ArraydeImagenes.map((Element, index) => {
+
         return (
-          <Carousel.Item className="ItemCarrusel">
+          <Carousel.Item key={index} className="ItemCarrusel">
             <img className="ImagenCarrusel" src={Element.Imagen} />
             <Carousel.Caption>
               <div className="texto-superpuesto">TU ESCAPE A LA NATURALEZA</div>
