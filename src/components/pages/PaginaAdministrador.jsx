@@ -1,12 +1,30 @@
-import React from "react";
+
 import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Habitacion from "./habitacion/Habitacion";
+import { leerHabitaciones } from "../../helpers/queriesHabitaciones";
+
 
 const PaginaAdministrador = () => {
+  const [habitacion, setHabitaciones] = useState([]);
+    useEffect(() => {
+      traerHabitaciones();
+    }, []);
+
+    const traerHabitaciones = async ()=> {
+        try {
+         const listaHabitaciones = await leerHabitaciones()
+         setHabitaciones (listaHabitaciones);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
   return (
     <section>
       <div>
-        <h1 className="mt-3 bold tituloAdmin">Administrador</h1>
+        <h1 className="mt-5 bold tituloAdmin">Administrador</h1>
         <hr />
       </div>
       <div className="d-flex justify-content-between align-items-center subtAdmin">
@@ -15,53 +33,34 @@ const PaginaAdministrador = () => {
           variant="outline-secondary"
           id="btnAdmin"
           as={Link}
-          to={"/administrador/agregarhabitacion"}
+          to={"/administrador/agregarHabitacion"}
         >
           <i className="bi bi-file-earmark-plus"> Habitación</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover>
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center ">
           <tr>
             <th>N° de habitación</th>
             <th>Descripción Breve</th>
-            <th>Descripción Amplia</th>
             <th>Tipo</th>
             <th>Url Imagen</th>
-            <th>Categoría</th>
-            <th>Tarifa</th>
             <th>Estado</th>
+            <th>Tarifa</th>
             <th>Opciones</th>
           </tr>
         </thead>
         <tbody>
-          {/*{habitaciones.map((habitacion) => (
-            <ItemHabitacion
-              key={habitacion.id}
-             habitacion={habitacion}
-              setHabitacion={setHabitacion}
-            ></ItemHabitacion>
-          ))}*/}
-          <tr>
-            <td>1</td>
-            <td>1</td>
-            <td></td>
-            <td>Individual</td>
-            <td>1</td>
-            <td></td>
-            <td>$</td>
-            <td>Libre</td>
-            <td className="d-flex justify-content-center">
-              <Button id="btnEditar">
-                <i className="bi bi-pencil-square"></i>
-              </Button>
-              <Button id="btnBorrar">
-                <i className="bi bi-trash-fill"></i>
-              </Button>
-            </td>
-          </tr>
+        {habitacion.map((habitacion) =>
+            <Habitacion
+              key={habitacion._id}
+              habitacion={habitacion}
+            ></Habitacion>
+          )}
         </tbody>
       </Table>
+
+
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Huéspedes</h2>
 
@@ -74,7 +73,7 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover className="tabla">
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center">
           <tr>
             <th>N° de habitación</th>

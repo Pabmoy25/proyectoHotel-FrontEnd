@@ -15,16 +15,13 @@
   background-color: #82376b;
 }
 
-body {
-  background: #f7f6df;
-}
-
 .tituloAdmin,
-.subtAdmin {
+.subtAdmin,
+.titulo-administrador {
   color: #7c127b;
 }
 
-.tabla {
+#tabla table thead {
   background-color: #f7f6df;
 }
 
@@ -33,12 +30,16 @@ h2,
 thead {
   font-family: "montserrat alternates";
 }
+
 h1 {
   color: #7c127b;
 }
+
 tbody {
   font-family: "quicksand";
 }
+
+/*Administrador y login*/
 
 #btnAdmin {
   font-weight: bold;
@@ -52,6 +53,16 @@ tbody {
   font-weight: bold;
   font-size: larger;
 }
+
+#btnIngresar {
+  font-family: "montserrat alternates";
+  color: #ffffff;
+  font-weight: normal;
+  background-color: #9a2a99;
+  border: 2px outset #edefec;
+  width: 150px;
+}
+
 #btnBorrar {
   background-color: #ffbbf2;
 }
@@ -59,39 +70,79 @@ tbody {
   background-color: #d9abff;
 }
 
+#btnGoogle,
+#btnFaceb {
+  color: #646363;
+  width: 60px;
+  margin: 8px;
+  border: 2px outset #edefec;
+  background-color: #ffffff;
+}
+.contenLogin {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #7c127b;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#formLogin input {
+  background-color: hsl(58, 60%, 92%);
+}
+#formLogin input:focus {
+  border-color: #ffbbf2;
+  outline: none;
+  box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
+}
+
+.contenFormHabitacion {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #7c127b;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#formHabitacion input {
+  background-color: hsl(58, 60%, 92%);
+}
+#formHabitacion input:focus {
+  border-color: #ffbbf2;
+  outline: none;
+  box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
+}
+
 /*Pagina sobre NOsotros*/
 
 .cuadroNosotros {
   background-color: rgba(128, 0, 128, 0.3);
   border: 2px solid rgba(128, 0, 128, 0.5);
-  border-radius: 15px; 
-  padding: 20px; 
+  border-radius: 15px;
+  padding: 20px;
   margin: 20px auto;
   max-width: 800px;
   box-shadow: 0 0 20px rgba(128, 0, 128, 0.5);
 }
 
-.itemcard:hover::after{
-  filter: drop-shadow(5px 0 4px 
-  #0000001a);
+.itemcard:hover::after {
+  filter: drop-shadow(5px 0 4px #0000001a);
 }
 
-.itemcard:hover .layer{
+.itemcard:hover .layer {
   left: 50px;
 }
 
-
 .itemcard {
-  --color: #FFBBF2;
+  --color: #ffbbf2;
 
   background-color: var(--color);
   border-radius: 10px;
-  box-shadow: #3c40434d 0px 1px 2px 0px,#3c404326 0px 1px 3px 1px;
+  box-shadow: #3c40434d 0px 1px 2px 0px, #3c404326 0px 1px 3px 1px;
   position: relative;
   cursor: pointer;
 }
 
-.itemcard::after{
+.itemcard::after {
   content: "";
   position: absolute;
   top: 8px;
@@ -100,28 +151,22 @@ tbody {
   height: 80%;
   box-sizing: border-box;
   border-style: solid;
-  border-color: transparent
-  transparent transparent var(--color);
+  border-color: transparent transparent transparent var(--color);
   border-width: 40px 40px 40px 40px;
   filter: drop-shadow(5px 0 4px #00000094);
-  transition: filter .5s;
+  transition: filter 0.5s;
 }
 
-.layer{
-  background-color: #F2F2F2 ;
-  border: 1PX solid #fff;
+.layer {
+  background-color: #f2f2f2;
+  border: 1px solid #fff;
   border-radius: inherit;
   padding: 20px;
-  box-shadow:
-  #00000012 0px 1px 2px
-  #00000012 0px 2px 4px
-  #00000012 0px 4px 8px
-  #00000012 0px 8px 16px
-  #00000012 0px 16px 32px
-  #00000012 0px 32px 64px;
+  box-shadow: #00000012 0px 1px 2px #00000012 0px 2px 4px #00000012 0px 4px 8px
+    #00000012 0px 8px 16px #00000012 0px 16px 32px #00000012 0px 32px 64px;
   position: relative;
   left: 10px;
-  transition: left 1s ;
+  transition: left 1s;
 }
 
 .cardEquipo {
@@ -133,7 +178,6 @@ tbody {
   overflow: hidden;
   margin: 0 auto; /* Oculta cualquier contenido que se desborde de la tarjeta */
 }
-
 
 .cardEquipo .imageEquipo {
   width: 100%;
@@ -158,14 +202,13 @@ tbody {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Cambia el ancho para que coincida con el ancho de la tarjeta */
-  height: 100%; /* Ajusta la altura según sea necesario */
+  width: 100%;
+  height: 100%;
   background: #e09ad0;
   transition: all 0.5s;
   transform-origin: left;
   transform: perspective(2000px) rotateY(-90deg);
 }
-
 
 .cardEquipo:hover .detailsEquipo {
   transform: perspective(2000px) rotateY(0deg);
@@ -180,7 +223,7 @@ tbody {
   text-transform: uppercase;
 }
 
-.tituloequipo{
+.tituloequipo {
   font-size: 20px;
 }
 
@@ -309,3 +352,64 @@ button {
     font-size: 1.5em; /* Tamaño de letra más grande */
   }
 }
+=======
+.btn-volver {
+  background-color: #7c127b;
+  border-color: #7c127b;
+  color: #fff;
+}
+
+.btn-volver:hover {
+  background-color: #82376b;
+  border-color: #82376b;
+}
+
+.menu {
+  font-weight: bold;
+  border: 2px solid #82376b;
+}
+
+.galeria-moviles {
+  display: flex;
+  width: 400px;
+  height: 350px;
+}
+
+.galeria-moviles img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
+}
+
+.galeria-moviles img:hover {
+  cursor: crosshair;
+  width: 200px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+@media (max-width: 576px) {
+  .galeria-moviles {
+    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
+  }
+}
+
+
+/* Footer */
+.footer-link {
+  color: #fff;
+}
+.icono-link {
+  color: #fff;
+}
+.btn-entidades {
+  color: #fff;
+}
+.sutbtitulofooter
+{
+  color: yellow;
+}
+
