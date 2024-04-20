@@ -13,16 +13,22 @@ const Login = ({ setLogueado }) => {
 
   const navegacion = useNavigate();
 
-  const onSubmit = (usuario) => {
-    console.log(usuario);
+  const onSubmit = async (usuario) => {
+    //console.log(usuario);
+    const respuesta = await login(usuario);
 
-    if (login(usuario)) {
+    if (respuesta.status === 200) {
       Swal.fire({
-        title: "Sesión iniciada",
-        text: `El usuario ${usuario.email} fue logueado correctamente`,
+        title: `¡Bienvenido ${usuario.email}!`,
+        text: "Sesión iniciada exitosamente",
         icon: "success",
       });
-      setLogueado(usuario.email);
+      const dato = await respuesta.json();
+      sessionStorage.setItem(
+        "InicioSesionHaku",
+        JSON.stringify({ email: dato.email, token: dato.token })
+      );
+      setLogueado(dato);
       navegacion("/administrador");
     } else {
       Swal.fire({

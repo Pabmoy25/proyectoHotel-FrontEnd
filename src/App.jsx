@@ -18,7 +18,7 @@ import RutasAdmin from "./components/routes/RutasAdmin";
 
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
+  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {} //"";
 
   const [logueado, setLogueado] = useState(usuario);
 
