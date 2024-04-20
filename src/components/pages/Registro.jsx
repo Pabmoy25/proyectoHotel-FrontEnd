@@ -1,12 +1,11 @@
 import React from 'react';
-import Fondo from '../../assets/Fondo.jpg'
+import Fondo from '../../assets/Registr.png'
 
 
 const Registro = () => {
     return (
 
-        
-        <div   className='FondoPagina'>
+        <div  className='FondoPagina'>
             <section>
          <div class="form-box">
             <div class="form-value">
@@ -59,6 +58,7 @@ const Registro = () => {
         </div>
         </section>
         </div>
+
     );
 };
 
