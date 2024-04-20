@@ -1,3 +1,4 @@
+const URI_USUARIOS = import.meta.env.ITE_API_USUARIOS;
 /*const admin = {
   email: "admin@hakuhuasi.com.ar",
   password: "Haku123h",
@@ -9,6 +10,22 @@
     return true;
   } else return false;
 };*/
+
+export const crearUsuario = async (nuevoUsuario) => {
+  try {
+    const respuesta = await fetch(URI_USUARIOS, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      
+      body: JSON.stringify(nuevoUsuario),
+    });
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 export const leerUsuarios = async () => {
   try {

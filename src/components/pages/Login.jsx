@@ -14,8 +14,9 @@ const Login = ({ setLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = async (usuario) => {
-    //console.log(usuario);
+    console.log(usuario);
     const respuesta = await login(usuario);
+    console.log(respuesta)
 
     if (respuesta.status === 200) {
       Swal.fire({
@@ -26,7 +27,7 @@ const Login = ({ setLogueado }) => {
       const dato = await respuesta.json();
       sessionStorage.setItem(
         "InicioSesionHaku",
-        JSON.stringify({ email: dato.email, token: dato.token })
+        JSON.stringify({ email: dato.email})//, token: dato.token })
       );
       setLogueado(dato);
       navegacion("/administrador");
