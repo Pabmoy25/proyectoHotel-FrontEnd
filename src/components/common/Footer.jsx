@@ -163,7 +163,7 @@ const Footer = () => {
       </div>
     </section>
   </div>
-  <p className="text-center">&copy; Todos los derechos reservados</p>
+  <h5 className="text-center">&copy; Todos los derechos reservados</h5>
 </footer>
   );
 };
