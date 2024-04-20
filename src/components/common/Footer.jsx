@@ -1,6 +1,14 @@
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import logoHotel from "../../assets/logoHotel.png";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import logoTripAdvisor from "../../assets/tripAdvisor.jpg";
+import logoTucuman from "../../assets/logo-marca-tucuman.jpg";
+import logobooking from "../../assets/Booking-Logo.jpg";
+import destinoArgentino from "../../assets/Destino-Argentina-logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -10,78 +18,148 @@ const Footer = () => {
         <section className="row">
           <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
             <h4>Hotel Haku Huasi</h4>
-            <p><span className="sutbtitulofooter">Dirección:</span> Ruta 340 - Km 23, San Quintín</p>
-            <p><span className="sutbtitulofooter">Codigo Postal:</span> 4101</p>
-            <p><span className="sutbtitulofooter">Localidad:</span> San Quintín, Yerba Buena</p>
-            <p><span className="sutbtitulofooter">Provincia:</span> País: Argentina</p>
-            <br />
-            <h4>Contacto en Argentina</h4>
-            <p><span className="sutbtitulofooter">Tel./Fax:</span> (+54 9) (0381) 4924444 / 4925555</p>
-            <p><span className="sutbtitulofooter">Móvil:</span>(+54 9) (0381) 155-333333</p>
-            <p><span className="sutbtitulofooter">e-mail: </span> hakuhuasihotel@gmail.com.ar</p>
-           
+            <p>
+              <span className="sutbtitulofooter">Dirección:</span> Ruta 340 - Km
+              23, San Quintín
+            </p>
+            <p>
+              <span className="sutbtitulofooter">Codigo Postal:</span> 4101
+            </p>
+            <p>
+              <span className="sutbtitulofooter">Localidad:</span> San Quintín,
+              Yerba Buena
+            </p>
+            <p>
+              <span className="sutbtitulofooter">Provincia:</span> País:
+              Argentina
+            </p>
+            <h4 className="mt-4">Contacto en Argentina</h4>
+            <p>
+              <span className="sutbtitulofooter">Tel./Fax:</span> (+54 9) (0381)
+              4924444 / 4925555
+            </p>
+            <p>
+              <span className="sutbtitulofooter">Móvil:</span>(+54 9) (0381)
+              155-333333
+            </p>
+            <p>
+              <span className="sutbtitulofooter">e-mail: </span>{" "}
+              hakuhuasihotel@gmail.com.ar
+            </p>
           </div>
           <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
             <h4>Seguínos</h4>
-            <Link to="/error404" className="icono-link me-lg-3">
-              <FaInstagram className="icono-instagram" />
-            </Link>
-            <Link to="/error404" className="icono-link me-lg-3">
-              <FaFacebook className="icono-facebook" />
-            </Link>
-            <Link to="/error404" className="icono-link me-lg-3">
-              <FaTwitter className="icono-twitter" />
-            </Link>
+            <div className="d-flex flex-row justify-content-center">
+              <Link to="/error404" className="icono-link mx-2">
+                <FaInstagram
+                  className="icono-instagram"
+                  style={{ fontSize: "24px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaFacebook
+                  className="icono-facebook"
+                  style={{ fontSize: "24px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaTwitter
+                  className="icono-twitter"
+                  style={{ fontSize: "24px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaLinkedin
+                  className="icono-linkedin"
+                  style={{ fontSize: "24px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaYoutube
+                  className="icono-youtube"
+                  style={{ fontSize: "24px" }}
+                />
+              </Link>
+            </div>
           </div>
 
-          <div className="col-lg-3 mt-3 d-flex flex-column text-center text-lg-end">
+          <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
             <h4>Secciones</h4>
-            <Link
-              to="/error404"
-              className="footer-link text-decoration-none me-2 fs-5"
-            >
-              Habitaciones
-            </Link>
-            <Link
-              to="/error404"
-              className="footer-link text-decoration-none me-2 fs-5"
-            >
-              Galería
-            </Link>
-            <Link
-              to="/error404"
-              className="footer-link text-decoration-none me-2 fs-5"
-            >
-              Quiénes somos
-            </Link>
-            <Link
-              to="/error404"
-              className="footer-link text-decoration-none me-2 fs-5"
-            >
-              Contacto
-            </Link>
-            <Link
-              to="/error404"
-              className="footer-link text-decoration-none me-2 fs-5"
-            >
-              Ubicación
-            </Link>
-            <Link
-              to="/error404"
-              className="footer-link text-decoration-none me-2 fs-5"
-            >
-              Login
-            </Link>
+            <div className="d-flex flex-column align-items-start">
+              <Link
+                to="/error404"
+                className="footer-link text-decoration-none mb-2 fs-5"
+              >
+                Habitaciones
+              </Link>
+              <Link
+                to="/error404"
+                className="footer-link text-decoration-none mb-2 fs-5"
+              >
+                Galería
+              </Link>
+              <Link
+                to="/error404"
+                className="footer-link text-decoration-none mb-2 fs-5"
+              >
+                Quiénes somos
+              </Link>
+              <Link
+                to="/error404"
+                className="footer-link text-decoration-none mb-2 fs-5"
+              >
+                Contacto
+              </Link>
+              <Link
+                to="/error404"
+                className="footer-link text-decoration-none mb-2 fs-5"
+              >
+                Ubicación
+              </Link>
+              <Link
+                to="/error404"
+                className="footer-link text-decoration-none mb-2 fs-5"
+              >
+                Login
+              </Link>
+            </div>
           </div>
-          <div className="col-lg-3 mt-3 d-flex justify-content-center">
-            <Link to="/error404">
-              <img
-                src={logoTripAdvisor}
-                alt="logo de trip advisor"
-                className="img-fluid"
-                width={120}
-              />
-            </Link>
+          <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
+            <h4>Sitios relacionados</h4>
+            <div className="d-flex flex-column align-items-center">
+              <Link to="/error404" className="my-1">
+                <img
+                  src={logoTripAdvisor}
+                  alt="logo de trip advisor"
+                  className="img-fluid"
+                  width={120}
+                />
+              </Link>
+              <a href="https://www.tucumanturismo.gob.ar/" className="my-1">
+                <img
+                  src={logoTucuman}
+                  alt="logo de Tucumán turismo"
+                  className="img-fluid"
+                  width={120}
+                />
+              </a>
+              <a href="https://www.booking.com" className="my-1">
+                <img
+                  src={logobooking}
+                  alt="logo de booking"
+                  className="img-fluid"
+                  width={120}
+                />
+              </a>
+              <a href="https://www.destinoargentina.com.ar" className="my-1">
+                <img
+                  src={destinoArgentino}
+                  alt="logo destino Argentino"
+                  className="img-fluid"
+                  width={120}
+                />
+              </a>
+            </div>
           </div>
         </section>
       </div>
