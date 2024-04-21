@@ -80,7 +80,7 @@ const PaginaAdministrador = () => {
           )}
         </tbody>
       </Table>
-
+    
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Huéspedes</h2>
@@ -106,6 +106,7 @@ const PaginaAdministrador = () => {
             <th>Opciones</th>
           </tr>
         </thead>
+        </Table>
         <tbody>
           {/*{huespedes.map((huesped) => (
             <ItemHuesped
@@ -114,6 +115,7 @@ const PaginaAdministrador = () => {
               setHuesped={setHuesped}
             ></ItemHuesped>
           ))}*/}
+          </tbody>
           <tr>
             <td>1</td>
             <td>Juan Perez</td>
@@ -125,16 +127,10 @@ const PaginaAdministrador = () => {
             <Button id="btnEditar" onClick={() => handleEditarHabitacion(habitacion)}>
             <i className="bi bi-pencil-square"></i>
             </Button>
-
-            <Button id="btnBorrar" onClick={() => handleBorrarHabitacion (habitacion)}>
-            <i className="bi bi-trash-fill"></i>
-            </Button>
             </td>
-          </tr>
-        </tbody>
-      </Table>
-    </section>
+            </tr>     
   );
-};
+
+      
 
 export default PaginaAdministrador;

@@ -28,9 +28,12 @@ const Habitacion = ({habitacion, onEditar}) => {
             </td>
     </tr>
     );
-};
+  };
 
- const borrarHabitacion = () => {
+
+
+
+ const borrarHabitacion = ({habitacion, eliminarHabitacion}) => {
     Swal.fire({
       title: "¿Está seguro de eliminar esta habitación?",
       text: "No puedes revertir este proceso",
@@ -43,22 +46,21 @@ const Habitacion = ({habitacion, onEditar}) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
 
-      const respuesta = await borrarHabitacion(Habitacion.id);
+      const respuesta = borrarHabitacion(habitacion._id);
 if (respuesta.status === 200) {
         Swal.fire({
           title: "La habitación fue eliminada",
-          text: `La habitación "${Habitacion.nombreHabitacion}" fue eliminada`,
+          text: `La habitación "${habitacion.habitacion}" fue eliminada`,
           icon: "success",
         });
-        borrarHabitacion(Habitacion.id)
+        eliminarHabitacion(habitacion._id);
       }else {
         Swal.fire({
           title: "Ocurrió un error",
-          text: `La habitación "${Habitacion.nombreHabitacion}" no fue eliminada, intentelo de nuevo en unos minutos`,
+          text: `La habitación "${habitacion.habitacion}" no fue eliminada, intentelo de nuevo en unos minutos`,
           icon: "success",
         });
-
-      }
+            }
       }
     });
   };
