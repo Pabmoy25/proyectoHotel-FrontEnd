@@ -296,6 +296,9 @@ tbody {
   .galeria-moviles {
     display: none; /* Oculta la galería de móviles en dispositivos pequeños */
   }
+  .tituloPrincipal h1 {
+    font-size: 60px;
+  }
 }
 
 
@@ -359,3 +362,4 @@ tbody {
 .tituloPrincipal h1 {
   font-size: 100px;
 }
+

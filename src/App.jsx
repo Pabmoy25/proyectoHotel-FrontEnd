@@ -16,6 +16,7 @@ import Error404 from "./components/pages/Error404";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
+import Registro from "./components/pages/Registro"
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
@@ -70,6 +71,14 @@ function App() {
           exact
           path="/CatalogoHabitaciones"
           element={<CatalogoHabitacion></CatalogoHabitacion>}
+        >
+          {" "}
+        </Route>
+
+        <Route
+          exact
+          path="/registro"
+          element={<Registro></Registro>}
         >
           {" "}
         </Route>
