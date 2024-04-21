@@ -3,7 +3,9 @@ import Fondo from "../../assets/Registr.png";
 
 const Registro = () => {
   return (
-    <div class="container-registro">
+
+    
+    <div class="container-registro my-4">
     <div class="form_area-registro">
         <p class="title-registro">REGISTRATE</p>
         <form action="">
