@@ -37,7 +37,7 @@ const Menu = ({ logueado, setLogueado }) => {
             <NavLink end className="nav-link" to={"/CatalogoHabitaciones"}>
               Habitaciones
             </NavLink>
-            <NavLink end className="nav-link" to={"/error404"}>
+            <NavLink end className="nav-link" to={"/contacto"}>
               Contacto
             </NavLink>
             <NavLink end className="nav-link" to={"/galeria"}>

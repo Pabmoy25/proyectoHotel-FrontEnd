@@ -17,6 +17,8 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
 import Registro from "./components/pages/Registro"
+import Contacto from "./components/pages/Contacto";
+
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
@@ -81,6 +83,13 @@ function App() {
           element={<Registro></Registro>}
         >
           {" "}
+        </Route>
+        
+        <Route
+          exact
+          path="/contacto"
+          element={<Contacto></Contacto>}
+        >
         </Route>
 
         {/*<Route
