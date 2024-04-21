@@ -17,14 +17,14 @@ const Login = ({ setLogueado }) => {
     try {
       //console.log(usuario);
       const respuesta = await login(usuario);
-      console.log(respuesta); //error
+      console.log(respuesta); 
 
       if (respuesta.status === 200) {
-      /*  Swal.fire({
-          title: `¡Bienvenido ${usuario.email}!`,
+        Swal.fire({
+          title: `¡Bienvenido ${usuario.nombreCompleto}!`,
           text: "Sesión iniciada exitosamente",
           icon: "success",
-        });*/
+        });
         const dato = await respuesta.json();
         sessionStorage.setItem(
           "InicioSesionHaku",
