@@ -313,3 +313,14 @@ tbody {
 {
   color: yellow;
 }
+
+
+.btnCard {
+  background-color: #f1ede5;
+}
+
+.card-img-top-nueva {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
