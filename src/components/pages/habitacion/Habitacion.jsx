@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 
 
-const Habitacion = ({habitacion}) => { 
+const Habitacion = ({habitacion, onEditar}) => { 
     return (
         <tr>
             <td className="text-center">{habitacion.habitacion}</td>
@@ -18,7 +18,7 @@ const Habitacion = ({habitacion}) => {
       <td className="text-center">$ {habitacion.precio}</td>
           
       <td className="d-flex justify-content-center">
-              <Button id="btnEditar">
+              <Button onClick={()=>onEditar(habitacion)}>
                 <i className="bi bi-pencil-square"></i>
               </Button>
               <Button id="btnBorrar">
