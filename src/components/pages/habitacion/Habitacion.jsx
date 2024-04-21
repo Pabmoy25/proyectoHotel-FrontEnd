@@ -19,7 +19,7 @@ const Habitacion = ({habitacion, eliminarHabitacion}) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
 
-      const respuesta = borrarHabitacion(habitacion._id);
+      const respuesta = await borrarHabitacion(habitacion._id);
 if (respuesta.status === 200) {
         Swal.fire({
           title: "La habitación fue eliminada",
@@ -65,11 +65,5 @@ if (respuesta.status === 200) {
     );
   };
 
-
-
-
- 
-
-  
 
 export default Habitacion;

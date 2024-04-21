@@ -14,8 +14,8 @@ const FormularioHabitacion = ({editar, titulo}) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
     setValue,
+    reset
   } = useForm();
 
 
@@ -38,15 +38,13 @@ const FormularioHabitacion = ({editar, titulo}) => {
     if (respuesta.status === 200) {
       const habitacionBuscada = await respuesta.json();
       //  Mostrar datos en el formulario:
-      setValue("numeroHabitacion", habitacionBuscada.habitacion);
+      setValue("habitacion", habitacionBuscada.habitacion);
       setValue("imagen", habitacionBuscada.imagen);
       setValue("tipoDeHabitacion", habitacionBuscada.tipoDeHabitacion);
       setValue("descripcion_breve", habitacionBuscada.descripcion_breve);
       setValue("descripcion_amplia", habitacionBuscada.descripcion_amplia);
-
-      setValue("Fecha de Entrada", habitacionBuscada.descripcion_amplia);
-      setValue("Fecha de Salida", habitacionBuscada.descripcion_amplia);
-
+     /*  setValue("Fecha de Entrada", habitacionBuscada.fechaEntrada);
+      setValue("Fecha de Salida", habitacionBuscada.fechaSalida); */
       setValue("precio", habitacionBuscada.precio);
       setValue("estado", habitacionBuscada.estado);
       
@@ -88,6 +86,7 @@ const FormularioHabitacion = ({editar, titulo}) => {
             icon: "success",
           });
           navegacion("/administrador");
+          reset();
         } else {
           Swal.fire({
             title: "Ocurrio un error",
@@ -298,7 +297,7 @@ const FormularioHabitacion = ({editar, titulo}) => {
             <Form.Label>Estado de la Habitación*</Form.Label>
             <Form.Select
               {...register("estado", {
-                required: "Debe seleccionar un estado (Ocupada o Libre)",
+                required: "Debe seleccionar un estado (Disponible o No disponible)",
               })}
             >
               <option value="">Seleccione una opcion</option>

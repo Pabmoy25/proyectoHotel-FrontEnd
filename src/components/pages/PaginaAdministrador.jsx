@@ -3,7 +3,7 @@ import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones,obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
+import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 
 
 const PaginaAdministrador = () => {
@@ -21,21 +21,10 @@ const PaginaAdministrador = () => {
         }
       }
 
-      const handleEditarHabitacion = async (habitacionId) => {
-        try {
-          
-          const habitacion = await obtenerHabitacion(habitacionId);
-  
-          console.log("Detalles de la habitación a editar:", habitacion);
-        } catch (error) {
-          console.error("Error al cargar los detalles de la habitación:", error);
-        }
-      };
-
-      const borrarHabitacion = async (id) => {
+        const borrarHabitaciones = async (id) => {
         try {
           await borrarHabitacion(id);
-          setHabitaciones(habitacion.filter(habitacion => habitacion.id !== id));
+          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
         } catch (error) {
           console.log(error);
         }
@@ -76,6 +65,7 @@ const PaginaAdministrador = () => {
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
+              eliminarHabitacion={borrarHabitaciones}
             ></Habitacion>
           )}
         </tbody>
