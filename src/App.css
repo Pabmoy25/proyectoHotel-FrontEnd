@@ -331,3 +331,64 @@ tbody {
   border-top-right-radius: 15px; 
   border: 2px solid #82376b;
 }
+
+
+/*Catalogo Habitaciones*/
+.portadaHabitaciones {
+  position: relative;
+  top: 0px;
+}
+
+.banner {
+  object-fit: cover;
+  height: 395px;
+  width: 100%;
+  filter: grayscale(15%);
+}
+
+.tituloPrincipal {
+  color: #f05bfb;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.tituloPrincipal h1 {
+  font-size: 100px;
+}
+
+@media (max-width: 576px) {
+  /* Estilos para el banner en dispositivos pequeños y medianos */
+  .banner {
+    height: 200px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 30px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+@media (min-width: 767.98px){
+  .banner {
+    height: 300px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 60px; /* Tamaño de fuente más pequeño */
+  }
+}
