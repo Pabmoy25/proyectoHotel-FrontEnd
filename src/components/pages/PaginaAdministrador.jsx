@@ -3,7 +3,7 @@ import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones,obtenerHabitacion } from "../../helpers/queriesHabitaciones";
+import { leerHabitaciones,obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 
 
 const PaginaAdministrador = () => {
@@ -29,6 +29,15 @@ const PaginaAdministrador = () => {
           console.log("Detalles de la habitación a editar:", habitacion);
         } catch (error) {
           console.error("Error al cargar los detalles de la habitación:", error);
+        }
+      };
+
+      const borrarHabitacion = async (id) => {
+        try {
+          await borrarHabitacion(id);
+          setHabitaciones(habitacion.filter(habitacion => habitacion.id !== id));
+        } catch (error) {
+          console.log(error);
         }
       };
     
@@ -71,7 +80,7 @@ const PaginaAdministrador = () => {
           )}
         </tbody>
       </Table>
-
+    
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Huéspedes</h2>
@@ -97,6 +106,7 @@ const PaginaAdministrador = () => {
             <th>Opciones</th>
           </tr>
         </thead>
+        </Table>
         <tbody>
           {/*{huespedes.map((huesped) => (
             <ItemHuesped
@@ -105,6 +115,7 @@ const PaginaAdministrador = () => {
               setHuesped={setHuesped}
             ></ItemHuesped>
           ))}*/}
+          </tbody>
           <tr>
             <td>1</td>
             <td>Juan Perez</td>
@@ -114,17 +125,12 @@ const PaginaAdministrador = () => {
             <td></td>
             <td className="d-flex justify-content-center">
             <Button id="btnEditar" onClick={() => handleEditarHabitacion(habitacion)}>
-  <i className="bi bi-pencil-square"></i>
-</Button>
-              <Button id="btnBorrar">
-                <i className="bi bi-trash-fill"></i>
-              </Button>
+            <i className="bi bi-pencil-square"></i>
+            </Button>
             </td>
-          </tr>
-        </tbody>
-      </Table>
-    </section>
+            </tr>     
   );
-};
+
+      
 
 export default PaginaAdministrador;
