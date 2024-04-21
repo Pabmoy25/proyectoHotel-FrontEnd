@@ -270,6 +270,8 @@ tbody {
   border: 2px solid #82376b;
 }
 
+/*GALERIA*/
+
 .galeria-moviles {
   display: flex;
   width: 400px;
@@ -291,6 +293,55 @@ tbody {
   opacity: 1;
   filter: contrast(120%);
 }
+
+.imagen-con-margen {
+  margin-bottom: 20px; /* Puedes ajustar este valor según tus preferencias */
+}
+
+.custom-button {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #323030,
+              -6px -6px 12px #a8a3a3;
+}
+
+.custom-button::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #d53cff 0%, #ffd0fc 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.custom-button:hover::before {
+  width: 9em;
+}
+
+.custom-pagination-button {
+  color: #000000 !important; /* Color del texto */
+  background-color: #e9a2ff !important;  
+  border-color: #e155fd !important; /* Color del borde */
+}
+
+.custom-pagination-button:hover {
+  color: #000000 !important; /* Color del texto al pasar el ratón */
+  background-color: #ffffff !important; /* Color de fondo al pasar el ratón */
+  border-color: #a5a5a5 !important; /* Color del borde al pasar el ratón */
+}
+
 
 @media (max-width: 576px) {
   .galeria-moviles {

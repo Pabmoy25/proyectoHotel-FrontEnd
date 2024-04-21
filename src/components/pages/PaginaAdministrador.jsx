@@ -106,7 +106,7 @@ const PaginaAdministrador = () => {
             <th>Opciones</th>
           </tr>
         </thead>
-        </Table>
+        
         <tbody>
           {/*{huespedes.map((huesped) => (
             <ItemHuesped
@@ -128,10 +128,12 @@ const PaginaAdministrador = () => {
             <i className="bi bi-pencil-square"></i>
             </Button>
             </td>
-            </tr>   
-          </section>  
+          </tr>   
+          </Table>
+        </section> 
   );
 };
+
       
 
 export default PaginaAdministrador;
