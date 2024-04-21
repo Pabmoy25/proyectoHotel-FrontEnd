@@ -19,7 +19,7 @@ import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion
 import Registro from "./components/pages/Registro"
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
+  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {} //"";
 
   const [logueado, setLogueado] = useState(usuario);
 
