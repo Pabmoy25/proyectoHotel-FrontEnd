@@ -5,6 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import { leerHabitaciones } from "../../../helpers/queriesHabitaciones";
 import { useEffect, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import cuotasimple from "../../../assets/cuotasimple.png"
 
 const PaginaPrincipal = () => {
   return (
@@ -37,7 +38,22 @@ const PaginaPrincipal = () => {
         </Row>
       </section>
       <CardsInfo />
-      <Accordion className="custom-accordion" defaultActiveKey="0">
+     
+
+    <div className="main-section mb-3">
+      <div className="background-overlay"></div> {/* Div para superposición de color rosa */}
+      <img className="background-image" src="https://www.lanacion.com.ar/resizer/v2/woman-at-the-supermarket-checkout-she-is-paying-X6NNODLTHJFOXISHIQ33SRIKGY.jpg?auth=b7f4209935f4005e1d69d99ae8a71d37774e08683b8cdc40e7be124275823305&width=420&height=280&quality=70&smart=true" alt="Imagen de fondo" />
+      <div className="overlay-text disclainer-text">
+        <h1>SEGUI DISFRUTANDO!!</h1>
+        <p className="disclaimer-text">Reservá tu alojamiento con nosotros usando CUOTA SIMPLE*</p>
+        <div className="logos-container">
+          <img src={cuotasimple} alt="Logo 1" className="logo" />
+        </div>
+        <p className="disclaimer-text">El plan cuota simple es únicamente válido para todo lo referente a Alojamiento</p>
+      </div>
+    </div>
+
+    <Accordion className="custom-accordion" defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>Política de Cancelación:</Accordion.Header>
           <Accordion.Body>
