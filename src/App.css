@@ -324,3 +324,10 @@ tbody {
   height: 200px;
   object-fit: cover;
 }
+
+
+.redondearImgCard {
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
+  border: 2px solid #82376b;
+}
