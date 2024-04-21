@@ -296,9 +296,6 @@ tbody {
   .galeria-moviles {
     display: none; /* Oculta la galería de móviles en dispositivos pequeños */
   }
-  .tituloPrincipal h1 {
-    font-size: 60px;
-  }
 }
 
 
@@ -363,3 +360,35 @@ tbody {
   font-size: 100px;
 }
 
+@media (max-width: 576px) {
+  /* Estilos para el banner en dispositivos pequeños y medianos */
+  .banner {
+    height: 200px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 30px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+@media (min-width: 767.98px){
+  .banner {
+    height: 300px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 60px; /* Tamaño de fuente más pequeño */
+  }
+}
