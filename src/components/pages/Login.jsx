@@ -16,7 +16,7 @@ const Login = ({ setLogueado }) => {
   const onSubmit = async (usuario) => {
     console.log(usuario);
     const respuesta = await login(usuario);
-    console.log(respuesta)
+    console.log(respuesta)//error
 
     if (respuesta.status === 200) {
       Swal.fire({
