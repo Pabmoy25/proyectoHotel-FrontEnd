@@ -443,3 +443,18 @@ tbody {
     font-size: 60px; /* Tamaño de fuente más pequeño */
   }
 }
+
+.custom-accordion .accordion-header {
+  background-color: #7f3c87; /* Cambia el color de fondo del encabezado */
+  color: #000000; /* Cambia el color del texto del encabezado */
+}
+
+.custom-accordion .accordion-body {
+  background-color: #fadaff; /* Cambia el color de fondo del cuerpo */
+  color: #4a235a; /* Cambia el color del texto del cuerpo */
+}
+
+.custom-accordion .accordion-header .accordion-button {
+  background-color: #82376b; /* Cambia el color de fondo del botón */
+  color: #ffffff; /* Cambia el color del texto del botón */
+}
