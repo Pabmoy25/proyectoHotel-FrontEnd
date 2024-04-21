@@ -14,29 +14,33 @@ const Login = ({ setLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = async (usuario) => {
-    console.log(usuario);
-    const respuesta = await login(usuario);
-    console.log(respuesta)//error
+    try {
+      //console.log(usuario);
+      const respuesta = await login(usuario);
+      console.log(respuesta); //error
 
-    if (respuesta.status === 200) {
-      Swal.fire({
-        title: `¡Bienvenido ${usuario.email}!`,
-        text: "Sesión iniciada exitosamente",
-        icon: "success",
-      });
-      const dato = await respuesta.json();
-      sessionStorage.setItem(
-        "InicioSesionHaku",
-        JSON.stringify({ email: dato.email})//, token: dato.token })
-      );
-      setLogueado(dato);
-      navegacion("/administrador");
-    } else {
-      Swal.fire({
-        title: "Error en login",
-        text: "E-mail o password incorrectos",
-        icon: "error",
-      });
+      if (respuesta.status === 200) {
+      /*  Swal.fire({
+          title: `¡Bienvenido ${usuario.email}!`,
+          text: "Sesión iniciada exitosamente",
+          icon: "success",
+        });*/
+        const dato = await respuesta.json();
+        sessionStorage.setItem(
+          "InicioSesionHaku",
+          JSON.stringify({ email: dato.email }) //, token: dato.token })
+        );
+        setLogueado(dato);
+        navegacion("/administrador");
+      } else {
+        Swal.fire({
+          title: "Error en login",
+          text: "E-mail o password incorrectos",
+          icon: "error",
+        });
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -84,7 +88,7 @@ const Login = ({ setLogueado }) => {
                 message: "Ingrese un mínimo de 6 caracteres",
               },
               maxLength: {
-                value: 60,
+                value: 100,
                 message: "Ingrese un máximo de 10 caracteres",
               },
               pattern: {
