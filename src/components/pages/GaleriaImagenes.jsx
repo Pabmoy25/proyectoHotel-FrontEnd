@@ -146,7 +146,6 @@ const GaleriaImagenes = () => {
       </div>
 
       <Modal show={modalOpen} onHide={toggleModal}>
-        <ModalHeader closeButton>Título del Modal</ModalHeader>
         <ModalBody>
           {imagenModal && (
             <img src={imagenModal} className="img-fluid" alt="Imagen modal" />
