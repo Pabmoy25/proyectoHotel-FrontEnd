@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import NosotrosHistoria from "../../assets/NosotrosHistoria.jpg";
-import FotoAnto from "../../assets/FotoAnto.jpg";
-import Pablo from "../../assets/Pablo.jpg";
 import { Container } from "react-bootstrap";
 
 const SobreNosotros = () => {
