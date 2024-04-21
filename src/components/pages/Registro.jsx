@@ -8,7 +8,7 @@ const Registro = () => {
         <p className="title-registro">REGISTRATE</p>
         <form action="">
           <div className="form_group-registro">
-            <label className="sub_title-registro" for="name">
+            <label className="sub_title-registro" htmlFor="name">
               Nombre
             </label>
             <input
@@ -19,7 +19,7 @@ const Registro = () => {
             ></input>
           </div>
           <div className="form_group-registro">
-            <label className="sub_title-registro" for="name">
+            <label className="sub_title-registro" htmlFor="apellido">
               Apellido
             </label>
             <input
@@ -30,7 +30,7 @@ const Registro = () => {
             ></input>
           </div>
           <div className="form_group-registro">
-            <label className="sub_title-registro" for="email">
+            <label className="sub_title-registro" htmlFor="email">
               Email
             </label>
             <input
@@ -42,7 +42,7 @@ const Registro = () => {
             ></input>
           </div>
           <div className="form_group-registro">
-            <label className="sub_title-registro" for="password">
+            <label className="sub_title-registro" htmlFor="password">
               Contraseña
             </label>
             <input
@@ -53,12 +53,12 @@ const Registro = () => {
             ></input>
           </div>
           <div className="form_group-registro">
-            <label className="sub_title-registro" for="password">
+            <label className="sub_title-registro" htmlFor="confirmarPassword">
               Confirmar Contraseña
             </label>
             <input
               placeholder="**********"
-              id="password"
+              id="confirmarPassword"
               className="form_style-registro"
               type="password"
             ></input>
@@ -76,8 +76,8 @@ const Registro = () => {
           <a className="link-registro" href=""></a>
         </form>
       </div>
-      <a class="link-registro" href=""></a>
-      </div>
+      <a className="link-registro" href=""></a>
+    </div>
   );
 };
 
