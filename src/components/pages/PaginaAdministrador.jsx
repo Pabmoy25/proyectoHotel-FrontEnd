@@ -3,7 +3,7 @@ import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones } from "../../helpers/queriesHabitaciones";
+import { leerHabitaciones,obtenerHabitacion } from "../../helpers/queriesHabitaciones";
 
 
 const PaginaAdministrador = () => {
@@ -20,6 +20,18 @@ const PaginaAdministrador = () => {
           console.log(error);
         }
       }
+
+      const handleEditarHabitacion = async (habitacionId) => {
+        try {
+          
+          const habitacion = await obtenerHabitacion(habitacionId);
+  
+          console.log("Detalles de la habitación a editar:", habitacion);
+        } catch (error) {
+          console.error("Error al cargar los detalles de la habitación:", error);
+        }
+      };
+    
 
   return (
     <section>
@@ -101,9 +113,9 @@ const PaginaAdministrador = () => {
             <td></td>
             <td></td>
             <td className="d-flex justify-content-center">
-              <Button id="btnEditar">
-                <i className="bi bi-pencil-square"></i>
-              </Button>
+            <Button id="btnEditar" onClick={() => handleEditarHabitacion(habitacion)}>
+  <i className="bi bi-pencil-square"></i>
+</Button>
               <Button id="btnBorrar">
                 <i className="bi bi-trash-fill"></i>
               </Button>
