@@ -21,12 +21,48 @@ const Habitacion = ({habitacion, onEditar}) => {
               <Button onClick={()=>onEditar(habitacion)}>
                 <i className="bi bi-pencil-square"></i>
               </Button>
-              <Button id="btnBorrar">
-                <i className="bi bi-trash-fill"></i>
-              </Button>
+              
+              <Button variant="danger" onClick={borrarHabitacion} className="me-lg-2 mt-2">
+          <i className="bi bi-trash"></i>
+        </Button>
             </td>
     </tr>
     );
 };
+
+ const borrarHabitacion = () => {
+    Swal.fire({
+      title: "¿Está seguro de eliminar esta habitación?",
+      text: "No puedes revertir este proceso",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Borrar",
+      cancelButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+
+      const respuesta = await borrarHabitacion(Habitacion.id);
+if (respuesta.status === 200) {
+        Swal.fire({
+          title: "La habitación fue eliminada",
+          text: `La habitación "${Habitacion.nombreHabitacion}" fue eliminada`,
+          icon: "success",
+        });
+        borrarHabitacion(Habitacion.id)
+      }else {
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: `La habitación "${Habitacion.nombreHabitacion}" no fue eliminada, intentelo de nuevo en unos minutos`,
+          icon: "success",
+        });
+
+      }
+      }
+    });
+  };
+
+  
 
 export default Habitacion;
