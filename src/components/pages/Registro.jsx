@@ -1,5 +1,4 @@
 import React from 'react';
-import Fondo from '../../assets/Registr.png'
 
 
 const Registro = () => {
