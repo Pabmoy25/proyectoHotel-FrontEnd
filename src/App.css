@@ -16,7 +16,8 @@
 }
 
 .tituloAdmin,
-.subtAdmin {
+.subtAdmin,
+.titulo-administrador {
   color: #7c127b;
 }
 
@@ -29,12 +30,15 @@ h2,
 thead {
   font-family: "montserrat alternates";
 }
+
 h1 {
   color: #7c127b;
 }
+
 tbody {
   font-family: "quicksand";
 }
+
 /*Administrador y login*/
 
 #btnAdmin {
@@ -66,33 +70,6 @@ tbody {
   background-color: #d9abff;
 }
 
-.galeria-moviles{
-  display: flex;
-  width: 400px;
-  height: 350px;
-}
-
-.galeria-moviles img{
-  width: 0px;
-  flex-grow: 1;
-  object-fit: cover;
-  opacity: .8;
-  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
-}
-
-.galeria-moviles img:hover { 
-  cursor: crosshair;
-  width: 200px;
-  opacity: 1;
-  filter: contrast(120%);
-}
-
-@media (max-width: 576px) {
-  .galeria-moviles {
-    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
-  }
-}
-
 #btnGoogle,
 #btnFaceb {
   color: #646363;
@@ -118,7 +95,6 @@ tbody {
   box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
 }
 
-
 .contenFormHabitacion {
   width: 80%;
   margin: auto;
@@ -135,8 +111,6 @@ tbody {
   outline: none;
   box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
 }
-
-
 
 /*Pagina sobre NOsotros*/
 
@@ -280,7 +254,6 @@ tbody {
   color: #fff;
 }
 
-
 .btn-volver {
   background-color: #7c127b;
   border-color: #7c127b;
@@ -292,9 +265,181 @@ tbody {
   border-color: #82376b;
 }
 
-
 .menu {
-    font-weight: bold;
-    border: 2px solid #82376b;
+  font-weight: bold;
+  border: 2px solid #82376b;
 }
 
+/*GALERIA*/
+
+.galeria-moviles {
+  display: flex;
+  width: 400px;
+  height: 350px;
+}
+
+.galeria-moviles img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
+}
+
+.galeria-moviles img:hover {
+  cursor: crosshair;
+  width: 200px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.imagen-con-margen {
+  margin-bottom: 20px; /* Puedes ajustar este valor según tus preferencias */
+}
+
+.custom-button {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #323030,
+              -6px -6px 12px #a8a3a3;
+}
+
+.custom-button::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #d53cff 0%, #ffd0fc 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.custom-button:hover::before {
+  width: 9em;
+}
+
+.custom-pagination-button {
+  color: #000000 !important; /* Color del texto */
+  background-color: #e9a2ff !important;  
+  border-color: #e155fd !important; /* Color del borde */
+}
+
+.custom-pagination-button:hover {
+  color: #000000 !important; /* Color del texto al pasar el ratón */
+  background-color: #ffffff !important; /* Color de fondo al pasar el ratón */
+  border-color: #a5a5a5 !important; /* Color del borde al pasar el ratón */
+}
+
+
+@media (max-width: 576px) {
+  .galeria-moviles {
+    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
+  }
+}
+
+
+/* Footer */
+.footer-link {
+  color: #fff;
+}
+.icono-link {
+  color: #fff;
+}
+.btn-entidades {
+  color: #fff;
+}
+.sutbtitulofooter
+{
+  color: yellow;
+}
+
+
+.btnCard {
+  background-color: #f1ede5;
+}
+
+.card-img-top-nueva {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+.redondearImgCard {
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
+  border: 2px solid #82376b;
+}
+
+
+/*Catalogo Habitaciones*/
+.portadaHabitaciones {
+  position: relative;
+  top: 0px;
+}
+
+.banner {
+  object-fit: cover;
+  height: 395px;
+  width: 100%;
+  filter: grayscale(15%);
+}
+
+.tituloPrincipal {
+  color: #f05bfb;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.tituloPrincipal h1 {
+  font-size: 100px;
+}
+
+@media (max-width: 576px) {
+  /* Estilos para el banner en dispositivos pequeños y medianos */
+  .banner {
+    height: 200px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 30px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+@media (min-width: 767.98px){
+  .banner {
+    height: 300px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 60px; /* Tamaño de fuente más pequeño */
+  }
+}
