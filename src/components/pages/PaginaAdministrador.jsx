@@ -128,9 +128,10 @@ const PaginaAdministrador = () => {
             <i className="bi bi-pencil-square"></i>
             </Button>
             </td>
-            </tr>     
+            </tr>   
+          </section>  
   );
-
+};
       
 
 export default PaginaAdministrador;

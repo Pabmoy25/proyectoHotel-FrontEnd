@@ -1,65 +1,42 @@
-import React from 'react';
-import Fondo from '../../assets/Registr.png'
-
+import React from "react";
+import Fondo from "../../assets/Registr.png";
 
 const Registro = () => {
-    return (
+  return (
+    <form class="form-registro">
+      <p class="title-registro">Register </p>
+      <p class="message-registro">Signup now and get full access to our app. </p>
+      <div class="flex-registro">
+        <label>
+          <input class="input-registro" type="text" placeholder="" required=""></input>
+          <span>Firstname</span>
+        </label>
 
-        <div  className='FondoPagina'>
-            <section>
-         <div class="form-box">
-            <div class="form-value">
-                <form action="">
-                    <h2 className='titulo-registro text-center'>Registrarse</h2>
+        <label>
+          <input class="input-registro" type="text" placeholder="" required=""></input>
+          <span>Lastname</span>
+        </label>
+      </div>
 
-                    <div className="form-group row">
-                                <div className="col">
-                                <div class="inputboxAyN">
-                        <input type="Nombre" required></input>
-                        <label for="">Nombre</label>
-                    </div>
-                                </div>
-                                <div className="col">
-                                <div class="inputboxAyN">
-                        <i className="fa-regular fa-envelope icon"></i>
-                        <input type="Apellido" required></input>
-                        <label for="">Apellido</label>
-                    </div>
+      <label>
+        <input class="input-registro" type="email" placeholder="" required=""></input>
+        <span>Email</span>
+      </label>
 
-                                </div>
-                            </div>
-                    <div class="inputbox">
-                        <i className="fa-regular fa-envelope icon"></i>
-                        <input type="email" required></input>
-                        <label for="">Email</label>
-                    </div>
-
-                    <div class="inputbox">
-                        <i class="fa-regular fa-envelope icon"></i>
-                        <input type="email" required></input>
-                        <label for="">Repetir Email</label>
-                    </div>
-                    <div class="inputbox">
-                        <i class="fa-solid fa-lock icon"></i>
-                        <input type="password" required></input>
-                        <label for="">Contraseña</label>
-                    </div>
-
-                    <div class="inputbox">
-                        <i class="fa-solid fa-lock icon"></i>
-                        <input type="password" required></input>
-                        <label for="">Repetir Contraseña</label>
-                    </div>
-            
-                    <button>Registrar</button>
-
-                </form>
-            </div>
-        </div>
-        </section>
-        </div>
-
-    );
+      <label>
+        <input class="input-registro" type="password" placeholder="" required=""></input>
+        <span>Password</span>
+      </label>
+      <label>
+        <input class="input-registro" type="password" placeholder="" required=""></input>
+        <span>Confirm password</span>
+      </label>
+      <button class="submit-registro">Submit</button>
+      <p class="signin-registro">
+        Already have an acount ? <a href="#">Signin</a>{" "}
+      </p>
+    </form>
+  );
 };
 
 export default Registro;
