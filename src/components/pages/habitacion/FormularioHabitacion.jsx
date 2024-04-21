@@ -6,9 +6,19 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom"
-import { crearHabitacion,editarHabitacion,obtenerHabitacion } from "../../../helpers/queriesHabitaciones";
+import { crearHabitacion, editarHabitacion, obtenerHabitacion } from "../../../helpers/queriesHabitaciones";
 
-const FormularioHabitacion = ({editar}) => {
+
+const FormularioHabitacion = ({editar, titulo}) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    setValue,
+  } = useForm();
+
+
   const { id } = useParams();
   const navegacion = useNavigate();
 
@@ -18,13 +28,6 @@ const FormularioHabitacion = ({editar}) => {
     }
   }, []);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-    setValue,
-  } = useForm();
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -98,7 +101,7 @@ const FormularioHabitacion = ({editar}) => {
     <Container className="container-fluid">
       <section className="container mainpage contenFormHabitacion my-5">
         <h1 className="display-4 mt-2 titulo-administrador">
-          Nueva Habitación
+        {titulo}
         </h1>
         <hr />
 

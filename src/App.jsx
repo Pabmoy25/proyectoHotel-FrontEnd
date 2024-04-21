@@ -17,6 +17,7 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
 import Registro from "./components/pages/Registro"
+import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
@@ -82,6 +83,16 @@ function App() {
         >
           {" "}
         </Route>
+        <Route
+              exact
+              path="/administrador/editar/:id"
+              element={
+                <FormularioHabitacion
+                  editar={true}
+                  titulo="Editar Habitacion"
+                ></FormularioHabitacion>
+              }
+            ></Route>
 
         {/*<Route
               exact

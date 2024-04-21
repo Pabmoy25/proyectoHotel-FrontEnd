@@ -54,7 +54,7 @@ if (respuesta.status === 200) {
       <td className="text-center">$ {habitacion.precio}</td>
           
       <td className="d-flex justify-content-center">
-      <Link className="btn" id="btnEditar">
+      <Link className="btn" id="btnEditar" to={`/administrador/editar/${habitacion._id}`}>
                 <i className="bi bi-pencil-square"></i>
               </Link>
               <Button id="btnBorrar" onClick={borrarHabitaciones} >
