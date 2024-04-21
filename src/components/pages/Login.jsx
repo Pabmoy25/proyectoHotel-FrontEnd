@@ -28,7 +28,7 @@ const Login = ({ setLogueado }) => {
         const dato = await respuesta.json();
         sessionStorage.setItem(
           "InicioSesionHaku",
-          JSON.stringify({ email: dato.email }) //, token: dato.token })
+          JSON.stringify({ email: dato.email, token: dato.token }) //, token: dato.token })
         );
         setLogueado(dato);
         navegacion("/administrador");
