@@ -3,7 +3,7 @@ import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones,obtenerHabitacion } from "../../helpers/queriesHabitaciones";
+import { leerHabitaciones,obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 
 
 const PaginaAdministrador = () => {

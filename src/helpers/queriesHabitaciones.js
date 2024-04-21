@@ -51,3 +51,14 @@ export const leerHabitaciones = async () => {
     }
   };
 
+  export const borrarHabitacion = async (id) => {
+    try {
+      const respuesta = await fetch(`${URI_HABITACIONES}/${id}`, {
+        method: "DELETE",
+      });
+      console.log(respuesta);
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
