@@ -31,6 +31,15 @@ const PaginaAdministrador = () => {
           console.error("Error al cargar los detalles de la habitación:", error);
         }
       };
+
+      const borrarHabitacion = async (id) => {
+        try {
+          await borrarHabitacion(id);
+          setHabitaciones(habitacion.filter(habitacion => habitacion.id !== id));
+        } catch (error) {
+          console.log(error);
+        }
+      };
     
 
   return (
@@ -114,11 +123,12 @@ const PaginaAdministrador = () => {
             <td></td>
             <td className="d-flex justify-content-center">
             <Button id="btnEditar" onClick={() => handleEditarHabitacion(habitacion)}>
-  <i className="bi bi-pencil-square"></i>
-</Button>
-              <Button id="btnBorrar">
-                <i className="bi bi-trash-fill"></i>
-              </Button>
+            <i className="bi bi-pencil-square"></i>
+            </Button>
+
+            <Button id="btnBorrar" onClick={() => handleBorrarHabitacion (habitacion)}>
+            <i className="bi bi-trash-fill"></i>
+            </Button>
             </td>
           </tr>
         </tbody>
