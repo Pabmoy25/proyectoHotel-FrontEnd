@@ -15,6 +15,7 @@ import Error404 from "./components/pages/Error404";
 //import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
+import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
@@ -62,6 +63,14 @@ function App() {
           {" "}
         </Route>
         <Route path="/error404" element={<Error404 />}>
+          {" "}
+        </Route>
+
+        <Route
+          exact
+          path="/CatalogoHabitaciones"
+          element={<CatalogoHabitacion></CatalogoHabitacion>}
+        >
           {" "}
         </Route>
 
