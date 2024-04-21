@@ -39,12 +39,18 @@ const FormularioHabitacion = ({editar, titulo}) => {
       const habitacionBuscada = await respuesta.json();
       //  Mostrar datos en el formulario:
       setValue("numeroHabitacion", habitacionBuscada.habitacion);
-      setValue("tipoDeHabitacion", habitacionBuscada.tipoDeHabitacion);
-      setValue("precio", habitacionBuscada.precio);
-      setValue("estado", habitacionBuscada.estado);
       setValue("imagen", habitacionBuscada.imagen);
+      setValue("tipoDeHabitacion", habitacionBuscada.tipoDeHabitacion);
       setValue("descripcion_breve", habitacionBuscada.descripcion_breve);
       setValue("descripcion_amplia", habitacionBuscada.descripcion_amplia);
+
+      setValue("Fecha de Entrada", habitacionBuscada.descripcion_amplia);
+      setValue("Fecha de Salida", habitacionBuscada.descripcion_amplia);
+
+      setValue("precio", habitacionBuscada.precio);
+      setValue("estado", habitacionBuscada.estado);
+      
+      
     } else {
       Swal.fire({
         title: "Ocurrió un error",
@@ -231,6 +237,10 @@ const FormularioHabitacion = ({editar, titulo}) => {
               <Form.Group className="mb-3" controlId="formFechaEntrada">
                 <Form.Label>Fecha de Entrada *</Form.Label>
                 <DatePicker
+                {...register("fechaEntrada", {
+                  required: "El periodo de entrada es obligatorio",
+                  
+                })}
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                   selectsStart
@@ -238,6 +248,7 @@ const FormularioHabitacion = ({editar, titulo}) => {
                   endDate={endDate}
                   dateFormat="dd/MM/yyyy"
                   className="form-control"
+                 
                 />
               </Form.Group>
             </Col>
@@ -245,6 +256,10 @@ const FormularioHabitacion = ({editar, titulo}) => {
               <Form.Group className="mb-3" controlId="formFechaSalida">
                 <Form.Label>Fecha de Salida *</Form.Label>
                 <DatePicker
+                {...register("fechaSalida", {
+                  required: "El periodo de salida es obligatorio",
+                  
+                })}
                   selected={endDate}
                   onChange={(date) => setEndDate(date)}
                   selectsEnd
@@ -287,8 +302,8 @@ const FormularioHabitacion = ({editar, titulo}) => {
               })}
             >
               <option value="">Seleccione una opcion</option>
-              <option value="Libre">Libre</option>
-              <option value="Ocupada">Ocupada</option>
+              <option value="Disponible">Disponible</option>
+              <option value="No disponible">No disponible</option>
             </Form.Select>
             <Form.Text className="text-danger">
               {errors.estado?.message}
