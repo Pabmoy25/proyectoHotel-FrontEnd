@@ -67,10 +67,10 @@ const GaleriaImagenes = () => {
 
       <div className="container">
         <div className="row ">
-          <div className="col-md-4 mb-3 ">
+          <div className="col-md-4 ">
             <img
               src={Modal1}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 1"
               onClick={() => toggleModal(Modal1)}
             />
@@ -79,7 +79,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal4}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal4)}
             />
@@ -87,7 +87,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal3}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal3)}
             />
@@ -95,7 +95,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal2}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal2)}
             />
@@ -103,7 +103,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal5}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal5)}
             />
@@ -112,7 +112,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal9}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal9)}
             />
@@ -120,7 +120,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal7}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal7)}
             />
@@ -128,7 +128,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal8}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal8)}
             />
@@ -136,7 +136,7 @@ const GaleriaImagenes = () => {
           <div className="col-md-4">
             <img
               src={Modal6}
-              className="img-fluid galeria-imagen"
+              className="img-fluid galeria-imagen imagen-con-margen"
               alt="Imagen 2"
               onClick={() => toggleModal(Modal6)}
             />
@@ -145,16 +145,33 @@ const GaleriaImagenes = () => {
         </div>
       </div>
 
+      <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
       <Modal show={modalOpen} onHide={toggleModal} size="lg">
         <ModalBody>
           {imagenModal && (
             <img src={imagenModal} className="img-fluid" alt="Imagen modal" />
           )}
         </ModalBody>
-        <ModalFooter>
-          <Button variant="secondary" onClick={toggleModal}>
-            Cerrar
-          </Button>
+        <ModalFooter className="justify-content-center">
+        <button className="btn btn-dark d-block d-md-none" onClick={toggleModal}> {/* Botón de Bootstrap visible solo en dispositivos pequeños y medianos */}
+      Cerrar
+    </button>
+    <button className=" custom-button d-none d-md-inline-block" onClick={toggleModal}> {/* Botón personalizado visible solo en dispositivos grandes */}
+      Cerrar
+    </button>
         </ModalFooter>
       </Modal>
     </>
