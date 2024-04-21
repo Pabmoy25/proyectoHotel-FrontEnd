@@ -2,29 +2,12 @@ import SliderCarrusel from "../PaginaPrincipal/SliderCarrusel";
 import "./PaginaPrincipal.css";
 import CardsInfo from "../PaginaPrincipal/CardsInfo";
 import { Col, Row } from "react-bootstrap";
-import CardHabitacion from "../habitacion/CardHabitacion";
 import { leerHabitaciones } from "../../../helpers/queriesHabitaciones";
 import { useEffect, useState } from "react";
 
 
 
 const PaginaPrincipal = () => {
-  const [habitacion, setHabitacion] = useState([]);
-  useEffect(() => {
-    traerHabitaciones();
-  }, []);
-  
-  const traerHabitaciones = async ()=> {
-      try {
-       const listaHabitaciones = await leerHabitaciones()
-       if(!traerHabitaciones){
-        return setHabitacion ([]);
-       }
-       setHabitacion (listaHabitaciones)
-      } catch (error) {
-        console.log(error);
-      }
-    }
 
   return (
     <>
@@ -57,9 +40,7 @@ const PaginaPrincipal = () => {
             </div>
           </Col>
         </Row>
-        <Row>
-{habitacion.map((habitacion)=><CardHabitacion key={habitacion._id} cardHabitacion={habitacion}></CardHabitacion>)}
-</Row>
+
       </section>
 
       <CardsInfo />
