@@ -88,7 +88,7 @@ const GaleriaImagenes = () => {
         <ul className="pagination justify-content-center">
           <li className={`page-item ${currentPage === 1 && "disabled"}`}>
             <button
-              className="page-link"
+              className="page-link custom-pagination-button"
               onClick={() => paginate(currentPage - 1)}
             >
               Previous
@@ -103,7 +103,7 @@ const GaleriaImagenes = () => {
                 }`}
               >
                 <button
-                  className="page-link"
+                  className="page-link custom-pagination-button"
                   onClick={() => paginate(number + 1)}
                 >
                   {number + 1}
@@ -118,7 +118,7 @@ const GaleriaImagenes = () => {
             }`}
           >
             <button
-              className="page-link"
+              className="page-link custom-pagination-button"
               onClick={() => paginate(currentPage + 1)}
             >
               Next

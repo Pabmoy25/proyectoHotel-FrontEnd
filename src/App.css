@@ -330,6 +330,18 @@ tbody {
   width: 9em;
 }
 
+.custom-pagination-button {
+  color: #000000 !important; /* Color del texto */
+  background-color: #e9a2ff !important;  
+  border-color: #e155fd !important; /* Color del borde */
+}
+
+.custom-pagination-button:hover {
+  color: #000000 !important; /* Color del texto al pasar el ratón */
+  background-color: #ffffff !important; /* Color de fondo al pasar el ratón */
+  border-color: #a5a5a5 !important; /* Color del borde al pasar el ratón */
+}
+
 
 @media (max-width: 576px) {
   .galeria-moviles {
