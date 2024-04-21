@@ -15,8 +15,8 @@ export const leerHabitaciones = async () => {
 
   export const obtenerHabitacion = async (id) => {
     try {
-      const response = await fetch(`${URI_HABITACIONES}/${id}`);
-      return response;
+      const respuesta = await fetch(`${URI_HABITACIONES}/${id}`);
+      return respuesta;
     } catch (error) {
       console.log(error);
     }
@@ -38,14 +38,14 @@ export const leerHabitaciones = async () => {
 
   export const editarHabitacion = async (id, habitacion) => {
     try {
-      const response = await fetch(`${URI_HABITACIONES}/${id}`, {
+      const respuesta = await fetch(`${URI_HABITACIONES}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(habitacion),
       });
-      return response;
+      return respuesta;
     } catch (error) {
       console.log(error);
     }

@@ -4,36 +4,95 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { crearHabitacion } from "../../../helpers/queriesHabitaciones";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom"
+import { crearHabitacion,editarHabitacion,obtenerHabitacion } from "../../../helpers/queriesHabitaciones";
 
-const FormularioHabitacion = () => {
+const FormularioHabitacion = ({editar}) => {
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
+  useEffect(() => {
+    if (editar) {
+      cargarDatosEnFormulario();
+    }
+  }, []);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
   } = useForm();
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
-  const habitacionValidada = async (habitacion) => {
-    const respuesta = await crearHabitacion(habitacion);
-    if (respuesta.status === 201) {
-      Swal.fire({
-        title: "Habitación creada",
-        text: `La Habitación: ${habitacion.habitacion} fue creada con exito`,
-        icon: "success",
-      });
-      reset();
+  const cargarDatosEnFormulario = async () => {
+  
+    const respuesta = await obtenerHabitacion(id);
+    if (respuesta.status === 200) {
+      const habitacionBuscada = await respuesta.json();
+      //  Mostrar datos en el formulario:
+      setValue("numeroHabitacion", habitacionBuscada.habitacion);
+      setValue("tipoDeHabitacion", habitacionBuscada.tipoDeHabitacion);
+      setValue("precio", habitacionBuscada.precio);
+      setValue("estado", habitacionBuscada.estado);
+      setValue("imagen", habitacionBuscada.imagen);
+      setValue("descripcion_breve", habitacionBuscada.descripcion_breve);
+      setValue("descripcion_amplia", habitacionBuscada.descripcion_amplia);
     } else {
       Swal.fire({
-        title: "Ocurrio un error",
-        text: "Intente crear la habitación en unos minutos",
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
         icon: "error",
       });
     }
   };
+
+  const habitacionValidada = async (habitacion) => {
+    try {
+      if (editar) {
+        const respuesta = await editarHabitacion(id, habitacion);
+        if (respuesta.status === 200) {
+          Swal.fire({
+            title: "Habitación editada",
+            text: `La habitación número ${habitacion.habitacion} fue modificada exitosamente.`,
+            icon: "success",
+          });
+          // Redireccionar a tabla de Admin una vez termine la edición
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar la habitación en unos minutos.",
+            icon: "error",
+          });
+        }
+      } else {
+        const respuesta = await crearHabitacion(habitacion);
+        if (respuesta.status === 201) {
+          Swal.fire({
+            title: "Habitación creada",
+            text: `La Habitación: ${habitacion.habitacion} fue creada con exito`,
+            icon: "success",
+          });
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: "Intente crear la habitación en unos minutos",
+            icon: "error",
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+  
 
   return (
     <Container className="container-fluid">
