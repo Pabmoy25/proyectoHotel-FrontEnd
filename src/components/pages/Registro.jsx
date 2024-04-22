@@ -29,6 +29,29 @@ const Registro = () => {
             {errors.nombre?.message}
           </Form.Text>
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formNombre">
+          <Form.Label>Apellido</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Apellido"
+            {...register("apellido", {
+              required: "El apellido es obligatorio",
+              minLength: {
+                value: 3,
+                message:
+                  "Debe ingresar al menos 3 caracteres",
+              },
+              maxLength: {
+                value: 50,
+                message:
+                  "Debe ingresar como máximo 50 caracteres",
+              },
+            })}
+          />
+          <Form.Text className="text-danger">
+            {errors.apellido?.message}
+          </Form.Text>
+        </Form.Group>
           <Form.Group className="mb-3" controlId="email">
             <Form.Label>E-mail</Form.Label>
             <Form.Control
