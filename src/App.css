@@ -444,6 +444,7 @@ tbody {
   }
 }
 
+
 .custom-accordion .accordion-header {
   background-color: #7f3c87; /* Cambia el color de fondo del encabezado */
   color: #000000; /* Cambia el color del texto del encabezado */
@@ -521,5 +522,215 @@ tbody {
   .overlay-text {
     font-size: 18px;
   }
+}
+
+
+/*NOSOTROS CARDS*/
+.card-client {
+  background: #ffd1f9;
+  width: 13rem;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid #8f3ba0;
+  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border-radius: 10px;
+  text-align: center;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.card-client:hover {
+  transform: translateY(-10px);
+}
+
+.user-picture {
+  overflow: hidden;
+  object-fit: cover;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid #8f3ba0;;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.user-picture svg {
+  width: 2.5rem;
+  fill: currentColor;
+}
+
+.name-client {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.name-client span {
+  display: block;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.social-media:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background: #000000;
+}
+
+.social-media a {
+  position: relative;
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+.social-media a svg {
+  width: 1.1rem;
+  fill: currentColor;
+}
+
+/*-- Tooltip Social Media --*/
+.tooltip-social {
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -90%);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.tooltip-social:after {
+  content: " ";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+  border-top-color: #262626;
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+
+
+/*Registro*/
+
+.container-registro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form_area-registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  max-width: 40%;
+  margin: 20px auto; /* Margen arriba y abajo de 20px, márgenes automáticos a los lados */
+  padding: 20px;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  backdrop-filter: blur(5px); /* Ajusta el valor según lo desees */
+  background-color: #eddcd97a;
+}
+
+@media (max-width: 576px) {
+  .form_area-registro {
+    max-width: 95%; /* Cambia el máximo ancho para ocupar toda la pantalla en dispositivos pequeños */
+  }
+}
+
+.title-registro {
+  color: #264143;
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.sub_title-registro {
+  font-weight: 600;
+  margin: 5px 0;
+  text-align: right;
+}
+
+.form_group-registro {
+  margin: 10px 0;
+}
+
+.form_style-registro {
+  outline: none;
+  border: 2px solid #264143;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form_style-registro:focus, .btn:focus {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #E99F4C;
+}
+
+.btn-registro {
+  padding: 15px;
+  margin: 25px 0px;
+  width: 100%;
+  max-width: 290px;
+  font-size: 15px;
+  background: #ffcff0;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 3px 3px 0px 0px #E99F4C;
+}
+
+.btn-registro:hover {
+  opacity: .9;
+}
+
+.link-registro {
+  font-weight: 800;
+  color: #264143;
+  padding: 5px;
+}
+
+.Background-registro{
+  background-image: url('http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg');
+  background-size: cover;
+  opacity: 0.9;
+
 }
 

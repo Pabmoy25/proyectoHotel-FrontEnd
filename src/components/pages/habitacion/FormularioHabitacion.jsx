@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom"
-import { crearHabitacion,editarHabitacion,obtenerHabitacion } from "../../../helpers/queriesHabitaciones";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  crearHabitacion,
+  editarHabitacion,
+  obtenerHabitacion,
+} from "../../../helpers/queriesHabitaciones";
 
-const FormularioHabitacion = ({editar}) => {
+const FormularioHabitacion = ({ editar, titulo }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+    reset,
+  } = useForm();
   const { id } = useParams();
   const navegacion = useNavigate();
 
@@ -18,30 +27,21 @@ const FormularioHabitacion = ({editar}) => {
     }
   }, []);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-    setValue,
-  } = useForm();
-
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
   const cargarDatosEnFormulario = async () => {
-  
     const respuesta = await obtenerHabitacion(id);
     if (respuesta.status === 200) {
       const habitacionBuscada = await respuesta.json();
       //  Mostrar datos en el formulario:
-      setValue("numeroHabitacion", habitacionBuscada.habitacion);
-      setValue("tipoDeHabitacion", habitacionBuscada.tipoDeHabitacion);
-      setValue("precio", habitacionBuscada.precio);
-      setValue("estado", habitacionBuscada.estado);
+      setValue("habitacion", habitacionBuscada.habitacion);
       setValue("imagen", habitacionBuscada.imagen);
+      setValue("tipoDeHabitacion", habitacionBuscada.tipoDeHabitacion);
       setValue("descripcion_breve", habitacionBuscada.descripcion_breve);
       setValue("descripcion_amplia", habitacionBuscada.descripcion_amplia);
+      setValue("precio", habitacionBuscada.precio);
+      setValue("estado", habitacionBuscada.estado);
     } else {
       Swal.fire({
         title: "Ocurrió un error",
@@ -79,6 +79,7 @@ const FormularioHabitacion = ({editar}) => {
             icon: "success",
           });
           navegacion("/administrador");
+          reset();
         } else {
           Swal.fire({
             title: "Ocurrio un error",
@@ -91,15 +92,11 @@ const FormularioHabitacion = ({editar}) => {
       console.log(error);
     }
   };
-  
-  
 
   return (
     <Container className="container-fluid">
       <section className="container mainpage contenFormHabitacion my-5">
-        <h1 className="display-4 mt-2 titulo-administrador">
-          Nueva Habitación
-        </h1>
+        <h1 className="display-4 mt-2 titulo-administrador">{titulo}</h1>
         <hr />
 
         <Form
@@ -222,39 +219,6 @@ const FormularioHabitacion = ({editar}) => {
               {errors.descripcion_amplia?.message}
             </Form.Text>
           </Form.Group>
-
-          <Row>
-            <Col md={6}>
-              <Form.Group className="mb-3" controlId="formFechaEntrada">
-                <Form.Label>Fecha de Entrada *</Form.Label>
-                <DatePicker
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
-                  selectsStart
-                  startDate={startDate}
-                  endDate={endDate}
-                  dateFormat="dd/MM/yyyy"
-                  className="form-control"
-                />
-              </Form.Group>
-            </Col>
-            <Col md={6}>
-              <Form.Group className="mb-3" controlId="formFechaSalida">
-                <Form.Label>Fecha de Salida *</Form.Label>
-                <DatePicker
-                  selected={endDate}
-                  onChange={(date) => setEndDate(date)}
-                  selectsEnd
-                  startDate={startDate}
-                  endDate={endDate}
-                  minDate={startDate}
-                  dateFormat="dd/MM/yyyy"
-                  className="form-control"
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-
           <Form.Group className="mb-3" controlId="formPrecio">
             <Form.Label>Tarifa por noche*</Form.Label>
             <Form.Control
@@ -280,12 +244,13 @@ const FormularioHabitacion = ({editar}) => {
             <Form.Label>Estado de la Habitación*</Form.Label>
             <Form.Select
               {...register("estado", {
-                required: "Debe seleccionar un estado (Ocupada o Libre)",
+                required:
+                  "Debe seleccionar un estado (Disponible o No disponible)",
               })}
             >
               <option value="">Seleccione una opcion</option>
-              <option value="Libre">Libre</option>
-              <option value="Ocupada">Ocupada</option>
+              <option value="Disponible">Disponible</option>
+              <option value="No disponible">No disponible</option>
             </Form.Select>
             <Form.Text className="text-danger">
               {errors.estado?.message}
