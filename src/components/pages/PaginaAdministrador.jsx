@@ -3,7 +3,7 @@ import { Table, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones,obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
+import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 
 
 const PaginaAdministrador = () => {
@@ -21,21 +21,10 @@ const PaginaAdministrador = () => {
         }
       }
 
-      const handleEditarHabitacion = async (habitacionId) => {
-        try {
-          
-          const habitacion = await obtenerHabitacion(habitacionId);
-  
-          console.log("Detalles de la habitación a editar:", habitacion);
-        } catch (error) {
-          console.error("Error al cargar los detalles de la habitación:", error);
-        }
-      };
-
-      const borrarHabitacion = async (id) => {
+        const borrarHabitaciones = async (id) => {
         try {
           await borrarHabitacion(id);
-          setHabitaciones(habitacion.filter(habitacion => habitacion.id !== id));
+          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
         } catch (error) {
           console.log(error);
         }
@@ -76,6 +65,7 @@ const PaginaAdministrador = () => {
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
+              eliminarHabitacion={borrarHabitaciones}
             ></Habitacion>
           )}
         </tbody>
@@ -94,7 +84,7 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
+      <Table responsive="sm" striped bordered hover className="tabla">
         <thead className="text-center">
           <tr>
             <th>N° de habitación</th>
@@ -106,7 +96,6 @@ const PaginaAdministrador = () => {
             <th>Opciones</th>
           </tr>
         </thead>
-        
         <tbody>
           {/*{huespedes.map((huesped) => (
             <ItemHuesped
@@ -115,7 +104,6 @@ const PaginaAdministrador = () => {
               setHuesped={setHuesped}
             ></ItemHuesped>
           ))}*/}
-          </tbody>
           <tr>
             <td>1</td>
             <td>Juan Perez</td>
@@ -124,10 +112,17 @@ const PaginaAdministrador = () => {
             <td></td>
             <td></td>
             <td className="d-flex justify-content-center">
-            <Button id="btnEditar" onClick={() => handleEditarHabitacion(habitacion)}>
-            <i className="bi bi-pencil-square"></i>
-            </Button>
+              <Button id="btnEditar">
+                <i className="bi bi-pencil-square"></i>
+              </Button>
+              <Button id="btnBorrar">
+                <i className="bi bi-trash-fill"></i>
+              </Button>
             </td>
+          </tr>
+        </tbody>
+      </Table>
+    </section>
           </tr>   
           </Table>
         </section> 
