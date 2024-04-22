@@ -1,35 +1,50 @@
-
 import { Table, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
-
+import {
+  leerHabitaciones,
+  borrarHabitacion,
+} from "../../helpers/queriesHabitaciones";
+import { leerUsuarios } from "../../helpers/queriesUsuarios";
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
-    useEffect(() => {
-      traerHabitaciones();
-    }, []);
+  useEffect(() => {
+    traerHabitaciones();
+  }, []);
 
-    const traerHabitaciones = async ()=> {
-        try {
-         const listaHabitaciones = await leerHabitaciones()
-         setHabitaciones (listaHabitaciones);
-        } catch (error) {
-          console.log(error);
-        }
-      }
+  const traerHabitaciones = async () => {
+    try {
+      const listaHabitaciones = await leerHabitaciones();
+      setHabitaciones(listaHabitaciones);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-        const borrarHabitaciones = async (id) => {
-        try {
-          await borrarHabitacion(id);
-          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
-        } catch (error) {
-          console.log(error);
-        }
-      };
-    
+  const borrarHabitaciones = async (id) => {
+    try {
+      await borrarHabitacion(id);
+      setHabitaciones(habitacion.filter((habitacion) => habitacion._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const [huesped, setHuesped] = useState([]);
+  useEffect(() => {
+    traerHuesped();
+  }, []);
+  
+  const traerHuesped = async () => {
+    try {
+      const listaHuesped = await leerUsuarios();
+      setHabitaciones(listaHuesped);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Container className="container-fluid">
@@ -61,16 +76,15 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-        {habitacion.map((habitacion) =>
+          {habitacion.map((habitacion) => (
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
               eliminarHabitacion={borrarHabitaciones}
             ></Habitacion>
-          )}
+          ))}
         </tbody>
       </Table>
-    
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Huéspedes</h2>
@@ -119,19 +133,11 @@ const PaginaAdministrador = () => {
                 <i className="bi bi-trash-fill"></i>
               </Button>
             </td>
-
-
-
-
-
           </tr>
         </tbody>
       </Table>
     </Container>
-
   );
 };
-
-      
 
 export default PaginaAdministrador;
