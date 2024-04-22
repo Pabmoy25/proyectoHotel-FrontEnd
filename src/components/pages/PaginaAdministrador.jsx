@@ -4,13 +4,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
 import { leerHabitaciones, obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
+import {Container } from "react-bootstrap";
 
-
-import { Table, Button, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 
 
 
