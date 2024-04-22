@@ -781,6 +781,27 @@ tbody {
   opacity: 0.9;
 }
 
+/*RESERVAS*/
+
+/* Estilos para el componente DateRange */
+.DateRange {
+  width: 100%; /* O ajusta el ancho según sea necesario */
+}
+
+/* Media query para dispositivos de pantalla pequeña */
+@media screen and (max-width: 768px) {
+  .DateRange {
+    width: 80%; /* Porcentaje del ancho de la pantalla */
+    max-width: 300px; /* Ancho máximo del calendario */
+  }
+}
+
+.date-range-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  width: 100%;
+  overflow-x: auto;
+}
 
 
 
