@@ -15,7 +15,7 @@ const Registro = () => {
   return (
     <>
       <div className="container-registro my-4 Background-registro">
-        <Form onSubmit={handleSubmit(onSubmit)} id="formRegistro">
+        <Form onSubmit={handleSubmit()} id="formRegistro">
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label>Nombre</Form.Label>
             <Form.Control
@@ -86,6 +86,33 @@ const Registro = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="password">
             <Form.Label>Contraseña</Form.Label>
+
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              {...register("password", {
+                required: "La contraseña es obligatoria",
+                minLength: {
+                  value: 6,
+                  message: "Ingrese un mínimo de 6 caracteres",
+                },
+                maxLength: {
+                  value: 100,
+                  message: "Ingrese un máximo de 10 caracteres",
+                },
+                pattern: {
+                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                  message:
+                    "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.password?.message}
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="password">
+            <Form.Label>Confirmar contraseña</Form.Label>
 
             <Form.Control
               type="password"
