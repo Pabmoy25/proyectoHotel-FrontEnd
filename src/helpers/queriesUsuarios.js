@@ -31,7 +31,7 @@ export const crearUsuario = async (nuevoUsuario) => {
 
 export const leerUsuarios = async () => {
   try {
-    const respuesta = await fetch(URI_USUARIOS);//`${URI_USUARIOS}/leer`
+    const respuesta = await fetch(URI_USUARIOS+'/listar');//`${URI_USUARIOS}/leer`
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
