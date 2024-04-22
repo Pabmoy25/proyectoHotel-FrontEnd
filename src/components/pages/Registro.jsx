@@ -14,6 +14,8 @@ const Registro = () => {
 
   const enviar = async (datos) => {
     try {
+
+      console.log("Ingrso ",datos)
       const respuesta = await crearUsuario(datos);
 
       if (respuesta.status === 201) {
@@ -69,7 +71,7 @@ const Registro = () => {
               {errors.nombre?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formApellido">
+         {/* <Form.Group className="mb-3" controlId="formApellido">
             <Form.Label className="sub_title-registro">Apellido</Form.Label>
             <Form.Control
               className="mb-2"
@@ -90,7 +92,7 @@ const Registro = () => {
             <Form.Text className="text-danger">
               {errors.apellido?.message}
             </Form.Text>
-          </Form.Group>
+            </Form.Group>*/}
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
             <Form.Control
@@ -146,7 +148,7 @@ const Registro = () => {
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formConfirmPassword">
+          +{/*<Form.Group className="mb-3" controlId="formConfirmPassword">
             <Form.Label className="sub_title-registro">
               Confirmar contraseña
             </Form.Label>
@@ -175,7 +177,7 @@ const Registro = () => {
             <Form.Text className="text-danger">
               {errors.password?.message}
             </Form.Text>
-          </Form.Group>
+            </Form.Group>*/}
           <Form.Group className="">
             <div className="d-flex flex-row">
               <p>Ya tienes una cuenta?</p>
