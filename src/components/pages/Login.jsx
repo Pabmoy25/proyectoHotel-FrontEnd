@@ -21,7 +21,7 @@ const Login = ({ setLogueado }) => {
 
       if (respuesta.status === 200) {
         Swal.fire({
-          title: `¡Bienvenido ${usuario.nombreCompleto}!`,
+          title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });

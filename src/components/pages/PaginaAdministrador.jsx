@@ -119,10 +119,16 @@ const PaginaAdministrador = () => {
                 <i className="bi bi-trash-fill"></i>
               </Button>
             </td>
+
+
+
+
+
           </tr>
         </tbody>
       </Table>
     </Container>
+
   );
 };
 
