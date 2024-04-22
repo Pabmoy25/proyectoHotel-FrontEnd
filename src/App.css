@@ -525,6 +525,25 @@ tbody {
 }
 
 
+/*Propuestas*/
+
+.titulo-propuesta {
+  font-weight: bold;
+  color: #5f1769; /* color blanco */
+}
+
+.descripcion-propuesta {
+  color: #34203e; /* color blanco */
+}
+
+.bg-color-propuesta {
+  background-color: #ffc7e5; /* rosa claro */
+}
+
+.texto-propuesta {
+  padding: 20px;
+}
+=======
 /*NOSOTROS CARDS*/
 .card-client {
   background: #ffd1f9;
