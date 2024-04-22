@@ -130,7 +130,7 @@ const PaginaAdministrador = () => {
             </td>
           </tr>   
           </Table>
-        </section> 
+        </Container> 
   );
 };
 
