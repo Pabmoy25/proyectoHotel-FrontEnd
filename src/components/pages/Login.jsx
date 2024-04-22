@@ -51,7 +51,7 @@ const Login = ({ setLogueado }) => {
         <hr />
       </div>
       <Form onSubmit={handleSubmit(onSubmit)} id="formLogin">
-        <Form.Group className="mb-3" controlId="email">
+        <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label>E-mail</Form.Label>
           <Form.Control
             type="email"
@@ -75,7 +75,7 @@ const Login = ({ setLogueado }) => {
           />
           <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
+        <Form.Group className="mb-3" controlId="passwordLogin">
           <Form.Label>Contraseña</Form.Label>
 
           <Form.Control
