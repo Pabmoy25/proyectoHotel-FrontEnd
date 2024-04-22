@@ -147,39 +147,8 @@ const PaginaAdministrador = () => {
           </td>
         </tr>
       </Table>
-    </section>
-  );
-};
-
-          <tr>
-            <td>1</td>
-            <td>Juan Perez</td>
-            <td>juanp@gmail.com</td>
-            <td>11111111</td>
-            <td></td>
-            <td></td>
-            <td className="d-flex justify-content-center">
-              <Button id="btnEditar">
-                <i className="bi bi-pencil-square"></i>
-              </Button>
-              <Button id="btnBorrar">
-                <i className="bi bi-trash-fill"></i>
-              </Button>
-            </td>
-
-
-
-
-
-          </tr>
-        </tbody>
-      </Table>
     </Container>
-
   );
 };
-
-      
-
 
 export default PaginaAdministrador;
