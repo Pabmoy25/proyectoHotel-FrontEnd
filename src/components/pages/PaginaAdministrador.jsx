@@ -40,7 +40,7 @@ const PaginaAdministrador = () => {
   const traerHuesped = async () => {
     try {
       const listaHuesped = await leerUsuarios();
-      setHabitaciones(listaHuesped);
+      setHuesped(listaHuesped);
     } catch (error) {
       console.log(error);
     }
@@ -87,9 +87,9 @@ const PaginaAdministrador = () => {
       </Table>
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
-        <h2 className="my-4">Huéspedes</h2>
+        <h2 className="my-4">Huéspedes</h2></div>
 
-        <Button
+       {/* <Button
           variant="outline-secondary"
           id="btnAdmin"
           as={Link}
@@ -97,7 +97,7 @@ const PaginaAdministrador = () => {
         >
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
-      </div>
+        </div>*/}
       <Table responsive="sm" striped bordered hover className="tabla">
         <thead className="text-center">
           <tr>
@@ -111,20 +111,18 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-          {huespedes.map((huesped) => (
+         {/* {(huesped.map((huesped) => (
             <ItemHuesped
               key={huesped.id}
               huesped={huesped}
               setHuesped={setHuesped}
             ></ItemHuesped>
-          ))}
+          )))}*/}
           <tr>
-            <td>1</td>
+            
             <td>Juan Perez</td>
             <td>juanp@gmail.com</td>
-            <td>11111111</td>
-            <td></td>
-            <td></td>
+            
             <td className="d-flex justify-content-center">
               <Button id="btnEditar">
                 <i className="bi bi-pencil-square"></i>
