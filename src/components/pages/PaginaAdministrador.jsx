@@ -36,7 +36,7 @@ const PaginaAdministrador = () => {
   useEffect(() => {
     traerHuesped();
   }, []);
-  
+
   const traerHuesped = async () => {
     try {
       const listaHuesped = await leerUsuarios();
@@ -101,23 +101,23 @@ const PaginaAdministrador = () => {
       <Table responsive="sm" striped bordered hover className="tabla">
         <thead className="text-center">
           <tr>
-            <th>N° de habitación</th>
+            
             <th>Nombre completo</th>
             <th>Email</th>
-            <th>N° de contacto</th>
+            {/*<th>N° de contacto</th>
             <th>Fecha de checkin</th>
             <th>Fecha de checkout</th>
-            <th>Opciones</th>
+        <th>Opciones</th>*/}
           </tr>
         </thead>
         <tbody>
-          {/*{huespedes.map((huesped) => (
+          {huespedes.map((huesped) => (
             <ItemHuesped
               key={huesped.id}
               huesped={huesped}
               setHuesped={setHuesped}
             ></ItemHuesped>
-          ))}*/}
+          ))}
           <tr>
             <td>1</td>
             <td>Juan Perez</td>
