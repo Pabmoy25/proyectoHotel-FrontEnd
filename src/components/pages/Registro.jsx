@@ -1,4 +1,3 @@
-
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,56 +7,57 @@ import Swal from "sweetalert2";
 import Fondo from "../../assets/Registr.png";
 
 const Registro = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <>
       <div className="container-registro my-4 Background-registro">
         <Form onSubmit={handleSubmit(onSubmit)} id="formRegistro">
-        <Form.Group className="mb-3" controlId="formNombre">
-          <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Nombre"
-            {...register("nombre", {
-              required: "El nombre es obligatorio",
-              minLength: {
-                value: 3,
-                message:
-                  "Debe ingresar al menos 3 caracteres",
-              },
-              maxLength: {
-                value: 50,
-                message:
-                  "Debe ingresar como máximo 50 caracteres",
-              },
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.nombre?.message}
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formNombre">
-          <Form.Label>Apellido</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Apellido"
-            {...register("apellido", {
-              required: "El apellido es obligatorio",
-              minLength: {
-                value: 3,
-                message:
-                  "Debe ingresar al menos 3 caracteres",
-              },
-              maxLength: {
-                value: 50,
-                message:
-                  "Debe ingresar como máximo 50 caracteres",
-              },
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.apellido?.message}
-          </Form.Text>
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formNombre">
+            <Form.Label>Nombre</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Nombre"
+              {...register("nombre", {
+                required: "El nombre es obligatorio",
+                minLength: {
+                  value: 3,
+                  message: "Debe ingresar al menos 3 caracteres",
+                },
+                maxLength: {
+                  value: 50,
+                  message: "Debe ingresar como máximo 50 caracteres",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.nombre?.message}
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formNombre">
+            <Form.Label>Apellido</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Apellido"
+              {...register("apellido", {
+                required: "El apellido es obligatorio",
+                minLength: {
+                  value: 3,
+                  message: "Debe ingresar al menos 3 caracteres",
+                },
+                maxLength: {
+                  value: 50,
+                  message: "Debe ingresar como máximo 50 caracteres",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.apellido?.message}
+            </Form.Text>
+          </Form.Group>
           <Form.Group className="mb-3" controlId="email">
             <Form.Label>E-mail</Form.Label>
             <Form.Control
