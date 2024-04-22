@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import swal from 'sweetalert2';
+import emailjs from '@emailjs/browser';
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const Contacto = () => {
     emailContacto: "",
     consultaContacto: ""
   });
+
+  const form = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,26 +21,30 @@ const Contacto = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validación de datos del formulario aquí...
 
-    // Simulando el envío exitoso del formulario
     enviarFormulario();
   };
 
   const enviarFormulario = () => {
-    // Simulación de envío del formulario (aquí puedes hacer la llamada a la API)
-    // Después de enviar correctamente el formulario, muestra el Sweet Alert
     swal.fire("¡Consulta enviada!", "Su consulta ha sido correctamente enviada.", "success")
       .then((result) => {
-        // Después de hacer clic en OK, resetea el formulario
         if (result.isConfirmed) {
           setFormData({
             nombreContacto: "",
             emailContacto: "",
             consultaContacto: ""
           });
+          sendEmail();
         }
       });
+  };
+
+  const sendEmail = () => {
+    emailjs
+      .sendForm('service_gseh43o', 'template_p430uw9', form.current, {
+        publicKey: 'rzSFKooKPHw-SU_P2',
+      })
+      
   };
 
   return (
@@ -45,7 +52,7 @@ const Contacto = () => {
       <div className="blur-container">
         <h1 className="tituloAdmin text-center mt-4"><strong>Contactate con Hotel Haku Wasi</strong></h1>
         <h5 className="text-center mt-4 mb-5"> <strong>Complete el formulario y le responderemos a la mayor brevedad posible. Desde ya, muchas gracias.</strong></h5>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} ref={form}>
           <div className="container">
             <div className="row">
               <div className="col-md-6">
@@ -126,5 +133,4 @@ const Contacto = () => {
 };
 
 export default Contacto;
-
 
