@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../../helpers/queriesUsuarios.js";
+import { crearUsuario, login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 import Fondo from "../../assets/Registr.png";
 
@@ -11,6 +11,31 @@ const Registro = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const funcion = async (datos) => {
+    try {
+      const respuesta = await crearUsuario(datos);
+
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Huésped creado",
+          text: `El Huésped: ${datos.nombre} fue creado con exito`,
+          icon: "success",
+        });
+        navegacion("/administrador");
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: "Intente crear la habitación en unos minutos",
+          icon: "error",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="container-registro my-4 Background-registro">
@@ -24,7 +49,8 @@ const Registro = () => {
           </div>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label className="sub_title-registro">Nombre</Form.Label>
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="text"
               placeholder="Nombre"
               {...register("nombre", {
@@ -45,7 +71,8 @@ const Registro = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formApellido">
             <Form.Label className="sub_title-registro">Apellido</Form.Label>
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="text"
               placeholder="Apellido"
               {...register("apellido", {
@@ -66,7 +93,8 @@ const Registro = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="email"
               placeholder="nombre@gmail.com"
               {...register("email", {
@@ -93,7 +121,8 @@ const Registro = () => {
           <Form.Group className="mb-3" controlId="formPassword">
             <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="password"
               placeholder="Contraseña"
               {...register("password", {
@@ -122,7 +151,8 @@ const Registro = () => {
               Confirmar contraseña
             </Form.Label>
 
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="password"
               placeholder="Contraseña"
               {...register("password", {
@@ -166,9 +196,9 @@ const Registro = () => {
             </Button>
           </div>
         </Form>
-        </div>
+      </div>
 
-        {/*<div className="form_area-registro">
+      {/*<div className="form_area-registro">
           <p className="title-registro">REGISTRATE</p>
           <form action="">
             <div className="form_group-registro">
