@@ -1,64 +1,84 @@
-import React from 'react';
-
+import React from "react";
+import Fondo from "../../assets/Registr.png";
 
 const Registro = () => {
-    return (
-
-        <div  className='FondoPagina'>
-            <section>
-         <div class="form-box">
-            <div class="form-value">
-                <form action="">
-                    <h2 className='titulo-registro text-center'>Registrarse</h2>
-
-                    <div className="form-group row">
-                                <div className="col">
-                                <div class="inputboxAyN">
-                        <input type="Nombre" required></input>
-                        <label for="">Nombre</label>
-                    </div>
-                                </div>
-                                <div className="col">
-                                <div class="inputboxAyN">
-                        <i className="fa-regular fa-envelope icon"></i>
-                        <input type="Apellido" required></input>
-                        <label for="">Apellido</label>
-                    </div>
-
-                                </div>
-                            </div>
-                    <div class="inputbox">
-                        <i className="fa-regular fa-envelope icon"></i>
-                        <input type="email" required></input>
-                        <label for="">Email</label>
-                    </div>
-
-                    <div class="inputbox">
-                        <i class="fa-regular fa-envelope icon"></i>
-                        <input type="email" required></input>
-                        <label for="">Repetir Email</label>
-                    </div>
-                    <div class="inputbox">
-                        <i class="fa-solid fa-lock icon"></i>
-                        <input type="password" required></input>
-                        <label for="">Contraseña</label>
-                    </div>
-
-                    <div class="inputbox">
-                        <i class="fa-solid fa-lock icon"></i>
-                        <input type="password" required></input>
-                        <label for="">Repetir Contraseña</label>
-                    </div>
-            
-                    <button>Registrar</button>
-
-                </form>
-            </div>
-        </div>
-        </section>
-        </div>
-
-    );
+  return (
+    <div className="container-registro my-4 Background-registro">
+      <div className="form_area-registro">
+        <p className="title-registro">REGISTRATE</p>
+        <form action="">
+          <div className="form_group-registro">
+            <label className="sub_title-registro" htmlFor="name">
+              Nombre
+            </label>
+            <input
+              placeholder="Juan"
+              className="form_style-registro"
+              type="text"
+              required=""
+            ></input>
+          </div>
+          <div className="form_group-registro">
+            <label className="sub_title-registro" htmlFor="apellido">
+              Apellido
+            </label>
+            <input
+              placeholder="Perez"
+              className="form_style-registro"
+              type="text"
+              required=""
+            ></input>
+          </div>
+          <div className="form_group-registro">
+            <label className="sub_title-registro" htmlFor="email">
+              Email
+            </label>
+            <input
+              placeholder="JuanPerez@gmail.com"
+              id="email"
+              className="form_style-registro"
+              type="email"
+              required=""
+            ></input>
+          </div>
+          <div className="form_group-registro">
+            <label className="sub_title-registro" htmlFor="password">
+              Contraseña
+            </label>
+            <input
+              placeholder="**********"
+              id="password"
+              className="form_style-registro"
+              type="password"
+            ></input>
+          </div>
+          <div className="form_group-registro">
+            <label className="sub_title-registro" htmlFor="confirmarPassword">
+              Confirmar Contraseña
+            </label>
+            <input
+              placeholder="**********"
+              id="confirmarPassword"
+              className="form_style-registro"
+              type="password"
+            ></input>
+          </div>
+          <div>
+            <button className="btn-registro">REGISTRAR</button>
+            <p>
+              Ya tienes una cuenta?{" "}
+              <a className="link-registro" href="">
+                Inicia Sesion
+              </a>
+            </p>
+            <a className="link-registro" href=""></a>
+          </div>
+          <a className="link-registro" href=""></a>
+        </form>
+      </div>
+      <a className="link-registro" href=""></a>
+    </div>
+  );
 };
 
 export default Registro;
