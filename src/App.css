@@ -1,42 +1,836 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainpage {
+  flex-grow: 1;
+}
+
+.bg-violeta {
+  background-color: #82376b;
+}
+
+.tituloAdmin,
+.subtAdmin,
+.titulo-administrador {
+  color: #7c127b;
+}
+
+#tabla table thead {
+  background-color: #f7f6df;
+}
+
+h1,
+h2,
+thead {
+  font-family: "montserrat alternates";
+}
+
+h1 {
+  color: #7c127b;
+}
+
+tbody {
+  font-family: "quicksand";
+}
+
+/*Administrador y login*/
+
+#btnAdmin {
+  font-weight: bold;
+  color: #82376b;
+  border: 2px solid #82376b;
+}
+#btnEditar,
+#btnBorrar {
+  color: #474747;
+  border: 2px outset #edefec;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#btnIngresar {
+  font-family: "montserrat alternates";
+  color: #ffffff;
+  font-weight: normal;
+  background-color: #9a2a99;
+  border: 2px outset #edefec;
+  width: 150px;
+}
+
+#btnBorrar {
+  background-color: #ffbbf2;
+}
+#btnEditar {
+  background-color: #d9abff;
+}
+
+#btnGoogle,
+#btnFaceb {
+  color: #646363;
+  width: 60px;
+  margin: 8px;
+  border: 2px outset #edefec;
+  background-color: #ffffff;
+}
+.contenLogin {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #7c127b;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#formLogin input {
+  background-color: hsl(58, 60%, 92%);
+}
+#formLogin input:focus {
+  border-color: #ffbbf2;
+  outline: none;
+  box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
+}
+
+.contenFormHabitacion {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #7c127b;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#formHabitacion input {
+  background-color: hsl(58, 60%, 92%);
+}
+#formHabitacion input:focus {
+  border-color: #ffbbf2;
+  outline: none;
+  box-shadow: 1px 1px 3px #ffbbf2, 0 0 8px #ffbbf2;
+}
+
+/*Pagina sobre NOsotros*/
+
+.cuadroNosotros {
+  background-color: rgba(128, 0, 128, 0.3);
+  border: 2px solid rgba(128, 0, 128, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.5);
+}
+
+.itemcard:hover::after {
+  filter: drop-shadow(5px 0 4px #0000001a);
+}
+
+.itemcard:hover .layer {
+  left: 50px;
+}
+
+.itemcard {
+  --color: #ffbbf2;
+
+  background-color: var(--color);
+  border-radius: 10px;
+  box-shadow: #3c40434d 0px 1px 2px 0px, #3c404326 0px 1px 3px 1px;
+  position: relative;
+  cursor: pointer;
+}
+
+.itemcard::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  z-index: 2;
+  height: 80%;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--color);
+  border-width: 40px 40px 40px 40px;
+  filter: drop-shadow(5px 0 4px #00000094);
+  transition: filter 0.5s;
+}
+
+.layer {
+  background-color: #f2f2f2;
+  border: 1px solid #fff;
+  border-radius: inherit;
+  padding: 20px;
+  box-shadow: #00000012 0px 1px 2px #00000012 0px 2px 4px #00000012 0px 4px 8px
+    #00000012 0px 8px 16px #00000012 0px 16px 32px #00000012 0px 32px 64px;
+  position: relative;
+  left: 10px;
+  transition: left 1s;
+}
+
+.cardEquipo {
+  width: 200px; /* Ajusta el ancho de la tarjeta según tu preferencia */
+  height: 250px; /* Ajusta la altura de la tarjeta según tu preferencia */
+  background-color: #333;
+  margin-bottom: 5px; /* Espacio entre las tarjetas */
+  position: relative; /* Agrega posición relativa para que los elementos absolutamente posicionados se basen en esta tarjeta */
+  overflow: hidden;
+  margin: 0 auto; /* Oculta cualquier contenido que se desborde de la tarjeta */
+}
+
+.cardEquipo .imageEquipo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cardEquipo .imageEquipo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s;
+}
+
+.cardEquipo:hover .imageEquipo img {
+  opacity: 0.5;
+  transform: translateX(30%);
+}
+
+.cardEquipo .detailsEquipo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e09ad0;
+  transition: all 0.5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+
+.cardEquipo:hover .detailsEquipo {
+  transform: perspective(2000px) rotateY(0deg);
+}
+
+.cardEquipo .detailsEquipo .centerEquipo {
+  padding: 5px;
+  text-align: center;
+  background-color: #e09ad0;
+  line-height: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.tituloequipo {
+  font-size: 20px;
+}
+
+.social-buttons {
   text-align: center;
 }
 
+.btnequipo {
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-linkedin {
+  background-color: #82376b;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.btn-github {
+  background-color: #82376b;
+  color: #fff;
+}
+
+.btn-volver {
+  background-color: #7c127b;
+  border-color: #7c127b;
+  color: #fff;
+}
+
+.btn-volver:hover {
+  background-color: #82376b;
+  border-color: #82376b;
+}
+
+.menu {
+  font-weight: bold;
+  border: 2px solid #82376b;
+}
+
+/*GALERIA*/
+
+.galeria-moviles {
+  display: flex;
+  width: 400px;
+  height: 350px;
+}
+
+.galeria-moviles img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
+}
+
+.galeria-moviles img:hover {
+  cursor: crosshair;
+  width: 200px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.imagen-con-margen {
+  margin-bottom: 20px; /* Puedes ajustar este valor según tus preferencias */
+}
+
+.custom-button {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #323030, -6px -6px 12px #a8a3a3;
+}
+
+.custom-button::before {
+  content: "";
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #d53cff 0%, #ffd0fc 100%);
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.custom-button:hover::before {
+  width: 9em;
+}
+
+.custom-pagination-button {
+  color: #000000 !important; /* Color del texto */
+  background-color: #e9a2ff !important;
+  border-color: #e155fd !important; /* Color del borde */
+}
+
+.custom-pagination-button:hover {
+  color: #000000 !important; /* Color del texto al pasar el ratón */
+  background-color: #ffffff !important; /* Color de fondo al pasar el ratón */
+  border-color: #a5a5a5 !important; /* Color del borde al pasar el ratón */
+}
+
+@media (max-width: 576px) {
+  .galeria-moviles {
+    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
+  }
+}
+
+/* Footer */
+.footer-link {
+  color: #fff;
+}
+.icono-link {
+  color: #fff;
+}
+.btn-entidades {
+  color: #fff;
+}
+.sutbtitulofooter {
+  color: yellow;
+}
+
+.btnCard {
+  background-color: #f1ede5;
+}
+
+.card-img-top-nueva {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.redondearImgCard {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid #82376b;
+}
+
+/*Catalogo Habitaciones*/
+.portadaHabitaciones {
+  position: relative;
+  top: 0px;
+}
+
+.banner {
+  object-fit: cover;
+  height: 395px;
+  width: 100%;
+  filter: grayscale(15%);
+}
+
+.tituloPrincipal {
+  color: #f05bfb;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.tituloPrincipal h1 {
+  font-size: 100px;
+}
+
+@media (max-width: 576px) {
+  /* Estilos para el banner en dispositivos pequeños y medianos */
+  .banner {
+    height: 200px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 30px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+@media (min-width: 767.98px) {
+  .banner {
+    height: 300px;
+    filter: grayscale(0%);
+  }
+
+  /* Estilos para el texto principal en dispositivos pequeños y medianos */
+  .tituloPrincipal {
+    top: 40%; /* Cambia la posición vertical */
+  }
+
+  .tituloPrincipal h1 {
+    font-size: 60px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+
+
+
+/* contacto*/
+.background-container {
+  background-image: url('http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.blur-container {
+  background-color: rgba(255, 255, 255, 0.5); /* Opacidad del fondo */
+  backdrop-filter: blur(5px); /* Aplicar filtro de desenfoque */
+  padding: 20px;
+}
+
+
+.custom-accordion .accordion-header {
+  background-color: #7f3c87; /* Cambia el color de fondo del encabezado */
+  color: #000000; /* Cambia el color del texto del encabezado */
+}
+
+.custom-accordion .accordion-body {
+  background-color: #fadaff; /* Cambia el color de fondo del cuerpo */
+  color: #4a235a; /* Cambia el color del texto del cuerpo */
+}
+
+.custom-accordion .accordion-header .accordion-button {
+  background-color: #82376b; /* Cambia el color de fondo del botón */
+  color: #ffffff; /* Cambia el color del texto del botón */
+}
+
+.main-section {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 192, 203, 0.5); /* Color rosa con opacidad */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(87, 31, 96);
+  text-align: center;
+  z-index: 1;
+}
+
+.disclaimer-text {
+  text-align: center; /* Alinea el texto al centro */
+  margin-top: 20px; /* Espacio superior */
+  font-size: 18px; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Texto en negrita */
+  color: #71307c; /* Color de texto blanco */
+}
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Estilos para los logotipos */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  width: 100px; /* Ajusta el tamaño según tus necesidades */
+  height: auto;
+  margin: 0 10px; /* Espaciado entre los logotipos */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Estilos adicionales para hacer que el texto sea responsive */
+@media screen and (max-width: 768px) {
+  .overlay-text {
+    font-size: 18px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+
+/*Propuestas*/
+
+.titulo-propuesta {
+  font-weight: bold;
+  color: #5f1769; /* color blanco */
+}
+
+.descripcion-propuesta {
+  color: #34203e; /* color blanco */
+}
+
+.bg-color-propuesta {
+  background-color: #ffc7e5; /* rosa claro */
+}
+
+.texto-propuesta {
+  padding: 20px;
+}
+
+/*NOSOTROS CARDS*/
+.card-client {
+  background: #ffd1f9;
+  width: 13rem;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid #8f3ba0;
+  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border-radius: 10px;
+  text-align: center;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.card-client:hover {
+  transform: translateY(-10px);
+}
+
+.user-picture {
+  overflow: hidden;
+  object-fit: cover;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid #8f3ba0;;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.user-picture svg {
+  width: 2.5rem;
+  fill: currentColor;
+}
+
+.name-client {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.name-client span {
+  display: block;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.social-media:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background: #000000;
+}
+
+.social-media a {
+  position: relative;
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+.social-media a svg {
+  width: 1.1rem;
+  fill: currentColor;
+}
+
+/*-- Tooltip Social Media --*/
+.tooltip-social {
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -90%);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.tooltip-social:after {
+  content: " ";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+  border-top-color: #262626;
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+
+}
+
+/*Registro*/
+
+.container-registro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#formRegistro input {
+  border: 2px solid #adb5bd;
+  width: 250px;
+}
+
+#btnIngresar, #formRegistro input:focus {
+  transform: translateY(4px);
+  border-color: #4b34a6;
+  outline: none;
+  box-shadow: 1px 1px 3px #4b34a6, 0 0 8px #4b34a6;
+}
+
+.form_area-registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  max-width: 40%;
+  margin: 20px auto; /* Margen arriba y abajo de 20px, márgenes automáticos a los lados */
+  padding: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  /*box-shadow: 3px 4px 0px 1px #E99F4C;*/
+  backdrop-filter: blur(5px); /* Ajusta el valor según lo desees */
+  background-color: #eddcd97a;
+}
+
+@media (max-width: 576px) {
+  .form_area-registro {
+    max-width: 95%; /* Cambia el máximo ancho para ocupar toda la pantalla en dispositivos pequeños */
   }
 }
 
-.card {
-  padding: 2em;
+.title-registro {
+  color: #7c127b;
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.sub_title-registro {
+  font-weight: 600;
+  color: #0c0520;
+  /*margin: 5px 0;
+  text-align: right;*/
 }
+
+.form_group-registro {
+  margin: 10px 0;
+}
+
+.form_style-registro {
+  outline: none;
+  border: 2px solid #495057;
+  /*box-shadow: 3px 4px 0px 1px #E99F4C;*/
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form_style-registro:focus,
+.btn:focus {
+  transform: translateY(4px);
+  /*box-shadow: 1px 2px 0px 0px #E99F4C;*/
+}
+
+#btn-registro {
+  padding: 15px;
+  margin: 25px 0px;
+  width: 200px;
+  max-width: 290px;
+  font-size:larger;
+  background: #ffcff0;
+  border-radius: 10px;
+  font-weight: 800;
+  color: #100236;
+  outline: none;
+  border: 1px solid #e30abb;
+  box-shadow: 3px 3px 0px 0px #ffffff;
+}
+
+#btn-registro:hover {
+  opacity: 0.9;
+}
+
+/*.link-registro {
+  font-weight: 800;
+  color: #264143;
+  padding: 5px;
+}*/
+
+.Background-registro {
+  background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.DateRange {
+  width: 100%; /* O ajusta el ancho según sea necesario */
+}
+
+@media screen and (max-width: 768px) {
+  .DateRange {
+    width: 80%; /* Porcentaje del ancho de la pantalla */
+    max-width: 300px; /* Ancho máximo del calendario */
+  }
+}
+
+.date-range-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+.search-button {
+  position: absolute;
+  bottom: -40px; /* Distancia desde la parte inferior del contenedor */
+  left: 50%; /* Centra horizontalmente el botón */
+  transform: translateX(-50%); /* Ajusta el botón horizontalmente */
+  background-color: pink; /* Color de fondo rosa */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reservas-button {
+  display: block;
+  width: 100%;
+  background-color: rgb(156, 27, 141); /* Color de fondo rosa */
+  color: rgb(255, 255, 255); /* Color del texto blanco */
+  font-size: 24px; /* Tamaño de fuente */
+  padding: 20px 0; /* Espaciado interno */
+  border: none;
+  cursor: pointer;
+  outline: none; /* Quita el borde de enfoque */
+}
+
+.date-picker-container {
+  width: 100%;
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+
+
+
+
+
+
