@@ -19,15 +19,15 @@ const Registro = () => {
       if (respuesta.status === 201) {
         Swal.fire({
           title: "Huésped creado",
-          text: `El Huésped: ${datos.email} fue creado con exito`,
+          text: `El Huésped: ${datos.email} fue creado con éxito`,
           icon: "success",
         });
         navegacion("/administrador");
         reset();
       } else {
         Swal.fire({
-          title: "Ocurrio un error",
-          text: "Intente crear la habitación en unos minutos",
+          title: "Ocurrió un error",
+          text: "Intente ingresar en unos minutos",
           icon: "error",
         });
       }
