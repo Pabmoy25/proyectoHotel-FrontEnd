@@ -13,23 +13,34 @@ const Login = ({ setLogueado }) => {
 
   const navegacion = useNavigate();
 
-  const onSubmit = (usuario) => {
-    console.log(usuario);
+  const onSubmit = async (usuario) => {
+    try {
+      //console.log(usuario);
+      const respuesta = await login(usuario);
+      console.log(respuesta); 
 
-    if (login(usuario)) {
-      Swal.fire({
-        title: "Sesión iniciada",
-        text: `El usuario ${usuario.email} fue logueado correctamente`,
-        icon: "success",
-      });
-      setLogueado(usuario.email);
-      navegacion("/administrador");
-    } else {
-      Swal.fire({
-        title: "Error en login",
-        text: "E-mail o password incorrectos",
-        icon: "error",
-      });
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: `¡Bienvenido ${usuario.email}!`,
+          text: "Sesión iniciada exitosamente",
+          icon: "success",
+        });
+        const dato = await respuesta.json();
+        sessionStorage.setItem(
+          "InicioSesionHaku",
+          JSON.stringify({ email: dato.email, token: dato.token }) //, token: dato.token })
+        );
+        setLogueado(dato);
+        navegacion("/administrador");
+      } else {
+        Swal.fire({
+          title: "Error en login",
+          text: "E-mail o password incorrectos",
+          icon: "error",
+        });
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -77,7 +88,7 @@ const Login = ({ setLogueado }) => {
                 message: "Ingrese un mínimo de 6 caracteres",
               },
               maxLength: {
-                value: 10,
+                value: 100,
                 message: "Ingrese un máximo de 10 caracteres",
               },
               pattern: {
