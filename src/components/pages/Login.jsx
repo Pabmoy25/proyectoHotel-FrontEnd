@@ -9,6 +9,7 @@ const Login = ({ setLogueado }) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const navegacion = useNavigate();

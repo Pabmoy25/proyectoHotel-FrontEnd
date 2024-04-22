@@ -7,6 +7,7 @@ import {
   borrarHabitacion,
 } from "../../helpers/queriesHabitaciones";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
+import Usuarios from "./usuarioHuesped/Usuario.jsx"
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);

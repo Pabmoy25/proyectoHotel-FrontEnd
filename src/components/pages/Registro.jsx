@@ -5,12 +5,16 @@ import { crearUsuario, login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 import Fondo from "../../assets/Registr.png";
 
+
 const Registro = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
+
+  const navegacion = useNavigate();
 
   const enviar = async (datos) => {
     try {
@@ -24,7 +28,7 @@ const Registro = () => {
           text: `El Huésped: ${datos.email} fue creado con éxito`,
           icon: "success",
         });
-        navegacion("/administrador");
+        navegacion("/");
         reset();
       } else {
         Swal.fire({
