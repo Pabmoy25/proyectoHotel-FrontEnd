@@ -41,6 +41,7 @@ const PaginaAdministrador = () => {
   const traerHuesped = async () => {
     try {
       const listaHuesped = await leerUsuarios();
+      console.log(listaHuesped)
       setHuesped(listaHuesped);
     } catch (error) {
       console.log(error);
@@ -104,7 +105,7 @@ const PaginaAdministrador = () => {
         <thead className="text-center">
           <tr>
             <th>Nombre completo</th>
-            <th>Email</th>
+            <th>E-mail</th>
             {/*<th>N° de contacto</th>
             <th>Fecha de checkin</th>
             <th>Fecha de checkout</th>
@@ -116,7 +117,7 @@ const PaginaAdministrador = () => {
             <Usuarios
               key={huesped._id}
               huesped={huesped}
-              setHuesped={setHuesped}
+              //setHuesped={setHuesped}
             ></Usuarios>
           ))}
           {/* {(huesped.map((huesped) => (

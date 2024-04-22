@@ -16,7 +16,7 @@ console.log(URI_USUARIOS)
 export const crearUsuario = async (nuevoUsuario) => {
   try {
 
-    const respuesta = await fetch(URI_USUARIOS+'/crear', { //`${URI_USUARIOS}/crear`
+    const respuesta = await fetch(URI_USUARIOS+'/crear', { 
       method: "POST",
       headers: { "Content-Type": "application/json" },
       
@@ -32,7 +32,7 @@ export const crearUsuario = async (nuevoUsuario) => {
 
 export const leerUsuarios = async () => {
   try {
-    const respuesta = await fetch(URI_USUARIOS+'/listar');//`${URI_USUARIOS}/leer`
+    const respuesta = await fetch(URI_USUARIOS+'/listar');
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -52,6 +52,6 @@ export const login = async (usuario) => {
     return respuesta;
   } catch (error) {
     console.log(error);
-    //return null
+   
   }
 };
