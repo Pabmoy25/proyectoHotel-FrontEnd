@@ -18,7 +18,6 @@ import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion
 import Registro from "./components/pages/Registro"
 
 import Contacto from "./components/pages/Contacto";
-=======
 import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 
