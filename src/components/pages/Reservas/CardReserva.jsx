@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardHeader, Col } from "react-bootstrap";
-import dayjs from "dayjs";
 
 const CardReservas = () => {
     

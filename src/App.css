@@ -781,14 +781,10 @@ tbody {
   opacity: 0.9;
 }
 
-/*RESERVAS*/
-
-/* Estilos para el componente DateRange */
 .DateRange {
   width: 100%; /* O ajusta el ancho según sea necesario */
 }
 
-/* Media query para dispositivos de pantalla pequeña */
 @media screen and (max-width: 768px) {
   .DateRange {
     width: 80%; /* Porcentaje del ancho de la pantalla */
@@ -813,6 +809,23 @@ tbody {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.reservas-button {
+  display: block;
+  width: 100%;
+  background-color: rgb(156, 27, 141); /* Color de fondo rosa */
+  color: rgb(255, 255, 255); /* Color del texto blanco */
+  font-size: 24px; /* Tamaño de fuente */
+  padding: 20px 0; /* Espaciado interno */
+  border: none;
+  cursor: pointer;
+  outline: none; /* Quita el borde de enfoque */
+}
+
+.date-picker-container {
+  width: 100%;
+  margin-bottom: 20px; /* Espaciado inferior */
 }
 
 
