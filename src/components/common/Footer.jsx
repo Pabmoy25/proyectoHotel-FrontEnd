@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-violeta text-light py-4">
+    <footer className="bg-violeta text-light">
   <div className="container">
     <section className="row">
-      <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
+      <div className="col-lg-3 mt-3 d-flex flex-column align-items-start">
         <h4>Hotel Haku Huasi</h4>
         <p>
           <span className="sutbtitulofooter">Dirección:</span> Ruta 340 - Km
@@ -33,7 +33,7 @@ const Footer = () => {
           <span className="sutbtitulofooter">Provincia:</span> País:
           Argentina
         </p>
-        <h4 className="mt-4">Contacto en Argentina</h4>
+        <h4>Contacto en Argentina</h4>
         <p>
           <span className="sutbtitulofooter">Tel./Fax:</span> (+54 9) (0381)
           4924444 / 4925555
@@ -88,37 +88,37 @@ const Footer = () => {
         <div className="d-flex flex-column align-items-start">
           <Link
             to="/error404"
-            className="footer-link text-decoration-none mb-2 fs-5"
+            className="footer-link text-decoration-none mb-2 fs-6"
           >
             Habitaciones
           </Link>
           <Link
             to="/galeria"
-            className="footer-link text-decoration-none mb-2 fs-5"
+            className="footer-link text-decoration-none mb-2 fs-6"
           >
             Galería
           </Link>
           <Link
             to="/nosotros"
-            className="footer-link text-decoration-none mb-2 fs-5"
+            className="footer-link text-decoration-none mb-2 fs-6"
           >
             Quiénes somos
           </Link>
           <Link
             to="/error404"
-            className="footer-link text-decoration-none mb-2 fs-5"
+            className="footer-link text-decoration-none mb-2 fs-6"
           >
             Contacto
           </Link>
           <Link
             to="/error404"
-            className="footer-link text-decoration-none mb-2 fs-5"
+            className="footer-link text-decoration-none mb-2 fs-6"
           >
             Ubicación
           </Link>
           <Link
             to="/login"
-            className="footer-link text-decoration-none mb-2 fs-5"
+            className="footer-link text-decoration-none mb-2 fs-6"
           >
             Login
           </Link>
@@ -163,7 +163,7 @@ const Footer = () => {
       </div>
     </section>
   </div>
-  <p className="text-center">&copy; Todos los derechos reservados</p>
+  <p className="text-center">&copy; 2024 Hotel Haku Huasi - Todos los derechos reservados</p>
 </footer>
   );
 };
