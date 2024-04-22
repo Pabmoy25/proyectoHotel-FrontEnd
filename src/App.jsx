@@ -12,11 +12,13 @@ import SobreNosotros from "./components/pages/SobreNosotros";
 import Login from "./components/pages/Login";
 import { useState } from "react";
 import Error404 from "./components/pages/Error404";
-//import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
 import Registro from "./components/pages/Registro"
+import Propuestas from "./components/pages/Propuestas";
+import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
+
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {} //"";
@@ -63,6 +65,9 @@ function App() {
         <Route path="/nosotros" element={<SobreNosotros></SobreNosotros>}>
           {" "}
         </Route>
+        <Route path="/Propuestas" element={<Propuestas></Propuestas>}>
+          {" "}
+        </Route>
         <Route path="/error404" element={<Error404 />}>
           {" "}
         </Route>
@@ -82,6 +87,16 @@ function App() {
         >
           {" "}
         </Route>
+        <Route
+              exact
+              path="/administrador/editar/:id"
+              element={
+                <FormularioHabitacion
+                  editar={true}
+                  titulo="Editar Habitacion"
+                ></FormularioHabitacion>
+              }
+            ></Route>
 
         {/*<Route
               exact

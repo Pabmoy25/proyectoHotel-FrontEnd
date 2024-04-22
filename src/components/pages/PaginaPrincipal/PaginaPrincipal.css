@@ -117,6 +117,19 @@
      
     }
 
+    .cardok {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      justify-content: center;
+      align-items: center;
+      max-width: 200px;
+      flex: 1 0 100%; 
+     
+    }
+    
+
     .card-image {
       width: 70%;
       justify-content: center;
