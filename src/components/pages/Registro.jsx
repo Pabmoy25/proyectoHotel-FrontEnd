@@ -15,7 +15,9 @@ const Registro = () => {
   return (
     <>
       <div className="container-registro my-4 Background-registro">
-        <Form onSubmit={handleSubmit()} id="formRegistro">
+        
+        <Form onSubmit={handleSubmit()} id="formRegistro" className="form_area-registro">
+        <div><p className="title-registro">REGISTRATE</p></div>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label>Nombre</Form.Label>
             <Form.Control
@@ -139,16 +141,12 @@ const Registro = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-            <h6 className="text-center" as={Link} to={""}>
-              Recuperar contraseña
-            </h6>{" "}
-            <div className=" px-3">
-              <h6> | </h6>
-            </div>
+            
+            <div><p>Ya tienes una cuenta?</p>
             <h6 className="text-center" as={Link} to={"/registro"}>
               {" "}
-              Registrarme
-            </h6>
+              Inicia sesión
+            </h6></div>
           </Form.Group>
           <div className="d-flex justify-content-center">
             <Button type="submit" className="mb-3" id="btnIngresar">
