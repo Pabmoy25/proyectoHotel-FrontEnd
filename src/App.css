@@ -491,6 +491,7 @@ tbody {
 
 .sub_title-registro {
   font-weight: 600;
+  color: #0c0520;
   /*margin: 5px 0;
   text-align: right;*/
 }
@@ -520,13 +521,13 @@ tbody {
   margin: 25px 0px;
   width: 200px;
   max-width: 290px;
-  font-size: 15px;
+  font-size:larger;
   background: #ffcff0;
   border-radius: 10px;
   font-weight: 800;
-  color: #120e1c;
+  color: #100236;
   outline: none;
-  border: 1px solid #e30abb;;
+  border: 1px solid #e30abb;
   box-shadow: 3px 3px 0px 0px #ffffff;
 }
 
