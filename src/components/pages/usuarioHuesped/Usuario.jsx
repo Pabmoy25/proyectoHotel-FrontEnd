@@ -13,7 +13,7 @@ const Usuario = (huesped) => {
           <Link
             className="btn"
             id="btnEditar"
-            to={`/administrador/editar/${huesped._id}`}
+            to={`/administrador/editar/${huesped._id}`}//corregir
           >
             <i className="bi bi-pencil-square"></i>
           </Link>

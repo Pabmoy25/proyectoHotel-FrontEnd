@@ -59,7 +59,7 @@ const Registro = () => {
               className="mb-2"
               type="text"
               placeholder="Nombre"
-              {...register("nombre", {
+              {...register("nombreCompleto", {
                 required: "El nombre es obligatorio",
                 minLength: {
                   value: 3,
