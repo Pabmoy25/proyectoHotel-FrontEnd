@@ -1,8 +1,13 @@
+
 import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
 import { leerHabitaciones, obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
+import {Container } from "react-bootstrap";
+
+
+
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
@@ -10,6 +15,7 @@ const PaginaAdministrador = () => {
   useEffect(() => {
     traerHabitaciones();
   }, []);
+
 
   const traerHabitaciones = async () => {
     try {
@@ -38,8 +44,19 @@ const PaginaAdministrador = () => {
     }
   };
 
+        const borrarHabitaciones = async (id) => {
+        try {
+          await borrarHabitacion(id);
+          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+
+
   return (
-    <section>
+    <Container className="container-fluid">
       <div>
         <h1 className="mt-5 bold tituloAdmin">Administrador</h1>
         <hr />
@@ -72,6 +89,7 @@ const PaginaAdministrador = () => {
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
+              eliminarHabitacion={borrarHabitaciones}
             ></Habitacion>
           )}
         </tbody>
@@ -88,7 +106,7 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
+      <Table responsive="sm" striped bordered hover className="tabla">
         <thead className="text-center">
           <tr>
             <th>N° de habitación</th>
@@ -108,6 +126,7 @@ const PaginaAdministrador = () => {
               setHuesped={setHuesped}
             ></ItemHuesped>
           ))}*/}
+
         </tbody>
         <tr>
           <td>1</td>
@@ -123,7 +142,7 @@ const PaginaAdministrador = () => {
           </td>
         </tr>
       </Table>
-    </section>
+    </Container>
   );
 };
 
