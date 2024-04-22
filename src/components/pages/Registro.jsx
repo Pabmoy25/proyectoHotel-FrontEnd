@@ -72,7 +72,7 @@ const Registro = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.nombre?.message}
+              {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
          {/* <Form.Group className="mb-3" controlId="formApellido">
