@@ -5,21 +5,19 @@ import { crearUsuario, login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 import Fondo from "../../assets/Registr.png";
 
-
 const Registro = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
   const navegacion = useNavigate();
 
   const enviar = async (datos) => {
     try {
-
-      console.log("Ingrso ",datos)
+      console.log("Ingrso ", datos);
       const respuesta = await crearUsuario(datos);
 
       if (respuesta.status === 201) {
@@ -54,7 +52,9 @@ const Registro = () => {
             <p className="title-registro">REGISTRATE</p>
           </div>
           <Form.Group className="mb-3" controlId="formNombre">
-            <Form.Label className="sub_title-registro">Nombre</Form.Label>
+            <Form.Label className="sub_title-registro">
+              Nombre y apellido
+            </Form.Label>
             <Form.Control
               className="mb-2"
               type="text"
@@ -75,7 +75,7 @@ const Registro = () => {
               {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
-         {/* <Form.Group className="mb-3" controlId="formApellido">
+          {/* <Form.Group className="mb-3" controlId="formApellido">
             <Form.Label className="sub_title-registro">Apellido</Form.Label>
             <Form.Control
               className="mb-2"
@@ -152,7 +152,8 @@ const Registro = () => {
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
-          +{/*<Form.Group className="mb-3" controlId="formConfirmPassword">
+          +
+          {/*<Form.Group className="mb-3" controlId="formConfirmPassword">
             <Form.Label className="sub_title-registro">
               Confirmar contraseña
             </Form.Label>
