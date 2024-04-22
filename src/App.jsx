@@ -17,6 +17,7 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
 import Registro from "./components/pages/Registro"
+import Propuestas from "./components/pages/Propuestas";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {} //"";
@@ -61,6 +62,9 @@ function App() {
           {" "}
         </Route>
         <Route path="/nosotros" element={<SobreNosotros></SobreNosotros>}>
+          {" "}
+        </Route>
+        <Route path="/Propuestas" element={<Propuestas></Propuestas>}>
           {" "}
         </Route>
         <Route path="/error404" element={<Error404 />}>

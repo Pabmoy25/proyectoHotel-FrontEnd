@@ -31,6 +31,9 @@ const Menu = ({ logueado, setLogueado }) => {
             <NavLink end className="nav-link" to={"/"}>
               Inicio
             </NavLink>
+            <NavLink end className="nav-link" to={"/Propuestas"}>
+              Propuestas
+            </NavLink>
             <NavLink end className="nav-link" to={"/nosotros"}>
               Nosotros
             </NavLink>
