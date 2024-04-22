@@ -801,6 +801,18 @@ tbody {
   justify-content: center; /* Centra el contenido horizontalmente */
   width: 100%;
   overflow-x: auto;
+  position: relative;
+}
+.search-button {
+  position: absolute;
+  bottom: -40px; /* Distancia desde la parte inferior del contenedor */
+  left: 50%; /* Centra horizontalmente el botón */
+  transform: translateX(-50%); /* Ajusta el botón horizontalmente */
+  background-color: pink; /* Color de fondo rosa */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 

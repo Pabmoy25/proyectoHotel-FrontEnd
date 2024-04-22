@@ -13,14 +13,20 @@ const DatePicker = () => {
     ]);
   
     return (
-      <div className="date-range-container">
+        <>
+         <div className="date-range-container">
         <DateRange
           editableDateInputs={true}
           onChange={item => setState([item.selection])}
           moveRangeOnFirstSelection={false}
           ranges={state}
         />
+        <button className="search-button">Buscar Habitaciones</button>
       </div>
+
+        </>
+     
+      
     );
   }
   
