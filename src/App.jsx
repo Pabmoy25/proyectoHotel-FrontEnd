@@ -20,7 +20,7 @@ import Registro from "./components/pages/Registro"
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuarioHakuHuasi")) || "";
+  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {} //"";
 
   const [logueado, setLogueado] = useState(usuario);
 

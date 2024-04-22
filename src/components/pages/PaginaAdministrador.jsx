@@ -1,5 +1,5 @@
 
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
@@ -32,7 +32,7 @@ const PaginaAdministrador = () => {
     
 
   return (
-    <section>
+    <Container className="container-fluid">
       <div>
         <h1 className="mt-5 bold tituloAdmin">Administrador</h1>
         <hr />
@@ -123,6 +123,9 @@ const PaginaAdministrador = () => {
         </tbody>
       </Table>
     </section>
+          </tr>   
+          </Table>
+        </section> 
   );
 };
 
