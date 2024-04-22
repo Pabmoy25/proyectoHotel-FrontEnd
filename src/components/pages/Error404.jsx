@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 
 const Error404 = () => {
   return (
+    <div>
     <Container className="container-fluid">
       <section className="container cuadroNosotros mt-4">
         <h2 className="text-center mt-4 tituloAdmin">
@@ -43,6 +44,7 @@ const Error404 = () => {
         </div>
       </section>
     </Container>
+    </div>
   );
 };
 

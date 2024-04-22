@@ -1,4 +1,11 @@
 
+import { Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Habitacion from "./habitacion/Habitacion";
+import { leerHabitaciones, obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
+
+
 import { Table, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -6,20 +13,41 @@ import Habitacion from "./habitacion/Habitacion";
 import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 
 
+
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
-    useEffect(() => {
-      traerHabitaciones();
-    }, []);
 
-    const traerHabitaciones = async ()=> {
-        try {
-         const listaHabitaciones = await leerHabitaciones()
-         setHabitaciones (listaHabitaciones);
-        } catch (error) {
-          console.log(error);
-        }
-      }
+  useEffect(() => {
+    traerHabitaciones();
+  }, []);
+
+
+  const traerHabitaciones = async () => {
+    try {
+      const listaHabitaciones = await leerHabitaciones();
+      setHabitaciones(listaHabitaciones);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleEditarHabitacion = async (habitacionId) => {
+    try {
+      const habitacion = await obtenerHabitacion(habitacionId);
+      console.log("Detalles de la habitación a editar:", habitacion);
+    } catch (error) {
+      console.error("Error al cargar los detalles de la habitación:", error);
+    }
+  };
+
+  const handleBorrarHabitacion = async (id) => {
+    try {
+      await borrarHabitacion(id);
+      setHabitaciones(habitacion.filter(habitacion => habitacion.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
         const borrarHabitaciones = async (id) => {
         try {
@@ -30,6 +58,7 @@ const PaginaAdministrador = () => {
         }
       };
     
+
 
   return (
     <Container className="container-fluid">
@@ -61,7 +90,7 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-        {habitacion.map((habitacion) =>
+          {habitacion.map((habitacion) =>
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
@@ -70,11 +99,9 @@ const PaginaAdministrador = () => {
           )}
         </tbody>
       </Table>
-    
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Huéspedes</h2>
-
         <Button
           variant="outline-secondary"
           id="btnAdmin"
@@ -104,6 +131,26 @@ const PaginaAdministrador = () => {
               setHuesped={setHuesped}
             ></ItemHuesped>
           ))}*/}
+
+        </tbody>
+        <tr>
+          <td>1</td>
+          <td>Juan Perez</td>
+          <td>juanp@gmail.com</td>
+          <td>11111111</td>
+          <td></td>
+          <td></td>
+          <td className="d-flex justify-content-center">
+            <Button id="btnEditar" onClick={() => handleEditarHabitacion(habitacion)}>
+              <i className="bi bi-pencil-square"></i>
+            </Button>
+          </td>
+        </tr>
+      </Table>
+    </section>
+  );
+};
+
           <tr>
             <td>1</td>
             <td>Juan Perez</td>
@@ -133,5 +180,6 @@ const PaginaAdministrador = () => {
 };
 
       
+
 
 export default PaginaAdministrador;
