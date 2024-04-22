@@ -15,12 +15,17 @@ const Registro = () => {
   return (
     <>
       <div className="container-registro my-4 Background-registro">
-        
-        <Form onSubmit={handleSubmit()} id="formRegistro" className="form_area-registro text-start">
-        <div><p className="title-registro">REGISTRATE</p></div>
+        <Form
+          onSubmit={handleSubmit()}
+          id="formRegistro"
+          className="form_area-registro text-start"
+        >
+          <div>
+            <p className="title-registro">REGISTRATE</p>
+          </div>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label className="sub_title-registro">Nombre</Form.Label>
-            <Form.Control
+            <Form.Control className="mb-2"
               type="text"
               placeholder="Nombre"
               {...register("nombre", {
@@ -41,7 +46,7 @@ const Registro = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label className="sub_title-registro">Apellido</Form.Label>
-            <Form.Control
+            <Form.Control className="mb-2"
               type="text"
               placeholder="Apellido"
               {...register("apellido", {
@@ -62,7 +67,7 @@ const Registro = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="email">
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
-            <Form.Control
+            <Form.Control className="mb-2"
               type="email"
               placeholder="nombre@gmail.com"
               {...register("email", {
@@ -89,7 +94,7 @@ const Registro = () => {
           <Form.Group className="mb-3" controlId="password">
             <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
-            <Form.Control
+            <Form.Control className="mb-2"
               type="password"
               placeholder="Contraseña"
               {...register("password", {
@@ -114,9 +119,11 @@ const Registro = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="password">
-            <Form.Label className="sub_title-registro">Confirmar contraseña</Form.Label>
+            <Form.Label className="sub_title-registro">
+              Confirmar contraseña
+            </Form.Label>
 
-            <Form.Control
+            <Form.Control className="mb-2"
               type="password"
               placeholder="Contraseña"
               {...register("password", {
@@ -140,23 +147,29 @@ const Registro = () => {
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="d-flex subtAdmin my-4">
-            
-            <div><p>Ya tienes una cuenta?</p>
-            <h6 className="text-center" as={Link} to={"/registro"}>
-              {" "}
-              Inicia sesión
-            </h6></div>
+          <Form.Group className="">
+            <div className="d-flex flex-row">
+              <p>Ya tienes una cuenta?</p>
+              <Button
+                variant="link"
+                className="nav-link fw-bold"
+                as={Link}
+                to={"/login"}
+              >
+                {" "}
+                Inicia sesión
+              </Button>
+            </div>
           </Form.Group>
           <div className="d-flex justify-content-center">
-            <Button type="submit" className="mb-3" id="btnIngresar">
+            <Button type="submit" className="mb-3" id="btn-registro">
               Ingresar
             </Button>
           </div>
-          
         </Form>
+        </div>
 
-        <div className="form_area-registro">
+        {/*<div className="form_area-registro">
           <p className="title-registro">REGISTRATE</p>
           <form action="">
             <div className="form_group-registro">
@@ -229,7 +242,7 @@ const Registro = () => {
           </form>
         </div>
         <a className="link-registro" href=""></a>
-      </div>
+            </div>*/}
     </>
   );
 };

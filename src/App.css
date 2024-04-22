@@ -308,12 +308,11 @@ tbody {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 6px 6px 12px #323030,
-              -6px -6px 12px #a8a3a3;
+  box-shadow: 6px 6px 12px #323030, -6px -6px 12px #a8a3a3;
 }
 
 .custom-button::before {
-  content: '';
+  content: "";
   width: 0;
   height: 3em;
   border-radius: 30em;
@@ -321,7 +320,7 @@ tbody {
   top: 0;
   left: 0;
   background-image: linear-gradient(to right, #d53cff 0%, #ffd0fc 100%);
-  transition: .5s ease;
+  transition: 0.5s ease;
   display: block;
   z-index: -1;
 }
@@ -332,7 +331,7 @@ tbody {
 
 .custom-pagination-button {
   color: #000000 !important; /* Color del texto */
-  background-color: #e9a2ff !important;  
+  background-color: #e9a2ff !important;
   border-color: #e155fd !important; /* Color del borde */
 }
 
@@ -342,13 +341,11 @@ tbody {
   border-color: #a5a5a5 !important; /* Color del borde al pasar el ratón */
 }
 
-
 @media (max-width: 576px) {
   .galeria-moviles {
     display: none; /* Oculta la galería de móviles en dispositivos pequeños */
   }
 }
-
 
 /* Footer */
 .footer-link {
@@ -360,11 +357,9 @@ tbody {
 .btn-entidades {
   color: #fff;
 }
-.sutbtitulofooter
-{
+.sutbtitulofooter {
   color: yellow;
 }
-
 
 .btnCard {
   background-color: #f1ede5;
@@ -376,13 +371,11 @@ tbody {
   object-fit: cover;
 }
 
-
 .redondearImgCard {
-  border-top-left-radius: 15px; 
-  border-top-right-radius: 15px; 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   border: 2px solid #82376b;
 }
-
 
 /*Catalogo Habitaciones*/
 .portadaHabitaciones {
@@ -428,7 +421,7 @@ tbody {
   }
 }
 
-@media (min-width: 767.98px){
+@media (min-width: 767.98px) {
   .banner {
     height: 300px;
     filter: grayscale(0%);
@@ -444,7 +437,6 @@ tbody {
   }
 }
 
-
 /*Registro*/
 
 .container-registro {
@@ -453,6 +445,18 @@ tbody {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+}
+
+#formRegistro input {
+  border: 2px solid #adb5bd;
+  width: 250px;
+}
+
+#btnIngresar, #formRegistro input:focus {
+  transform: translateY(4px);
+  border-color: #4b34a6;
+  outline: none;
+  box-shadow: 1px 1px 3px #4b34a6, 0 0 8px #4b34a6;
 }
 
 .form_area-registro {
@@ -465,9 +469,9 @@ tbody {
   max-width: 40%;
   margin: 20px auto; /* Margen arriba y abajo de 20px, márgenes automáticos a los lados */
   padding: 20px;
-  border: 2px solid #264143;
+  border: 2px solid #ffffff;
   border-radius: 20px;
-  box-shadow: 3px 4px 0px 1px #E99F4C;
+  /*box-shadow: 3px 4px 0px 1px #E99F4C;*/
   backdrop-filter: blur(5px); /* Ajusta el valor según lo desees */
   background-color: #eddcd97a;
 }
@@ -478,23 +482,17 @@ tbody {
   }
 }
 
-/*Registro*/
-/*#formRegistro Form.Label{
-  text-align: left;
-}*/
-
 .title-registro {
-  color: #264143;
+  color: #7c127b;
   font-weight: 900;
   font-size: 1.5em;
   margin-top: 20px;
-
 }
 
 .sub_title-registro {
   font-weight: 600;
-  margin: 5px 0;
-  text-align: right;
+  /*margin: 5px 0;
+  text-align: right;*/
 }
 
 .form_group-registro {
@@ -503,43 +501,47 @@ tbody {
 
 .form_style-registro {
   outline: none;
-  border: 2px solid #264143;
-  box-shadow: 3px 4px 0px 1px #E99F4C;
+  border: 2px solid #495057;
+  /*box-shadow: 3px 4px 0px 1px #E99F4C;*/
   width: 100%;
   padding: 12px 10px;
   border-radius: 4px;
   font-size: 15px;
 }
 
-.form_style-registro:focus, .btn:focus {
+.form_style-registro:focus,
+.btn:focus {
   transform: translateY(4px);
-  box-shadow: 1px 2px 0px 0px #E99F4C;
+  /*box-shadow: 1px 2px 0px 0px #E99F4C;*/
 }
 
-.btn-registro {
+#btn-registro {
   padding: 15px;
   margin: 25px 0px;
-  width: 100%;
+  width: 200px;
   max-width: 290px;
   font-size: 15px;
   background: #ffcff0;
   border-radius: 10px;
   font-weight: 800;
-  box-shadow: 3px 3px 0px 0px #E99F4C;
+  color: #120e1c;
+  outline: none;
+  border: 1px solid #e30abb;;
+  box-shadow: 3px 3px 0px 0px #ffffff;
 }
 
-.btn-registro:hover {
-  opacity: .9;
+#btn-registro:hover {
+  opacity: 0.9;
 }
 
-.link-registro {
+/*.link-registro {
   font-weight: 800;
   color: #264143;
   padding: 5px;
-}
+}*/
 
-.Background-registro{
-  background-image: url('http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg');
+.Background-registro {
+  background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");
   background-size: cover;
   opacity: 0.9;
 }
