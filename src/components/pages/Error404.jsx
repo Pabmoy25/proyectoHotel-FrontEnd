@@ -2,48 +2,43 @@ import React from "react";
 import { Link } from "react-router-dom";
 import error404 from "../../assets/error404.jpg";
 import { Container } from "react-bootstrap";
+import "../../App.css";
 
 const Error404 = () => {
   return (
-    <div>
-    <Container className="container-fluid">
-      <section className="container cuadroNosotros mt-4">
-        <h2 className="text-center mt-4 tituloAdmin">
-          ¡Ups! La página que estás buscando no existe 😔
-        </h2>
-      </section>
+    <div className="error404-container">
+      <div className="background-image"></div>
+      <Container className="container-fluid overlay">
+        <div className="main-container">
+          <section className="cuadro1">
+            <h1 className="text-center mt-4 tituloAdmin">
+              <strong>¡Ups! La página que estás buscando no existe 😔</strong>
+            </h1>
+          </section>
 
-      <section className="mainpage">
-        <div className="row align-items-center my-4">
-          <div className="col-lg-6 col-md-12 col-sm-12">
-            <h2 className="tituloAdmin text-center">
-              Error 404: Página no encontrada
+          <section className="cuadro2">
+            <h2 className="text-center mt-3 mb-3 tituloAdmin">
+              <strong> Error 404: Página no encontrada</strong>
             </h2>
-            <p className="text-center">
-              ¡Hola! Gracias por visitar la página de Haku Wasi, es un honor
-              recibirte 😊 <br></br>
+            <h5 className="text-center">
+              ¡Hola! Gracias por visitar la página de Haku Huasi, es un honor
+              recibirte 😊 <br />
               Tal parece que la página que buscas no existe pero, no te
               preocupes, te invitamos a seguir navegando por el resto de
-              nuestras secciones. <br></br>¡El mejor alojamiento para tu próximo
-              viaje te espera en nuestro hotel!
-            </p>
-            <div className="text-center mb-4">
+              nuestras secciones.
+            </h5>
+            <h5 className="text-center mt-3">
+              ¡El mejor alojamiento para tu próximo viaje te espera en nuestro
+              hotel!
+            </h5>
+            <div className="text-center mb-4 mt-5">
               <Link to="/" className="btnequipo btn-volver">
                 Volver al inicio
               </Link>
             </div>
-          </div>
-          <div className="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center ">
-            <img
-              src={error404}
-              alt="Error 404"
-              className="img-fluid "
-              width={350}
-            ></img>
-          </div>
+          </section>
         </div>
-      </section>
-    </Container>
+      </Container>
     </div>
   );
 };
