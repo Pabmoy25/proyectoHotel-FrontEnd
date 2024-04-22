@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
-
 import Fondo from "../../assets/Registr.png";
 
 const Registro = () => {
@@ -44,7 +43,7 @@ const Registro = () => {
               {errors.nombre?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formNombre">
+          <Form.Group className="mb-3" controlId="formApellido">
             <Form.Label className="sub_title-registro">Apellido</Form.Label>
             <Form.Control className="mb-2"
               type="text"
@@ -65,7 +64,7 @@ const Registro = () => {
               {errors.apellido?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="email">
+          <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
             <Form.Control className="mb-2"
               type="email"
@@ -91,7 +90,7 @@ const Registro = () => {
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="password">
+          <Form.Group className="mb-3" controlId="formPassword">
             <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
             <Form.Control className="mb-2"
@@ -118,7 +117,7 @@ const Registro = () => {
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="password">
+          <Form.Group className="mb-3" controlId="formConfirmPassword">
             <Form.Label className="sub_title-registro">
               Confirmar contraseña
             </Form.Label>
