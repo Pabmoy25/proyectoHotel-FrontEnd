@@ -1,4 +1,10 @@
-import React from "react";
+
+import { Form, Button } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../helpers/queriesUsuarios.js";
+import Swal from "sweetalert2";
+
 import Fondo from "../../assets/Registr.png";
 
 const Registro = () => {
