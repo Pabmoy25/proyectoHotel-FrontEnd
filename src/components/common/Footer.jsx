@@ -87,7 +87,7 @@ const Footer = () => {
         <h4>Secciones</h4>
         <div className="d-flex flex-column align-items-start">
           <Link
-            to="/error404"
+            to="/CatalogoHabitaciones"
             className="footer-link text-decoration-none mb-2 fs-6"
           >
             Habitaciones
