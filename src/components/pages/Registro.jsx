@@ -12,14 +12,14 @@ const Registro = () => {
     formState: { errors },
   } = useForm();
 
-  const funcion = async (datos) => {
+  const enviar = async (datos) => {
     try {
       const respuesta = await crearUsuario(datos);
 
       if (respuesta.status === 201) {
         Swal.fire({
           title: "Huésped creado",
-          text: `El Huésped: ${datos.nombre} fue creado con exito`,
+          text: `El Huésped: ${datos.email} fue creado con exito`,
           icon: "success",
         });
         navegacion("/administrador");
@@ -40,7 +40,7 @@ const Registro = () => {
     <>
       <div className="container-registro my-4 Background-registro">
         <Form
-          onSubmit={handleSubmit()}
+          onSubmit={handleSubmit(enviar)}
           id="formRegistro"
           className="form_area-registro text-start"
         >
@@ -100,8 +100,8 @@ const Registro = () => {
               {...register("email", {
                 required: "El e-mail es obligatorio",
                 minLength: {
-                  value: 15,
-                  message: "El e-mail debe tener al menos 15 caracteres",
+                  value: 10,
+                  message: "El e-mail debe tener al menos 10 caracteres",
                 },
                 maxLength: {
                   value: 40,
@@ -128,8 +128,8 @@ const Registro = () => {
               {...register("password", {
                 required: "La contraseña es obligatoria",
                 minLength: {
-                  value: 6,
-                  message: "Ingrese un mínimo de 6 caracteres",
+                  value: 3,
+                  message: "Ingrese un mínimo de 3 caracteres",
                 },
                 maxLength: {
                   value: 100,
@@ -158,7 +158,7 @@ const Registro = () => {
               {...register("password", {
                 required: "La contraseña es obligatoria",
                 minLength: {
-                  value: 6,
+                  value: 3,
                   message: "Ingrese un mínimo de 6 caracteres",
                 },
                 maxLength: {

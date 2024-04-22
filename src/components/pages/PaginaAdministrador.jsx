@@ -87,9 +87,10 @@ const PaginaAdministrador = () => {
       </Table>
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
-        <h2 className="my-4">Huéspedes</h2></div>
+        <h2 className="my-4">Huéspedes</h2>
+      </div>
 
-       {/* <Button
+      {/* <Button
           variant="outline-secondary"
           id="btnAdmin"
           as={Link}
@@ -101,7 +102,6 @@ const PaginaAdministrador = () => {
       <Table responsive="sm" striped bordered hover className="tabla">
         <thead className="text-center">
           <tr>
-            
             <th>Nombre completo</th>
             <th>Email</th>
             {/*<th>N° de contacto</th>
@@ -111,7 +111,7 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-         {/* {(huesped.map((huesped) => (
+          {/* {(huesped.map((huesped) => (
             <ItemHuesped
               key={huesped.id}
               huesped={huesped}
@@ -119,10 +119,9 @@ const PaginaAdministrador = () => {
             ></ItemHuesped>
           )))}*/}
           <tr>
-            
             <td>Juan Perez</td>
             <td>juanp@gmail.com</td>
-            
+
             <td className="d-flex justify-content-center">
               <Button id="btnEditar">
                 <i className="bi bi-pencil-square"></i>
