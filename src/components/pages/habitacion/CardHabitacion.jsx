@@ -16,7 +16,7 @@ const CardHabitacion = ({cardHabitacion}) => {
                 {cardHabitacion.descripcion_breve}<br className="mb-2"/> 
             </Card.Text>
         </Card.Body>
-        <Link className='btn btn-secondary me-2' to={""}>Ver Habitación</Link>
+        <Link className='btn btn-secondary me-2' to={"'/detallehabitación/'+ producto.id"}>Ver Habitación</Link>
     </Card>
 </Col>
       );
