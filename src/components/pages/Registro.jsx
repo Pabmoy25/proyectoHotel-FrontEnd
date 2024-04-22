@@ -19,7 +19,7 @@ const Registro = () => {
         <Form onSubmit={handleSubmit()} id="formRegistro" className="form_area-registro">
         <div><p className="title-registro">REGISTRATE</p></div>
           <Form.Group className="mb-3" controlId="formNombre">
-            <Form.Label>Nombre</Form.Label>
+            <Form.Label className="sub_title-registro">Nombre</Form.Label>
             <Form.Control
               type="text"
               placeholder="Nombre"
@@ -40,7 +40,7 @@ const Registro = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formNombre">
-            <Form.Label>Apellido</Form.Label>
+            <Form.Label className="sub_title-registro">Apellido</Form.Label>
             <Form.Control
               type="text"
               placeholder="Apellido"
@@ -61,7 +61,7 @@ const Registro = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="email">
-            <Form.Label>E-mail</Form.Label>
+            <Form.Label className="sub_title-registro">E-mail</Form.Label>
             <Form.Control
               type="email"
               placeholder="name@example.com"
@@ -87,7 +87,7 @@ const Registro = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="password">
-            <Form.Label>Contraseña</Form.Label>
+            <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
             <Form.Control
               type="password"
@@ -114,7 +114,7 @@ const Registro = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="password">
-            <Form.Label>Confirmar contraseña</Form.Label>
+            <Form.Label className="sub_title-registro">Confirmar contraseña</Form.Label>
 
             <Form.Control
               type="password"
@@ -153,14 +153,7 @@ const Registro = () => {
               Ingresar
             </Button>
           </div>
-          <div className="d-flex justify-content-center">
-            <Button id="btnGoogle">
-              <i className="bi bi-google"></i>
-            </Button>
-            <Button id="btnFaceb">
-              <i className="bi bi-facebook"></i>
-            </Button>
-          </div>
+          
         </Form>
 
         <div className="form_area-registro">

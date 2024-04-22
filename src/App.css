@@ -478,11 +478,17 @@ tbody {
   }
 }
 
+/*Registro*/
+/*#formRegistro Form.Label{
+  text-align: left;
+}*/
+
 .title-registro {
   color: #264143;
   font-weight: 900;
   font-size: 1.5em;
   margin-top: 20px;
+  text-align: left;
 }
 
 .sub_title-registro {
