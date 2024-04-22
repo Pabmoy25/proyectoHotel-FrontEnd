@@ -16,7 +16,7 @@ const Registro = () => {
     <>
       <div className="container-registro my-4 Background-registro">
         
-        <Form onSubmit={handleSubmit()} id="formRegistro" className="form_area-registro">
+        <Form onSubmit={handleSubmit()} id="formRegistro" className="form_area-registro text-start">
         <div><p className="title-registro">REGISTRATE</p></div>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label className="sub_title-registro">Nombre</Form.Label>
@@ -64,7 +64,7 @@ const Registro = () => {
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
             <Form.Control
               type="email"
-              placeholder="name@example.com"
+              placeholder="nombre@gmail.com"
               {...register("email", {
                 required: "El e-mail es obligatorio",
                 minLength: {
@@ -91,7 +91,7 @@ const Registro = () => {
 
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               {...register("password", {
                 required: "La contraseña es obligatoria",
                 minLength: {
@@ -118,7 +118,7 @@ const Registro = () => {
 
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               {...register("password", {
                 required: "La contraseña es obligatoria",
                 minLength: {
@@ -140,7 +140,7 @@ const Registro = () => {
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="d-flex justify-content-center subtAdmin my-4">
+          <Form.Group className="d-flex subtAdmin my-4">
             
             <div><p>Ya tienes una cuenta?</p>
             <h6 className="text-center" as={Link} to={"/registro"}>
