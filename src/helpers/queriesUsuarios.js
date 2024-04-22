@@ -15,6 +15,7 @@ console.log(URI_USUARIOS)
 
 export const crearUsuario = async (nuevoUsuario) => {
   try {
+
     const respuesta = await fetch(URI_USUARIOS+'/crear', { //`${URI_USUARIOS}/crear`
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -51,6 +52,6 @@ export const login = async (usuario) => {
     return respuesta;
   } catch (error) {
     console.log(error);
-    return null
+    //return null
   }
 };

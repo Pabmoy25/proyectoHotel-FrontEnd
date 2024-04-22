@@ -111,6 +111,13 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
+          {huesped.map((huesped) => (
+            <Usuarios
+              key={huesped._id}
+              huesped={huesped}
+              setHuesped={setHuesped}
+            ></Usuarios>
+          ))}
           {/* {(huesped.map((huesped) => (
             <ItemHuesped
               key={huesped.id}
