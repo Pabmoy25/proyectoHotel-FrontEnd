@@ -16,7 +16,7 @@ const Footer = () => {
     <footer className="bg-violeta text-light">
       <div className="container">
         <section className="row">
-          <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
+          <div className="col-lg-3 col-md-6 col-sm-12 mt-3 d-flex flex-column align-items-center">
             <h4>Hotel Haku Huasi</h4>
             <div className="align-items-start">
               <p>
@@ -51,46 +51,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
-            <h4>Seguínos</h4>
-            <div className="d-flex flex-row justify-content-center">
-              <Link
-                to="https://www.instagram.com/hakuhuasihotel?igsh=NHI5eDhod24zaTdz"
-                className="icono-link mx-2"
-              >
-                <FaInstagram
-                  className="icono-instagram"
-                  style={{ fontSize: "30px" }}
-                />
-              </Link>
-              <Link to="/error404" className="icono-link mx-2">
-                <FaFacebook
-                  className="icono-facebook"
-                  style={{ fontSize: "30px" }}
-                />
-              </Link>
-              <Link to="/error404" className="icono-link mx-2">
-                <FaTwitter
-                  className="icono-twitter"
-                  style={{ fontSize: "30px" }}
-                />
-              </Link>
-              <Link to="/error404" className="icono-link mx-2">
-                <FaLinkedin
-                  className="icono-linkedin"
-                  style={{ fontSize: "30px" }}
-                />
-              </Link>
-              <Link to="/error404" className="icono-link mx-2">
-                <FaYoutube
-                  className="icono-youtube"
-                  style={{ fontSize: "30px" }}
-                />
-              </Link>
-            </div>
-          </div>
-
-          <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
+          <div className="col-lg-3 col-md-6 col-sm-12 mt-3 d-flex flex-column align-items-center">
             <h4>Secciones</h4>
             <div className="d-flex flex-column align-items-start">
               <Link
@@ -131,7 +92,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="col-lg-3 mt-3 d-flex flex-column align-items-center">
+          <div className="col-lg-3 col-md-6 col-sm-12 mt-3 d-flex flex-column align-items-center">
             <h4>Sitios relacionados</h4>
             <div className="d-flex flex-wrap justify-content-center text-center">
               <a href="https://www.tripadvisor.com.ar" className="m-1">
@@ -168,6 +129,48 @@ const Footer = () => {
               </a>
             </div>
           </div>
+          
+          <div className="col-lg-3 col-md-6 col-sm-12 mt-3 d-flex flex-column align-items-center">
+            <h4>Seguínos</h4>
+            <div className="d-flex flex-row justify-content-center">
+              <Link
+                to="https://www.instagram.com/hakuhuasihotel?igsh=NHI5eDhod24zaTdz"
+                className="icono-link mx-2"
+              >
+                <FaInstagram
+                  className="icono-instagram"
+                  style={{ fontSize: "30px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaFacebook
+                  className="icono-facebook"
+                  style={{ fontSize: "30px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaTwitter
+                  className="icono-twitter"
+                  style={{ fontSize: "30px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaLinkedin
+                  className="icono-linkedin"
+                  style={{ fontSize: "30px" }}
+                />
+              </Link>
+              <Link to="/error404" className="icono-link mx-2">
+                <FaYoutube
+                  className="icono-youtube"
+                  style={{ fontSize: "30px" }}
+                />
+              </Link>
+            </div>
+          </div>
+
+          
+         
         </section>
       </div>
       <p className="text-center">
