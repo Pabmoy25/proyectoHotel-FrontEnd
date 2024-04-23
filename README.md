@@ -34,6 +34,10 @@ npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
 
 ## Deploy y Githud del Backend del Proyecto
 
+- https://github.com/Pabmoy25/protectoHotel-BackEnd.git
+
+- https://protecto-hotel-backend-prod.vercel.app
+
 
 👨‍💻👩‍💻 Autores
 
