@@ -136,7 +136,7 @@ const PaginaPrincipal = () => {
           alt="Imagen de fondo"
         />
         <div className="overlay-text disclainer-text">
-          <h1 className="text-sm">SEGUI DISFRUTANDO!!</h1>
+          <h1 className="text-sm text-md">SEGUI DISFRUTANDO!!</h1>
           <p className="disclaimer-text text-sm">
             Reservá tu alojamiento con nosotros usando CUOTA SIMPLE*
           </p>

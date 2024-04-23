@@ -530,6 +530,10 @@ tbody {
   .overlay-text {
     font-size: 18px;
   }
+
+  .text-md {
+    font-size: 20px; /* Tamaño de fuente para dispositivos medianos */
+  }
 }
 
 /*Propuestas*/
@@ -819,10 +823,11 @@ tbody {
     border-color: #ff0000; /* Borde rojo */
   }
 
-  .text-sm {
-    font-size: 12px; /* Tamaño de fuente para dispositivos pequeños */
-  }
+
+
+  @media (max-width: 576px) {
   
-  .text-md {
-    font-size: 18px; /* Tamaño de fuente para dispositivos medianos */
+    .text-sm {
+      font-size: 12px; /* Tamaño de fuente para dispositivos pequeños */
+    }
   }
