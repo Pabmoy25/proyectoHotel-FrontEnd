@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../../helpers/queriesUsuarios.js";
+import { crearUsuario, login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 import Fondo from "../../assets/Registr.png";
 
@@ -10,12 +10,41 @@ const Registro = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
+
+  const navegacion = useNavigate();
+
+  const enviar = async (datos) => {
+    try {
+      console.log("Ingrso ", datos);
+      const respuesta = await crearUsuario(datos);
+
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Huésped creado",
+          text: `El Huésped: ${datos.email} fue creado con éxito`,
+          icon: "success",
+        });
+        navegacion("/");
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: "Intente ingresar en unos minutos",
+          icon: "error",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="container-registro my-4 Background-registro">
         <Form
-          onSubmit={handleSubmit()}
+          onSubmit={handleSubmit(enviar)}
           id="formRegistro"
           className="form_area-registro text-start"
         >
@@ -23,11 +52,14 @@ const Registro = () => {
             <p className="title-registro">REGISTRATE</p>
           </div>
           <Form.Group className="mb-3" controlId="formNombre">
-            <Form.Label className="sub_title-registro">Nombre</Form.Label>
-            <Form.Control className="mb-2"
+            <Form.Label className="sub_title-registro">
+              Nombre y apellido
+            </Form.Label>
+            <Form.Control
+              className="mb-2"
               type="text"
               placeholder="Nombre"
-              {...register("nombre", {
+              {...register("nombreCompleto", {
                 required: "El nombre es obligatorio",
                 minLength: {
                   value: 3,
@@ -40,12 +72,13 @@ const Registro = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.nombre?.message}
+              {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formApellido">
+          {/* <Form.Group className="mb-3" controlId="formApellido">
             <Form.Label className="sub_title-registro">Apellido</Form.Label>
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="text"
               placeholder="Apellido"
               {...register("apellido", {
@@ -63,17 +96,18 @@ const Registro = () => {
             <Form.Text className="text-danger">
               {errors.apellido?.message}
             </Form.Text>
-          </Form.Group>
+            </Form.Group>*/}
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="email"
               placeholder="nombre@gmail.com"
               {...register("email", {
                 required: "El e-mail es obligatorio",
                 minLength: {
-                  value: 15,
-                  message: "El e-mail debe tener al menos 15 caracteres",
+                  value: 10,
+                  message: "El e-mail debe tener al menos 10 caracteres",
                 },
                 maxLength: {
                   value: 40,
@@ -93,14 +127,15 @@ const Registro = () => {
           <Form.Group className="mb-3" controlId="formPassword">
             <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="password"
               placeholder="Contraseña"
               {...register("password", {
                 required: "La contraseña es obligatoria",
                 minLength: {
-                  value: 6,
-                  message: "Ingrese un mínimo de 6 caracteres",
+                  value: 3,
+                  message: "Ingrese un mínimo de 3 caracteres",
                 },
                 maxLength: {
                   value: 100,
@@ -117,18 +152,20 @@ const Registro = () => {
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formConfirmPassword">
+          +
+          {/*<Form.Group className="mb-3" controlId="formConfirmPassword">
             <Form.Label className="sub_title-registro">
               Confirmar contraseña
             </Form.Label>
 
-            <Form.Control className="mb-2"
+            <Form.Control
+              className="mb-2"
               type="password"
               placeholder="Contraseña"
               {...register("password", {
                 required: "La contraseña es obligatoria",
                 minLength: {
-                  value: 6,
+                  value: 3,
                   message: "Ingrese un mínimo de 6 caracteres",
                 },
                 maxLength: {
@@ -145,7 +182,7 @@ const Registro = () => {
             <Form.Text className="text-danger">
               {errors.password?.message}
             </Form.Text>
-          </Form.Group>
+            </Form.Group>*/}
           <Form.Group className="">
             <div className="d-flex flex-row">
               <p>Ya tienes una cuenta?</p>
@@ -166,9 +203,9 @@ const Registro = () => {
             </Button>
           </div>
         </Form>
-        </div>
+      </div>
 
-        {/*<div className="form_area-registro">
+      {/*<div className="form_area-registro">
           <p className="title-registro">REGISTRATE</p>
           <form action="">
             <div className="form_group-registro">
