@@ -27,8 +27,6 @@ const FormularioHabitacion = ({ editar, titulo }) => {
     }
   }, []);
 
-
-
   const cargarDatosEnFormulario = async () => {
     const respuesta = await obtenerHabitacion(id);
     if (respuesta.status === 200) {
@@ -60,7 +58,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
             text: `La habitación número ${habitacion.habitacion} fue modificada exitosamente.`,
             icon: "success",
           });
-         
+
           navegacion("/administrador");
         } else {
           Swal.fire({
@@ -99,7 +97,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
         <hr />
 
         <Form
-          className="my-4"
+          className="my-4 custom-form rounded"
           onSubmit={handleSubmit(habitacionValidada)}
           id="formHabitacion"
         >
@@ -255,7 +253,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
               {errors.estado?.message}
             </Form.Text>
           </Form.Group>
-          <Button type="submit" variant="outline-secondary" id="btnAdmin">
+          <Button type="submit" className="btnguardar-pink w-100" id="btnAdmin">
             Guardar
           </Button>
         </Form>

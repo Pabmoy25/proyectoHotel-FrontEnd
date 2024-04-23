@@ -818,3 +818,22 @@ tbody {
     color: white;
   }
 
+  .custom-form {
+    background-color: #fdefff6c;
+    padding: 20px; 
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+
+  .btnguardar-pink {
+    background-color: #82376b !important; /* Color rosa personalizado */
+    border-color: #82376b !important; /* Color de borde */
+    color: #ffffff !important; /* Color del texto */
+  }
+  
+  .btnguardar-pink:hover {
+    background-color: #ffe6f0 !important; /* Color rosa personalizado al pasar el ratón */
+    border-color: #fff1f7 !important; /* Color de borde al pasar el ratón */
+    color: #000000 !important;
+  }
+
