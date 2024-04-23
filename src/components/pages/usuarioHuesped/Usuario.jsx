@@ -6,22 +6,18 @@ const Usuario = (usuario) => {
   return (
     <>
       <tr>
-        <td className="text-center"></td> 
-        <td className="text-center"></td> 
-        <td className="text-center"></td> 
+        <td className="text-center"></td>
+        <td className="text-center"></td>
+        <td className="text-center"></td>
         <td className="text-center"></td>
         <td className="text-center">{usuario.nombreCompleto}</td>
         <td className="text-center">{usuario.email}</td>
-        
+
         <td className="d-flex justify-content-center">
-          <Link
-            className="btn"
-            id="btnEditar"
-            //to={`/administrador/editar/${huesped._id}`} corregir
-          >
+          <Link className="btn" id="btnEditar">
             <i className="bi bi-pencil-square"></i>
           </Link>
-          <Button id="btnBorrar"> {/*</td>onClick={borrarHabitaciones}>*/}
+          <Button id="btnBorrar">
             <i className="bi bi-trash-fill"></i>
           </Button>
         </td>

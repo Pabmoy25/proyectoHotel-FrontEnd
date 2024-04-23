@@ -31,7 +31,7 @@ const GaleriaImagenes = () => {
   };
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagesPerPage] = useState(9); // Cantidad de imágenes por página
+  const [imagesPerPage] = useState(9);
 
   const modalImages = [
     Modal1,
@@ -91,7 +91,7 @@ const GaleriaImagenes = () => {
               className="page-link custom-pagination-button"
               onClick={() => paginate(currentPage - 1)}
             >
-              Previous
+              Anterior
             </button>
           </li>
           {[...Array(Math.ceil(modalImages.length / imagesPerPage)).keys()].map(
@@ -121,7 +121,7 @@ const GaleriaImagenes = () => {
               className="page-link custom-pagination-button"
               onClick={() => paginate(currentPage + 1)}
             >
-              Next
+              Siguiente
             </button>
           </li>
         </ul>
@@ -139,7 +139,6 @@ const GaleriaImagenes = () => {
             onClick={toggleModal}
           >
             {" "}
-            {/* Botón de Bootstrap visible solo en dispositivos pequeños y medianos */}
             Cerrar
           </button>
           <button
@@ -147,7 +146,6 @@ const GaleriaImagenes = () => {
             onClick={toggleModal}
           >
             {" "}
-            {/* Botón personalizado visible solo en dispositivos grandes */}
             Cerrar
           </button>
         </ModalFooter>
