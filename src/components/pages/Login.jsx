@@ -35,7 +35,7 @@ const Login = ({ setLogueado }) => {
           JSON.stringify({ email: dato.email, token: dato.token })
         );
         setLogueado(dato);
-        navegacion("/administrador");
+        
 
         if(dato.email==='admin@hakuhuasi.com.ar'){
           Swal.fire({
@@ -43,6 +43,9 @@ const Login = ({ setLogueado }) => {
             text: dato.token,
             icon: "warning",
           });
+          navegacion("/administrador");
+        }else{
+          navegacion("/");
         }
 
        
