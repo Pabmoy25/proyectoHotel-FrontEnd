@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
@@ -27,8 +27,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
     }
   }, []);
 
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+
 
   const cargarDatosEnFormulario = async () => {
     const respuesta = await obtenerHabitacion(id);
@@ -61,7 +60,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
             text: `La habitación número ${habitacion.habitacion} fue modificada exitosamente.`,
             icon: "success",
           });
-          // Redireccionar a tabla de Admin una vez termine la edición
+         
           navegacion("/administrador");
         } else {
           Swal.fire({
