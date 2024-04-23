@@ -6,6 +6,10 @@ const Usuario = (huesped) => {
   return (
     <>
       <tr>
+        <td className="text-center"></td> 
+        <td className="text-center"></td> 
+        <td className="text-center"></td> 
+        <td className="text-center"></td>
         <td className="text-center">{huesped.nombreCompleto}</td>
         <td className="text-center">{huesped.email}</td>
         
