@@ -52,7 +52,7 @@ const PaginaAdministrador = () => {
   return (
     <Container className="container-fluid">
       <div>
-        <h1 className="mt-5 bold tituloAdmin">Administrador</h1>
+        <h1 className="mt-5 bold tituloAdminForm tituloAdmin">ADMINISTRADOR</h1>
         <hr />
       </div>
       <div className="d-flex justify-content-between align-items-center subtAdmin">

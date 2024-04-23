@@ -837,3 +837,11 @@ tbody {
     color: #000000 !important;
   }
 
+  .tituloAdminForm {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 5rem; /* Añade un margen superior de 5 unidades de medida */
+    background: rgb(184,48,175);
+background: radial-gradient(circle, rgba(184,48,175,1) 11%, rgba(150,58,143,1) 58%, rgba(238,218,237,1) 100%);
+color: white;
+
+  }
