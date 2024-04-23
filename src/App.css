@@ -824,6 +824,7 @@ tbody {
   padding: 10px;
   color: white;
   border: rgb(130, 25, 119);
+  font-size: 20px;
 }
 
 .date-range-container {
@@ -871,4 +872,9 @@ tbody {
 .search-button:hover {
   background-color: rgb(255, 152, 204); 
   color: #000000;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
 }
