@@ -127,7 +127,7 @@ const PaginaPrincipal = () => {
         </div>
       </section>
       
-      <div className="main-section mb-3">
+      <div className="main-section">
         <div className="background-overlay"></div>{" "}
         {/* Div para superposición de color rosa */}
         <img
@@ -149,7 +149,6 @@ const PaginaPrincipal = () => {
           </p>
         </div>
       </div>
-      );
     </>
   );
 };
