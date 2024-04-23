@@ -444,6 +444,9 @@ tbody {
   background-position: center;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos secundarios */
+  align-items: center;
 }
 
 .blur-container {
