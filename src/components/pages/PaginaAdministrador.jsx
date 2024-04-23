@@ -6,7 +6,8 @@ import Habitacion from "./habitacion/Habitacion";
 import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 import {Container } from "react-bootstrap";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
-import Usuarios from "./usuarioHuesped/Usuario"
+import Usuario from "./usuarioHuesped/Usuario";
+
 
 
 const PaginaAdministrador = () => {
@@ -14,6 +15,11 @@ const PaginaAdministrador = () => {
 
   useEffect(() => {
     traerHabitaciones();
+  }, []);
+  
+  const [huesped, setHuesped] = useState([]);
+  useEffect(() => {
+    traerHuesped();
   }, []);
 
   
@@ -38,10 +44,7 @@ const PaginaAdministrador = () => {
 
 
 
-      const [huesped, setHuesped] = useState([]);
-  useEffect(() => {
-    traerHuesped();
-  }, []);
+ 
 
   const traerHuesped = async () => {
     try {
@@ -106,8 +109,8 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover className="tabla">
-        
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
+      <thead className="text-center ">
           <tr>
             <th>N° de habitación</th>
             <th>Nombre completo</th>
@@ -117,22 +120,33 @@ const PaginaAdministrador = () => {
             <th>Fecha de checkout</th>
             <th>Opciones</th>
           </tr>
-        
-        <tbody>
-        {huesped.map((huesped) => (
-            <Usuarios
-              key={huesped._id}
-              huesped={huesped}
-              //setHuesped={setHuesped}
-            ></Usuarios>
-          ))}
-          {/*{huespedes.map((huesped) => (
-            <ItemHuesped
-              key={huesped.id}
-              huesped={huesped}
-              setHuesped={setHuesped}
-            ></ItemHuesped>
-          ))}*/}
+        </thead>
+         <tbody>
+      {huesped.map((huesped) => (
+      <tr key={huesped._id}>
+      <td>{huesped.numHabitacion}</td>
+      <td>{huesped.nombreCompleto}</td>
+      <td>{huesped.email}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td className="d-flex justify-content-center">
+        <Link
+          className="btn"
+          id="btnEditar"
+          //to={`/administrador/editar/${huesped._id}`} corregir
+        >
+          <i className="bi bi-pencil-square"></i>
+        </Link>
+        <Button id="btnBorrar">
+          {" "}
+          {/*</td>onClick={borrarHabitaciones}>*/}
+          <i className="bi bi-trash-fill"></i>
+        </Button>
+      </td>
+    </tr>
+  ))}
+  
 
         </tbody>
         
