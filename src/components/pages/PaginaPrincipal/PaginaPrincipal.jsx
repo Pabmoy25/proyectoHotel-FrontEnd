@@ -79,7 +79,7 @@ const PaginaPrincipal = () => {
       <h2 className="my-3 tituloAdmin text-center">Nuestras Propuestas</h2>
 
       <section className="row justify-content-center">
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-12 col-sm-12">
           <div className="row">
             <div className="col">
               <Card className="custom-card">
