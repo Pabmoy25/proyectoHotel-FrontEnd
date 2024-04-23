@@ -85,9 +85,9 @@ const PaginaPrincipal = () => {
               <Card className="custom-card">
                 <Card.Img variant="top" src={Boda} className="custom-img" />
                 <Card.Body>
-                  <Card.Title>Noche de bodas</Card.Title>
+                  <Card.Title>Noche de bodas Unicas</Card.Title>
                   <Card.Text>El resto de tu vida comienza aquí.</Card.Text>
-                  <Button variant="primary">Más info</Button>
+                  <Button className="btn btn-dark">Más info</Button>
                 </Card.Body>
               </Card>
             </div>
@@ -103,7 +103,7 @@ const PaginaPrincipal = () => {
                   <Card.Text>
                     Sé aventurero y conoce la ciudad.
                   </Card.Text>
-                  <Button variant="primary">Más info</Button>
+                  <Button className="btn btn-dark">Más info</Button>
                 </Card.Body>
               </Card>
             </div>
@@ -119,7 +119,7 @@ const PaginaPrincipal = () => {
                   <Card.Text>
                     Comodidades para todo los gustos
                   </Card.Text>
-                  <Button variant="primary">Más info</Button>
+                  <Button className="btn btn-dark">Más info</Button>
                 </Card.Body>
               </Card>
             </div>
@@ -136,14 +136,14 @@ const PaginaPrincipal = () => {
           alt="Imagen de fondo"
         />
         <div className="overlay-text disclainer-text">
-          <h1>SEGUI DISFRUTANDO!!</h1>
-          <p className="disclaimer-text">
+          <h1 className="text-sm">SEGUI DISFRUTANDO!!</h1>
+          <p className="disclaimer-text text-sm">
             Reservá tu alojamiento con nosotros usando CUOTA SIMPLE*
           </p>
           <div className="logos-container">
             <img src={cuotasimple} alt="Logo 1" className="logo" />
           </div>
-          <p className="disclaimer-text">
+          <p className="disclaimer-text text-sm">
             El plan cuota simple es únicamente válido para todo lo referente a
             Alojamiento
           </p>

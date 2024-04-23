@@ -813,3 +813,16 @@ tbody {
     filter: blur(3px);
   }
 
+  .custom-button {
+    background-color: #ff0000; /* Color rojo */
+    color: #ffffff; /* Texto blanco */
+    border-color: #ff0000; /* Borde rojo */
+  }
+
+  .text-sm {
+    font-size: 12px; /* Tamaño de fuente para dispositivos pequeños */
+  }
+  
+  .text-md {
+    font-size: 18px; /* Tamaño de fuente para dispositivos medianos */
+  }
