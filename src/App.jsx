@@ -19,6 +19,7 @@ import Registro from "./components/pages/Registro"
 import Contacto from "./components/pages/Contacto";
 import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
+import DetalleHabitacion from "./components/pages/DetalleHabitacion";
 
 
 
@@ -117,6 +118,13 @@ function App() {
                 <FormularioHabitacion></FormularioHabitacion>
               }
             ></Route>*/}
+
+        <Route
+          exact
+          path="/DetalleHabitacion/:id"
+          element={<DetalleHabitacion></DetalleHabitacion>}
+        ></Route>
+
       </Routes>
       {/*</Container>*/}
       <Footer></Footer>
