@@ -817,3 +817,11 @@ tbody {
 .texto-propuesta {
   margin-top: 20px;
 }
+
+.reservas-button {
+  width: 100%;
+  background-color: rgb(130, 25, 119);
+  padding: 10px;
+  color: white;
+  border: rgb(130, 25, 119);
+}
