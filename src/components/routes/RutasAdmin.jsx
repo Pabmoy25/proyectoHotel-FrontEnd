@@ -21,7 +21,9 @@ const RutasAdmin = () => {
         <Route
           exact
           path="/editar/:id"
-          element={<FormularioHabitacion editar={true} titulo="Editar Habitacion" />}
+          element={
+            <FormularioHabitacion editar={true} titulo="Editar Habitacion" />
+          }
         />
       </Routes>
     </>

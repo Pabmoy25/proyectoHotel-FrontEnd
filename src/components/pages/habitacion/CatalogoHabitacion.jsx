@@ -32,13 +32,12 @@ const CatalogoHabitacion = () => {
         <div className="titulos tituloPrincipal">
           <h1 className="">HABITACIONES</h1>
         </div>
-
       </div>
 
       <div>
         <DatePicker></DatePicker>
       </div>
-      
+
       <Row>
         {habitacion.map((habitacion) => (
           <CardHabitacion
