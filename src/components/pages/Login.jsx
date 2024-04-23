@@ -37,9 +37,9 @@ const Login = ({ setLogueado }) => {
         setLogueado(dato);
         navegacion("/administrador");
 
-        if(dato.rolAdmin){
+        if(dato.email==='admin@hakuhuasi.com.ar'){
           Swal.fire({
-            title: "Obtuviste el siguente token, por favor apúntalo",
+            title: "Por favor guarda tu token para gestionar la BD",
             text: dato.token,
             icon: "warning",
           });
