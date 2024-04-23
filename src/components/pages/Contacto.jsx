@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 
+
 const Contacto = () => {
   const [formData, setFormData] = useState({
     nombreContacto: "",
@@ -9,7 +10,9 @@ const Contacto = () => {
     consultaContacto: ""
   });
 
+
   const form = useRef();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,11 +22,14 @@ const Contacto = () => {
     });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
+
     enviarFormulario();
   };
+
 
   const enviarFormulario = () => {
     swal.fire("¡Consulta enviada!", "Su consulta ha sido correctamente enviada.", "success")
@@ -39,13 +45,15 @@ const Contacto = () => {
       });
   };
 
+
   const sendEmail = () => {
     emailjs
       .sendForm('service_gseh43o', 'template_p430uw9', form.current, {
         publicKey: 'rzSFKooKPHw-SU_P2',
       })
-      
+     
   };
+
 
   return (
     <div className="background-container">
@@ -55,7 +63,7 @@ const Contacto = () => {
         <form onSubmit={handleSubmit} ref={form}>
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="mb-3">
                   <label htmlFor="nombreContacto" className="form-label tx-Intermedio fs-5">
                     Nombre:
@@ -91,7 +99,7 @@ const Contacto = () => {
                   />
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="mb-3">
                   <label htmlFor="consultaContacto" className="form-label tx-Intermedio fs-5">
                     Consulta:
@@ -114,7 +122,7 @@ const Contacto = () => {
             <div className="row">
               <div className="col-md-12 mb-4">
                 <div className="text-center mb-4 mt-4">
-                  <button 
+                  <button
                   type="submit" className="btnequipo btn-volver">Enviar consulta</button>
                 </div>
               </div>
@@ -131,6 +139,7 @@ const Contacto = () => {
     </div>
   );
 };
+
 
 export default Contacto;
 

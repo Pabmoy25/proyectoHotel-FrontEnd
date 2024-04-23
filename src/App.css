@@ -437,19 +437,40 @@ tbody {
   }
 }
 
+
+
+
+
+
+
 /* contacto*/
 .background-container {
   background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
   overflow: hidden;
 }
 
+
 .blur-container {
-  background-color: rgba(255, 255, 255, 0.5); /* Opacidad del fondo */
-  backdrop-filter: blur(5px); /* Aplicar filtro de desenfoque */
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
   padding: 20px;
+}
+
+/* Ajustes para dispositivos medianos como iPad y Kindle */
+@media only screen and (max-width: 1024px) {
+  .blur-container {
+    padding: 10px;
+  }
+}
+
+
+/* Ajustes adicionales para dispositivos pequeños */
+@media only screen and (max-width: 768px) {
+  .tituloAdmin {
+    font-size: 24px;
+  }
 }
 
 .custom-accordion .accordion-header {
@@ -776,6 +797,7 @@ tbody {
   opacity: 0.9;
 }
 
+
 .cuadro1,
 .cuadro2 {
   background-color: rgba(255, 255, 255, 0.9);
@@ -848,3 +870,4 @@ tbody {
   );
   color: white;
 }
+
