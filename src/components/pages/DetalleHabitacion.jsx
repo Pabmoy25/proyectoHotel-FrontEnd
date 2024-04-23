@@ -30,7 +30,8 @@ import Swal from "sweetalert2";
 
  return (
       
-   <Container className="my-3 mainpage">
+ <Container className="my-3 mainpage">
+   <h1>DETALLE HABITACION</h1>
       <Card>
         <Row>
           <Col md={6}>
