@@ -3,7 +3,7 @@ import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones, obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
+import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 import {Container } from "react-bootstrap";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
 import Usuarios from "./usuarioHuesped/Usuario"
@@ -23,15 +23,6 @@ const PaginaAdministrador = () => {
       setHabitaciones(listaHabitaciones);
     } catch (error) {
       console.log(error);
-    }
-  };
-
-  const handleEditarHabitacion = async (habitacionId) => {
-    try {
-      const habitacion = await obtenerHabitacion(habitacionId);
-      console.log("Detalles de la habitación a editar:", habitacion);
-    } catch (error) {
-      console.error("Error al cargar los detalles de la habitación:", error);
     }
   };
 
