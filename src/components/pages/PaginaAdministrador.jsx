@@ -36,6 +36,8 @@ const PaginaAdministrador = () => {
         }
       };
 
+
+
       const [huesped, setHuesped] = useState([]);
   useEffect(() => {
     traerHuesped();
@@ -94,7 +96,7 @@ const PaginaAdministrador = () => {
       </Table>
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
-        <h2 className="my-4">Huéspedes</h2>
+        <h2 className="my-4">Usuarios</h2>
         <Button
           variant="outline-secondary"
           id="btnAdmin"

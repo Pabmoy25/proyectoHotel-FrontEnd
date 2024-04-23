@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Usuario = (huesped) => {
+const Usuario = (usuario) => {
   return (
     <>
       <tr>
@@ -10,8 +10,8 @@ const Usuario = (huesped) => {
         <td className="text-center"></td> 
         <td className="text-center"></td> 
         <td className="text-center"></td>
-        <td className="text-center">{huesped.nombreCompleto}</td>
-        <td className="text-center">{huesped.email}</td>
+        <td className="text-center">{usuario.nombreCompleto}</td>
+        <td className="text-center">{usuario.email}</td>
         
         <td className="d-flex justify-content-center">
           <Link
