@@ -13,7 +13,11 @@ import Error404 from "./components/pages/Error404";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
+
 import Registro from "./components/pages/Registro";
+
+
+import Registro from "./components/pages/Registro"
 
 import Contacto from "./components/pages/Contacto";
 import Propuestas from "./components/pages/Propuestas";
