@@ -100,9 +100,7 @@ const PaginaPrincipal = () => {
                 />
                 <Card.Body>
                   <Card.Title>Actividades al aire libre</Card.Title>
-                  <Card.Text>
-                    Sé aventurero y conoce la ciudad.
-                  </Card.Text>
+                  <Card.Text>Sé aventurero y conoce la ciudad.</Card.Text>
                   <Button className="btn btn-dark">Más info</Button>
                 </Card.Body>
               </Card>
@@ -116,9 +114,7 @@ const PaginaPrincipal = () => {
                 />
                 <Card.Body>
                   <Card.Title>Nuestras Habitaciones</Card.Title>
-                  <Card.Text>
-                    Comodidades para todo los gustos
-                  </Card.Text>
+                  <Card.Text>Comodidades para todo los gustos</Card.Text>
                   <Button className="btn btn-dark">Más info</Button>
                 </Card.Body>
               </Card>
@@ -126,7 +122,7 @@ const PaginaPrincipal = () => {
           </div>
         </div>
       </section>
-      
+
       <div className="main-section">
         <div className="background-overlay"></div>{" "}
         {/* Div para superposición de color rosa */}
