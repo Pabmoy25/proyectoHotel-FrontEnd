@@ -10,6 +10,8 @@ import Boda from "../../../assets/Boda.png";
 import Actividad from "../../../assets/Actividad.png";
 import Habitaciones from "../../../assets/Habitaciones.png";
 import Pet from "../../../assets/ImgPagPrincipal/Pet.jpg";
+import { Link } from "react-router-dom";
+
 const PaginaPrincipal = () => {
   return (
     <>
@@ -92,7 +94,9 @@ const PaginaPrincipal = () => {
                 <Card.Body>
                   <Card.Title>Noche de bodas Unicas</Card.Title>
                   <Card.Text>El resto de tu vida comienza aquí.</Card.Text>
-                  <Button className="btn btn-dark">Más info</Button>
+                  <Link className="search-button " to={"/Propuestas"}>
+                    Mas info
+                  </Link>
                 </Card.Body>
               </Card>
             </div>
@@ -106,7 +110,9 @@ const PaginaPrincipal = () => {
                 <Card.Body>
                   <Card.Title>Actividades al aire libre</Card.Title>
                   <Card.Text>Sé aventurero y conoce la ciudad.</Card.Text>
-                  <Button className="btn btn-dark">Más info</Button>
+                  <Link className="search-button " to={"/Propuestas"}>
+                    Mas info
+                  </Link>
                 </Card.Body>
               </Card>
             </div>
@@ -120,7 +126,9 @@ const PaginaPrincipal = () => {
                 <Card.Body>
                   <Card.Title>Nuestras Habitaciones</Card.Title>
                   <Card.Text>Comodidades para todo los gustos</Card.Text>
-                  <Button className="btn btn-dark">Más info</Button>
+                  <Link className="search-button " to={"/CatalogoHabitaciones"}>
+                    Mas info
+                  </Link>
                 </Card.Body>
               </Card>
             </div>
