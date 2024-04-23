@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+
 
 const Usuario = (huesped) => {
   return (
