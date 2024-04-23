@@ -23,7 +23,7 @@ const Login = ({ setLogueado }) => {
 
       if (respuesta.status === 200) {
         Swal.fire({
-          title: `¡Bienvenido ${usuario.nombreCompleto}!`,
+          title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });
@@ -39,7 +39,7 @@ const Login = ({ setLogueado }) => {
 
         if(dato.email==='admin@hakuhuasi.com.ar'){
           Swal.fire({
-            title: "Por favor guarda tu token para gestionar la BD",
+            title: "Por favor, guarda tu token para gestión durante tu jornada",
             text: dato.token,
             icon: "warning",
           });
@@ -47,8 +47,6 @@ const Login = ({ setLogueado }) => {
         }else{
           navegacion("/");
         }
-
-       
 
       } else {
         Swal.fire({
