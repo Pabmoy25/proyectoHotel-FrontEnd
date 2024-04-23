@@ -91,14 +91,6 @@ const PaginaAdministrador = () => {
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Usuarios</h2>
-        <Button
-          variant="outline-secondary"
-          id="btnAdmin"
-          as={Link}
-          to={"/administrador/agregarhuesped"}
-        >
-          <i className="bi bi-file-earmark-plus"> Huésped</i>
-        </Button>
       </div>
       <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center ">

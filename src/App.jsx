@@ -110,13 +110,15 @@ function App() {
             ></Route>
 
 
-        {/*<Route
+        {<Route
               exact
               path="/agregarHabitacion"
               element={
-                <FormularioHabitacion></FormularioHabitacion>
+                <FormularioHabitacion editar={false}
+                titulo="Nueva Habitacion"></FormularioHabitacion>
               }
-            ></Route>*/}
+            ></Route>}
+
       </Routes>
       {/*</Container>*/}
       <Footer></Footer>
