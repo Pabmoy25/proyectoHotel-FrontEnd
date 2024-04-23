@@ -2,8 +2,6 @@ import SliderCarrusel from "../PaginaPrincipal/SliderCarrusel";
 import "./PaginaPrincipal.css";
 import CardsInfo from "../PaginaPrincipal/CardsInfo";
 import { Col, Row } from "react-bootstrap";
-import { leerHabitaciones } from "../../../helpers/queriesHabitaciones";
-import { useEffect, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import cuotasimple from "../../../assets/cuotasimple.png";
 import Card from "react-bootstrap/Card";
@@ -11,7 +9,7 @@ import Button from "react-bootstrap/Button";
 import Boda from "../../../assets/Boda.png";
 import Actividad from "../../../assets/Actividad.png";
 import Habitaciones from "../../../assets/Habitaciones.png";
-
+import Pet from "../../../assets/ImgPagPrincipal/Pet.jpg";
 const PaginaPrincipal = () => {
   return (
     <>
@@ -23,6 +21,13 @@ const PaginaPrincipal = () => {
               <img
                 src="https://images.pexels.com/photos/8939517/pexels-photo-8939517.jpeg"
                 className="PetfriendlyImg mb-3"
+              />
+            </div>
+            <div className="ImagenPetFriendly p-4">
+              <img
+                src={Pet}
+                className="d-md-block d-lg-none w-100"
+                alt="Imagen adicional"
               />
             </div>
           </Col>
