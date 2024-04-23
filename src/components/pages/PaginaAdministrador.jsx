@@ -1,13 +1,14 @@
-
 import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
-import {Container } from "react-bootstrap";
+import {
+  leerHabitaciones,
+  borrarHabitacion,
+} from "../../helpers/queriesHabitaciones";
+import { Container } from "react-bootstrap";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
-import Usuarios from "./usuarioHuesped/Usuario"
-
+import Usuarios from "./usuarioHuesped/Usuario";
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
@@ -16,7 +17,6 @@ const PaginaAdministrador = () => {
     traerHabitaciones();
   }, []);
 
-  
   const traerHabitaciones = async () => {
     try {
       const listaHabitaciones = await leerHabitaciones();
@@ -26,19 +26,16 @@ const PaginaAdministrador = () => {
     }
   };
 
-  
-        const borrarHabitaciones = async (id) => {
-        try {
-          await borrarHabitacion(id);
-          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
-        } catch (error) {
-          console.log(error);
-        }
-      };
+  const borrarHabitaciones = async (id) => {
+    try {
+      await borrarHabitacion(id);
+      setHabitaciones(habitacion.filter((habitacion) => habitacion._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-
-
-      const [huesped, setHuesped] = useState([]);
+  const [huesped, setHuesped] = useState([]);
   useEffect(() => {
     traerHuesped();
   }, []);
@@ -52,8 +49,6 @@ const PaginaAdministrador = () => {
       console.log(error);
     }
   };
-    
-
 
   return (
     <Container className="container-fluid">
@@ -85,13 +80,13 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-          {habitacion.map((habitacion) =>
+          {habitacion.map((habitacion) => (
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
               eliminarHabitacion={borrarHabitaciones}
             ></Habitacion>
-          )}
+          ))}
         </tbody>
       </Table>
 
@@ -107,35 +102,22 @@ const PaginaAdministrador = () => {
         </Button>
       </div>
       <Table responsive="sm" striped bordered hover className="tabla">
-        
-          <tr>
-            <th>N° de habitación</th>
-            <th>Nombre completo</th>
-            <th>Email</th>
-            <th>N° de contacto</th>
-            <th>Fecha de checkin</th>
-            <th>Fecha de checkout</th>
-            <th>Opciones</th>
-          </tr>
-        
-        <tbody>
-        {huesped.map((huesped) => (
-            <Usuarios
-              key={huesped._id}
-              huesped={huesped}
-              //setHuesped={setHuesped}
-            ></Usuarios>
-          ))}
-          {/*{huespedes.map((huesped) => (
-            <ItemHuesped
-              key={huesped.id}
-              huesped={huesped}
-              setHuesped={setHuesped}
-            ></ItemHuesped>
-          ))}*/}
+        <tr>
+          <th>N° de habitación</th>
+          <th>Nombre completo</th>
+          <th>Email</th>
+          <th>N° de contacto</th>
+          <th>Fecha de checkin</th>
+          <th>Fecha de checkout</th>
+          <th>Opciones</th>
+        </tr>
 
+        <tbody>
+          {huesped.map((huesped) => (
+            <Usuarios key={huesped._id} huesped={huesped}></Usuarios>
+          ))}
+          {}
         </tbody>
-        
       </Table>
     </Container>
   );
