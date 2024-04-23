@@ -29,7 +29,6 @@ export const crearUsuario = async (nuevoUsuario) => {
   }
 };
 
-
 export const leerUsuarios = async () => {
   try {
     const respuesta = await fetch(URI_USUARIOS+'/listar');

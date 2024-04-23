@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 
+
 const Login = ({ setLogueado }) => {
   const {
     register,
@@ -18,7 +19,7 @@ const Login = ({ setLogueado }) => {
     try {
       //console.log(usuario);
       const respuesta = await login(usuario);
-      console.log(respuesta); 
+      //console.log(respuesta); 
 
       if (respuesta.status === 200) {
         Swal.fire({
@@ -26,13 +27,27 @@ const Login = ({ setLogueado }) => {
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });
+        
         const dato = await respuesta.json();
+        
         sessionStorage.setItem(
           "InicioSesionHaku",
-          JSON.stringify({ email: dato.email, token: dato.token }) //, token: dato.token })
+          JSON.stringify({ email: dato.email, token: dato.token })
         );
         setLogueado(dato);
-        navegacion("/administrador");
+        
+
+        if(dato.email==='admin@hakuhuasi.com.ar'){
+          Swal.fire({
+            title: "Por favor, guarda tu token para gestión durante tu jornada",
+            text: dato.token,
+            icon: "warning",
+          });
+          navegacion("/administrador");
+        }else{
+          navegacion("/");
+        }
+
       } else {
         Swal.fire({
           title: "Error en login",
