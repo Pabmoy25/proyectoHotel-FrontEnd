@@ -28,17 +28,22 @@ const DatePicker = () => {
       </button>
       {showDatePicker && (
         <div className="date-range-container">
-          <DateRange
-            editableDateInputs={true}
-            onChange={handleDateChange}
-            moveRangeOnFirstSelection={false}
-            ranges={state}
-          />
+          <div className="calendar-scroll-container"> {/* Nuevo contenedor con scroll horizontal */}
+            <div className="calendar-wrapper"> {/* Contenedor para el calendario */}
+              <DateRange
+                className="calendar"
+                editableDateInputs={true}
+                onChange={handleDateChange}
+                moveRangeOnFirstSelection={false}
+                ranges={state}
+              />
+            </div>
+          </div>
           <button className="search-button">Buscar Habitaciones</button>
         </div>
       )}
     </div>
   );
 };
-
+  
 export default DatePicker;

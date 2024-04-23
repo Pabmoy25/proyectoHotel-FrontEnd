@@ -825,3 +825,50 @@ tbody {
   color: white;
   border: rgb(130, 25, 119);
 }
+
+.date-range-container {
+  text-align: center;
+}
+
+.calendar-wrapper {
+  display: inline-block;
+}
+
+
+.calendar-scroll-container {
+  overflow-x: auto;
+  white-space: nowrap; 
+}
+
+
+.calendar-wrapper {
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 768px) {
+  .calendar-scroll-container {
+    overflow-x: hidden; 
+    white-space: normal; 
+  }
+
+  .calendar-wrapper {
+    max-width: 90%;
+    margin: 0 auto; 
+  }
+}
+
+.search-button {
+  background-color: rgb(130, 25, 119); 
+  color: white; 
+  border: none;
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px; 
+}
+
+.search-button:hover {
+  background-color: rgb(255, 152, 204); 
+  color: #000000;
+}
