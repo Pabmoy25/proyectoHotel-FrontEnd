@@ -170,13 +170,13 @@ tbody {
 }
 
 .cardEquipo {
-  width: 200px; /* Ajusta el ancho de la tarjeta según tu preferencia */
-  height: 250px; /* Ajusta la altura de la tarjeta según tu preferencia */
+  width: 200px;
+  height: 250px;
   background-color: #333;
-  margin-bottom: 5px; /* Espacio entre las tarjetas */
-  position: relative; /* Agrega posición relativa para que los elementos absolutamente posicionados se basen en esta tarjeta */
+  margin-bottom: 5px;
+  position: relative;
   overflow: hidden;
-  margin: 0 auto; /* Oculta cualquier contenido que se desborde de la tarjeta */
+  margin: 0 auto;
 }
 
 .cardEquipo .imageEquipo {
@@ -284,7 +284,7 @@ tbody {
   object-fit: cover;
   opacity: 0.8;
   transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out,
-    filter 0.5s ease-in-out; /* Aplicamos la transición a width, opacity y filter */
+    filter 0.5s ease-in-out;
 }
 
 .galeria-moviles img:hover {
@@ -295,7 +295,7 @@ tbody {
 }
 
 .imagen-con-margen {
-  margin-bottom: 20px; /* Puedes ajustar este valor según tus preferencias */
+  margin-bottom: 20px;
 }
 
 .custom-button {
@@ -330,20 +330,20 @@ tbody {
 }
 
 .custom-pagination-button {
-  color: #000000 !important; /* Color del texto */
+  color: #000000 !important;
   background-color: #e9a2ff !important;
-  border-color: #e155fd !important; /* Color del borde */
+  border-color: #e155fd !important;
 }
 
 .custom-pagination-button:hover {
-  color: #000000 !important; /* Color del texto al pasar el ratón */
-  background-color: #ffffff !important; /* Color de fondo al pasar el ratón */
-  border-color: #a5a5a5 !important; /* Color del borde al pasar el ratón */
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border-color: #a5a5a5 !important;
 }
 
 @media (max-width: 576px) {
   .galeria-moviles {
-    display: none; /* Oculta la galería de móviles en dispositivos pequeños */
+    display: none;
   }
 }
 
@@ -405,19 +405,17 @@ tbody {
 }
 
 @media (max-width: 576px) {
-  /* Estilos para el banner en dispositivos pequeños y medianos */
   .banner {
     height: 200px;
     filter: grayscale(0%);
   }
 
-  /* Estilos para el texto principal en dispositivos pequeños y medianos */
   .tituloPrincipal {
-    top: 40%; /* Cambia la posición vertical */
+    top: 40%;
   }
 
   .tituloPrincipal h1 {
-    font-size: 30px; /* Tamaño de fuente más pequeño */
+    font-size: 30px;
   }
 }
 
@@ -427,19 +425,18 @@ tbody {
     filter: grayscale(0%);
   }
 
-  /* Estilos para el texto principal en dispositivos pequeños y medianos */
   .tituloPrincipal {
-    top: 40%; /* Cambia la posición vertical */
+    top: 40%;
   }
 
   .tituloPrincipal h1 {
-    font-size: 60px; /* Tamaño de fuente más pequeño */
+    font-size: 60px;
   }
 }
 
 /* contacto*/
 .background-container {
-  background-image: url('http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg');
+  background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -447,25 +444,24 @@ tbody {
 }
 
 .blur-container {
-  background-color: rgba(255, 255, 255, 0.5); /* Opacidad del fondo */
-  backdrop-filter: blur(5px); /* Aplicar filtro de desenfoque */
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
   padding: 20px;
 }
 
-
 .custom-accordion .accordion-header {
-  background-color: #7f3c87; /* Cambia el color de fondo del encabezado */
-  color: #000000; /* Cambia el color del texto del encabezado */
+  background-color: #7f3c87;
+  color: #000000;
 }
 
 .custom-accordion .accordion-body {
-  background-color: #fadaff; /* Cambia el color de fondo del cuerpo */
-  color: #4a235a; /* Cambia el color del texto del cuerpo */
+  background-color: #fadaff;
+  color: #4a235a;
 }
 
 .custom-accordion .accordion-header .accordion-button {
-  background-color: #82376b; /* Cambia el color de fondo del botón */
-  color: #ffffff; /* Cambia el color del texto del botón */
+  background-color: #82376b;
+  color: #ffffff;
 }
 
 .main-section {
@@ -481,7 +477,7 @@ tbody {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 192, 203, 0.5); /* Color rosa con opacidad */
+  background-color: rgba(255, 192, 203, 0.5);
 }
 
 .background-image {
@@ -505,11 +501,11 @@ tbody {
 }
 
 .disclaimer-text {
-  text-align: center; /* Alinea el texto al centro */
-  margin-top: 20px; /* Espacio superior */
-  font-size: 18px; /* Tamaño de fuente más grande */
-  font-weight: bold; /* Texto en negrita */
-  color: #71307c; /* Color de texto blanco */
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #71307c;
 }
 .logos-container {
   display: flex;
@@ -520,19 +516,18 @@ tbody {
 
 /* Estilos para los logotipos */
 .logo {
-  width: 100px; /* Ajusta el tamaño según tus necesidades */
+  width: 100px;
   height: auto;
-  margin: 0 10px; /* Espaciado entre los logotipos */
+  margin: 0 10px;
 }
 
-/* Estilos adicionales para hacer que el texto sea responsive */
 @media screen and (max-width: 768px) {
   .overlay-text {
     font-size: 18px;
   }
 
   .text-md {
-    font-size: 20px; /* Tamaño de fuente para dispositivos medianos */
+    font-size: 20px;
   }
 }
 
@@ -540,15 +535,15 @@ tbody {
 
 .titulo-propuesta {
   font-weight: bold;
-  color: #5f1769; /* color blanco */
+  color: #5f1769;
 }
 
 .descripcion-propuesta {
-  color: #34203e; /* color blanco */
+  color: #34203e;
 }
 
 .bg-color-propuesta {
-  background-color: #ffc7e5; /* rosa claro */
+  background-color: #ffc7e5;
 }
 
 .texto-propuesta {
@@ -632,7 +627,6 @@ tbody {
   fill: currentColor;
 }
 
-/*-- Tooltip Social Media --*/
 .tooltip-social {
   background: #ffffff;
   display: block;
@@ -701,18 +695,18 @@ tbody {
   height: auto;
   width: 100%;
   max-width: 40%;
-  margin: 20px auto; /* Margen arriba y abajo de 20px, márgenes automáticos a los lados */
+  margin: 20px auto;
   padding: 20px;
   border: 2px solid #ffffff;
   border-radius: 20px;
-  /*box-shadow: 3px 4px 0px 1px #E99F4C;*/
-  backdrop-filter: blur(5px); /* Ajusta el valor según lo desees */
+
+  backdrop-filter: blur(5px);
   background-color: #eddcd97a;
 }
 
 @media (max-width: 576px) {
   .form_area-registro {
-    max-width: 95%; /* Cambia el máximo ancho para ocupar toda la pantalla en dispositivos pequeños */
+    max-width: 95%;
   }
 }
 
@@ -726,8 +720,6 @@ tbody {
 .sub_title-registro {
   font-weight: 600;
   color: #0c0520;
-  /*margin: 5px 0;
-  text-align: right;*/
 }
 
 .form_group-registro {
@@ -737,7 +729,7 @@ tbody {
 .form_style-registro {
   outline: none;
   border: 2px solid #495057;
-  /*box-shadow: 3px 4px 0px 1px #E99F4C;*/
+
   width: 100%;
   padding: 12px 10px;
   border-radius: 4px;
@@ -747,7 +739,6 @@ tbody {
 .form_style-registro:focus,
 .btn:focus {
   transform: translateY(4px);
-  /*box-shadow: 1px 2px 0px 0px #E99F4C;*/
 }
 
 #btn-registro {
@@ -768,12 +759,6 @@ tbody {
 #btn-registro:hover {
   opacity: 0.9;
 }
-
-/*.link-registro {
-  font-weight: 800;
-  color: #264143;
-  padding: 5px;
-}*/
 
 .Background-registro {
   background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");
@@ -808,32 +793,27 @@ tbody {
 }
 
 .background-image {
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://static.vecteezy.com/system/resources/previews/019/522/263/non_2x/hotel-reception-interior-design-resort-hall-illustration-vector.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(3px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/019/522/263/non_2x/hotel-reception-interior-design-resort-hall-illustration-vector.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+}
+
+.custom-button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border-color: #ff0000;
+}
+
+@media (max-width: 576px) {
+  .text-sm {
+    font-size: 12px;
   }
+}
 
-  .custom-button {
-    background-color: #ff0000; /* Color rojo */
-    color: #ffffff; /* Texto blanco */
-    border-color: #ff0000; /* Borde rojo */
-  }
-
-
-
-  @media (max-width: 576px) {
-  
-    .text-sm {
-      font-size: 12px; /* Tamaño de fuente para dispositivos pequeños */
-    }
-  }
-
-  .texto-propuesta {
-    margin-top: 20px; /* Ajusta este valor según la separación que desees */
-  }
-
-  
+.texto-propuesta {
+  margin-top: 20px;
+}
