@@ -813,3 +813,8 @@ tbody {
     filter: blur(3px);
   }
 
+  #tabla thead tr:first-child th {
+    background-color: #82376b;
+    color: white;
+  }
+
