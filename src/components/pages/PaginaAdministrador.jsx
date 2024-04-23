@@ -1,13 +1,13 @@
-
 import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
-import {Container } from "react-bootstrap";
+import {
+  leerHabitaciones,
+  borrarHabitacion,
+} from "../../helpers/queriesHabitaciones";
+import { Container } from "react-bootstrap";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
-import Usuarios from "./usuarioHuesped/Usuario"
-
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
@@ -16,7 +16,11 @@ const PaginaAdministrador = () => {
     traerHabitaciones();
   }, []);
 
-  
+  const [huesped, setHuesped] = useState([]);
+  useEffect(() => {
+    traerHuesped();
+  }, []);
+
   const traerHabitaciones = async () => {
     try {
       const listaHabitaciones = await leerHabitaciones();
@@ -26,22 +30,14 @@ const PaginaAdministrador = () => {
     }
   };
 
-  
-        const borrarHabitaciones = async (id) => {
-        try {
-          await borrarHabitacion(id);
-          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
-        } catch (error) {
-          console.log(error);
-        }
-      };
-
-
-
-      const [huesped, setHuesped] = useState([]);
-  useEffect(() => {
-    traerHuesped();
-  }, []);
+  const borrarHabitaciones = async (id) => {
+    try {
+      await borrarHabitacion(id);
+      setHabitaciones(habitacion.filter((habitacion) => habitacion._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const traerHuesped = async () => {
     try {
@@ -52,8 +48,6 @@ const PaginaAdministrador = () => {
       console.log(error);
     }
   };
-    
-
 
   return (
     <Container className="container-fluid">
@@ -85,13 +79,13 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-          {habitacion.map((habitacion) =>
+          {habitacion.map((habitacion) => (
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
               eliminarHabitacion={borrarHabitaciones}
             ></Habitacion>
-          )}
+          ))}
         </tbody>
       </Table>
 
@@ -106,8 +100,8 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover className="tabla">
-        
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
+        <thead className="text-center ">
           <tr>
             <th>N° de habitación</th>
             <th>Nombre completo</th>
@@ -117,25 +111,33 @@ const PaginaAdministrador = () => {
             <th>Fecha de checkout</th>
             <th>Opciones</th>
           </tr>
-        
+        </thead>
         <tbody>
-        {huesped.map((huesped) => (
-            <Usuarios
-              key={huesped._id}
-              huesped={huesped}
-              //setHuesped={setHuesped}
-            ></Usuarios>
+          {huesped.map((huesped) => (
+            <tr key={huesped._id}>
+              <td>{huesped.numHabitacion}</td>
+              <td>{huesped.nombreCompleto}</td>
+              <td>{huesped.email}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td className="d-flex justify-content-center">
+                <Link
+                  className="btn"
+                  id="btnEditar"
+                  //to={`/administrador/editar/${huesped._id}`} corregir
+                >
+                  <i className="bi bi-pencil-square"></i>
+                </Link>
+                <Button id="btnBorrar">
+                  {" "}
+                  {/*</td>onClick={borrarHabitaciones}>*/}
+                  <i className="bi bi-trash-fill"></i>
+                </Button>
+              </td>
+            </tr>
           ))}
-          {/*{huespedes.map((huesped) => (
-            <ItemHuesped
-              key={huesped.id}
-              huesped={huesped}
-              setHuesped={setHuesped}
-            ></ItemHuesped>
-          ))}*/}
-
         </tbody>
-        
       </Table>
     </Container>
   );
