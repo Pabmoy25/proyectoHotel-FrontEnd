@@ -4,8 +4,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Footer from "./components/common/Footer";
 import Menu from "./components/common/Menu";
 import PaginaPrincipal from "./components/pages/PaginaPrincipal/PaginaPrincipal";
-//import PaginaAdministrador from "./components/pages/PaginaAdministrador";
-//import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GaleriaImagenes from "./components/pages/GaleriaImagenes";
 import SobreNosotros from "./components/pages/SobreNosotros";
@@ -15,16 +13,14 @@ import Error404 from "./components/pages/Error404";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
-import Registro from "./components/pages/Registro"
+import Registro from "./components/pages/Registro";
 import Contacto from "./components/pages/Contacto";
 import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import DetalleHabitacion from "./components/pages/DetalleHabitacion";
 
-
-
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {} //"";
+  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {}; //"";
 
   const [logueado, setLogueado] = useState(usuario);
 
@@ -49,7 +45,6 @@ function App() {
           exact
           path="/administrador/*"
           element={
-            //reemplazo {<PaginaAdministrador></PaginaAdministrador>} por
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
             </RutasProtegidas>
@@ -83,23 +78,24 @@ function App() {
           {" "}
         </Route>
 
-        <Route
-          exact
-          path="/registro"
-          element={<Registro></Registro>}
-        >
+        <Route exact path="/registro" element={<Registro></Registro>}>
           {" "}
         </Route>
 
-        
-        <Route
-          exact
-          path="/contacto"
-          element={<Contacto></Contacto>}
-        >
-        </Route>
+        <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
 
         <Route
+
+          exact
+          path="/administrador/editar/:id"
+          element={
+            <FormularioHabitacion
+              editar={true}
+              titulo="Editar Habitacion"
+            ></FormularioHabitacion>
+          }
+        ></Route>
+
               exact
               path="/administrador/editar/:id"
               element={
@@ -126,7 +122,6 @@ function App() {
         ></Route>
 
       </Routes>
-      {/*</Container>*/}
       <Footer></Footer>
     </BrowserRouter>
   );

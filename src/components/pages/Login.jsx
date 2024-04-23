@@ -10,16 +10,19 @@ const Login = ({ setLogueado }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
   const navegacion = useNavigate();
 
   const onSubmit = async (usuario) => {
     try {
-      //console.log(usuario);
       const respuesta = await login(usuario);
+
+      console.log(respuesta);
+
       //console.log(respuesta); 
+
 
       if (respuesta.status === 200) {
         Swal.fire({

@@ -3,7 +3,6 @@ import logoHotel from "../../assets/logoHotel.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Menu = ({ logueado, setLogueado }) => {
-
   const navegacion = useNavigate();
 
   const logout = () => {
@@ -46,15 +45,17 @@ const Menu = ({ logueado, setLogueado }) => {
             <NavLink end className="nav-link" to={"/galeria"}>
               Galeria
             </NavLink>
-            {/*<NavLink end className="nav-link" to={"/administrador"}>
-              Administrador
-            </NavLink>*/}
-            {logueado.email ? (//logueado.length > 0  por logueado.email
+
+            {logueado.email ? (
               <>
                 <NavLink end className="nav-link" to={"/administrador"}>
                   Administrador
                 </NavLink>
-                <Button variant="link" onClick={logout} className="nav-link text-start">
+                <Button
+                  variant="link"
+                  onClick={logout}
+                  className="nav-link text-start"
+                >
                   Logout
                 </Button>
               </>
@@ -64,9 +65,6 @@ const Menu = ({ logueado, setLogueado }) => {
               </NavLink>
             )}
 
-            {/*<NavLink end className="nav-link" to={"/login"}>
-              Login
-          </NavLink>*/}
             <NavLink end className="nav-link" to={"/registro"}>
               Registro
             </NavLink>

@@ -9,6 +9,10 @@ import {
 import { Container } from "react-bootstrap";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
 
+import Usuarios from "./usuarioHuesped/Usuario";
+
+
+
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
 
@@ -20,6 +24,7 @@ const PaginaAdministrador = () => {
   useEffect(() => {
     traerHuesped();
   }, []);
+
 
   const traerHabitaciones = async () => {
     try {
@@ -38,6 +43,7 @@ const PaginaAdministrador = () => {
       console.log(error);
     }
   };
+
 
   const traerHuesped = async () => {
     try {
@@ -100,6 +106,24 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
+
+      <Table responsive="sm" striped bordered hover className="tabla">
+        <tr>
+          <th>N° de habitación</th>
+          <th>Nombre completo</th>
+          <th>Email</th>
+          <th>N° de contacto</th>
+          <th>Fecha de checkin</th>
+          <th>Fecha de checkout</th>
+          <th>Opciones</th>
+        </tr>
+
+        <tbody>
+          {huesped.map((huesped) => (
+            <Usuarios key={huesped._id} huesped={huesped}></Usuarios>
+          ))}
+          {}
+
       <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center ">
           <tr>
@@ -137,9 +161,13 @@ const PaginaAdministrador = () => {
               </td>
             </tr>
           ))}
+
         </tbody>
       </Table>
+      </tbody>
+      </Table>
     </Container>
+    
   );
 };
 

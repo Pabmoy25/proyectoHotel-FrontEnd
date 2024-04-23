@@ -2,8 +2,6 @@ import SliderCarrusel from "../PaginaPrincipal/SliderCarrusel";
 import "./PaginaPrincipal.css";
 import CardsInfo from "../PaginaPrincipal/CardsInfo";
 import { Col, Row } from "react-bootstrap";
-import { leerHabitaciones } from "../../../helpers/queriesHabitaciones";
-import { useEffect, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import cuotasimple from "../../../assets/cuotasimple.png";
 import Card from "react-bootstrap/Card";
@@ -11,6 +9,8 @@ import Button from "react-bootstrap/Button";
 import Boda from "../../../assets/Boda.png";
 import Actividad from "../../../assets/Actividad.png";
 import Habitaciones from "../../../assets/Habitaciones.png";
+import Pet from "../../../assets/ImgPagPrincipal/Pet.jpg";
+import { Link } from "react-router-dom";
 
 const PaginaPrincipal = () => {
   return (
@@ -23,6 +23,13 @@ const PaginaPrincipal = () => {
               <img
                 src="https://images.pexels.com/photos/8939517/pexels-photo-8939517.jpeg"
                 className="PetfriendlyImg mb-3"
+              />
+            </div>
+            <div className="ImagenPetFriendly p-4">
+              <img
+                src={Pet}
+                className="d-md-block d-lg-none w-100"
+                alt="Imagen adicional"
               />
             </div>
           </Col>
@@ -79,15 +86,17 @@ const PaginaPrincipal = () => {
       <h2 className="my-3 tituloAdmin text-center">Nuestras Propuestas</h2>
 
       <section className="row justify-content-center">
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-12 col-sm-12">
           <div className="row">
             <div className="col">
               <Card className="custom-card">
                 <Card.Img variant="top" src={Boda} className="custom-img" />
                 <Card.Body>
-                  <Card.Title>Noche de bodas</Card.Title>
+                  <Card.Title>Noche de bodas Unicas</Card.Title>
                   <Card.Text>El resto de tu vida comienza aquí.</Card.Text>
-                  <Button variant="primary">Más info</Button>
+                  <Link className="search-button " to={"/Propuestas"}>
+                    Mas info
+                  </Link>
                 </Card.Body>
               </Card>
             </div>
@@ -100,10 +109,10 @@ const PaginaPrincipal = () => {
                 />
                 <Card.Body>
                   <Card.Title>Actividades al aire libre</Card.Title>
-                  <Card.Text>
-                    Sé aventurero y conoce la ciudad.
-                  </Card.Text>
-                  <Button variant="primary">Más info</Button>
+                  <Card.Text>Sé aventurero y conoce la ciudad.</Card.Text>
+                  <Link className="search-button " to={"/Propuestas"}>
+                    Mas info
+                  </Link>
                 </Card.Body>
               </Card>
             </div>
@@ -116,17 +125,17 @@ const PaginaPrincipal = () => {
                 />
                 <Card.Body>
                   <Card.Title>Nuestras Habitaciones</Card.Title>
-                  <Card.Text>
-                    Comodidades para todo los gustos
-                  </Card.Text>
-                  <Button variant="primary">Más info</Button>
+                  <Card.Text>Comodidades para todo los gustos</Card.Text>
+                  <Link className="search-button " to={"/CatalogoHabitaciones"}>
+                    Mas info
+                  </Link>
                 </Card.Body>
               </Card>
             </div>
           </div>
         </div>
       </section>
-      
+
       <div className="main-section">
         <div className="background-overlay"></div>{" "}
         {/* Div para superposición de color rosa */}
@@ -136,14 +145,14 @@ const PaginaPrincipal = () => {
           alt="Imagen de fondo"
         />
         <div className="overlay-text disclainer-text">
-          <h1>SEGUI DISFRUTANDO!!</h1>
-          <p className="disclaimer-text">
+          <h1 className="text-sm text-md">SEGUI DISFRUTANDO!!</h1>
+          <p className="disclaimer-text text-sm">
             Reservá tu alojamiento con nosotros usando CUOTA SIMPLE*
           </p>
           <div className="logos-container">
             <img src={cuotasimple} alt="Logo 1" className="logo" />
           </div>
-          <p className="disclaimer-text">
+          <p className="disclaimer-text text-sm">
             El plan cuota simple es únicamente válido para todo lo referente a
             Alojamiento
           </p>

@@ -5,7 +5,6 @@
 El proyecto consiste en desarrollar un sistema de gestión de hotel que permita a los usuarios registrados
 reservar habitaciones disponibles y al administrador gestionar las habitaciones y usuarios.
 
-
 ## Librerias y Framewroks
 
 - [NodeJS 20.11.0](https://nodejs.org/en)
@@ -30,6 +29,7 @@ reservar habitaciones disponibles y al administrador gestionar las habitaciones 
 - [React Responsive v10.0.0](https://www.npmjs.com/package/react-responsive)
 
 
+
 ## Clonar y probar el proyecto
 
 - git clone https://github.com/Pabmoy25/proyectoHotel-FrontEnd.git
@@ -43,6 +43,10 @@ npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
 
 ## Deploy del Proyecto
 
+
+## Deploy y Githud del Backend del Proyecto
+
+=======
 - https://protecto-hotel-frontend.netlify.app/
 
 
@@ -53,6 +57,7 @@ npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
 - https://protecto-hotel-backend-prod.vercel.app
 
 
+
 👨‍💻👩‍💻 Autores
 
 - Antonella, Ortega
@@ -60,85 +65,3 @@ npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
 - Pablo Francisco, Moyano
 - Laura Agostina, Bellotti
 - Julián Toranzo, Navarro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
