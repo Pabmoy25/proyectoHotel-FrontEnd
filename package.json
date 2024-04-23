@@ -10,12 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "antd": "^5.16.4",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "date-fns": "^3.6.0",
+    "dayjs": "^1.11.10",
+    "express-validator": "^7.0.1",
     "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-bootstrap-icons": "^1.11.4",
+    "react-date-range": "^2.0.1",
     "react-datepicker": "^6.9.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.3",
@@ -24,7 +30,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-responsive-image": "^5.0.0",
     "react-router-dom": "^6.22.3",
-    "sweetalert2": "^11.10.7"
+    "sweetalert2": "^11.10.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

@@ -437,7 +437,20 @@ tbody {
   }
 }
 
+/* contacto*/
+.background-container {
+  background-image: url('http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.blur-container {
+  background-color: rgba(255, 255, 255, 0.5); /* Opacidad del fondo */
+  backdrop-filter: blur(5px); /* Aplicar filtro de desenfoque */
+  padding: 20px;
+}
 
 
 .custom-accordion .accordion-header {
@@ -519,7 +532,6 @@ tbody {
   }
 }
 
-
 /*Propuestas*/
 
 .titulo-propuesta {
@@ -565,7 +577,7 @@ tbody {
   object-fit: cover;
   width: 5rem;
   height: 5rem;
-  border: 4px solid #8f3ba0;;
+  border: 4px solid #8f3ba0;
   border-radius: 999px;
   display: flex;
   justify-content: center;
@@ -652,7 +664,6 @@ tbody {
 .social-media a:hover .tooltip-social {
   opacity: 1;
   transform: translate(-50%, -130%);
-
 }
 
 /*Registro*/
@@ -670,7 +681,8 @@ tbody {
   width: 250px;
 }
 
-#btnIngresar, #formRegistro input:focus {
+#btnIngresar,
+#formRegistro input:focus {
   transform: translateY(4px);
   border-color: #4b34a6;
   outline: none;
@@ -739,7 +751,7 @@ tbody {
   margin: 25px 0px;
   width: 200px;
   max-width: 290px;
-  font-size:larger;
+  font-size: larger;
   background: #ffcff0;
   border-radius: 10px;
   font-weight: 800;
@@ -764,3 +776,42 @@ tbody {
   background-size: cover;
   opacity: 0.9;
 }
+
+
+.cuadro1,
+.cuadro2 {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.error404-container {
+  position: relative;
+}
+
+.background-image {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/019/522/263/non_2x/hotel-reception-interior-design-resort-hall-illustration-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+  }
+
+

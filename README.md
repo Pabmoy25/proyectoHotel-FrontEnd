@@ -10,10 +10,14 @@ reservar habitaciones disponibles y al administrador gestionar las habitaciones 
 
 - [NodeJS 20.11.0](https://nodejs.org/en)
 - [React Bootstraps v2.10.2](https://react-bootstrap.netlify.app/)
-- [Bootstraps 5 v5.3.3](https://getbootstrap.com/) 
-
-
-
+- [Bootstraps 5 v5.3.3](https://getbootstrap.com/)
+- [react-datepicker v6.9.0](https://www.npmjs.com/package/react-datepicker) 
+- [react-hook-form v7.51.3](https://react-hook-form.com/) 
+- [sweetalert2 v11.10.8](https://sweetalert2.github.io/) 
+- [react-icons v6.22.3](https://www.npmjs.com/package/react-icons) 
+- [react-responsive-carousel v3.2.23](https://www.npmjs.com/package/react-responsive-carousel) 
+- [react-responsive-image v5.0.0](https://www.npmjs.com/package/react-responsive-image) 
+- [react-dom v18.2.0](https://www.npmjs.com/package/react-dom)
 
 
 ## Clonar y probar el proyecto
@@ -29,10 +33,14 @@ npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
 
 ## Deploy del Proyecto
 
-
+- https://protecto-hotel-frontend.netlify.app/
 
 
 ## Deploy y Githud del Backend del Proyecto
+
+- https://github.com/Pabmoy25/protectoHotel-BackEnd.git
+
+- https://protecto-hotel-backend-prod.vercel.app
 
 
 👨‍💻👩‍💻 Autores

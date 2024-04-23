@@ -4,11 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 
+
 const Login = ({ setLogueado }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const navegacion = useNavigate();
@@ -17,7 +19,7 @@ const Login = ({ setLogueado }) => {
     try {
       //console.log(usuario);
       const respuesta = await login(usuario);
-      console.log(respuesta); 
+      //console.log(respuesta); 
 
       if (respuesta.status === 200) {
         Swal.fire({
@@ -25,13 +27,27 @@ const Login = ({ setLogueado }) => {
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });
+        
         const dato = await respuesta.json();
+        
         sessionStorage.setItem(
           "InicioSesionHaku",
-          JSON.stringify({ email: dato.email, token: dato.token }) //, token: dato.token })
+          JSON.stringify({ email: dato.email, token: dato.token })
         );
         setLogueado(dato);
-        navegacion("/administrador");
+        
+
+        if(dato.email==='admin@hakuhuasi.com.ar'){
+          Swal.fire({
+            title: "Por favor, guarda tu token para gestión durante tu jornada",
+            text: dato.token,
+            icon: "warning",
+          });
+          navegacion("/administrador");
+        }else{
+          navegacion("/");
+        }
+
       } else {
         Swal.fire({
           title: "Error en login",
@@ -51,7 +67,7 @@ const Login = ({ setLogueado }) => {
         <hr />
       </div>
       <Form onSubmit={handleSubmit(onSubmit)} id="formLogin">
-        <Form.Group className="mb-3" controlId="email">
+        <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label>E-mail</Form.Label>
           <Form.Control
             type="email"
@@ -75,7 +91,7 @@ const Login = ({ setLogueado }) => {
           />
           <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
+        <Form.Group className="mb-3" controlId="passwordLogin">
           <Form.Label>Contraseña</Form.Label>
 
           <Form.Control

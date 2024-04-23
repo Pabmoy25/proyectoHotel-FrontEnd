@@ -16,9 +16,11 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import CatalogoHabitacion from "./components/pages/habitacion/CatalogoHabitacion";
 import Registro from "./components/pages/Registro"
+import Contacto from "./components/pages/Contacto";
 import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import DetalleHabitacion from "./components/pages/DetalleHabitacion";
+
 
 
 function App() {
@@ -88,6 +90,15 @@ function App() {
         >
           {" "}
         </Route>
+
+        
+        <Route
+          exact
+          path="/contacto"
+          element={<Contacto></Contacto>}
+        >
+        </Route>
+
         <Route
               exact
               path="/administrador/editar/:id"
@@ -98,6 +109,7 @@ function App() {
                 ></FormularioHabitacion>
               }
             ></Route>
+
 
         {/*<Route
               exact

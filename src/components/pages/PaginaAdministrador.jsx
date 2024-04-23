@@ -1,35 +1,53 @@
-
-import { Table, Button, Container } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
-
+import {
+  leerHabitaciones,
+  borrarHabitacion,
+} from "../../helpers/queriesHabitaciones";
+import { Container } from "react-bootstrap";
+import { leerUsuarios } from "../../helpers/queriesUsuarios";
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
-    useEffect(() => {
-      traerHabitaciones();
-    }, []);
 
-    const traerHabitaciones = async ()=> {
-        try {
-         const listaHabitaciones = await leerHabitaciones()
-         setHabitaciones (listaHabitaciones);
-        } catch (error) {
-          console.log(error);
-        }
-      }
+  useEffect(() => {
+    traerHabitaciones();
+  }, []);
 
-        const borrarHabitaciones = async (id) => {
-        try {
-          await borrarHabitacion(id);
-          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
-        } catch (error) {
-          console.log(error);
-        }
-      };
-    
+  const [huesped, setHuesped] = useState([]);
+  useEffect(() => {
+    traerHuesped();
+  }, []);
+
+  const traerHabitaciones = async () => {
+    try {
+      const listaHabitaciones = await leerHabitaciones();
+      setHabitaciones(listaHabitaciones);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const borrarHabitaciones = async (id) => {
+    try {
+      await borrarHabitacion(id);
+      setHabitaciones(habitacion.filter((habitacion) => habitacion._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const traerHuesped = async () => {
+    try {
+      const listaHuesped = await leerUsuarios();
+      console.log(listaHuesped);
+      setHuesped(listaHuesped);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Container className="container-fluid">
@@ -61,20 +79,18 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-        {habitacion.map((habitacion) =>
+          {habitacion.map((habitacion) => (
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
               eliminarHabitacion={borrarHabitaciones}
             ></Habitacion>
-          )}
+          ))}
         </tbody>
       </Table>
-    
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
-        <h2 className="my-4">Huéspedes</h2>
-
+        <h2 className="my-4">Usuarios</h2>
         <Button
           variant="outline-secondary"
           id="btnAdmin"
@@ -84,8 +100,8 @@ const PaginaAdministrador = () => {
           <i className="bi bi-file-earmark-plus"> Huésped</i>
         </Button>
       </div>
-      <Table responsive="sm" striped bordered hover className="tabla">
-        <thead className="text-center">
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
+        <thead className="text-center ">
           <tr>
             <th>N° de habitación</th>
             <th>Nombre completo</th>
@@ -97,41 +113,34 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-          {/*{huespedes.map((huesped) => (
-            <ItemHuesped
-              key={huesped.id}
-              huesped={huesped}
-              setHuesped={setHuesped}
-            ></ItemHuesped>
-          ))}*/}
-          <tr>
-            <td>1</td>
-            <td>Juan Perez</td>
-            <td>juanp@gmail.com</td>
-            <td>11111111</td>
-            <td></td>
-            <td></td>
-            <td className="d-flex justify-content-center">
-              <Button id="btnEditar">
-                <i className="bi bi-pencil-square"></i>
-              </Button>
-              <Button id="btnBorrar">
-                <i className="bi bi-trash-fill"></i>
-              </Button>
-            </td>
-
-
-
-
-
-          </tr>
+          {huesped.map((huesped) => (
+            <tr key={huesped._id}>
+              <td>{huesped.numHabitacion}</td>
+              <td>{huesped.nombreCompleto}</td>
+              <td>{huesped.email}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td className="d-flex justify-content-center">
+                <Link
+                  className="btn"
+                  id="btnEditar"
+                  //to={`/administrador/editar/${huesped._id}`} corregir
+                >
+                  <i className="bi bi-pencil-square"></i>
+                </Link>
+                <Button id="btnBorrar">
+                  {" "}
+                  {/*</td>onClick={borrarHabitaciones}>*/}
+                  <i className="bi bi-trash-fill"></i>
+                </Button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </Container>
-
   );
 };
-
-      
 
 export default PaginaAdministrador;
