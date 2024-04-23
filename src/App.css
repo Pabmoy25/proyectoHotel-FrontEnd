@@ -456,6 +456,27 @@ tbody {
 }
 
 
+
+@media (max-width: 576px) {
+  .map-container {
+    height: 300px; /* Ajusta la altura del mapa para dispositivos pequeños */
+    margin-top: 20px; /* Ajusta el margen superior del mapa para dispositivos pequeños */
+    display: none;
+  }
+
+  .tituloAdmin {
+    font-size: 24px; /* Ajusta el tamaño del título en dispositivos pequeños */
+    margin-top: 10px; /* Ajusta el margen superior del título en dispositivos pequeños */
+  }
+
+  .blur-container h5 {
+    font-size: 14px; /* Ajusta el tamaño del subtítulo en dispositivos pequeños */
+    margin-top: 10px; /* Ajusta el margen superior del subtítulo en dispositivos pequeños */
+  }
+}
+
+
+
 .custom-accordion .accordion-header {
   background-color: #7f3c87; /* Cambia el color de fondo del encabezado */
   color: #000000; /* Cambia el color del texto del encabezado */

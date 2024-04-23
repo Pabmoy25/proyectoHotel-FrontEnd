@@ -55,7 +55,7 @@ const Contacto = () => {
       <div className="blur-container">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-12">
               <h1 className="tituloAdmin text-center mt-4">
                 <strong>Contactate con Hotel Haku Wasi</strong>
               </h1>
@@ -133,7 +133,7 @@ const Contacto = () => {
                 </div>
               </form>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-12 map-container">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d10370.39822055393!2d-65.372251882829!3d-26.77271575080301!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sus!4v1713717254060!5m2!1ses-419!2sus"
                 height="700"
