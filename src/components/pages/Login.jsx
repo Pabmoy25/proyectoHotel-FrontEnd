@@ -19,21 +19,34 @@ const Login = ({ setLogueado }) => {
     try {
       //console.log(usuario);
       const respuesta = await login(usuario);
-      console.log(respuesta); 
+      //console.log(respuesta); 
 
       if (respuesta.status === 200) {
         Swal.fire({
-          title: `¡Bienvenido ${usuario.email}!`,
+          title: `¡Bienvenido ${usuario.nombreCompleto}!`,
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });
+        
         const dato = await respuesta.json();
+        
         sessionStorage.setItem(
           "InicioSesionHaku",
-          JSON.stringify({ email: dato.email, token: dato.token }) //, token: dato.token })
+          JSON.stringify({ email: dato.email, token: dato.token })
         );
         setLogueado(dato);
         navegacion("/administrador");
+
+        if(dato.rolAdmin){
+          Swal.fire({
+            title: "Obtuviste el siguente token, por favor apúntalo",
+            text: dato.token,
+            icon: "warning",
+          });
+        }
+
+       
+
       } else {
         Swal.fire({
           title: "Error en login",
