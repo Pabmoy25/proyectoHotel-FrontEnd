@@ -45,11 +45,6 @@ const PaginaAdministrador = () => {
   };
 
 
-  const [huesped, setHuesped] = useState([]);
-  useEffect(() => {
-    traerHuesped();
-  }, []);
-
   const traerHuesped = async () => {
     try {
       const listaHuesped = await leerUsuarios();
@@ -169,7 +164,10 @@ const PaginaAdministrador = () => {
 
         </tbody>
       </Table>
+      </tbody>
+      </Table>
     </Container>
+    
   );
 };
 
