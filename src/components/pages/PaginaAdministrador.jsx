@@ -1,36 +1,20 @@
 
+import React, { useEffect, useState } from "react";
 import { Table, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import {
-  leerHabitaciones,
-  borrarHabitacion,
-} from "../../helpers/queriesHabitaciones";
+import Usuarios from "./usuarioHuesped/Usuario";
+import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
-import Usuarios from "./usuarioHuesped/Usuario.jsx"
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
-
-import { Table, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Habitacion from "./habitacion/Habitacion";
-import { leerHabitaciones, obtenerHabitacion, borrarHabitacion } from "../../helpers/queriesHabitaciones";
-import {Container } from "react-bootstrap";
-
-
-
-
-const PaginaAdministrador = () => {
-  const [habitacion, setHabitaciones] = useState([]);
-
+  const [huesped, setHuesped] = useState([]);
 
   useEffect(() => {
     traerHabitaciones();
+    traerHuesped();
   }, []);
-
 
   const traerHabitaciones = async () => {
     try {
@@ -41,6 +25,14 @@ const PaginaAdministrador = () => {
     }
   };
 
+  const traerHuesped = async () => {
+    try {
+      const listaHuesped = await leerUsuarios();
+      setHuesped(listaHuesped);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const borrarHabitaciones = async (id) => {
     try {
@@ -51,17 +43,6 @@ const PaginaAdministrador = () => {
     }
   };
 
-  const [huesped, setHuesped] = useState([]);
-  useEffect(() => {
-    traerHuesped();
-  }, []);
-
-  const traerHuesped = async () => {
-    try {
-      const listaHuesped = await leerUsuarios();
-      console.log(listaHuesped)
-      setHuesped(listaHuesped);
-
   const handleEditarHabitacion = async (habitacionId) => {
     try {
       const habitacion = await obtenerHabitacion(habitacionId);
@@ -71,25 +52,6 @@ const PaginaAdministrador = () => {
     }
   };
 
-  const handleBorrarHabitacion = async (id) => {
-    try {
-      await borrarHabitacion(id);
-      setHabitaciones(habitacion.filter(habitacion => habitacion.id !== id));
-
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-        const borrarHabitaciones = async (id) => {
-        try {
-          await borrarHabitacion(id);
-          setHabitaciones(habitacion.filter(habitacion => habitacion._id !== id));
-        } catch (error) {
-          console.log(error);
-        }
-      };
-    
   return (
     <Container className="container-fluid">
       <div>
@@ -120,11 +82,7 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-
           {habitacion.map((habitacion) => (
-
-          {habitacion.map((habitacion) =>
-
             <Habitacion
               key={habitacion._id}
               habitacion={habitacion}
@@ -136,28 +94,12 @@ const PaginaAdministrador = () => {
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Huéspedes</h2>
-
-      {/* <Button
-
-        <Button
-
-          variant="outline-secondary"
-          id="btnAdmin"
-          as={Link}
-          to={"/administrador/agregarhuesped"}
-        >
-          <i className="bi bi-file-earmark-plus"> Huésped</i>
-        </Button>
-        </div>*/}
+      </div>
       <Table responsive="sm" striped bordered hover className="tabla">
         <thead className="text-center">
           <tr>
             <th>Nombre completo</th>
             <th>E-mail</th>
-            {/*<th>N° de contacto</th>
-            <th>Fecha de checkin</th>
-            <th>Fecha de checkout</th>
-        <th>Opciones</th>*/}
           </tr>
         </thead>
         <tbody>
@@ -165,47 +107,9 @@ const PaginaAdministrador = () => {
             <Usuarios
               key={huesped._id}
               huesped={huesped}
-              //setHuesped={setHuesped}
             ></Usuarios>
           ))}
-          {/* {(huesped.map((huesped) => (
-            <ItemHuesped
-              key={huesped.id}
-              huesped={huesped}
-              setHuesped={setHuesped}
-            ></ItemHuesped>
-
-          )))}*/}
-          <tr>
-            <td>Juan Perez</td>
-            <td>juanp@gmail.com</td>
-
-            <td className="d-flex justify-content-center">
-              <Button id="btnEditar">
-                <i className="bi bi-pencil-square"></i>
-              </Button>
-              <Button id="btnBorrar">
-                <i className="bi bi-trash-fill"></i>
-              </Button>
-            </td>
-          </tr>
-
-          ))}*/}
-
         </tbody>
-        <tr>
-          <td>1</td>
-          <td>Juan Perez</td>
-          <td>juanp@gmail.com</td>
-          <td>11111111</td>
-          <td></td>
-          <td></td>
-          <td className="d-flex justify-content-center">
-            <Button id="btnEditar" onClick={() => handleEditarHabitacion(habitacion)}>
-              <i className="bi bi-pencil-square"></i>
-            </Button>
-          </td>
-        </tr>
       </Table>
     </Container>
   );

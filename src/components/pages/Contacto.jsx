@@ -55,7 +55,7 @@ const Contacto = () => {
         <form onSubmit={handleSubmit} ref={form}>
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="mb-3">
                   <label htmlFor="nombreContacto" className="form-label tx-Intermedio fs-5">
                     Nombre:
@@ -91,7 +91,7 @@ const Contacto = () => {
                   />
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="mb-3">
                   <label htmlFor="consultaContacto" className="form-label tx-Intermedio fs-5">
                     Consulta:
@@ -133,4 +133,3 @@ const Contacto = () => {
 };
 
 export default Contacto;
-
