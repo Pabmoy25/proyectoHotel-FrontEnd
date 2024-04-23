@@ -831,3 +831,9 @@ tbody {
       font-size: 12px; /* Tamaño de fuente para dispositivos pequeños */
     }
   }
+
+  .texto-propuesta {
+    margin-top: 20px; /* Ajusta este valor según la separación que desees */
+  }
+
+  
