@@ -19,6 +19,7 @@ const CardHabitacion = ({ cardHabitacion }) => {
               {cardHabitacion.descripcion_breve}
               <br className="mb-2" />
             </Card.Text>
+
           </Card.Body>
           <Link className="search-button " to={""}>
             Ver Habitación
@@ -30,4 +31,12 @@ const CardHabitacion = ({ cardHabitacion }) => {
 };
 
 export default CardHabitacion;
+
+        </Card.Body>
+        <Link className='btn btn-secondary me-2' to={"/DetalleHabitacion/ + CardHabitaciones._id"}>Ver Habitación</Link>
+    </Card>
+</Col>
+      );
+    };
+
 

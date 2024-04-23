@@ -17,6 +17,7 @@ import Registro from "./components/pages/Registro";
 import Contacto from "./components/pages/Contacto";
 import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
+import DetalleHabitacion from "./components/pages/DetalleHabitacion";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {}; //"";
@@ -84,6 +85,7 @@ function App() {
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
 
         <Route
+
           exact
           path="/administrador/editar/:id"
           element={
@@ -93,6 +95,32 @@ function App() {
             ></FormularioHabitacion>
           }
         ></Route>
+
+              exact
+              path="/administrador/editar/:id"
+              element={
+                <FormularioHabitacion
+                  editar={true}
+                  titulo="Editar Habitacion"
+                ></FormularioHabitacion>
+              }
+            ></Route>
+
+
+        {/*<Route
+              exact
+              path="/agregarHabitacion"
+              element={
+                <FormularioHabitacion></FormularioHabitacion>
+              }
+            ></Route>*/}
+
+        <Route
+          exact
+          path="/DetalleHabitacion/:id"
+          element={<DetalleHabitacion></DetalleHabitacion>}
+        ></Route>
+
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

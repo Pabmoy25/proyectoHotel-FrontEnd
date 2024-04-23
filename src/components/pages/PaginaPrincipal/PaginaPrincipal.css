@@ -29,7 +29,7 @@
   color: white;
   font-size: 3vw;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.945);
 }
 
 .carousel-indicators [data-bs-target] {
@@ -145,4 +145,112 @@
 
 .card-text {
   font-family: "Quicksand", sans-serif;
+=======
+   .descripcion {
+    flex: 1;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .Informacion {
+      flex-direction: column; 
+    }
+     
+    }
+
+    .card-container {
+      display: flex;
+     justify-content: center;
+      width: 100%;
+      gap: 10px;
+      margin-left: 0 px;
+    }
+
+    .card {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      justify-content: center;
+      align-items: center;
+      max-width: 300px;
+      flex: 1 0 100%; 
+     
+    }
+
+    .cardok {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      justify-content: center;
+      align-items: center;
+      max-width: 200px;
+      flex: 1 0 100%; 
+     
+    }
+    
+
+    .card-image {
+      width: 70%;
+      justify-content: center;
+   
+    }
+    
+    .card-title {
+      color: #6D0D3D;
+      font-family:"Montserrat Alternates", sans-serif;
+      margin: 10px 0;
+      
+    }
+    
+    .card-text{
+      font-family: "Quicksand", sans-serif;
+    }
+
+  /*  @media (max-width: 768px) {
+      .card {
+        width: calc(33.333% - 20px);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .card {
+        width: calc(50% - 20px);
+      }
+    }*/
+
+    /*@media (max-width: 600px) {
+      .card-container {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }*/
+  
+.portadaHabitaciones{
+  background: rgb(109,13,61);
+  background: linear-gradient(0deg, rgba(109,13,61,1) 2%, rgba(193,121,174,1) 50%, rgba(208,137,190,1) 66%, rgba(255,187,242,1) 100%);
+}
+
+#Titulodetalles{
+  font-family:"Montserrat Alternates", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.945);
+}
+
+.parrafoamenities{
+  font-family: "Quicksand", sans-serif;
+}
+
+.titulopregunta{
+  color: #6D0D3D;
+}
+
+.sidebar-left {
+  position: sticky;
+  top: 20px; /* Ajusta según tus necesidades */
+  height: 100%; /* Ocupa toda la altura disponible */
+}
+
+.sidebar-right .card {
+  width: 100%;
+
 }
