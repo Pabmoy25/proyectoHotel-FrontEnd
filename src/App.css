@@ -456,9 +456,6 @@ tbody {
 }
 
 
-.error404-container {
-  position: relative;
-
 .custom-accordion .accordion-header {
   background-color: #7f3c87; /* Cambia el color de fondo del encabezado */
   color: #000000; /* Cambia el color del texto del encabezado */
@@ -488,7 +485,6 @@ tbody {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 192, 203, 0.5); /* Color rosa con opacidad */
-
 }
 
 .background-image {
@@ -497,35 +493,6 @@ tbody {
   left: 0;
   width: 100%;
   height: 100%;
-
-  background-image: url('https://static.vecteezy.com/system/resources/previews/019/522/263/non_2x/hotel-reception-interior-design-resort-hall-illustration-vector.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(3px);
-}
-
-.overlay {
-  position: relative;
-  z-index: 1;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cuadro1,
-.cuadro2 {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 800px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
   object-fit: cover;
   z-index: -1;
 }
@@ -814,50 +781,42 @@ tbody {
   opacity: 0.9;
 }
 
-.DateRange {
-  width: 100%; /* O ajusta el ancho según sea necesario */
+
+.cuadro1,
+.cuadro2 {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 768px) {
-  .DateRange {
-    width: 80%; /* Porcentaje del ancho de la pantalla */
-    max-width: 300px; /* Ancho máximo del calendario */
-  }
-}
-
-.date-range-container {
+.main-container {
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  width: 100%;
-  overflow-x: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.error404-container {
   position: relative;
 }
-.search-button {
-  position: absolute;
-  bottom: -40px; /* Distancia desde la parte inferior del contenedor */
-  left: 50%; /* Centra horizontalmente el botón */
-  transform: translateX(-50%); /* Ajusta el botón horizontalmente */
-  background-color: pink; /* Color de fondo rosa */
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-.reservas-button {
-  display: block;
-  width: 100%;
-  background-color: rgb(156, 27, 141); /* Color de fondo rosa */
-  color: rgb(255, 255, 255); /* Color del texto blanco */
-  font-size: 24px; /* Tamaño de fuente */
-  padding: 20px 0; /* Espaciado interno */
-  border: none;
-  cursor: pointer;
-  outline: none; /* Quita el borde de enfoque */
-}
+.background-image {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/019/522/263/non_2x/hotel-reception-interior-design-resort-hall-illustration-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+  }
 
-.date-picker-container {
-  width: 100%;
-  margin-bottom: 20px; /* Espaciado inferior */
-}
+
 
