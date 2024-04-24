@@ -4,6 +4,8 @@ import { Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import DatePicker from "../Reservas/DatePicker";
 
+
+
 const CatalogoHabitacion = () => {
   const [habitacion, setHabitacion] = useState([]);
   useEffect(() => {
@@ -32,13 +34,12 @@ const CatalogoHabitacion = () => {
         <div className="titulos tituloPrincipal">
           <h1 className="">HABITACIONES</h1>
         </div>
-
       </div>
 
       <div>
         <DatePicker></DatePicker>
       </div>
-      
+
       <Row>
         {habitacion.map((habitacion) => (
           <CardHabitacion

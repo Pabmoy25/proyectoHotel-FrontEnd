@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Usuario = (huesped) => {
   return (
+
     <tr>
       <td className="text-center"></td>
       <td className="text-center"></td>
@@ -26,6 +27,7 @@ const Usuario = (huesped) => {
         </Button>
       </td>
     </tr>
+
   );
 };
 

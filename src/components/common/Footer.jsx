@@ -129,7 +129,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="col-lg-3 col-md-6 col-sm-12 mt-3 d-flex flex-column align-items-center">
             <h4>Seguínos</h4>
             <div className="d-flex flex-row justify-content-center">
@@ -168,9 +168,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-
-          
-         
         </section>
       </div>
       <p className="text-center">

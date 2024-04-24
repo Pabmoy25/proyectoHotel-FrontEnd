@@ -31,7 +31,6 @@ const SliderCarrusel = () => {
   return (
     <Carousel className="Carrusel">
       {ArraydeImagenes.map((Element, index) => {
-
         return (
           <Carousel.Item key={index} className="ItemCarrusel">
             <img className="ImagenCarrusel" src={Element.Imagen} />
