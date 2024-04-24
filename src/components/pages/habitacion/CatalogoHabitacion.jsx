@@ -4,6 +4,8 @@ import { Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import DatePicker from "../Reservas/DatePicker";
 
+
+
 const CatalogoHabitacion = () => {
   const [habitacion, setHabitacion] = useState([]);
   useEffect(() => {

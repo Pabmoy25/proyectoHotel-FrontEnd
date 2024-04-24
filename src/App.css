@@ -434,12 +434,6 @@ tbody {
   }
 }
 
-
-
-
-
-
-
 /* contacto*/
 .background-container {
   background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg");
@@ -448,13 +442,11 @@ tbody {
   overflow: hidden;
 }
 
-
 .blur-container {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   padding: 20px;
 }
-
 
 /* Ajustes para dispositivos medianos como iPad y Kindle */
 @media only screen and (max-width: 1024px) {
@@ -463,23 +455,12 @@ tbody {
   }
 }
 
-
 /* Ajustes adicionales para dispositivos pequeños */
 @media only screen and (max-width: 768px) {
   .tituloAdmin {
     font-size: 24px;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 .custom-accordion .accordion-header {
   background-color: #7f3c87;
@@ -798,7 +779,6 @@ tbody {
   opacity: 0.9;
 }
 
-
 .cuadro1,
 .cuadro2 {
   background-color: rgba(255, 255, 255, 0.9);
@@ -868,42 +848,39 @@ tbody {
   display: inline-block;
 }
 
-
 .calendar-scroll-container {
   overflow-x: auto;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
-
 
 .calendar-wrapper {
   display: inline-block;
 }
 
-
 @media screen and (max-width: 768px) {
   .calendar-scroll-container {
-    overflow-x: hidden; 
-    white-space: normal; 
+    overflow-x: hidden;
+    white-space: normal;
   }
 
   .calendar-wrapper {
     max-width: 90%;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 }
 
 .search-button {
-  background-color: rgb(130, 25, 119); 
-  color: white; 
+  background-color: rgb(130, 25, 119);
+  color: white;
   border: none;
-  padding: 10px 20px; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  font-size: 16px; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .search-button:hover {
-  background-color: rgb(255, 152, 204); 
+  background-color: rgb(255, 152, 204);
   color: #000000;
 }
 
@@ -911,4 +888,3 @@ tbody {
   display: flex;
   justify-content: center;
 }
-

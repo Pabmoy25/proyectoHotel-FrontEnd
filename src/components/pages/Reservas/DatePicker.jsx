@@ -28,8 +28,12 @@ const DatePicker = () => {
       </button>
       {showDatePicker && (
         <div className="date-range-container">
-          <div className="calendar-scroll-container"> {/* Nuevo contenedor con scroll horizontal */}
-            <div className="calendar-wrapper"> {/* Contenedor para el calendario */}
+          <div className="calendar-scroll-container">
+            {" "}
+            {/* Nuevo contenedor con scroll horizontal */}
+            <div className="calendar-wrapper">
+              {" "}
+              {/* Contenedor para el calendario */}
               <DateRange
                 className="calendar"
                 editableDateInputs={true}
@@ -45,5 +49,5 @@ const DatePicker = () => {
     </div>
   );
 };
-  
+
 export default DatePicker;
