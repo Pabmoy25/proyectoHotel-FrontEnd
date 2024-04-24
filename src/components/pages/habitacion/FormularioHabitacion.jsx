@@ -27,8 +27,6 @@ const FormularioHabitacion = ({ editar, titulo }) => {
     }
   }, []);
 
-
-
   const cargarDatosEnFormulario = async () => {
     const respuesta = await obtenerHabitacion(id);
     if (respuesta.status === 200) {
@@ -60,7 +58,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
             text: `La habitación número ${habitacion.habitacion} fue modificada exitosamente.`,
             icon: "success",
           });
-         
+
           navegacion("/administrador");
         } else {
           Swal.fire({

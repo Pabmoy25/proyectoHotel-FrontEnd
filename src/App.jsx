@@ -25,6 +25,7 @@ function App() {
   const [logueado, setLogueado] = useState(usuario);
 
   return (
+
     <BrowserRouter>
       <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
 
@@ -96,25 +97,6 @@ function App() {
           }
         ></Route>
 
-              exact
-              path="/administrador/editar/:id"
-              element={
-                <FormularioHabitacion
-                  editar={true}
-                  titulo="Editar Habitacion"
-                ></FormularioHabitacion>
-              }
-            ></Route>
-
-
-        {/*<Route
-              exact
-              path="/agregarHabitacion"
-              element={
-                <FormularioHabitacion></FormularioHabitacion>
-              }
-            ></Route>*/}
-
         <Route
           exact
           path="/DetalleHabitacion/:id"
@@ -124,6 +106,7 @@ function App() {
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
+ 
   );
 }
 

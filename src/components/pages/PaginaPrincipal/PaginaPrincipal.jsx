@@ -137,8 +137,7 @@ const PaginaPrincipal = () => {
       </section>
 
       <div className="main-section">
-        <div className="background-overlay"></div>{" "}
-        {/* Div para superposición de color rosa */}
+        <div className="background-overlay"></div>
         <img
           className="background-image"
           src="https://www.lanacion.com.ar/resizer/v2/woman-at-the-supermarket-checkout-she-is-paying-X6NNODLTHJFOXISHIQ33SRIKGY.jpg?auth=b7f4209935f4005e1d69d99ae8a71d37774e08683b8cdc40e7be124275823305&width=420&height=280&quality=70&smart=true"

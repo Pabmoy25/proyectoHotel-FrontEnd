@@ -2,9 +2,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Carousel, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
-
-
 const DetalleHabitacion = () => {
   return (
     <>
@@ -16,12 +13,11 @@ const DetalleHabitacion = () => {
           </h1>
         </div>
       </div>
-      
 
-      <Container className="mt-5"> 
+      <Container className="mt-5">
         <Row>
           <Col md={6}>
-            <Carousel> 
+            <Carousel>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -47,11 +43,7 @@ const DetalleHabitacion = () => {
           </Col>
         </Row>
 
-       
-     
-
-       
-   <Col md={6} className="order-md-last mt-md- mt-4">
+        <Col md={6} className="order-md-last mt-md- mt-4">
           <div>
             <h2 className="Titulo Pregunta text-center">
               ¿Qué incluye la habitación?
@@ -70,28 +62,24 @@ const DetalleHabitacion = () => {
       </Container>
 
       <Row>
+        <Col md={6} className="order-md-first">
+          <aside className="sidebar-left">
+            <Card>
+              <Card.Body>
+                <Card.Title>Reserva tu Habitación</Card.Title>
+                <Card.Text>
+                  ¡Asegura tu estancia ahora! Disfruta de nuestras increíbles
+                  instalaciones y servicios.
+                </Card.Text>
 
-<Col md={6} className="order-md-first">
-  <aside className="sidebar-left">
-
-      <Card>
-
-        <Card.Body>
-          <Card.Title>Reserva tu Habitación</Card.Title>
-          <Card.Text>
-            ¡Asegura tu estancia ahora! Disfruta de nuestras increíbles instalaciones y servicios.
-          </Card.Text>
-          
-            <Link to="/Contacto" className="btn btn-primary">Reservar Habitación</Link>
-        
-        </Card.Body>
-      </Card>
-      </aside>
-    </Col>
-
-
-</Row>
-      
+                <Link to="/Contacto" className="btn btn-primary">
+                  Reservar Habitación
+                </Link>
+              </Card.Body>
+            </Card>
+          </aside>
+        </Col>
+      </Row>
     </>
   );
 };
