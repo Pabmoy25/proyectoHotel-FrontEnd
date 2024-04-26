@@ -99,23 +99,6 @@ const PaginaAdministrador = () => {
         <h2 className="my-4">Usuarios</h2>
       </div>
 
-      <Table responsive="sm" striped bordered hover className="tabla">
-        <tr>
-          <th>N° de habitación</th>
-          <th>Nombre completo</th>
-          <th>Email</th>
-          <th>N° de contacto</th>
-          <th>Fecha de checkin</th>
-          <th>Fecha de checkout</th>
-          <th>Opciones</th>
-        </tr>
-
-        <tbody>
-          {huesped.map((huesped) => (
-            <Usuarios key={huesped._id} huesped={huesped}></Usuarios>
-          ))}
-          {}
-
       <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center ">
           <tr>
@@ -156,8 +139,8 @@ const PaginaAdministrador = () => {
 
         </tbody>
       </Table>
-      </tbody>
-      </Table>
+
+   
     </Container>
     
   );
