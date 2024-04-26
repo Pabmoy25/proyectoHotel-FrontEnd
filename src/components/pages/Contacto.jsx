@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 
-
 const Contacto = () => {
   const [formData, setFormData] = useState({
     nombreContacto: "",
@@ -10,9 +9,7 @@ const Contacto = () => {
     consultaContacto: "",
   });
 
-
   const form = useRef();
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,14 +19,11 @@ const Contacto = () => {
     });
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
     enviarFormulario();
   };
-
 
   const enviarFormulario = () => {
     swal
@@ -50,19 +44,11 @@ const Contacto = () => {
       });
   };
 
-
   const sendEmail = () => {
-
     emailjs.sendForm("service_gseh43o", "template_p430uw9", form.current, {
       publicKey: "rzSFKooKPHw-SU_P2",
-
-    emailjs
-      .sendForm('service_gseh43o', 'template_p430uw9', form.current, {
-        publicKey: 'rzSFKooKPHw-SU_P2',
-      })
-
+    });
   };
-
 
   return (
     <div className="background-container">
@@ -71,7 +57,6 @@ const Contacto = () => {
           <strong>Contactate con Hotel Haku Wasi</strong>
         </h1>
         <h5 className="text-center mt-4 mb-5">
-          {" "}
           <strong>
             Complete el formulario y le responderemos a la mayor brevedad
             posible. Desde ya, muchas gracias.
@@ -148,13 +133,9 @@ const Contacto = () => {
             <div className="row">
               <div className="col-md-12 mb-4">
                 <div className="text-center mb-4 mt-4">
-
                   <button type="submit" className="btnequipo btn-volver">
                     Enviar consulta
-
-                  <button
-                  type="submit" className="btnequipo btn-volver">Enviar consulta</button>
-
+                  </button>
                 </div>
               </div>
             </div>
@@ -170,6 +151,5 @@ const Contacto = () => {
     </div>
   );
 };
-
 
 export default Contacto;

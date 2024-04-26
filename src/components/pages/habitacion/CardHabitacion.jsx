@@ -14,14 +14,15 @@ const CardHabitacion = ({ cardHabitacion }) => {
             />
           </div>
           <Card.Body>
-            <Card.Title>Habitación: {cardHabitacion.tipoDeHabitacion}</Card.Title>
+            <Card.Title>
+              Habitación: {cardHabitacion.tipoDeHabitacion}
+            </Card.Title>
             <Card.Text>
               {cardHabitacion.descripcion_breve}
               <br className="mb-2" />
             </Card.Text>
-
           </Card.Body>
-          <Link className="search-button " to={""}>
+          <Link className="search-button " to={"/detalleHabitacion/ + cardHabitaciones._id"}>
             Ver Habitación
           </Link>
         </Card>
@@ -31,12 +32,3 @@ const CardHabitacion = ({ cardHabitacion }) => {
 };
 
 export default CardHabitacion;
-
-        </Card.Body>
-        <Link className='btn btn-secondary me-2' to={"/DetalleHabitacion/ + CardHabitaciones._id"}>Ver Habitación</Link>
-    </Card>
-</Col>
-      );
-    };
-
-
