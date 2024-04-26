@@ -1,11 +1,11 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { crearUsuario, login } from "../../helpers/queriesUsuarios.js";
+import { crearUsuario, editarUsuarios, login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 import Fondo from "../../assets/Registr.png";
 
-const Registro = () => {
+const Registro = ({editar}) => {
   const {
     register,
     handleSubmit,
@@ -40,13 +40,38 @@ const Registro = () => {
     }
   };
 
+  const usuarioValidado = async (usuario) => {
+    try {
+      if (editar) {
+        const respuesta = await editarUsuarios(id, usuario);
+        if (respuesta.status === 200) {
+          Swal.fire({
+            title: "Usuario editado",
+            text: `El usuario ${usuario.nombreCompleto} fue modificado con exito.`,
+            icon: "success",
+          });
+
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar el usuario en unos minutos.",
+            icon: "error",
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="container-registro my-4 Background-registro">
-        <Form
-          onSubmit={handleSubmit(enviar)}
-          id="formRegistro"
-          className="form_area-registro text-start"
+      <Form
+          className="my-4 custom-form rounded"
+          onSubmit={handleSubmit(usuarioValidado)}
+          id="formHabitacion"
         >
           <div>
             <p className="title-registro">REGISTRATE</p>
@@ -75,28 +100,6 @@ const Registro = () => {
               {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
-          {/* <Form.Group className="mb-3" controlId="formApellido">
-            <Form.Label className="sub_title-registro">Apellido</Form.Label>
-            <Form.Control
-              className="mb-2"
-              type="text"
-              placeholder="Apellido"
-              {...register("apellido", {
-                required: "El apellido es obligatorio",
-                minLength: {
-                  value: 3,
-                  message: "Debe ingresar al menos 3 caracteres",
-                },
-                maxLength: {
-                  value: 50,
-                  message: "Debe ingresar como máximo 50 caracteres",
-                },
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.apellido?.message}
-            </Form.Text>
-            </Form.Group>*/}
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
             <Form.Control
@@ -152,37 +155,6 @@ const Registro = () => {
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
-          +
-          {/*<Form.Group className="mb-3" controlId="formConfirmPassword">
-            <Form.Label className="sub_title-registro">
-              Confirmar contraseña
-            </Form.Label>
-
-            <Form.Control
-              className="mb-2"
-              type="password"
-              placeholder="Contraseña"
-              {...register("password", {
-                required: "La contraseña es obligatoria",
-                minLength: {
-                  value: 3,
-                  message: "Ingrese un mínimo de 6 caracteres",
-                },
-                maxLength: {
-                  value: 100,
-                  message: "Ingrese un máximo de 10 caracteres",
-                },
-                pattern: {
-                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                  message:
-                    "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
-                },
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.password?.message}
-            </Form.Text>
-            </Form.Group>*/}
           <Form.Group className="">
             <div className="d-flex flex-row">
               <p>Ya tienes una cuenta?</p>

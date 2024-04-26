@@ -108,6 +108,16 @@ function App() {
           path="/DetalleHabitacion/:id"
           element={<DetalleHabitacion></DetalleHabitacion>}
         ></Route>
+        <Route
+          exact
+          path="/registro/editar/:id"
+          element={
+            <Registro
+              editar={true}
+              titulo="Editar Usuario"
+            ></Registro>
+          }
+        ></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

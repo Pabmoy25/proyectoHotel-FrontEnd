@@ -9,7 +9,7 @@ import {
 import { Container } from "react-bootstrap";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
 
-import Usuarios from "./usuarioHuesped/Usuario";
+
 
 
 
@@ -121,13 +121,13 @@ const PaginaAdministrador = () => {
               <td></td>
               <td></td>
               <td className="d-flex justify-content-center">
-                <Link
-                  className="btn"
-                  id="btnEditar"
-                  //to={`/administrador/editar/${huesped._id}`} corregir
-                >
-                  <i className="bi bi-pencil-square"></i>
-                </Link>
+              <Link
+          className="btn"
+          id="btnEditar"
+          to={`/registro/editar/${huesped._id}`}
+        >
+          <i className="bi bi-pencil-square"></i>
+        </Link>
                 <Button id="btnBorrar">
                   {" "}
                   {/*</td>onClick={borrarHabitaciones}>*/}
