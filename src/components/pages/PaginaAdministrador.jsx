@@ -58,7 +58,7 @@ const PaginaAdministrador = () => {
   return (
     <Container className="container-fluid">
       <div>
-        <h1 className="mt-5 bold tituloAdmin">Administrador</h1>
+        <h1 className="mt-5 bold tituloAdminForm tituloAdmin">ADMINISTRADOR</h1>
         <hr />
       </div>
       <div className="d-flex justify-content-between align-items-center subtAdmin">
@@ -97,14 +97,6 @@ const PaginaAdministrador = () => {
 
       <div className="d-flex justify-content-between align-items-center subtAdmin">
         <h2 className="my-4">Usuarios</h2>
-        <Button
-          variant="outline-secondary"
-          id="btnAdmin"
-          as={Link}
-          to={"/administrador/agregarhuesped"}
-        >
-          <i className="bi bi-file-earmark-plus"> Huésped</i>
-        </Button>
       </div>
 
       <Table responsive="sm" striped bordered hover className="tabla">

@@ -815,6 +815,43 @@ tbody {
   filter: blur(3px);
 }
 
+
+#tabla thead tr:first-child th {
+  background-color: #82376b;
+  color: white;
+}
+
+.custom-form {
+  background-color: #fdefff6c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btnguardar-pink {
+  background-color: #82376b !important;
+  border-color: #82376b !important;
+  color: #ffffff !important;
+}
+
+.btnguardar-pink:hover {
+  background-color: #ffe6f0 !important;
+  border-color: #fff1f7 !important;
+  color: #000000 !important;
+}
+
+.tituloAdminForm {
+  text-align: center;
+  margin-top: 5rem;
+  background: rgb(184, 48, 175);
+  background: radial-gradient(
+    circle,
+    rgba(184, 48, 175, 1) 11%,
+    rgba(150, 58, 143, 1) 58%,
+    rgba(238, 218, 237, 1) 100%
+  );
+  color: white;
+
 .custom-button {
   background-color: #ff0000;
   color: #ffffff;
@@ -887,4 +924,6 @@ tbody {
 .card-container {
   display: flex;
   justify-content: center;
+
+  
 }

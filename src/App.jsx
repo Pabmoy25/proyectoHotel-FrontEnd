@@ -86,7 +86,6 @@ function App() {
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
 
         <Route
-
           exact
           path="/administrador/editar/:id"
           element={
@@ -96,13 +95,19 @@ function App() {
             ></FormularioHabitacion>
           }
         ></Route>
-
+        {<Route
+              exact
+              path="/agregarHabitacion"
+              element={
+                <FormularioHabitacion editar={false}
+                titulo="Nueva Habitacion"></FormularioHabitacion>
+              }
+            ></Route>}
         <Route
           exact
           path="/DetalleHabitacion/:id"
           element={<DetalleHabitacion></DetalleHabitacion>}
         ></Route>
-
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

@@ -97,7 +97,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
         <hr />
 
         <Form
-          className="my-4"
+          className="my-4 custom-form rounded"
           onSubmit={handleSubmit(habitacionValidada)}
           id="formHabitacion"
         >
@@ -253,7 +253,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
               {errors.estado?.message}
             </Form.Text>
           </Form.Group>
-          <Button type="submit" variant="outline-secondary" id="btnAdmin">
+          <Button type="submit" className="btnguardar-pink w-100" id="btnAdmin">
             Guardar
           </Button>
         </Form>
