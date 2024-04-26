@@ -55,6 +55,15 @@ export const editarUsuarios = async (id, usuario) => {
   }
 };
 
+export const obtenerUsuarios = async (id) => {
+  try {
+    const respuesta = await fetch(`${URI_USUARIOS}/${id}`);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URI_USUARIOS, {
