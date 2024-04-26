@@ -8,24 +8,20 @@ import {
 } from "../../helpers/queriesHabitaciones";
 import { Container } from "react-bootstrap";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
-
-
-
+import UsuariosHuesped from "./usuario/UsuariosHuesped";
 
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
+  const [huesped, setHuesped] = useState([]);
+  const [usuario, setUsuarios] = useState([]);
 
   useEffect(() => {
     traerHabitaciones();
-  }, []);
-
-  const [huesped, setHuesped] = useState([]);
-  useEffect(() => {
     traerHuesped();
-  }, []);
+    }, []);
 
-
+  
   const traerHabitaciones = async () => {
     try {
       const listaHabitaciones = await leerHabitaciones();
@@ -50,13 +46,14 @@ const PaginaAdministrador = () => {
       const listaHuesped = await leerUsuarios();
       console.log(listaHuesped);
       setHuesped(listaHuesped);
+      setUsuarios(listaHuesped);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <Container className="container-fluid">
+    <Container>
       <div>
         <h1 className="mt-5 bold tituloAdminForm tituloAdmin">ADMINISTRADOR</h1>
         <hr />
@@ -100,8 +97,8 @@ const PaginaAdministrador = () => {
       </div>
 
       <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
-        <thead className="text-center ">
-          <tr>
+        <thead className="text-center">
+         <tr>
             <th>N° de habitación</th>
             <th>Nombre completo</th>
             <th>Email</th>
@@ -112,31 +109,12 @@ const PaginaAdministrador = () => {
           </tr>
         </thead>
         <tbody>
-          {huesped.map((huesped) => (
-            <tr key={huesped._id}>
-              <td>{huesped.numHabitacion}</td>
-              <td>{huesped.nombreCompleto}</td>
-              <td>{huesped.email}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="d-flex justify-content-center">
-              <Link
-          className="btn"
-          id="btnEditar"
-          to={`/registro/editar/${huesped._id}`}
-        >
-          <i className="bi bi-pencil-square"></i>
-        </Link>
-                <Button id="btnBorrar">
-                  {" "}
-                  {/*</td>onClick={borrarHabitaciones}>*/}
-                  <i className="bi bi-trash-fill"></i>
-                </Button>
-              </td>
-            </tr>
+          {usuario.map((usuario) => (
+            <UsuariosHuesped
+              key={usuario._id}
+              usuario={usuario}>
+          </UsuariosHuesped>
           ))}
-
         </tbody>
       </Table>
 

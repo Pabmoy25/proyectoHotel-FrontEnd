@@ -201,25 +201,6 @@
   font-family: "Quicksand", sans-serif;
 }
 
-/*  @media (max-width: 768px) {
-      .card {
-        width: calc(33.333% - 20px);
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .card {
-        width: calc(50% - 20px);
-      }
-    }*/
-
-/*@media (max-width: 600px) {
-      .card-container {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }*/
-
 .portadaHabitaciones {
   background: rgb(109, 13, 61);
   background: linear-gradient(

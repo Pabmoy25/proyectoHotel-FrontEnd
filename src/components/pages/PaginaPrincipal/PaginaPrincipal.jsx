@@ -16,8 +16,8 @@ const PaginaPrincipal = () => {
   return (
     <>
       <SliderCarrusel />
-      <section className="w-100 my-3 ">
-        <Row className="fila mx-0">
+      <section className="w-100 my-3">
+        <Row className="fila">
           <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="col p-0">
             <div className="ImagenPetFriendly p-4">
               <img
