@@ -5,7 +5,7 @@ import { editarUsuarios, obtenerUsuarios, crearUsuario } from "../../helpers/que
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 
-const Registro = ({ editar }) => {
+const Registro = ({ editar, titulo}) => {
   const {
     register,
     handleSubmit,
@@ -89,7 +89,7 @@ const Registro = ({ editar }) => {
           id="formHabitacion"
         >
           <div>
-            <p className="title-registro">REGISTRATE</p>
+            <p className="title-registro">{titulo}</p>
           </div>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label className="sub_title-registro">
