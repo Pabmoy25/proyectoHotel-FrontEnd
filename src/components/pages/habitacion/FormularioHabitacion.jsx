@@ -10,6 +10,7 @@ import {
   obtenerHabitacion,
 } from "../../../helpers/queriesHabitaciones";
 
+
 const FormularioHabitacion = ({ editar, titulo }) => {
   const {
     register,
@@ -90,6 +91,7 @@ const FormularioHabitacion = ({ editar, titulo }) => {
     }
   };
 
+  
   return (
     <Container className="container-fluid">
       <section className="container mainpage contenFormHabitacion my-5">

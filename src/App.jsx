@@ -25,7 +25,6 @@ function App() {
   const [logueado, setLogueado] = useState(usuario);
 
   return (
-
     <BrowserRouter>
       <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
 
@@ -79,9 +78,16 @@ function App() {
           {" "}
         </Route>
 
-        <Route exact path="/registro" element={<Registro></Registro>}>
-          {" "}
-        </Route>
+        <Route
+          exact
+          path="/registro"
+          element={<Registro editar={false} titulo="REGISTRATE"></Registro>}
+        ></Route>
+        <Route
+          exact
+          path="/registro/editar/:id"
+          element={<Registro editar={true} titulo="Editar Usuario"></Registro>}
+        ></Route>
 
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
 
@@ -95,23 +101,27 @@ function App() {
             ></FormularioHabitacion>
           }
         ></Route>
-        {<Route
-              exact
-              path="/agregarHabitacion"
-              element={
-                <FormularioHabitacion editar={false}
-                titulo="Nueva Habitacion"></FormularioHabitacion>
-              }
-            ></Route>}
+        {
+          <Route
+            exact
+            path="/agregarHabitacion"
+            element={
+              <FormularioHabitacion
+                editar={false}
+                titulo="Nueva Habitacion"
+              ></FormularioHabitacion>
+            }
+          ></Route>
+        }
         <Route
           exact
           path="/DetalleHabitacion/:id"
           element={<DetalleHabitacion></DetalleHabitacion>}
         ></Route>
+        
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
- 
   );
 }
 
