@@ -41,12 +41,13 @@ export const leerUsuarios = async () => {
 
 export const editarUsuarios = async (id, usuario) => {
   try {
+    const { password, ...usuarioSinPassword } = usuario;
     const respuesta = await fetch(`${URI_USUARIOS}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(usuario),
+      body: JSON.stringify(usuarioSinPassword),
     });
     console.log(respuesta);
     return respuesta;

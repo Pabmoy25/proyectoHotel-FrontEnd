@@ -1,17 +1,16 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { crearUsuario, editarUsuarios, login, obtenerUsuarios } from "../../helpers/queriesUsuarios.js";
+import { editarUsuarios, obtenerUsuarios } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
-import Fondo from "../../assets/Registr.png";
 import { useEffect } from "react";
 
-const Registro = ({editar}) => {
+const Registro = ({ editar }) => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
-    reset,
   } = useForm();
   const { id } = useParams();
   const navegacion = useNavigate();
@@ -20,16 +19,15 @@ const Registro = ({editar}) => {
     if (editar) {
       cargarDatosUsuario();
     }
-  }, []);
+  }, [editar]);
 
   const cargarDatosUsuario = async () => {
     const respuesta = await obtenerUsuarios(id);
     if (respuesta.status === 200) {
       const usuarioBuscado = await respuesta.json();
-      //  Mostrar datos en el formulario:
-      setValue("usuario", usuarioBuscado.nombreCompleto);
+
+      setValue("nombreCompleto", usuarioBuscado.nombreCompleto);
       setValue("email", usuarioBuscado.email);
-      setValue("password", usuarioBuscado.password);
     } else {
       Swal.fire({
         title: "Ocurrió un error",
@@ -39,54 +37,32 @@ const Registro = ({editar}) => {
     }
   };
 
-   const usuarioValidado = async (usuario) => {
+  const usuarioValidado = async (usuario) => {
     try {
-      if (editar) {
-        const respuesta = await editarUsuarios(id, usuario);
-        if (respuesta.status === 200) {
-          Swal.fire({
-            title: "Usuario editado",
-            text: `El usuario ${usuario.email} fue modificado con exito.`,
-            icon: "success",
-          });
-
-          navegacion("/administrador");
-        } else {
-          Swal.fire({
-            title: "Ocurrió un error",
-            text: "Intente modificar el usuario en unos minutos.",
-            icon: "error",
-          });
-        }
+      const respuesta = await editarUsuarios(id, usuario);
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Usuario editado",
+          text: `El usuario ${usuario.email} fue modificado con exito.`,
+          icon: "success",
+        });
+        navegacion("/administrador");
       } else {
-        const respuesta = await crearUsuario(usuario);
-
-        if (respuesta.status === 201) {
-          Swal.fire({
-            title: "Huésped creado",
-            text: `El Huésped: ${usuario.email} fue creado con éxito`,
-            icon: "success",
-          });
-          navegacion("/administrador");
-          reset();
-        } else {
-          Swal.fire({
-            title: "Ocurrió un error",
-            text: "Intente ingresar en unos minutos",
-            icon: "error",
-          });
-        }
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: "Intente modificar el usuario en unos minutos.",
+          icon: "error",
+        });
       }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-   
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
       <div className="container-registro my-4 Background-registro">
-      <Form
+        <Form
           className="my-4 custom-form rounded"
           onSubmit={handleSubmit(usuarioValidado)}
           id="formHabitacion"
@@ -145,48 +121,18 @@ const Registro = ({editar}) => {
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formPassword">
-            <Form.Label className="sub_title-registro">Contraseña</Form.Label>
-
-            <Form.Control
-              className="mb-2"
-              type="password"
-              placeholder="Contraseña"
-              {...register("password", {
-                required: "La contraseña es obligatoria",
-                minLength: {
-                  value: 3,
-                  message: "Ingrese un mínimo de 3 caracteres",
-                },
-                maxLength: {
-                  value: 10,
-                  message: "Ingrese un máximo de 10 caracteres",
-                },
-                pattern: {
-                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                  message:
-                    "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
-                },
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.password?.message}
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="">
-            <div className="d-flex flex-row">
-              <p>Ya tienes una cuenta?</p>
-              <Button
-                variant="link"
-                className="nav-link fw-bold"
-                as={Link}
-                to={"/login"}
-              >
-                {" "}
-                Inicia sesión
-              </Button>
-            </div>
-          </Form.Group>
+          <div className="d-flex flex-row">
+            <p>Ya tienes una cuenta?</p>
+            <Button
+              variant="link"
+              className="nav-link fw-bold"
+              as={Link}
+              to={"/login"}
+            >
+              {" "}
+              Inicia sesión
+            </Button>
+          </div>
           <div className="d-flex justify-content-center">
             <Button type="submit" className="mb-3" id="btn-registro">
               Ingresar
@@ -194,81 +140,6 @@ const Registro = ({editar}) => {
           </div>
         </Form>
       </div>
-
-      {/*<div className="form_area-registro">
-          <p className="title-registro">REGISTRATE</p>
-          <form action="">
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="name">
-                Nombre
-              </label>
-              <input
-                placeholder="Juan"
-                className="form_style-registro"
-                type="text"
-                required=""
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="apellido">
-                Apellido
-              </label>
-              <input
-                placeholder="Perez"
-                className="form_style-registro"
-                type="text"
-                required=""
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="email">
-                Email
-              </label>
-              <input
-                placeholder="JuanPerez@gmail.com"
-                id="email"
-                className="form_style-registro"
-                type="email"
-                required=""
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="password">
-                Contraseña
-              </label>
-              <input
-                placeholder="**********"
-                id="password"
-                className="form_style-registro"
-                type="password"
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="confirmarPassword">
-                Confirmar Contraseña
-              </label>
-              <input
-                placeholder="**********"
-                id="confirmarPassword"
-                className="form_style-registro"
-                type="password"
-              ></input>
-            </div>
-            <div>
-              <button className="btn-registro">REGISTRAR</button>
-              <p>
-                Ya tienes una cuenta?{" "}
-                <a className="link-registro" href="">
-                  Inicia Sesion
-                </a>
-              </p>
-              <a className="link-registro" href=""></a>
-            </div>
-            <a className="link-registro" href=""></a>
-          </form>
-        </div>
-        <a className="link-registro" href=""></a>
-            </div>*/}
     </>
   );
 };
