@@ -1,9 +1,10 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import { crearUsuario, editarUsuarios, login } from "../../helpers/queriesUsuarios.js";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { crearUsuario, editarUsuarios, login, obtenerUsuarios } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 import Fondo from "../../assets/Registr.png";
+import { useEffect } from "react";
 
 const Registro = ({editar}) => {
   const {
@@ -12,42 +13,40 @@ const Registro = ({editar}) => {
     formState: { errors },
     reset,
   } = useForm();
-
+  const { id } = useParams();
   const navegacion = useNavigate();
 
-  const enviar = async (datos) => {
-    try {
-      console.log("Ingrso ", datos);
-      const respuesta = await crearUsuario(datos);
+  useEffect(() => {
+    if (editar) {
+      cargarDatosUsuario();
+    }
+  }, []);
 
-      if (respuesta.status === 201) {
-        Swal.fire({
-          title: "Huésped creado",
-          text: `El Huésped: ${datos.email} fue creado con éxito`,
-          icon: "success",
-        });
-        navegacion("/");
-        reset();
-      } else {
-        Swal.fire({
-          title: "Ocurrió un error",
-          text: "Intente ingresar en unos minutos",
-          icon: "error",
-        });
-      }
-    } catch (error) {
-      console.log(error);
+  const cargarDatosUsuario = async () => {
+    const respuesta = await obtenerUsuarios(id);
+    if (respuesta.status === 200) {
+      const usuarioBuscado = await respuesta.json();
+      //  Mostrar datos en el formulario:
+      setValue("usuario", usuarioBuscado.nombreCompleto);
+      setValue("email", usuarioBuscado.email);
+      setValue("password", usuarioBuscado.password);
+    } else {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
+        icon: "error",
+      });
     }
   };
 
-  const usuarioValidado = async (usuario) => {
+   const usuarioValidado = async (usuario) => {
     try {
       if (editar) {
         const respuesta = await editarUsuarios(id, usuario);
         if (respuesta.status === 200) {
           Swal.fire({
             title: "Usuario editado",
-            text: `El usuario ${usuario.nombreCompleto} fue modificado con exito.`,
+            text: `El usuario ${usuario.email} fue modificado con exito.`,
             icon: "success",
           });
 
@@ -59,11 +58,30 @@ const Registro = ({editar}) => {
             icon: "error",
           });
         }
+      } else {
+        const respuesta = await crearUsuario(usuario);
+
+        if (respuesta.status === 201) {
+          Swal.fire({
+            title: "Huésped creado",
+            text: `El Huésped: ${usuario.email} fue creado con éxito`,
+            icon: "success",
+          });
+          navegacion("/administrador");
+          reset();
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente ingresar en unos minutos",
+            icon: "error",
+          });
+        }
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      } catch (error) {
+        console.log(error);
+      }
+    };
+   
 
   return (
     <>
