@@ -39,6 +39,22 @@ export const leerUsuarios = async () => {
   }
 };
 
+export const editarUsuarios = async (id, usuario) => {
+  try {
+    const respuesta = await fetch(`${URI_USUARIOS}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URI_USUARIOS, {
