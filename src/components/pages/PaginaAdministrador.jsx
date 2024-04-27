@@ -1,24 +1,21 @@
-import { Table, Button } from "react-bootstrap";
+import { Container, Table, Button, Accordion, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Habitacion from "./habitacion/Habitacion";
-import {
-  leerHabitaciones,
-  borrarHabitacion,
-} from "../../helpers/queriesHabitaciones";
-import { Container } from "react-bootstrap";
+import { leerHabitaciones, borrarHabitacion } from "../../helpers/queriesHabitaciones";
 import { leerUsuarios } from "../../helpers/queriesUsuarios";
 import UsuariosHuesped from "./usuario/UsuariosHuesped";
 
 
+
+
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
-  const [huesped, setHuesped] = useState([]);
   const [usuario, setUsuarios] = useState([]);
 
   useEffect(() => {
     traerHabitaciones();
-    traerHuesped();
+    traerUsuarios();
     }, []);
 
   
@@ -41,12 +38,11 @@ const PaginaAdministrador = () => {
   };
 
 
-  const traerHuesped = async () => {
+  const traerUsuarios = async () => {
     try {
-      const listaHuesped = await leerUsuarios();
-      console.log(listaHuesped);
-      setHuesped(listaHuesped);
-      setUsuarios(listaHuesped);
+      const listaUsuarios = await leerUsuarios();
+      console.log(listaUsuarios);
+      setUsuarios(listaUsuarios);
     } catch (error) {
       console.log(error);
     }
@@ -99,12 +95,9 @@ const PaginaAdministrador = () => {
       <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
         <thead className="text-center">
          <tr>
-            <th>N° de habitación</th>
+           
             <th>Nombre completo</th>
             <th>Email</th>
-            <th>N° de contacto</th>
-            <th>Fecha de checkin</th>
-            <th>Fecha de checkout</th>
             <th>Opciones</th>
           </tr>
         </thead>
@@ -115,8 +108,51 @@ const PaginaAdministrador = () => {
               usuario={usuario}>
           </UsuariosHuesped>
           ))}
+          
         </tbody>
       </Table>
+
+      <div className="d-flex justify-content-between align-items-center subtAdmin">
+        <h2 className="my-4">Reservas</h2>
+        <Button
+          variant="outline-secondary"
+          id="btnAdmin"
+          as={Link}
+          to={"/administrador/agregarHabitacion"}
+        >
+          <i className="bi bi-file-earmark-plus">Reserva</i>
+        </Button>
+      </div>
+
+      <Table responsive="sm" striped bordered hover id="tabla" className="mb-5">
+        <thead className="text-center">
+         <tr>
+            <th>N° de habitación</th>
+            <th>Nombre completo</th>
+            <th>Email</th>
+            <th>N° de contacto</th>
+            <th>Fecha de checkin</th>
+            <th>Fecha de checkout</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {usuario.map((usuario) => (
+            <UsuariosHuesped
+              key={usuario._id}
+              usuario={usuario}>
+          </UsuariosHuesped>
+          ))}
+         
+        </tbody>
+      </Table>
+
+
+      
+
+        
+
+
 
    
     </Container>
