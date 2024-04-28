@@ -1,6 +1,6 @@
 const URI_USUARIOS = import.meta.env.VITE_API_USUARIOS;
 
-console.log(URI_USUARIOS)
+/* console.log(URI_USUARIOS) */
 /*const admin = {
   email: "admin@hakuhuasi.com.ar",
   password: "Haku123h",
