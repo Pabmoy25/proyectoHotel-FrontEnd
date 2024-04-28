@@ -115,7 +115,6 @@ const PaginaAdministrador = () => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
@@ -156,12 +155,12 @@ const PaginaAdministrador = () => {
         <Accordion.Item eventKey="0">
           <Accordion.Header>
             <h2 className="d-flex justify-content-between align-items-center subtAdmin">
-            Reservas
+              Reservas
             </h2>
           </Accordion.Header>
           <Accordion.Body>
             <Button
-            className="my-3"
+              className="my-3"
               variant="outline-secondary"
               id="btnAdmin"
               as={Link}
