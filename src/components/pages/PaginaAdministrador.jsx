@@ -164,7 +164,7 @@ const PaginaAdministrador = () => {
               variant="outline-secondary"
               id="btnAdmin"
               as={Link}
-              to={"/administrador/agregarHabitacion"}
+              to={"/administrador//crearReserva"}
             >
               <i className="bi bi-file-earmark-plus">Reserva</i>
             </Button>

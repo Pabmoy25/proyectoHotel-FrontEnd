@@ -18,6 +18,8 @@ import Contacto from "./components/pages/Contacto";
 import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import DetalleHabitacion from "./components/pages/DetalleHabitacion";
+import FormularioReservas from "./components/pages/Reservas/FormularioReservas";
+
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {}; //"";
@@ -118,6 +120,16 @@ function App() {
           path="/DetalleHabitacion/:id"
           element={<DetalleHabitacion></DetalleHabitacion>}
         ></Route>
+        <Route
+            exact
+            path="/crearReserva"
+            element={
+              <FormularioReservas
+                editar={false}
+                titulo="Nueva Reserva"
+              ></FormularioReservas>
+            }
+          ></Route>
         
       </Routes>
       <Footer></Footer>

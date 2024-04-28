@@ -11,7 +11,7 @@ const Reserva = ({reserva}) => {
             <Link
               className="btn"
               id="btnEditar"
-              to={`/registro/editar/${reserva._id}`}
+              /* to={`/registro/editar/${reserva._id}`} */
             >
               <i className="bi bi-pencil-square"></i>
             </Link>
