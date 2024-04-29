@@ -26,3 +26,12 @@ export const leerReservas = async () => {
       console.log(error);
     }
   };
+
+  export const obtenerReserva = async (id) => {
+    try {
+      const respuesta = await fetch(`${URI_RESERVAS}/${id}`);
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
