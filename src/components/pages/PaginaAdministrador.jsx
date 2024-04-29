@@ -187,7 +187,7 @@ const PaginaAdministrador = () => {
                   <th>N° de contacto</th>
                   <th>Fecha de checkin</th>
                   <th>Fecha de checkout</th>
-                  <th>Total de días</th>
+                  <th>Total de noches</th>
                   <th>Precio por noche</th>
                   <th>Opciones</th>
                 </tr>
