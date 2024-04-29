@@ -1,24 +1,25 @@
 import { Form, Button, Row, Col } from "react-bootstrap";
 import "react-datepicker/dist/react-datepicker.css";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { crearReservas } from "../../../helpers/queriesReserva";
-
 const FormularioReservas = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  /*  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date()); */
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    control,
   } = useForm();
 
   const reservaValidada = async (reserva) => {
+   
     const respuesta = await crearReservas(reserva);
     if (respuesta.status === 201) {
       Swal.fire({
@@ -45,7 +46,7 @@ const FormularioReservas = () => {
           id="formHabitacion"
         >
           <div>
-            <p className="title-registro">Reservar</p>
+            <p className="title-registro">RESERVAR</p>
           </div>
           <Row>
             <Col md={4}>
@@ -56,7 +57,7 @@ const FormularioReservas = () => {
                 <Form.Control
                   className="mb-2"
                   type="text"
-                  placeholder="Nombre"
+                  placeholder="José Perez"
                   {...register("nombreCompleto", {
                     required: "El nombre es obligatorio",
                     minLength: {
@@ -76,9 +77,11 @@ const FormularioReservas = () => {
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label className="sub_title-registro">E-mail</Form.Label>
+                <Form.Label className="sub_title-registro">
+                  E-mail de Contacto:
+                </Form.Label>
                 <Form.Control
-                  className="mb-2"
+                  className="mb-3"
                   type="email"
                   placeholder="nombre@gmail.com"
                   {...register("email", {
@@ -129,7 +132,7 @@ const FormularioReservas = () => {
               <Col md={4}>
                 <Form.Group className="mb-3" controlId="formNumeroHabitacion">
                   <Form.Label className="sub_title-registro">
-                    Numero de Habitación*
+                    Numero de Habitación
                   </Form.Label>
                   <Form.Control
                     type="text"
@@ -156,7 +159,7 @@ const FormularioReservas = () => {
               <Col md={4}>
                 <Form.Group className="mb-3" controlId="formTipo">
                   <Form.Label className="sub_title-registro">
-                    Tipo de Habitación*
+                    Tipo de Habitación
                   </Form.Label>
                   <Form.Select
                     {...register("tipoDeHabitacion", {
@@ -173,30 +176,31 @@ const FormularioReservas = () => {
                     {errors.tipoDeHabitacion?.message}
                   </Form.Text>
                 </Form.Group>
-                </Col>
-                <Col md={4}>
-                  <Form.Group className="mb-3" controlId="formPrecio">
-                    <Form.Label className="sub_title-registro">Tarifa por noche*</Form.Label>
-                    <Form.Control
-                      type="number"
-                      placeholder="20000"
-                      {...register("precio", {
-                        required: "El precio es obligatorio",
-                        min: {
-                          value: 10000,
-                          message: "El precio minimo es de $10.000",
-                        },
-                        max: {
-                          value: 100000,
-                          message: "El precio maximo es de $100.000",
-                        },
-                      })}
-                    />
-                    <Form.Text className="text-danger">
-                      {errors.precio?.message}
-                    </Form.Text>
-                  </Form.Group>
-              
+              </Col>
+              <Col md={4}>
+                <Form.Group className="mb-3" controlId="formPrecio">
+                  <Form.Label className="sub_title-registro">
+                    Tarifa por noche
+                  </Form.Label>
+                  <Form.Control
+                    type="number"
+                    placeholder="20000"
+                    {...register("precio", {
+                      required: "El precio es obligatorio",
+                      min: {
+                        value: 10000,
+                        message: "El precio minimo es de $10.000",
+                      },
+                      max: {
+                        value: 100000,
+                        message: "El precio maximo es de $100.000",
+                      },
+                    })}
+                  />
+                  <Form.Text className="text-danger">
+                    {errors.precio?.message}
+                  </Form.Text>
+                </Form.Group>
               </Col>
             </Row>
             <Row>
@@ -205,14 +209,19 @@ const FormularioReservas = () => {
                   <Form.Label className="sub_title-registro">
                     Fecha de Entrada
                   </Form.Label>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    selectsStart
-                    startDate={startDate}
-                    endDate={endDate}
-                    dateFormat="dd/MM/yyyy"
-                    className="form-control text-center"
+                  <Controller
+                    control={control}
+                    name="fechaEntrada"
+                    render={({ field }) => (
+                      <DatePicker
+                        placeholderText="Selecciona fecha de entrada"
+                        onChange={(date) => field.onChange(date)}
+                        selected={field.value}
+                        dateFormat="dd/MM/yyyy"
+                        className="form-control"
+                        minDate={new Date()}
+                      />
+                    )}
                   />
                 </Form.Group>
               </Col>
@@ -221,31 +230,35 @@ const FormularioReservas = () => {
                   <Form.Label className="sub_title-registro">
                     Fecha de Salida
                   </Form.Label>
-                  <DatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                    selectsEnd
-                    startDate={startDate}
-                    endDate={endDate}
-                    minDate={startDate}
-                    dateFormat="dd/MM/yyyy"
-                    className="form-control text-center"
-                  />
+                  <Controller
+                    control={control}
+                    name="fechaSalida"
+                    render={({ field }) => (
+                      <DatePicker
+                        placeholderText="Selecciona fecha de salida"
+                        onChange={(date) => field.onChange(date)}
+                        selected={field.value}
+                        dateFormat="dd/MM/yyyy"
+                        className="form-control"
+                        minDate={field.value}
+                      />
+                    )}
+                  />                  
                 </Form.Group>
               </Col>
               <Col md={4}>
-                <Form.Group className="mb-3" controlId="formFechaSalida">
+                <Form.Group className="mb-3" controlId="formTotalDias">
                   <Form.Label className="sub_title-registro">
                     Total de días
                   </Form.Label>
                   <Form.Control
                     type="number"
                     placeholder="Ej: 7"
-                    {...register("TotalDeDias", {
+                    {...register("totalDeDias", {
                       required: "Elija un periodo de días",
                       pattern: {
-                        value: /^[0-9]{3}$/,
-                        message: "Los dias no pueden superar los 3 dígitos)",
+                        value: /^[0-9]{1,3}$/,
+                        message: "Los días no pueden superar los 3 dígitos",
                       },
                     })}
                   />
