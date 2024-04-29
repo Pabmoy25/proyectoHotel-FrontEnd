@@ -181,13 +181,14 @@ const PaginaAdministrador = () => {
               <thead className="text-center">
                 <tr>
                   <th>N° de habitación</th>
-                  
+                  <th>Tipo de habitación</th>
                   <th>Nombre completo</th>
                   <th>Email</th>
                   <th>N° de contacto</th>
                   <th>Fecha de checkin</th>
                   <th>Fecha de checkout</th>
-                  
+                  <th>Total de días</th>
+                  <th>Precio por noche</th>
                   <th>Opciones</th>
                 </tr>
               </thead>
