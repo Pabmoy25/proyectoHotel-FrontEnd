@@ -1,6 +1,6 @@
 const URI_HABITACIONES = import.meta.env.VITE_API_HABITACIONES;
 
-console.log(URI_HABITACIONES);
+/* console.log(URI_HABITACIONES); */
 
 export const leerHabitaciones = async () => {
   try {

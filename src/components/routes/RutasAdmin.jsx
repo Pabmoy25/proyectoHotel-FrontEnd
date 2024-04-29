@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PaginaAdministrador from "../pages/PaginaAdministrador";
 import FormularioHabitacion from "../pages/habitacion/FormularioHabitacion";
+import FormularioReservas from "../pages/Reservas/FormularioReservas";
 
 const RutasAdmin = () => {
   return (
@@ -30,7 +31,17 @@ const RutasAdmin = () => {
             <FormularioHabitacion editar={true} titulo="Editar Habitacion" />
           }
         />
-      </Routes>
+        <Route
+          exact
+          path="/crearReserva"
+          element={
+            <FormularioReservas
+              editar={false}
+              titulo="Nueva Reserva"
+            ></FormularioReservas>
+          }
+        ></Route>
+                </Routes>
       
     </>
   );
