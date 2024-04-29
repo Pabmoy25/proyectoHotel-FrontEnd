@@ -3,20 +3,34 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useForm, Controller } from "react-hook-form";
 import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { crearReservas } from "../../../helpers/queriesReserva";
-const FormularioReservas = () => {
-  /*  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date()); */
 
+
+const FormularioReservas = () => {
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
     control,
+    setValue,
+    watch
   } = useForm();
+
+  
+  const fechaEntrada = watch("fechaEntrada");
+  const fechaSalida = watch("fechaSalida");
+
+  useEffect(() => {
+    if (fechaEntrada && fechaSalida) {
+      const diffTime = Math.abs(fechaSalida - fechaEntrada);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      setValue("totalDeDias", diffDays);
+    }
+  }, [fechaEntrada, fechaSalida, setValue]);
 
   const reservaValidada = async (reserva) => {
    
@@ -214,7 +228,7 @@ const FormularioReservas = () => {
                     name="fechaEntrada"
                     render={({ field }) => (
                       <DatePicker
-                        placeholderText="Selecciona fecha de entrada"
+                        placeholderText="día/mes/año"
                         onChange={(date) => field.onChange(date)}
                         selected={field.value}
                         dateFormat="dd/MM/yyyy"
@@ -235,12 +249,12 @@ const FormularioReservas = () => {
                     name="fechaSalida"
                     render={({ field }) => (
                       <DatePicker
-                        placeholderText="Selecciona fecha de salida"
+                        placeholderText="día/mes/año"
                         onChange={(date) => field.onChange(date)}
                         selected={field.value}
                         dateFormat="dd/MM/yyyy"
                         className="form-control"
-                        minDate={field.value}
+                        minDate={fechaEntrada || new Date()}
                       />
                     )}
                   />                  
@@ -249,21 +263,25 @@ const FormularioReservas = () => {
               <Col md={4}>
                 <Form.Group className="mb-3" controlId="formTotalDias">
                   <Form.Label className="sub_title-registro">
-                    Total de días
+                    Total de noches
                   </Form.Label>
                   <Form.Control
                     type="number"
                     placeholder="Ej: 7"
                     {...register("totalDeDias", {
-                      required: "Elija un periodo de días",
-                      pattern: {
-                        value: /^[0-9]{1,3}$/,
-                        message: "Los días no pueden superar los 3 dígitos",
+                      required: "Elija un periodo de días valido",
+                      min: {
+                        value: 1,
+                        message: "El minimo de reserva es de una noche",
                       },
-                    })}
+                        max: {
+                        value: 30,
+                        message: "El maximo de días por reserva es de 30 noches",
+                      },
+                    })}                   
                   />
                   <Form.Text className="text-danger">
-                    {errors.telefono?.message}
+                    {errors.totalDeDias?.message}
                   </Form.Text>
                 </Form.Group>
               </Col>
