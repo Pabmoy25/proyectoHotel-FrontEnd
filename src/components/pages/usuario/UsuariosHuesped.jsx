@@ -1,21 +1,16 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
-const Usuario = (huesped) => {
+const UsuariosHuesped = ({ usuario }) => {
   return (
     <tr>
-      <td className="text-center"></td>
-      <td className="text-center"></td>
-      <td className="text-center"></td>
-      <td className="text-center"></td>
-      <td className="text-center">{huesped.nombreCompleto}</td>
-      <td className="text-center">{huesped.email}</td>
+      <td className="text-center">{usuario.nombreCompleto}</td>
+      <td className="text-center">{usuario.email}</td>
       <td className="d-flex justify-content-center">
         <Link
           className="btn"
           id="btnEditar"
-          //to={`/administrador/editar/${huesped._id}`} corregir
+          to={`/registro/editar/${usuario._id}`}
         >
           <i className="bi bi-pencil-square"></i>
         </Link>
@@ -29,4 +24,4 @@ const Usuario = (huesped) => {
   );
 };
 
-export default Usuario;
+export default UsuariosHuesped;

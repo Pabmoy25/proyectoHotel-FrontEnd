@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PaginaAdministrador from "../pages/PaginaAdministrador";
 import FormularioHabitacion from "../pages/habitacion/FormularioHabitacion";
+import FormularioReservas from "../pages/Reservas/FormularioReservas";
 
 const RutasAdmin = () => {
   return (
@@ -16,14 +17,32 @@ const RutasAdmin = () => {
         <Route
           exact
           path="/agregarHabitacion"
-          element={<FormularioHabitacion></FormularioHabitacion>}
+          element={
+            <FormularioHabitacion
+              editar={false}
+              titulo="Nueva habitacion"
+            ></FormularioHabitacion>
+          }
         ></Route>
         <Route
           exact
           path="/editar/:id"
-          element={<FormularioHabitacion editar={true} titulo="Editar Habitacion" />}
+          element={
+            <FormularioHabitacion editar={true} titulo="Editar Habitacion" />
+          }
         />
-      </Routes>
+        <Route
+          exact
+          path="/crearReserva"
+          element={
+            <FormularioReservas
+              editar={false}
+              titulo="Nueva Reserva"
+            ></FormularioReservas>
+          }
+        ></Route>
+                </Routes>
+      
     </>
   );
 };

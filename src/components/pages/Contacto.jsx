@@ -53,6 +53,7 @@ const Contacto = () => {
   return (
     <div className="background-container">
       <div className="blur-container">
+<<<<<<< HEAD
         <div className="container">
           <div className="row">
             <div className="col-md-6">
@@ -66,6 +67,21 @@ const Contacto = () => {
                 </strong>
               </h5>
               <form onSubmit={handleSubmit} ref={form}>
+=======
+        <h1 className="tituloAdmin text-center mt-4">
+          <strong>Contactate con Hotel Haku Wasi</strong>
+        </h1>
+        <h5 className="text-center mt-4 mb-5">
+          <strong>
+            Complete el formulario y le responderemos a la mayor brevedad
+            posible. Desde ya, muchas gracias.
+          </strong>
+        </h5>
+        <form onSubmit={handleSubmit} ref={form}>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6 col-sm-12">
+>>>>>>> 74eaf4d8fffcd603009254eefb3de3fd7f7e0f6b
                 <div className="mb-3">
                   <label
                     htmlFor="nombreContacto"
@@ -106,6 +122,11 @@ const Contacto = () => {
                     required
                   />
                 </div>
+<<<<<<< HEAD
+=======
+              </div>
+              <div className="col-md-6 col-sm-12">
+>>>>>>> 74eaf4d8fffcd603009254eefb3de3fd7f7e0f6b
                 <div className="mb-3">
                   <label
                     htmlFor="consultaContacto"
@@ -142,7 +163,17 @@ const Contacto = () => {
               ></iframe>
             </div>
           </div>
+<<<<<<< HEAD
         </div>
+=======
+        </form>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d10370.39822055393!2d-65.372251882829!3d-26.77271575080301!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sus!4v1713717254060!5m2!1ses-419!2sus"
+          height="200"
+          width="100%"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+>>>>>>> 74eaf4d8fffcd603009254eefb3de3fd7f7e0f6b
       </div>
     </div>
   );

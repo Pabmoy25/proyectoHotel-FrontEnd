@@ -27,9 +27,10 @@ const Propuestas = () => {
             </ul>
           </div>
         </div>
-      </div>
 
-      <div className="row my-3">
+        <div className="col-lg-6">
+          <img src={Actvidad} alt="Imagen 2" className="img-fluid" />
+        </div>
         <div className="col-lg-6 d-flex align-items-center justify-content-center bg-color-propuesta">
           <div className="texto-propuesta">
             <p className="titulo-propuesta">
@@ -44,52 +45,39 @@ const Propuestas = () => {
               </li>
               <li>
                 Explora senderos pintorescos y descubre la belleza natural que
-                rodea nuestro hotel. Nuestros guías expertos te llevarán a
-                lugares fascinantes y te contarán historias interesantes sobre
-                la región.
+                rodea nuestro hotel.
               </li>
               <li>
                 Sumérgete en la magia del cielo estrellado con nuestra actividad
                 de observación astronómica. Telescopios profesionales te
-                permitirán descubrir la belleza del universo desde la comodidad
-                de nuestro entorno seguro y tranquilo.
+                permitirán descubrir la belleza del universo.
               </li>
             </ul>
           </div>
         </div>
-        <div className="col-lg-6">
-          <img src={Actvidad} alt="Imagen 2" className="img-fluid" />
-        </div>
-      </div>
 
-      <div className="row my-3">
         <div className="col-lg-6">
           <img src={Habitaciones} alt="Imagen 1" className="img-fluid" />
         </div>
         <div className="col-lg-6 d-flex align-items-center justify-content-center bg-color-propuesta">
           <div className="texto-propuesta">
             <p className="titulo-propuesta">
-              Descubre el Confort y la Elegancia en Nuestras Habitaciones
-              Exclusivas:
+              Descubre el Confort y la Elegancia en Nuestras Habitaciones:
             </p>
             <ul className="descripcion-propuesta">
               <li>
                 Sumérgete en un oasis de tranquilidad y sofisticación en nuestra
-                Suite de Lujo. Disfruta de amplios espacios, una decoración
-                elegante y todas las comodidades modernas que necesitas para una
-                estadía inolvidable.
+                Suite de Lujo. Disfruta de amplios espacios y una decoración
+                elegante
               </li>
               <li>
                 Relájate y recarga energías en nuestras confortables
-                Habitaciones Superiores. Equipadas con todo lo necesario para
-                una estancia placentera, estas habitaciones ofrecen un ambiente
-                acogedor y una vista espectacular de los alrededores.
+                Habitaciones Superiores.
               </li>
               <li>
                 Para aquellos que buscan una opción cómoda y accesible, nuestras
                 Habitaciones Estándar son la elección perfecta. Disfruta de un
-                ambiente acogedor y funcional, ideal para descansar después de
-                un día lleno de aventuras.
+                ambiente acogedor y funcional.
               </li>
             </ul>
           </div>
