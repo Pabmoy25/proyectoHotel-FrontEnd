@@ -25,6 +25,13 @@ const CardHabitacion = ({ cardHabitacion }) => {
           <Link className="search-button " to={"/detalleHabitacion/ + cardHabitaciones._id"}>
             Ver Habitación
           </Link>
+          <Link
+                      className="btn btn-inicio-card mt-3 border-0"
+                      variant="dark"
+                      to={`/reserva/${cardHabitacion._id}`}
+                    >
+                      Reservar
+                    </Link>
         </Card>
       </div>
     </Col>

@@ -72,9 +72,10 @@ const DetalleHabitacion = () => {
                   instalaciones y servicios.
                 </Card.Text>
 
-                <Link to="/Contacto" className="btn btn-primary">
+                <Link to="/administrador/editar/:id" className="btn btn-primary">
                   Reservar Habitación
                 </Link>
+                
               </Card.Body>
             </Card>
           </aside>
