@@ -87,8 +87,8 @@ const PaginaPrincipal = () => {
 
       <section className="d-flex justify-content-around">
         {/*<div className="col-lg-8 col-md-12 col-sm-12">*/}
-          <Row>
-            <Col sm={12} lg={4}>
+          <Row className="m-0"> 
+            <Col sm={12} md={4} lg={4} className="px-5">
               <Card className="custom-card">
                 <Card.Img variant="top" src={Boda} className="custom-img" />
                 <Card.Body>
@@ -100,7 +100,7 @@ const PaginaPrincipal = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col sm={12} lg={4}>
+            <Col sm={12} md={4} lg={4} className="px-5">
               <Card className="custom-card">
                 <Card.Img
                   variant="top"
@@ -116,7 +116,7 @@ const PaginaPrincipal = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col sm={12} lg={4}>
+            <Col sm={12} md={4} lg={4} className="px-5">
               <Card className="custom-card">
                 <Card.Img
                   variant="top"
