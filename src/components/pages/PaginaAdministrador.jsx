@@ -10,7 +10,9 @@ import { leerUsuarios } from "../../helpers/queriesUsuarios";
 import UsuariosHuesped from "./usuario/UsuariosHuesped";
 import Reserva from "./Reservas/Reserva";
 import Accordion from "react-bootstrap/Accordion";
-import { leerReservas } from "../../helpers/queriesReserva";
+import { borrarReserva, leerReservas } from "../../helpers/queriesReserva";
+
+
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
@@ -36,6 +38,16 @@ const PaginaAdministrador = () => {
     try {
       await borrarHabitacion(id);
       setHabitaciones(habitacion.filter((habitacion) => habitacion._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+
+  const borrarReservas = async (id) => {
+    try {
+      await borrarReserva(id);
+      setReservas(reserva.filter((reserva) => reserva._id !== id));
     } catch (error) {
       console.log(error);
     }
@@ -194,7 +206,7 @@ const PaginaAdministrador = () => {
               </thead>
               <tbody>
                 {reserva.map((reserva) => (
-                <Reserva key={reserva._id} reserva={reserva}></Reserva>
+                <Reserva key={reserva._id} reserva={reserva} eliminarReserva={borrarReservas}></Reserva>
                 ))}
               </tbody>
             </Table>
