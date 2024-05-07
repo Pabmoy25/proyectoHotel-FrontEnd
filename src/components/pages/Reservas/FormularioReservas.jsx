@@ -5,10 +5,11 @@ import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import { crearReservas } from "../../../helpers/queriesReserva";
+import { crearReservas, editarReserva } from "../../../helpers/queriesReserva";
 
 
-const FormularioReservas = () => {
+
+const FormularioReservas = ({editar, titulo}) => {
   
   const {
     register,
@@ -33,7 +34,25 @@ const FormularioReservas = () => {
   }, [fechaEntrada, fechaSalida, setValue]);
 
   const reservaValidada = async (reserva) => {
-   
+    try {
+      if (editar) {
+        const respuesta = await editarReserva(id, reserva);
+        if (respuesta.status === 200) {
+          Swal.fire({
+            title: "Reserva editada",
+            text: `La reserva fue modificada exitosamente.`,
+            icon: "success",
+          });
+
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar la reserva en unos minutos.",
+            icon: "error",
+          });
+        }
+      } else {
     const respuesta = await crearReservas(reserva);
     if (respuesta.status === 201) {
       Swal.fire({
@@ -49,7 +68,11 @@ const FormularioReservas = () => {
         icon: "error",
       });
     }
-  };
+  }
+} catch (error) {
+  console.log(error);
+}
+};
 
   return (
     <>

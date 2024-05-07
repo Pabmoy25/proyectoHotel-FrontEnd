@@ -1,5 +1,3 @@
-import Reserva from "../components/pages/Reservas/Reserva";
-
 const URI_RESERVAS = import.meta.env.VITE_API_RESERVAS;
 
 console.log(URI_RESERVAS);
@@ -52,7 +50,7 @@ export const leerReservas = async () => {
   };
 
 
-  export const editarReservas = async (id, reserva) => {
+  export const editarReserva = async (id, reserva) => {
     try {
       const respuesta = await fetch(`${URI_RESERVAS}/${id}`, {
         method: "PUT",
