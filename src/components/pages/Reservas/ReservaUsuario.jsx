@@ -4,9 +4,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Controller, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router-dom";
-import { editarHabitacion, obtenerHabitacion } from "../../../helpers/queriesHabitaciones";
+import { obtenerHabitacion } from "../../../helpers/queriesHabitaciones";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { crearReservas } from "../../../helpers/queriesReserva";
+
+
 
 const ReservaUsuario = () => {
   const {
@@ -52,20 +55,20 @@ const ReservaUsuario = () => {
     }
   };
 
-  const reservaValidada = async (habitacion) => {
+  const reservaValidada = async (reserva) => {
     try {
-      const respuesta = await editarHabitacion(id, habitacion);
+      const respuesta = await crearReservas(reserva);
       if (respuesta.status === 200) {
         Swal.fire({
-          title: "Habitación editada",
-          text: `La habitación número ${habitacion.habitacion} fue modificada exitosamente.`,
+          title: "Habitación reservada",
+          text: `La habitación fue reservada modificada exitosamente.`,
           icon: "success",
         });
-        navegacion("/administrador");
+        navegacion("/");
       } else {
         Swal.fire({
           title: "Ocurrió un error",
-          text: "Intente modificar la habitación en unos minutos.",
+          text: "Intente realizar la reserva en unos minutos.",
           icon: "error",
         });
       }
