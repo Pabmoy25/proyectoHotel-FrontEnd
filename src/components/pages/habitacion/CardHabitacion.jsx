@@ -1,7 +1,7 @@
 import { Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CardHabitacion = ({ cardHabitacion }) => {
+const CardHabitacion = ({ cardHabitacion, habitacion }) => {
   return (
     <Col md={4} lg={3} className="my-4 d-flex justify-content-center">
       <div className="card-container">
@@ -22,8 +22,11 @@ const CardHabitacion = ({ cardHabitacion }) => {
               <br className="mb-2" />
             </Card.Text>
           </Card.Body>
-          <Link className="search-button " to={"/detalleHabitacion/ + cardHabitaciones._id"}>
+          <Link className="search-button " to={"/detalleHabitacion/ + cardHabitacion._id"}>
             Ver Habitación
+          </Link>
+          <Link className="search-button mt-2" to={`/reserva/${cardHabitacion._id}`}>
+            Reservar
           </Link>
         </Card>
       </div>
