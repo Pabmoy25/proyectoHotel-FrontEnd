@@ -85,10 +85,10 @@ const PaginaPrincipal = () => {
 
       <h2 className="my-3 tituloAdmin text-center">Nuestras Propuestas</h2>
 
-      <section className="row justify-content-center">
-        <div className="col-lg-8 col-md-12 col-sm-12">
-          <div className="row">
-            <div className="col">
+      <section className="d-flex justify-content-around">
+        {/*<div className="col-lg-8 col-md-12 col-sm-12">*/}
+          <Row>
+            <Col sm={12} lg={4}>
               <Card className="custom-card">
                 <Card.Img variant="top" src={Boda} className="custom-img" />
                 <Card.Body>
@@ -99,8 +99,8 @@ const PaginaPrincipal = () => {
                   </Link>
                 </Card.Body>
               </Card>
-            </div>
-            <div className="col">
+            </Col>
+            <Col sm={12} lg={4}>
               <Card className="custom-card">
                 <Card.Img
                   variant="top"
@@ -115,8 +115,8 @@ const PaginaPrincipal = () => {
                   </Link>
                 </Card.Body>
               </Card>
-            </div>
-            <div className="col">
+            </Col>
+            <Col sm={12} lg={4}>
               <Card className="custom-card">
                 <Card.Img
                   variant="top"
@@ -131,9 +131,9 @@ const PaginaPrincipal = () => {
                   </Link>
                 </Card.Body>
               </Card>
-            </div>
-          </div>
-        </div>
+            </Col>
+          
+        </Row>
       </section>
 
       <div className="main-section">
