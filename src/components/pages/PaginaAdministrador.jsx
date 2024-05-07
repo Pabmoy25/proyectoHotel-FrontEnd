@@ -10,6 +10,7 @@ import { leerUsuarios } from "../../helpers/queriesUsuarios";
 import UsuariosHuesped from "./usuario/UsuariosHuesped";
 import Reserva from "./Reservas/Reserva";
 import Accordion from "react-bootstrap/Accordion";
+import { leerReservas } from "../../helpers/queriesReserva";
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
@@ -54,7 +55,7 @@ const PaginaAdministrador = () => {
     try {
       const listaReservas = await leerReservas();
       console.log(listaReservas);
-      setUsuarios(listaReservas);
+      setReservas(listaReservas);
     } catch (error) {
       console.log(error);
     }
@@ -180,17 +181,20 @@ const PaginaAdministrador = () => {
               <thead className="text-center">
                 <tr>
                   <th>N° de habitación</th>
+                  <th>Tipo de habitación</th>
                   <th>Nombre completo</th>
                   <th>Email</th>
                   <th>N° de contacto</th>
                   <th>Fecha de checkin</th>
                   <th>Fecha de checkout</th>
+                  <th>Total de noches</th>
+                  <th>Precio por noche</th>
                   <th>Opciones</th>
                 </tr>
               </thead>
               <tbody>
                 {reserva.map((reserva) => (
-                  <Reserva key={reserva._id} usuario={reserva}></Reserva>
+                <Reserva key={reserva._id} reserva={reserva}></Reserva>
                 ))}
               </tbody>
             </Table>

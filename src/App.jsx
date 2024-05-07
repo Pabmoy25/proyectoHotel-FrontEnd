@@ -19,6 +19,8 @@ import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import DetalleHabitacion from "./components/pages/DetalleHabitacion";
 import FormularioReservas from "./components/pages/Reservas/FormularioReservas";
+import ReservaUsuario from "./components/pages/Reservas/ReservaUsuario";
+import CardHabitacion from "./components/pages/habitacion/CardHabitacion";
 
 
 function App() {
@@ -103,34 +105,21 @@ function App() {
             ></FormularioHabitacion>
           }
         ></Route>
-        {
-          <Route
-            exact
-            path="/agregarHabitacion"
-            element={
-              <FormularioHabitacion
-                editar={false}
-                titulo="Nueva Habitacion"
-              ></FormularioHabitacion>
-            }
-          ></Route>
-        }
-        <Route
+           <Route
           exact
           path="/DetalleHabitacion/:id"
           element={<DetalleHabitacion></DetalleHabitacion>}
         ></Route>
-        <Route
-            exact
-            path="/crearReserva"
-            element={
-              <FormularioReservas
-                editar={false}
-                titulo="Nueva Reserva"
-              ></FormularioReservas>
-            }
-          ></Route>
-        
+          <Route
+          exact
+          path="/reserva/:id"
+          element={
+            <ReservaUsuario
+              reservar={true}
+              titulo="Reservar Habitacion"
+            ></ReservaUsuario>
+          }
+        ></Route>  
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
