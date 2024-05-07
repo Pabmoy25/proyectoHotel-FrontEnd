@@ -31,7 +31,7 @@ const FormularioReservas = ({ editar, titulo }) => {
 
   useEffect(() => {
     if (fechaEntrada && fechaSalida) {
-      const diffTime = Math.abs(fechaSalida - fechaEntrada);
+      const diffTime = Math.abs(new Date(fechaSalida) - new Date(fechaEntrada));
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       setValue("totalDeDias", diffDays);
     }
