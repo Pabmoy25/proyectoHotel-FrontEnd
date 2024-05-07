@@ -41,8 +41,12 @@ const RutasAdmin = () => {
             ></FormularioReservas>
           }
         ></Route>
-                </Routes>
-      
+        <Route
+          exact
+          path="/editarReserva/:id"
+          element={<FormularioReservas editar={true} titulo="Editar Reserva" />}
+        />
+      </Routes>
     </>
   );
 };

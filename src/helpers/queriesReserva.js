@@ -35,3 +35,32 @@ export const leerReservas = async () => {
       console.log(error);
     }
   };
+
+
+  export const borrarReserva = async (id) => {
+    try {
+      const respuesta = await fetch(`${URI_RESERVAS}/${id}`, {
+        method: "DELETE",
+      });
+      console.log(respuesta);
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  export const editarReserva = async (id, reserva) => {
+    try {
+      const respuesta = await fetch(`${URI_RESERVAS}/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reserva),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };

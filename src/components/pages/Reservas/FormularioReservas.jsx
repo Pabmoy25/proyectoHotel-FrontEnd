@@ -3,13 +3,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useForm, Controller } from "react-hook-form";
 import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import DatePicker from "react-datepicker";
-import { crearReservas } from "../../../helpers/queriesReserva";
+import {
+  crearReservas,
+  editarReserva,
+  obtenerReserva,
+} from "../../../helpers/queriesReserva";
+import { useNavigate, useParams } from "react-router-dom";
 
-
-const FormularioReservas = () => {
-  
+const FormularioReservas = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
@@ -17,8 +20,10 @@ const FormularioReservas = () => {
     reset,
     control,
     setValue,
-    watch
+    watch,
   } = useForm();
+  const { id } = useParams();
+  const navegacion = useNavigate();
 
   
   const fechaEntrada = watch("fechaEntrada");
@@ -26,28 +31,79 @@ const FormularioReservas = () => {
 
   useEffect(() => {
     if (fechaEntrada && fechaSalida) {
-      const diffTime = Math.abs(fechaSalida - fechaEntrada);
+      const diffTime = Math.abs(new Date(fechaSalida) - new Date(fechaEntrada));
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       setValue("totalDeDias", diffDays);
     }
   }, [fechaEntrada, fechaSalida, setValue]);
 
-  const reservaValidada = async (reserva) => {
-   
-    const respuesta = await crearReservas(reserva);
-    if (respuesta.status === 201) {
-      Swal.fire({
-        title: "reserva creada",
-        text: `La reserva fue creada con exito`,
-        icon: "success",
-      });
-      reset();
+  useEffect(() => {
+    if (editar) {
+      cargarDatosEnFormulario();
+    }
+  }, []);
+
+  const cargarDatosEnFormulario = async () => {
+    const respuesta = await obtenerReserva(id);
+    if (respuesta.status === 200) {
+      const reservaBuscada = await respuesta.json();
+      //  Mostrar datos en el formulario:
+      setValue("nombreCompleto", reservaBuscada.nombreCompleto);
+      setValue("email", reservaBuscada.email);
+      setValue("habitacion", reservaBuscada.habitacion);
+      setValue("precio", reservaBuscada.precio);
+      setValue("tipoDeHabitacion", reservaBuscada.tipoDeHabitacion);
+      setValue("fechaEntrada", reservaBuscada.fechaEntrada);
+      setValue("fechaSalida", reservaBuscada.fechaSalida);
+      setValue("telefono", reservaBuscada.telefono);
+      setValue("totalDeDias", reservaBuscada.totalDeDias);
     } else {
       Swal.fire({
-        title: "Ocurrio un error",
-        text: "Intente crear la reserva en unos minutos",
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
         icon: "error",
       });
+    }
+  };
+
+  const reservaValidada = async (reserva) => {
+    try {
+      if (editar) {
+        const respuesta = await editarReserva(id, reserva);
+        if (respuesta.status === 200) {
+          Swal.fire({
+            title: "Reserva editada",
+            text: `La reserva fue modificada exitosamente.`,
+            icon: "success",
+          });
+
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar la reserva en unos minutos.",
+            icon: "error",
+          });
+        }
+      } else {
+        const respuesta = await crearReservas(reserva);
+        if (respuesta.status === 201) {
+          Swal.fire({
+            title: "reserva creada",
+            text: `La reserva fue creada con exito`,
+            icon: "success",
+          });
+          reset();
+        } else {
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: "Intente crear la reserva en unos minutos",
+            icon: "error",
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -60,7 +116,7 @@ const FormularioReservas = () => {
           id="formHabitacion"
         >
           <div>
-            <p className="title-registro">RESERVAR</p>
+            <p className="title-registro">{titulo}</p>
           </div>
           <Row>
             <Col md={4}>
@@ -257,7 +313,7 @@ const FormularioReservas = () => {
                         minDate={fechaEntrada || new Date()}
                       />
                     )}
-                  />                  
+                  />
                 </Form.Group>
               </Col>
               <Col md={4}>
@@ -274,11 +330,12 @@ const FormularioReservas = () => {
                         value: 1,
                         message: "El minimo de reserva es de una noche",
                       },
-                        max: {
+                      max: {
                         value: 30,
-                        message: "El maximo de días por reserva es de 30 noches",
+                        message:
+                          "El maximo de días por reserva es de 30 noches",
                       },
-                    })}                   
+                    })}
                   />
                   <Form.Text className="text-danger">
                     {errors.totalDeDias?.message}
