@@ -11,7 +11,7 @@ import { crearReservas } from "../../../helpers/queriesReserva";
 
 
 
-const ReservaUsuario = () => {
+const ReservaUsuario = ({titulo}) => {
   const {
     register,
     handleSubmit,
@@ -61,7 +61,7 @@ const ReservaUsuario = () => {
       if (respuesta.status === 200) {
         Swal.fire({
           title: "Habitación reservada",
-          text: `La habitación fue reservada modificada exitosamente.`,
+          text: `La habitación fue reservada exitosamente, nos contactaremos en breve para coordinar la forma de pago, gracias.`,
           icon: "success",
         });
         navegacion("/");
@@ -87,7 +87,7 @@ const ReservaUsuario = () => {
         id="formHabitacion"
       >
         <div>
-          <p className="title-registro">RESERVAR</p>
+          <p className="title-registro">{titulo}</p>
         </div>
         <Row>
           <Col md={4}>
