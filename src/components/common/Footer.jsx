@@ -34,7 +34,7 @@ const Footer = () => {
                 <span className="sutbtitulofooter">Provincia:</span> Tucumán
               </p>
               <p>
-                <span className="sutbtitulofooter">País: </span> 
+                <span className="sutbtitulofooter">País: </span>
                 Argentina
               </p>
             </div>
@@ -134,7 +134,7 @@ const Footer = () => {
           </div>
 
           <div className="col-lg-3 col-md-6 col-sm-12 mt-3 d-flex flex-column align-items-center">
-            <h4>Seguínos</h4>
+            <h4>Síguenos</h4>
             <div className="d-flex flex-row justify-content-center">
               <Link
                 to="https://www.instagram.com/hakuhuasihotel?igsh=NHI5eDhod24zaTdz"
