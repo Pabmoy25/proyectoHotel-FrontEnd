@@ -91,9 +91,9 @@ const PaginaPrincipal = () => {
             <Card className="custom-card">
               <Card.Img variant="top" src={Boda} className="custom-img" />
               <Card.Body>
-                <Card.Title>Noche de bodas Unicas</Card.Title>
+                <Card.Title>Noche de bodas Únicas</Card.Title>
                 <Card.Text>El resto de tu vida comienza aquí.</Card.Text>
-                <Link className="search-button " to={"/Propuestas"}>
+                <Link className="search-button text-decoration-none" to={"/Propuestas"}>
                   Mas info
                 </Link>
               </Card.Body>
@@ -105,7 +105,7 @@ const PaginaPrincipal = () => {
               <Card.Body>
                 <Card.Title>Actividades al aire libre</Card.Title>
                 <Card.Text>Sé aventurero y conoce la ciudad.</Card.Text>
-                <Link className="search-button " to={"/Propuestas"}>
+                <Link className="search-button text-decoration-none" to={"/Propuestas"}>
                   Mas info
                 </Link>
               </Card.Body>
@@ -121,7 +121,7 @@ const PaginaPrincipal = () => {
               <Card.Body>
                 <Card.Title>Nuestras Habitaciones</Card.Title>
                 <Card.Text>Comodidades para todo los gustos</Card.Text>
-                <Link className="search-button " to={"/CatalogoHabitaciones"}>
+                <Link className="search-button text-decoration-none" to={"/CatalogoHabitaciones"}>
                   Mas info
                 </Link>
               </Card.Body>
