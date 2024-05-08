@@ -22,7 +22,7 @@ const PaginaPrincipal = () => {
             <div className="ImagenPetFriendly p-4">
               <img
                 src="https://images.pexels.com/photos/8939517/pexels-photo-8939517.jpeg"
-                className="PetfriendlyImg mb-3"
+                className="PetfriendlyImg mb-1"
               />
             </div>
             <div className="ImagenPetFriendly p-4">
@@ -85,10 +85,10 @@ const PaginaPrincipal = () => {
 
       <h2 className="my-3 tituloAdmin text-center">Nuestras Propuestas</h2>
 
-      <section className="d-flex justify-content-around">
-        <Row className="m-0">
-          <Col sm={12} md={4} lg={4} className="px-5">
-            <Card className="custom-card">
+      <section>
+        <Row className="m-0 d-flex justify-content-around">
+          <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
+            <Card className="custom-card w-30">
               <Card.Img variant="top" src={Boda} className="custom-img" />
               <Card.Body>
                 <Card.Title>Noche de bodas Únicas</Card.Title>
@@ -99,8 +99,8 @@ const PaginaPrincipal = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col sm={12} md={4} lg={4} className="px-5">
-            <Card className="custom-card">
+          <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
+            <Card className="custom-card w-30">
               <Card.Img variant="top" src={Actividad} className="custom-img" />
               <Card.Body>
                 <Card.Title>Actividades al aire libre</Card.Title>
@@ -111,8 +111,8 @@ const PaginaPrincipal = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col sm={12} md={4} lg={4} className="px-5">
-            <Card className="custom-card">
+          <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
+            <Card className="custom-card w-30">
               <Card.Img
                 variant="top"
                 src={Habitaciones}

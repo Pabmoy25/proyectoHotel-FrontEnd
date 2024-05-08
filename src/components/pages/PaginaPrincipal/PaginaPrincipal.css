@@ -63,7 +63,7 @@
 }
 
 .PetfriendlyImg {
-  width: 550px; /* Define el ancho deseado para la imagen */
+  width: 500px; /* Define el ancho deseado para la imagen */
   height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
   max-width: 100%; /* Evita que la imagen se desborde del contenedor */
   object-fit: cover;
