@@ -43,7 +43,7 @@ const ArrayCards = [
 
 function CardsInfo() {
   return (
-    <Row className="w-100 px-5">
+    <Row className="w-100 px-5 m-0">
       {ArrayCards.map((card) => (
         <CardOK title={card.title} imageURL={card.image} key={card.id} />
       ))}
