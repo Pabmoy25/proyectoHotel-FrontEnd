@@ -24,14 +24,17 @@ const Footer = () => {
                 Km 23, San Quintín
               </p>
               <p>
-                <span className="sutbtitulofooter">Codigo Postal:</span> 4101
+                <span className="sutbtitulofooter">Código Postal:</span> 4101
               </p>
               <p>
                 <span className="sutbtitulofooter">Localidad:</span> San
                 Quintín, Yerba Buena
               </p>
               <p>
-                <span className="sutbtitulofooter">Provincia:</span> País:
+                <span className="sutbtitulofooter">Provincia:</span> Tucumán
+              </p>
+              <p>
+                <span className="sutbtitulofooter">País: </span> 
                 Argentina
               </p>
             </div>
@@ -46,7 +49,7 @@ const Footer = () => {
                 155-333333
               </p>
               <p>
-                <span className="sutbtitulofooter">e-mail: </span>{" "}
+                <span className="sutbtitulofooter">E-mail: </span>{" "}
                 hakuhuasihotel@gmail.com.ar
               </p>
             </div>

@@ -17,7 +17,7 @@ const PaginaPrincipal = () => {
     <>
       <SliderCarrusel />
       <section className="w-100 my-3">
-        <Row className="fila">
+        <Row className="fila m-0">
           <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="col p-0">
             <div className="ImagenPetFriendly p-4">
               <img
@@ -86,53 +86,47 @@ const PaginaPrincipal = () => {
       <h2 className="my-3 tituloAdmin text-center">Nuestras Propuestas</h2>
 
       <section className="d-flex justify-content-around">
-        {/*<div className="col-lg-8 col-md-12 col-sm-12">*/}
-          <Row className="m-0"> 
-            <Col sm={12} md={4} lg={4} className="px-5">
-              <Card className="custom-card">
-                <Card.Img variant="top" src={Boda} className="custom-img" />
-                <Card.Body>
-                  <Card.Title>Noche de bodas Unicas</Card.Title>
-                  <Card.Text>El resto de tu vida comienza aquí.</Card.Text>
-                  <Link className="search-button " to={"/Propuestas"}>
-                    Mas info
-                  </Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col sm={12} md={4} lg={4} className="px-5">
-              <Card className="custom-card">
-                <Card.Img
-                  variant="top"
-                  src={Actividad}
-                  className="custom-img"
-                />
-                <Card.Body>
-                  <Card.Title>Actividades al aire libre</Card.Title>
-                  <Card.Text>Sé aventurero y conoce la ciudad.</Card.Text>
-                  <Link className="search-button " to={"/Propuestas"}>
-                    Mas info
-                  </Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col sm={12} md={4} lg={4} className="px-5">
-              <Card className="custom-card">
-                <Card.Img
-                  variant="top"
-                  src={Habitaciones}
-                  className="custom-img"
-                />
-                <Card.Body>
-                  <Card.Title>Nuestras Habitaciones</Card.Title>
-                  <Card.Text>Comodidades para todo los gustos</Card.Text>
-                  <Link className="search-button " to={"/CatalogoHabitaciones"}>
-                    Mas info
-                  </Link>
-                </Card.Body>
-              </Card>
-            </Col>
-          
+        <Row className="m-0">
+          <Col sm={12} md={4} lg={4} className="px-5">
+            <Card className="custom-card">
+              <Card.Img variant="top" src={Boda} className="custom-img" />
+              <Card.Body>
+                <Card.Title>Noche de bodas Unicas</Card.Title>
+                <Card.Text>El resto de tu vida comienza aquí.</Card.Text>
+                <Link className="search-button " to={"/Propuestas"}>
+                  Mas info
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col sm={12} md={4} lg={4} className="px-5">
+            <Card className="custom-card">
+              <Card.Img variant="top" src={Actividad} className="custom-img" />
+              <Card.Body>
+                <Card.Title>Actividades al aire libre</Card.Title>
+                <Card.Text>Sé aventurero y conoce la ciudad.</Card.Text>
+                <Link className="search-button " to={"/Propuestas"}>
+                  Mas info
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col sm={12} md={4} lg={4} className="px-5">
+            <Card className="custom-card">
+              <Card.Img
+                variant="top"
+                src={Habitaciones}
+                className="custom-img"
+              />
+              <Card.Body>
+                <Card.Title>Nuestras Habitaciones</Card.Title>
+                <Card.Text>Comodidades para todo los gustos</Card.Text>
+                <Link className="search-button " to={"/CatalogoHabitaciones"}>
+                  Mas info
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
       </section>
 
