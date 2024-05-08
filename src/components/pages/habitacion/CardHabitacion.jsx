@@ -32,11 +32,4 @@ const CardHabitacion = ({ cardHabitacion }) => {
 
 export default CardHabitacion;
 
-        </Card.Body>
-        <Link className='btn btn-secondary me-2' to={"/DetalleHabitacion/ + CardHabitaciones._id"}>Ver Habitación</Link>
-    </Card>
-</Col>
-      );
-    };
-
 

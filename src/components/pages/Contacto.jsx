@@ -55,10 +55,6 @@ const Contacto = () => {
 
     emailjs.sendForm("service_gseh43o", "template_p430uw9", form.current, {
       publicKey: "rzSFKooKPHw-SU_P2",
-
-    emailjs
-      .sendForm('service_gseh43o', 'template_p430uw9', form.current, {
-        publicKey: 'rzSFKooKPHw-SU_P2',
       })
 
   };
@@ -147,15 +143,11 @@ const Contacto = () => {
             </div>
             <div className="row">
               <div className="col-md-12 mb-4">
-                <div className="text-center mb-4 mt-4">
-
-                  <button type="submit" className="btnequipo btn-volver">
-                    Enviar consulta
-
-                  <button
-                  type="submit" className="btnequipo btn-volver">Enviar consulta</button>
-
-                </div>
+              <div className="text-center mb-4 mt-4">
+    <button type="submit" className="btnequipo btn-volver">
+        Enviar consulta
+    </button>
+</div>
               </div>
             </div>
           </div>

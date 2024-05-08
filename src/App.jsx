@@ -95,18 +95,7 @@ function App() {
             ></FormularioHabitacion>
           }
         ></Route>
-
-              exact
-              path="/administrador/editar/:id"
-              element={
-                <FormularioHabitacion
-                  editar={true}
-                  titulo="Editar Habitacion"
-                ></FormularioHabitacion>
-              }
-            ></Route>
-
-
+        
         {/*<Route
               exact
               path="/agregarHabitacion"
