@@ -66,7 +66,7 @@ const Registro = ({ editar, titulo}) => {
             text: `El Huésped: ${usuario.email} fue creado con éxito`,
             icon: "success",
           });
-          navegacion("/inicio");//1 modif naveg
+          navegacion("/");
         } else {
           Swal.fire({
             title: "Ocurrió un error",
