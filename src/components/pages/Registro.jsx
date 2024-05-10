@@ -86,7 +86,7 @@ const Registro = ({ editar, titulo}) => {
         <Form
           className="my-4 custom-form rounded"
           onSubmit={handleSubmit(usuarioValidado)}
-          id="formHabitacion"
+          id="formRegistro"
         >
           <div>
             <p className="title-registro">{titulo}</p>
