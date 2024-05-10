@@ -82,7 +82,7 @@ const Registro = ({ editar, titulo}) => {
 
   return (
     <>
-      <div className="container-registro my-4 Background-registro">
+      <div className="container-registro Background-registro">
         <Form
           className="my-4 custom-form rounded"
           onSubmit={handleSubmit(usuarioValidado)}
