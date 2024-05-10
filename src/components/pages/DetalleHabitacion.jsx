@@ -65,9 +65,12 @@ const DetalleHabitacion = () => {
                   </Card.Text>
                 </Col>
                 <Col md={4} className="d-flex align-items-center justify-content-center">
-                  <Link to="/administrador/editar/:id" className="btn btn-primary">
-                    Reservar Habitación
-                  </Link>
+                <Link
+                  className="search-button text-decoration-none"
+                  to={"/detalle"}
+                >
+                  Reservar
+                </Link>
                 </Col>
               </Row>
           </Col>
