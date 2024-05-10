@@ -172,9 +172,9 @@ const Registro = ({ editar, titulo}) => {
               </Form.Text>
             </Form.Group>
           )}
-          <div className="d-flex flex-row .sub_title-registro">
+          <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
-            <div>
+            
             <Button
               variant="link"
               className="nav-link fw-bold"
@@ -184,11 +184,11 @@ const Registro = ({ editar, titulo}) => {
               {" "}
                Inicia sesión
             </Button>
-            </div>
+            
             
           </div>
           <div className="d-flex justify-content-center">
-            <Button type="submit" className="mb-3" id="btn-registro">
+            <Button type="submit" className="mb-5" id="btn-registro">
               Ingresar
             </Button>
           </div>
