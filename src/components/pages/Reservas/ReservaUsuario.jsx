@@ -57,8 +57,9 @@ const ReservaUsuario = ({titulo}) => {
 
   const reservaValidada = async (reserva) => {
     try {
+      
       const respuesta = await crearReservas(reserva);
-      if (respuesta.status === 200) {
+      if (respuesta.status === 201) {
         Swal.fire({
           title: "Habitación reservada",
           text: `La habitación fue reservada exitosamente, nos contactaremos en breve para coordinar la forma de pago, gracias.`,
@@ -67,8 +68,8 @@ const ReservaUsuario = ({titulo}) => {
         navegacion("/");
       } else {
         Swal.fire({
-          title: "Ocurrió un error",
-          text: "Intente realizar la reserva en unos minutos.",
+          title: "Habitacion Reservada",
+          text: "La habitacion ya se encuentra ocupada, intente con otra habitacion disponible.",
           icon: "error",
         });
       }
