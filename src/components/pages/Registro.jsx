@@ -10,8 +10,10 @@ const Registro = ({ editar, titulo}) => {
     register,
     handleSubmit,
     setValue,
+    getValues,
     formState: { errors },
   } = useForm();
+
   const { id } = useParams();
   const navegacion = useNavigate();
 
@@ -172,6 +174,33 @@ const Registro = ({ editar, titulo}) => {
               </Form.Text>
             </Form.Group>
           )}
+          <Form.Group className="mb-3" controlId="formPasswordRepeat">
+              <Form.Label className="sub_title-registro">Reiterar contraseña</Form.Label>
+              <Form.Control
+                className="mb-2"
+                type="password"
+                placeholder="Contraseña"
+                {...register("passwordRepeat", {
+                  required: "Reiterar su contraseña es obligatorio",
+                  /*minLength: {
+                    value: 3,
+                    message: "Ingrese un mínimo de 3 caracteres",
+                  },
+                  maxLength: {
+                    value: 10,
+                    message: "Ingrese un máximo de 10 caracteres",
+                  },
+                  pattern: {
+                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                    message:
+                      "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
+                  },*/
+                })}
+              />
+              <Form.Text className="text-danger">
+              {errors.password?.message}
+              </Form.Text>
+            </Form.Group>
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
             
