@@ -1,16 +1,21 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { editarUsuarios, obtenerUsuarios, crearUsuario } from "../../helpers/queriesUsuarios.js";
+import {
+  editarUsuarios,
+  obtenerUsuarios,
+  crearUsuario,
+} from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 
-const Registro = ({ editar, titulo}) => {
+const Registro = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
     setValue,
     getValues,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -144,7 +149,7 @@ const Registro = ({ editar, titulo}) => {
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
-        
+
           {!editar && (
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label className="sub_title-registro">Contraseña</Form.Label>
@@ -175,14 +180,16 @@ const Registro = ({ editar, titulo}) => {
             </Form.Group>
           )}
           <Form.Group className="mb-3" controlId="formPasswordRepeat">
-              <Form.Label className="sub_title-registro">Reiterar contraseña</Form.Label>
-              <Form.Control
-                className="mb-2"
-                type="password"
-                placeholder="Contraseña"
-                {...register("passwordRepeat", {
-                  required: "Reiterar su contraseña es obligatorio",
-                  /*minLength: {
+            <Form.Label className="sub_title-registro">
+              Reiterar contraseña
+            </Form.Label>
+            <Form.Control
+              className="mb-2"
+              type="password"
+              placeholder="Contraseña"
+              {...register("passwordRepeat", {
+                required: "Reiterar su contraseña es obligatorio",
+                /*minLength: {
                     value: 3,
                     message: "Ingrese un mínimo de 3 caracteres",
                   },
@@ -195,15 +202,19 @@ const Registro = ({ editar, titulo}) => {
                     message:
                       "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
                   },*/
-                })}
-              />
-              <Form.Text className="text-danger">
+              })}
+            />{" "}
+            {watch("passwordRepeat") !== watch("password") &&
+            getValues("passwordRepeat") ? (
+              <p>Las contraseñas no coinciden</p>
+            ) : null}
+            <Form.Text className="text-danger">
               {errors.password?.message}
-              </Form.Text>
-            </Form.Group>
+            </Form.Text>
+          </Form.Group>
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
-            
+
             <Button
               variant="link"
               className="nav-link fw-bold"
@@ -211,10 +222,8 @@ const Registro = ({ editar, titulo}) => {
               to={"/login"}
             >
               {" "}
-               Inicia sesión
+              Inicia sesión
             </Button>
-            
-            
           </div>
           <div className="d-flex justify-content-center">
             <Button type="submit" className="mb-5" id="btn-registro">
@@ -228,4 +237,3 @@ const Registro = ({ editar, titulo}) => {
 };
 
 export default Registro;
-
