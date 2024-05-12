@@ -910,7 +910,7 @@ tbody {
 }
 
 .search-button {
-  background-color: rgb(130, 25, 119);
+  background-color: rgb(130, 25, 119) !important;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -927,4 +927,28 @@ tbody {
 .card-container {
   display: flex;
   justify-content: center;
+}
+
+
+.imagenDetalleHabitacion {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.fondoModal {
+  background: #fde6ff;
+}
+.modalHabitacionTexto{
+  color:#471a4e;
+}
+.modal-footer .btnCerrarModal{
+  background: #471a4e;
+  color: white;
+  border: #471a4e 0.1em solid;
+  font-family: "Rubik", sans-serif;
+}
+.modal-footer .btnCerrarModal:hover{
+background: #f7c2ff;
+color: rgb(31, 30, 30);
+border: #f7c2ff 0.1em solid;
 }

@@ -1,10 +1,27 @@
-import { Col, Card, ListGroup, Button } from "react-bootstrap";
+import {
+  Col,
+  Card,
+  ListGroup,
+  Button,
+  Modal,
+  Container,
+  Row,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
+import {
+  faDumbbell,
+  faWifi,
+  faSquareParking,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CardHabitacion = ({ cardHabitacion }) => {
   const [reservas, setReservas] = useState([]);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     const traerReservas = async () => {
@@ -43,12 +60,69 @@ const CardHabitacion = ({ cardHabitacion }) => {
               <br className="mb-2" />
             </Card.Text>
           </Card.Body>
-          <Link
-            className="search-button text-decoration-none"
-            to={"/detalleHabitacion/" + cardHabitacion._id}
+
+          <Button
+            className="search-button fw-semibold"
+            onClick={handleShow}
           >
-            Ver Habitación
-          </Link>
+            VER DETALLES
+          </Button>
+
+          <Modal show={show} onHide={handleClose} animation={false}>
+            <Modal.Header
+              closeButton
+              className="modalHabitacionTexto fondoModal"
+            >
+              <Modal.Title className="titulos fs-2">
+                {cardHabitacion.tipoDeHabitacion}
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="modalHabitacionTexto fondoModal">
+              <Container>
+                <Row>
+                  <Col xs={12}>
+                    <img
+                      src={cardHabitacion.imagen}
+                      className="imagenDetalleHabitacion"
+                    />
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col xs={12}>
+                    <div className="text-start mx-lg-5 mt-4 text-center">
+                      <h5 className="titulos fw-semibold">
+                        Servicios que Incluye
+                      </h5>
+                      <div>
+                        <span>
+                          <FontAwesomeIcon icon={faWifi} /> Wifi
+                        </span>
+                        <span className="mx-4">
+                          <FontAwesomeIcon icon={faSquareParking} />{" "}
+                          Estacionamiento
+                        </span>
+                        <span>
+                          <FontAwesomeIcon icon={faDumbbell} /> Gimnasio
+                        </span>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={12}>
+                    <p className="textos my-3 fw-bold modalHabitacionTexto">
+                      <span className="fs-5">Descripción: </span>
+                      {cardHabitacion.descripcion_breve}
+                    </p>
+                  </Col>
+                </Row>
+              </Container>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={handleClose} className="btnCerrarModal">
+                CERRAR
+              </Button>
+            </Modal.Footer>
+          </Modal>
 
           <div className="text-center">
             {habitacionReservada ? (
