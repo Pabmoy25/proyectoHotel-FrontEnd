@@ -76,7 +76,7 @@ const Footer = () => {
                 Quiénes somos
               </Link>
               <Link
-                to="/error404"
+                to="/contacto"
                 className="footer-link text-decoration-none mb-2 fs-6"
               >
                 Contacto
