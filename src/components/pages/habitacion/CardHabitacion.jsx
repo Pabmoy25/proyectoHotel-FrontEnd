@@ -1,7 +1,25 @@
 import { Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { leerReservas } from "../../../helpers/queriesReserva";
 
-const CardHabitacion = ({ cardHabitacion, habitacion }) => {
+const CardHabitacion = ({ cardHabitacion }) => {
+  const [reservas, setReservas] = useState([]);
+
+  useEffect(() => {
+    const traerReservas = async () => {
+      try {
+        const listaReservas = await leerReservas();
+        setReservas(listaReservas);
+      } catch (error) {
+        console.error("Error al leer las reservas:", error);
+      }
+    };
+    traerReservas();
+  }, []);
+
+  
+
   return (
     <Col md={4} lg={3} className="my-4 d-flex justify-content-center">
       <div className="card-container">
@@ -22,12 +40,13 @@ const CardHabitacion = ({ cardHabitacion, habitacion }) => {
               <br className="mb-2" />
             </Card.Text>
           </Card.Body>
-          <Link className="search-button " to={"/detalleHabitacion/ + cardHabitacion._id"}>
+          <Link
+            className="search-button "
+            to={"/detalleHabitacion/" + cardHabitacion._id}
+          >
             Ver Habitación
           </Link>
-          <Link className="search-button mt-2" to={`/reserva/${cardHabitacion._id}`}>
-            Reservar
-          </Link>
+          
         </Card>
       </div>
     </Col>
