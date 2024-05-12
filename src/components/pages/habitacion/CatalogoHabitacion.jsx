@@ -36,6 +36,7 @@ const CatalogoHabitacion = () => {
       </div>
 
       <Form.Select
+      className="custom-select-style" 
         value={filtroDisponibilidad}
         onChange={(e) => setFiltroDisponibilidad(e.target.value)}
       >
@@ -43,10 +44,6 @@ const CatalogoHabitacion = () => {
         <option value="disponible">Disponible</option>
         <option value="noDisponible">No disponible</option>
       </Form.Select>
-
-      <div>
-        <DatePicker></DatePicker>
-      </div>
 
       <Row>
         {habitacion.map((habitacion) => (
