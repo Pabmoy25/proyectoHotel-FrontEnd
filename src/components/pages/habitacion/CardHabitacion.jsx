@@ -24,7 +24,9 @@ const CardHabitacion = ({ cardHabitacion }) => {
   );
   console.log(habitacionReservada);
 
-  
+  const mensajeReserva = habitacionReservada
+    ? "Habitación reservada"
+    : "Reservar";
 
   return (
     <Col md={4} lg={3} className="my-4 d-flex justify-content-center">
@@ -52,7 +54,13 @@ const CardHabitacion = ({ cardHabitacion }) => {
           >
             Ver Habitación
           </Link>
-          
+          <Link
+            className="search-button mt-2"
+            to={`/reserva/${cardHabitacion._id}`}
+            disabled={habitacionReservada}
+          >
+            {mensajeReserva}
+          </Link>
         </Card>
       </div>
     </Col>
