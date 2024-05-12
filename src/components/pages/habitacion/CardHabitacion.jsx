@@ -1,4 +1,4 @@
-import { Col, Card } from "react-bootstrap";
+import { Col, Card, ListGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
@@ -54,13 +54,33 @@ const CardHabitacion = ({ cardHabitacion }) => {
           >
             Ver Habitación
           </Link>
-          <Link
+          {/* <Link
             className="search-button mt-2"
             to={`/reserva/${cardHabitacion._id}`}
             disabled={habitacionReservada}
           >
             {mensajeReserva}
-          </Link>
+          </Link> */}
+
+          <div className="text-center">
+            {habitacionReservada ? (
+              <Button
+                className="opacity-25 mt-3 border-0"
+                variant="dark"
+                disabled
+              >
+                No disponible
+              </Button>
+            ) : (
+              <Link
+                className="btn btn-inicio-card mt-2 border-0"
+                variant="dark"
+                to={`/reserva/${cardHabitacion._id}`}
+              >
+                Reservar
+              </Link>
+            )}
+          </div>
         </Card>
       </div>
     </Col>
