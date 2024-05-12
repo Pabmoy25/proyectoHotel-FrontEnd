@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
 import {
-
   faWifi,
   faPaw,
   faWaterLadder,
@@ -62,10 +61,7 @@ const CardHabitacion = ({ cardHabitacion }) => {
             </Card.Text>
           </Card.Body>
 
-          <Button
-            className="search-button fw-semibold"
-            onClick={handleShow}
-          >
+          <Button className="search-button fw-semibold" onClick={handleShow}>
             VER DETALLES
           </Button>
 
@@ -100,13 +96,11 @@ const CardHabitacion = ({ cardHabitacion }) => {
                           <FontAwesomeIcon icon={faWifi} /> Wifi
                         </span>
                         <span className="mx-4">
-                          <FontAwesomeIcon icon={faWaterLadder} />{" "}
-                          Piscina
+                          <FontAwesomeIcon icon={faWaterLadder} /> Piscina
                         </span>
 
                         <span className="mx-4">
-                          <FontAwesomeIcon icon={faPaw} />{" "}
-                          PetFriendly
+                          <FontAwesomeIcon icon={faPaw} /> PetFriendly
                         </span>
                       </div>
                     </div>
@@ -129,7 +123,6 @@ const CardHabitacion = ({ cardHabitacion }) => {
                       {cardHabitacion.precio}
                     </p>
                   </Col>
-                  
                 </Row>
               </Container>
             </Modal.Body>
