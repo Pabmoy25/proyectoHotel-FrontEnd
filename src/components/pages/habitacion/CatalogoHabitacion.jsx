@@ -35,15 +35,20 @@ const CatalogoHabitacion = () => {
         </div>
       </div>
 
-      <Form.Select
-      className="custom-select-style" 
-        value={filtroDisponibilidad}
-        onChange={(e) => setFiltroDisponibilidad(e.target.value)}
-      >
-        <option value="todos">Todos</option>
-        <option value="disponible">Disponible</option>
-        <option value="noDisponible">No disponible</option>
-      </Form.Select>
+      <Form>
+  <div className="d-flex align-items-center mb-3">
+    <div className="mr-2 ms-3">Elige una opción:</div>
+    <Form.Select
+       className="custom-select-style"
+      value={filtroDisponibilidad}
+      onChange={(e) => setFiltroDisponibilidad(e.target.value)}
+    >
+      <option value="todos">Todos</option>
+      <option value="disponible">Disponible</option>
+      <option value="noDisponible">No disponible</option>
+    </Form.Select>
+  </div>
+</Form>
 
       <Row>
         {habitacion.map((habitacion) => (

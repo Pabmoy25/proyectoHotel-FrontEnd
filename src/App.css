@@ -930,3 +930,10 @@ tbody {
 }
 
 
+.custom-select-style {
+  background-color: #f1c5ff !important; /* rosa claro */
+  color: #000; /* color del texto */
+  border: 1px solid #ced4da; /* borde */
+  border-radius: 0.25rem; /* redondear esquinas */
+  width: 200px; /* ajusta el ancho según sea necesario */
+}
