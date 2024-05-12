@@ -2,7 +2,6 @@ import CardHabitacion from "../habitacion/CardHabitacion";
 import { leerHabitaciones } from "../../../helpers/queriesHabitaciones";
 import { Row,Form } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import DatePicker from "../Reservas/DatePicker";
 
 const CatalogoHabitacion = () => {
   const [habitacion, setHabitacion] = useState([]);
@@ -36,12 +35,12 @@ const CatalogoHabitacion = () => {
       </div>
 
       <Form>
-  <div className="d-flex align-items-center mb-3">
-    <div className="mr-2 ms-3">Elige una opción:</div>
+  <div className="text-center mb-3">
+    <div className="mb-2 eligeOpcion">Elige una opción:</div>
     <Form.Select
-       className="custom-select-style me-3 ms-1"
-      value={filtroDisponibilidad}
-      onChange={(e) => setFiltroDisponibilidad(e.target.value)}
+       className="custom-select-style mx-auto w-25"
+       value={filtroDisponibilidad}
+       onChange={(e) => setFiltroDisponibilidad(e.target.value)}
     >
       <option value="todos">Todos</option>
       <option value="disponible">Disponible</option>

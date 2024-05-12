@@ -82,9 +82,9 @@ const PaginaAdministrador = () => {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
-            <h2 className="d-flex justify-content-between align-items-center subtAdmin">
+            <h3 className="d-flex justify-content-between align-items-center subtAdmin">
               Habitaciones
-            </h2>
+            </h3>
           </Accordion.Header>
           <Accordion.Body>
             <Button
@@ -102,7 +102,7 @@ const PaginaAdministrador = () => {
               bordered
               hover
               id="tabla"
-              className="mb-5 mt-2"
+              className="mb-4 mt-2"
             >
               <thead className="text-center ">
                 <tr>
@@ -110,7 +110,6 @@ const PaginaAdministrador = () => {
                   <th>Descripción Breve</th>
                   <th>Tipo</th>
                   <th>Url Imagen</th>
-                  <th>Estado</th>
                   <th>Tarifa</th>
                   <th>Opciones</th>
                 </tr>
@@ -131,9 +130,9 @@ const PaginaAdministrador = () => {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
-            <h2 className="d-flex justify-content-between align-items-center subtAdmin">
+            <h3 className="d-flex justify-content-between align-items-center subtAdmin">
               Usuarios
-            </h2>
+            </h3>
           </Accordion.Header>
           <Accordion.Body>
             <Table
@@ -142,7 +141,7 @@ const PaginaAdministrador = () => {
               bordered
               hover
               id="tabla"
-              className="mb-5"
+              className="mb-4"
             >
               <thead className="text-center">
                 <tr>
@@ -167,9 +166,9 @@ const PaginaAdministrador = () => {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
-            <h2 className="d-flex justify-content-between align-items-center subtAdmin ">
+            <h3 className="d-flex justify-content-between align-items-center subtAdmin ">
               Reservas
-            </h2>
+            </h3>
           </Accordion.Header>
           <Accordion.Body>
             <Button
@@ -183,12 +182,12 @@ const PaginaAdministrador = () => {
             </Button>
 
             <Table
-              responsive="sm"
+              responsive
               striped
               bordered
               hover
               id="tabla"
-              className="mb-5"
+              className="mb-4"
             >
               <thead className="text-center">
                 <tr>
