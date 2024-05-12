@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
 
-const CardHabitacion = ({ cardHabitacion }) => {
+const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const [reservas, setReservas] = useState([]);
+  
 
   useEffect(() => {
     const traerReservas = async () => {
@@ -23,7 +24,17 @@ const CardHabitacion = ({ cardHabitacion }) => {
   );
   console.log(habitacionReservada);
 
-  return (
+  const mostrarHabitacion = () => {
+    if (filtroDisponibilidad === "todos") {
+      return true;
+    } else if (filtroDisponibilidad === "disponible") {
+      return !habitacionReservada;
+    } else {
+      return habitacionReservada;
+    }
+  };
+
+  return mostrarHabitacion() ? (
     <Col md={4} lg={3} className="my-4 d-flex justify-content-center">
       <div className="card-container">
         <Card className="h-100 card-custom-rounded">
@@ -74,7 +85,8 @@ const CardHabitacion = ({ cardHabitacion }) => {
         </Card>
       </div>
     </Col>
-  );
+
+  ) : null;
 };
 
 export default CardHabitacion;
