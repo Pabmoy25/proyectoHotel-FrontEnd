@@ -77,7 +77,7 @@ const CardHabitacion = ({ cardHabitacion }) => {
                 {cardHabitacion.tipoDeHabitacion}
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body className="modalHabitacionTexto fondoModal">
+            <Modal.Body className="fondoModal">
               <Container>
                 <Row>
                   <Col xs={12}>
@@ -90,7 +90,7 @@ const CardHabitacion = ({ cardHabitacion }) => {
 
                 <Row>
                   <Col xs={12}>
-                    <div className="text-start mx-lg-5 mt-4 text-center">
+                    <div className="text-start mx-lg-5 mt-4 text-center modalHabitacionTexto">
                       <h5 className="titulos fw-semibold">
                         Servicios que Incluye
                       </h5>
@@ -109,11 +109,24 @@ const CardHabitacion = ({ cardHabitacion }) => {
                     </div>
                   </Col>
                   <Col xs={12}>
-                    <p className="textos my-3 fw-bold modalHabitacionTexto">
-                      <span className="fs-5">Descripción: </span>
-                      {cardHabitacion.descripcion_breve}
+                    <p className="textos my-3 fw-bold ">
+                      <span className="fs-5">Habitacion: </span>
+                      {cardHabitacion.habitacion}
                     </p>
                   </Col>
+                  <Col xs={12}>
+                    <p className="textos fw-bold ">
+                      <span className="fs-5">Descripción: </span>
+                      {cardHabitacion.descripcion_amplia}
+                    </p>
+                  </Col>
+                  <Col xs={12}>
+                    <p className="textos fw-bold ">
+                      <span className="fs-5">Precio por Noche: $ </span>
+                      {cardHabitacion.precio}
+                    </p>
+                  </Col>
+                  
                 </Row>
               </Container>
             </Modal.Body>
