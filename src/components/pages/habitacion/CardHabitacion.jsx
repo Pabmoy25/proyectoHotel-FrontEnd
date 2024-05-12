@@ -18,6 +18,12 @@ const CardHabitacion = ({ cardHabitacion }) => {
     traerReservas();
   }, []);
 
+  // Verificar si la habitación está reservada
+  const habitacionReservada = reservas.some(
+    (reserva) => reserva.habitacion === cardHabitacion.habitacion
+  );
+  console.log(habitacionReservada);
+
   
 
   return (
