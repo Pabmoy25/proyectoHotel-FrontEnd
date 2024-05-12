@@ -29,7 +29,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
+      <Menu setLogueado={setLogueado}></Menu>
 
       <Routes>
         <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>

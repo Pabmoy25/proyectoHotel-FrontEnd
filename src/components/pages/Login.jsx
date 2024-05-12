@@ -29,7 +29,7 @@ const Login = ({ setLogueado }) => {
 
         const dato = await respuesta.json();
 
-        console.log(dato);
+        console.log(dato.roleAdmin);
 
         if (dato.email === "admin@hakuhuasi.com.ar") {
           sessionStorage.setItem(
