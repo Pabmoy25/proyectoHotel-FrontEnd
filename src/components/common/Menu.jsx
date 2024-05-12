@@ -5,6 +5,11 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 const Menu = ({ logueado, setLogueado }) => {
   const navegacion = useNavigate();
 
+  console.log("logueado: ", logueado);
+
+  const usuario =
+    JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || null;
+
   const logout = () => {
     sessionStorage.removeItem("InicioSesionHaku");
 
@@ -46,37 +51,21 @@ const Menu = ({ logueado, setLogueado }) => {
               Galeria
             </NavLink>
 
-            {logueado.email ? (
-              logueado.email === 'admin@hakuhuasi.com.ar' ? (
-                <>
-                  <NavLink end className="nav-link" to={"/administrador"}>
-                    Administrador
-                  </NavLink>
-                  <Button
-                    variant="link"
-                    onClick={logout}
-                    className="nav-link text-start"
-                  >
-                    Logout
-                  </Button>
-                </>
-              ) : (
-                <>
-                  
-                  <Button
-                    variant="link"
-                    onClick={logout}
-                    className="nav-link text-start"
-                  >
-                    Logout
-                  </Button>
-                </>
-              )
-            ) : (
+            {!usuario ? (
               <>
                 <NavLink end className="nav-link" to={"/login"}>
                   Login
                 </NavLink>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="link"
+                  onClick={logout}
+                  className="nav-link text-start"
+                >
+                  Logout
+                </Button>
               </>
             )}
 

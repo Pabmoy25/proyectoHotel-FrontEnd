@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 const RutasProtegidas = ({ children }) => {
+  
   const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || null;
 
   if (!usuario) {
