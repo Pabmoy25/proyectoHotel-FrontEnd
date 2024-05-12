@@ -11,9 +11,10 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
 import {
-  faDumbbell,
+
   faWifi,
-  faSquareParking,
+  faPaw,
+  faWaterLadder,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -99,11 +100,13 @@ const CardHabitacion = ({ cardHabitacion }) => {
                           <FontAwesomeIcon icon={faWifi} /> Wifi
                         </span>
                         <span className="mx-4">
-                          <FontAwesomeIcon icon={faSquareParking} />{" "}
-                          Estacionamiento
+                          <FontAwesomeIcon icon={faWaterLadder} />{" "}
+                          Piscina
                         </span>
-                        <span>
-                          <FontAwesomeIcon icon={faDumbbell} /> Gimnasio
+
+                        <span className="mx-4">
+                          <FontAwesomeIcon icon={faPaw} />{" "}
+                          PetFriendly
                         </span>
                       </div>
                     </div>
