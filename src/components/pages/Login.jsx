@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 
-
 const Login = ({ setLogueado }) => {
   const {
     register,
@@ -21,36 +20,38 @@ const Login = ({ setLogueado }) => {
 
       console.log(respuesta);
 
-      //console.log(respuesta); 
-
-
       if (respuesta.status === 200) {
         Swal.fire({
           title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });
-        
-        const dato = await respuesta.json();
-        
-        sessionStorage.setItem(
-          "InicioSesionHaku",
-          JSON.stringify({ email: dato.email, token: dato.token })
-        );
-        setLogueado(dato);
-        
 
-        if(dato.email==='admin@hakuhuasi.com.ar'){
-          Swal.fire({
-            title: "Por favor, guarda tu token para gestión durante tu jornada",
-            text: dato.token,
-            icon: "warning",
-          });
+        const dato = await respuesta.json();
+
+        console.log(dato)
+
+        if (dato.roleAdmin) {
+          sessionStorage.setItem(
+            "InicioSesionHaku",
+            JSON.stringify({ email: dato.email, token: dato.token })
+          );
+          setLogueado(dato.email, dato.roleAdmin);//tratar de no guardar pass
           navegacion("/administrador");
-        }else{
+        } else {
+          sessionStorage.setItem(
+            "InicioSesionHaku",
+            JSON.stringify({ email: dato.email })
+          );
+          setLogueado(dato.email, dato.roleAdmin);
           navegacion("/");
         }
 
+        /*sessionStorage.setItem(
+          "InicioSesionHaku",
+          JSON.stringify({ email: dato.email, token: dato.token })
+        );
+        setLogueado(dato);*/
       } else {
         Swal.fire({
           title: "Error en login",

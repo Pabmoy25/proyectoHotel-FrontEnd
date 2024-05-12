@@ -24,7 +24,7 @@ import CardHabitacion from "./components/pages/habitacion/CardHabitacion";
 
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {}; //"";
+  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {}; 
 
   const [logueado, setLogueado] = useState(usuario);
 
@@ -51,6 +51,7 @@ function App() {
           element={
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
+              <FormularioHabitacion></FormularioHabitacion>
             </RutasProtegidas>
           }
         >
@@ -87,15 +88,15 @@ function App() {
           path="/registro"
           element={<Registro editar={false} titulo="REGISTRATE"></Registro>}
         ></Route>
-        <Route
+        {/*<Route
           exact
           path="/registro/editar/:id"
           element={<Registro editar={true} titulo="Editar Usuario"></Registro>}
-        ></Route>
+        ></Route>*/}
 
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
 
-        <Route
+        {/*<Route
           exact
           path="/administrador/editar/:id"
           element={
@@ -104,7 +105,7 @@ function App() {
               titulo="Editar Habitacion"
             ></FormularioHabitacion>
           }
-        ></Route>
+        ></Route>*/}
            <Route
           exact
           path="/DetalleHabitacion/:id"

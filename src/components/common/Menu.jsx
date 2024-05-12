@@ -47,22 +47,37 @@ const Menu = ({ logueado, setLogueado }) => {
             </NavLink>
 
             {logueado.email ? (
-              <>
-                <NavLink end className="nav-link" to={"/administrador"}>
-                  Administrador
-                </NavLink>
-                <Button
-                  variant="link"
-                  onClick={logout}
-                  className="nav-link text-start"
-                >
-                  Logout
-                </Button>
-              </>
+              logueado.email === 'admin@hakuhuasi.com.ar' ? (
+                <>
+                  <NavLink end className="nav-link" to={"/administrador"}>
+                    Administrador
+                  </NavLink>
+                  <Button
+                    variant="link"
+                    onClick={logout}
+                    className="nav-link text-start"
+                  >
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  
+                  <Button
+                    variant="link"
+                    onClick={logout}
+                    className="nav-link text-start"
+                  >
+                    Logout
+                  </Button>
+                </>
+              )
             ) : (
-              <NavLink end className="nav-link" to={"/login"}>
-                Login
-              </NavLink>
+              <>
+                <NavLink end className="nav-link" to={"/login"}>
+                  Login
+                </NavLink>
+              </>
             )}
 
             <NavLink end className="nav-link" to={"/registro"}>
