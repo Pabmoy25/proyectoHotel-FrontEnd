@@ -22,9 +22,8 @@ import FormularioReservas from "./components/pages/Reservas/FormularioReservas";
 import ReservaUsuario from "./components/pages/Reservas/ReservaUsuario";
 import CardHabitacion from "./components/pages/habitacion/CardHabitacion";
 
-
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {}; 
+  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {};
 
   const [logueado, setLogueado] = useState(usuario);
 
@@ -71,9 +70,6 @@ function App() {
         <Route path="/Propuestas" element={<Propuestas></Propuestas>}>
           {" "}
         </Route>
-        <Route path="/error404" element={<Error404 />}>
-          {" "}
-        </Route>
 
         <Route
           exact
@@ -106,12 +102,12 @@ function App() {
             ></FormularioHabitacion>
           }
         ></Route>*/}
-           <Route
+        <Route
           exact
           path="/DetalleHabitacion/:id"
           element={<DetalleHabitacion></DetalleHabitacion>}
         ></Route>
-          <Route
+        <Route
           exact
           path="/reserva/:id"
           element={
@@ -120,7 +116,11 @@ function App() {
               titulo="Reservar Habitacion"
             ></ReservaUsuario>
           }
-        ></Route>  
+        ></Route>
+
+        <Route path="*" element={<Error404 />}>
+          {" "}
+        </Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

@@ -131,7 +131,7 @@ const Login = ({ setLogueado }) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-          <h6 className="text-center" as={Link} to={""}>
+          <h6 className="text-center " as={Link} to={"/error404"}>
             Recuperar contraseña
           </h6>{" "}
           <div className=" px-3">
