@@ -93,7 +93,7 @@ const PaginaAdministrador = () => {
               as={Link}
               to={"/administrador/agregarHabitacion"}
             >
-              <i className="bi bi-file-earmark-plus"> Habitación</i>
+              <i className="bi bi-file-earmark-plus "> Nueva Habitación</i>
             </Button>
 
             <Table
@@ -102,7 +102,7 @@ const PaginaAdministrador = () => {
               bordered
               hover
               id="tabla"
-              className="mb-5"
+              className="mb-5 mt-2"
             >
               <thead className="text-center ">
                 <tr>
@@ -167,7 +167,7 @@ const PaginaAdministrador = () => {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
-            <h2 className="d-flex justify-content-between align-items-center subtAdmin">
+            <h2 className="d-flex justify-content-between align-items-center subtAdmin ">
               Reservas
             </h2>
           </Accordion.Header>
@@ -179,7 +179,7 @@ const PaginaAdministrador = () => {
               as={Link}
               to={"/administrador/crearReserva"}
             >
-              <i className="bi bi-file-earmark-plus">Reserva</i>
+              <i className="bi bi-file-earmark-plus">Nueva Reserva</i>
             </Button>
 
             <Table

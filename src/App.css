@@ -928,3 +928,12 @@ tbody {
   display: flex;
   justify-content: center;
 }
+
+
+.custom-select-style {
+  background-color: #f1c5ff !important; /* rosa claro */
+  color: #000; /* color del texto */
+  border: 1px solid #760e65 !important; /* borde */
+  border-radius: 0.25rem; /* redondear esquinas */
+  width: 200px; /* ajusta el ancho según sea necesario */
+}
