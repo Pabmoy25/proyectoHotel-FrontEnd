@@ -131,13 +131,13 @@ const Login = ({ setLogueado }) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-          <h6 className="text-center " as={Link} to={"/error404"}>
+          <h6 className="text-center " as={Link} to="*">
             Recuperar contraseña
           </h6>{" "}
           <div className=" px-3">
             <h6> | </h6>
           </div>
-          <h6 className="text-center" as={Link} to={"/registro"}>
+          <h6 className="text-center" as={Link} to='/registro'>
             {" "}
             Registrarme
           </h6>
@@ -148,10 +148,10 @@ const Login = ({ setLogueado }) => {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button id="btnGoogle">
+          <Button id="btnGoogle" className="" as={Link} to='*'>
             <i className="bi bi-google"></i>
           </Button>
-          <Button id="btnFaceb">
+          <Button id="btnFaceb" className="" as={Link} to='*'>
             <i className="bi bi-facebook"></i>
           </Button>
         </div>
