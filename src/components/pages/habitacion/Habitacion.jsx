@@ -47,9 +47,7 @@ const Habitacion = ({ habitacion, eliminarHabitacion }) => {
           alt="imagen de habitacion"
         ></img>
       </td>
-      <td className="text-center">{habitacion.estado}</td>
       <td className="text-center">$ {habitacion.precio}</td>
-
       <td className="d-flex justify-content-center">
         <Link
           className="btn"
