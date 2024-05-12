@@ -131,16 +131,18 @@ const Login = ({ setLogueado }) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-          <h6 className="text-center " as={Link} to="*">
+          <Button className="text-center nav-link" variant="link"  as={Link} to="*"><h6>
             Recuperar contraseña
-          </h6>{" "}
+            </h6>
+          </Button>{" "}
           <div className=" px-3">
             <h6> | </h6>
           </div>
-          <h6 className="text-center" as={Link} to='/registro'>
+          <Button className="text-center nav-link" variant="link" as={Link} to='/registro'><h6>
             {" "}
             Registrarme
-          </h6>
+            </h6>
+          </Button>
         </Form.Group>
         <div className="d-flex justify-content-center">
           <Button type="submit" className="mb-3" id="btnIngresar">
