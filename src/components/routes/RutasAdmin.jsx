@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import PaginaAdministrador from "../pages/PaginaAdministrador";
 import FormularioHabitacion from "../pages/habitacion/FormularioHabitacion";
 import FormularioReservas from "../pages/Reservas/FormularioReservas";
+import Registro from "../pages/Registro.jsx"
 
 const RutasAdmin = () => {
   return (

@@ -31,7 +31,7 @@ const Login = ({ setLogueado }) => {
 
         console.log(dato)
 
-        if (dato.roleAdmin) {
+        if (dato.email==='admin@hakuhuasi.com.ar') {
           sessionStorage.setItem(
             "InicioSesionHaku",
             JSON.stringify({ email: dato.email, token: dato.token })
@@ -47,11 +47,6 @@ const Login = ({ setLogueado }) => {
           navegacion("/");
         }
 
-        /*sessionStorage.setItem(
-          "InicioSesionHaku",
-          JSON.stringify({ email: dato.email, token: dato.token })
-        );
-        setLogueado(dato);*/
       } else {
         Swal.fire({
           title: "Error en login",
