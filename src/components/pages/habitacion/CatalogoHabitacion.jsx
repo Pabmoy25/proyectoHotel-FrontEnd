@@ -39,7 +39,7 @@ const CatalogoHabitacion = () => {
   <div className="d-flex align-items-center mb-3">
     <div className="mr-2 ms-3">Elige una opción:</div>
     <Form.Select
-       className="custom-select-style"
+       className="custom-select-style me-3 ms-1"
       value={filtroDisponibilidad}
       onChange={(e) => setFiltroDisponibilidad(e.target.value)}
     >
