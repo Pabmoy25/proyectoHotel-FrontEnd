@@ -36,7 +36,7 @@ const Login = ({ setLogueado }) => {
             "InicioSesionHaku",
             JSON.stringify({ email: dato.email, token: dato.token })
           );
-          setLogueado(dato.email, dato.roleAdmin);//tratar de no guardar pass
+          setLogueado(dato.email, dato.roleAdmin, dato.nombreCompleto, dato.token);
           navegacion("/administrador");
         } else {
           sessionStorage.setItem(
