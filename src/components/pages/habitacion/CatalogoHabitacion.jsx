@@ -1,13 +1,12 @@
 import CardHabitacion from "../habitacion/CardHabitacion";
 import { leerHabitaciones } from "../../../helpers/queriesHabitaciones";
-import { Row } from "react-bootstrap";
+import { Row,Form } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import DatePicker from "../Reservas/DatePicker";
 
-
-
 const CatalogoHabitacion = () => {
   const [habitacion, setHabitacion] = useState([]);
+  const [filtroDisponibilidad, setFiltroDisponibilidad] = useState("todos");
   useEffect(() => {
     traerHabitaciones();
   }, []);
@@ -36,15 +35,27 @@ const CatalogoHabitacion = () => {
         </div>
       </div>
 
-      <div>
-        <DatePicker></DatePicker>
-      </div>
+      <Form>
+  <div className="d-flex align-items-center mb-3">
+    <div className="mr-2 ms-3">Elige una opción:</div>
+    <Form.Select
+       className="custom-select-style me-3 ms-1"
+      value={filtroDisponibilidad}
+      onChange={(e) => setFiltroDisponibilidad(e.target.value)}
+    >
+      <option value="todos">Todos</option>
+      <option value="disponible">Disponible</option>
+      <option value="noDisponible">No disponible</option>
+    </Form.Select>
+  </div>
+</Form>
 
       <Row>
         {habitacion.map((habitacion) => (
           <CardHabitacion
             key={habitacion._id}
             cardHabitacion={habitacion}
+            filtroDisponibilidad={filtroDisponibilidad}
           ></CardHabitacion>
         ))}
       </Row>

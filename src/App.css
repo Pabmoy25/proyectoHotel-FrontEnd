@@ -930,6 +930,7 @@ tbody {
 }
 
 
+
 .imagenDetalleHabitacion {
   height: 500px;
   width: 100%;
@@ -952,3 +953,12 @@ background: #f7c2ff;
 color: rgb(31, 30, 30);
 border: #f7c2ff 0.1em solid;
 }
+
+.custom-select-style {
+  background-color: #f1c5ff !important; /* rosa claro */
+  color: #000; /* color del texto */
+  border: 1px solid #760e65 !important; /* borde */
+  border-radius: 0.25rem; /* redondear esquinas */
+  width: 200px; /* ajusta el ancho según sea necesario */
+}
+
