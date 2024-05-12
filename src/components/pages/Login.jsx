@@ -29,24 +29,37 @@ const Login = ({ setLogueado }) => {
 
         const dato = await respuesta.json();
 
-        console.log(dato)
+        console.log(dato);
 
-        if (dato.email==='admin@hakuhuasi.com.ar') {
+        if (dato.email === "admin@hakuhuasi.com.ar") {
           sessionStorage.setItem(
             "InicioSesionHaku",
-            JSON.stringify({ email: dato.email, token: dato.token })
+            JSON.stringify({
+              email: dato.email,
+              rol: dato.roleAdmin,
+              nombre: dato.nombreCompleto,
+              token: dato.token,
+            })
           );
-          setLogueado(dato.email, dato.roleAdmin, dato.nombreCompleto, dato.token);
+          setLogueado(
+            dato.email,
+            dato.roleAdmin,
+            dato.nombreCompleto,
+            dato.token
+          );
           navegacion("/administrador");
         } else {
           sessionStorage.setItem(
             "InicioSesionHaku",
-            JSON.stringify({ email: dato.email })
+            JSON.stringify({
+              email: dato.email,
+              rol: dato.roleAdmin,
+              nombre: dato.nombreCompleto,
+            })
           );
-          setLogueado(dato.email, dato.roleAdmin);
+          setLogueado(dato.email, dato.roleAdmin, dato.nombreCompleto);
           navegacion("/");
         }
-
       } else {
         Swal.fire({
           title: "Error en login",
