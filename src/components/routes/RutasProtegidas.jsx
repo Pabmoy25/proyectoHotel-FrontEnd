@@ -6,10 +6,10 @@ const RutasProtegidas = ({ children }) => {
   if (!usuario) {
     return <Navigate to={"/login"}></Navigate>;
   } else {
-    if(usuario.rol){
+    if(usuario.email==='admin@hakuhuasi.com.ar'){
       return children;
     }else{
-      return("/")
+      return <Navigate to={"/"}></Navigate>
     }
     
   }
