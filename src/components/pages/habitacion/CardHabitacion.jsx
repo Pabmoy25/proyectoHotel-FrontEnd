@@ -1,7 +1,28 @@
-import { Col, Card } from "react-bootstrap";
+import { Col, Card, ListGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { leerReservas } from "../../../helpers/queriesReserva";
 
-const CardHabitacion = ({ cardHabitacion, habitacion }) => {
+const CardHabitacion = ({ cardHabitacion }) => {
+  const [reservas, setReservas] = useState([]);
+
+  useEffect(() => {
+    const traerReservas = async () => {
+      try {
+        const listaReservas = await leerReservas();
+        setReservas(listaReservas);
+      } catch (error) {
+        console.error("Error al leer las reservas:", error);
+      }
+    };
+    traerReservas();
+  }, []);
+
+  const habitacionReservada = reservas.some(
+    (reserva) => reserva.habitacion === cardHabitacion.habitacion
+  );
+  console.log(habitacionReservada);
+
   return (
     <Col md={4} lg={3} className="my-4 d-flex justify-content-center">
       <div className="card-container">
@@ -22,12 +43,34 @@ const CardHabitacion = ({ cardHabitacion, habitacion }) => {
               <br className="mb-2" />
             </Card.Text>
           </Card.Body>
-          <Link className="search-button " to={"/detalleHabitacion/ + cardHabitacion._id"}>
+          <Link
+            className="search-button text-decoration-none"
+            to={"/detalleHabitacion/" + cardHabitacion._id}
+          >
             Ver Habitación
           </Link>
-          <Link className="search-button mt-2" to={`/reserva/${cardHabitacion._id}`}>
-            Reservar
-          </Link>
+
+          <div className="text-center">
+            {habitacionReservada ? (
+              <Button
+                className="opacity-50 mt-3 border-0"
+                variant="dark"
+                disabled
+              >
+                No disponible
+              </Button>
+            ) : (
+              <Button
+                className="mt-3"
+                variant="outline-secondary"
+                id="btnAdmin"
+                as={Link}
+                to={`/reserva/${cardHabitacion._id}`}
+              >
+                <i className="bi bi-file-earmark-plus"> Reservar</i>
+              </Button>
+            )}
+          </div>
         </Card>
       </div>
     </Col>
