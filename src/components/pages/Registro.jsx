@@ -7,7 +7,7 @@ import {
   crearUsuario,
 } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Registro = ({ editar, titulo }) => {
   const {
@@ -21,6 +21,26 @@ const Registro = ({ editar, titulo }) => {
 
   const { id } = useParams();
   const navegacion = useNavigate();
+
+  /*const [password, setPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
+    const handlePasswordChange = (event) => {
+      setPassword(event.target.value);
+    };
+
+    const handleRepeatPasswordChange = (event) => {
+      setRepeatPassword(event.target.value);
+    };
+
+  const validatePasswords = () => {
+    if (password !== repeatPassword) {
+      setPasswordError("Las contraseñas no coinciden");
+    } else {
+      setPasswordError("");
+    }
+  };*/
 
   useEffect(() => {
     if (editar) {
@@ -118,7 +138,7 @@ const Registro = ({ editar, titulo }) => {
                 },
               })}
             />
-            <Form.Text className="text-danger">
+            <Form.Text className="text-danger fw-bold">
               {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
@@ -145,7 +165,7 @@ const Registro = ({ editar, titulo }) => {
                 },
               })}
             />
-            <Form.Text className="text-danger">
+            <Form.Text className="text-danger fw-bold">
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
@@ -154,8 +174,12 @@ const Registro = ({ editar, titulo }) => {
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label className="sub_title-registro">Contraseña</Form.Label>
               <Form.Control
+                controlid="password"
                 className="mb-2"
                 type="password"
+                //value={password}
+                //onChange={handlePasswordChange}
+                //onBlur={validatePasswords}
                 placeholder="Contraseña"
                 {...register("password", {
                   required: "La contraseña es obligatoria",
@@ -174,8 +198,8 @@ const Registro = ({ editar, titulo }) => {
                   },
                 })}
               />
-              <Form.Text className="text-danger">
-                {errors.password?.message}
+              <Form.Text className="text-danger fw-bold">
+                {errors?.password?.message}
               </Form.Text>
             </Form.Group>
           )}
@@ -184,33 +208,29 @@ const Registro = ({ editar, titulo }) => {
               Reiterar contraseña
             </Form.Label>
             <Form.Control
+              controlid="password"
               className="mb-2"
               type="password"
+              //value={repeatPassword}
+              //onChange={handleRepeatPasswordChange}
+              //onBlur={validatePasswords}
               placeholder="Contraseña"
               {...register("passwordRepeat", {
                 required: "Reiterar su contraseña es obligatorio",
-                /*minLength: {
-                    value: 3,
-                    message: "Ingrese un mínimo de 3 caracteres",
-                  },
-                  maxLength: {
-                    value: 10,
-                    message: "Ingrese un máximo de 10 caracteres",
-                  },
-                  pattern: {
-                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                    message:
-                      "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
-                  },*/
               })}
             />{" "}
             {watch("passwordRepeat") !== watch("password") &&
             getValues("passwordRepeat") ? (
-              <p>Las contraseñas no coinciden</p>
+              <p className="text-danger fw-bold">
+                Las contraseñas no coinciden
+              </p>
             ) : null}
-            <Form.Text className="text-danger">
+            {/*
+            {passwordError && <p style={{ color: "red" }}>{passwordError}</p>} 
+           <p className="text-danger">Las contraseñas coinciden</p>}
+            {/*<Form.Text className="text-danger">
               {errors.password?.message}
-            </Form.Text>
+          </Form.Text>*/}
           </Form.Group>
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
