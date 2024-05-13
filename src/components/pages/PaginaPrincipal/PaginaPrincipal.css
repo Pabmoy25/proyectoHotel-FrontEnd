@@ -236,25 +236,40 @@
 }
 
 .rating {
-  font-size: 24px;
+  font-size: 30px;
   display: inline-block;
+  
   }
   
   .rating::before {
-  content: "★★★★★"; 
-  letter-spacing: 3px;
-  background: linear-gradient(90deg, #f7d500 0%, #f7d500 calc(20% - 0.5px), #f7d500 calc(20% - 0.5px),#f7d500 100%); /* Gradiente de color para las estrellas no seleccionadas */
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    content: "★★★★★"; 
+    letter-spacing: 3px;
+    color: #ffbf00; /* Color de las estrellas amarillas */
+    
   }
   
+  .rating::after {
+    content: "★★★★★"; 
+    letter-spacing: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+     z-index: -1;
+  }
   
   .comment {
   padding: 10px;
   margin: 10px 0;
   text-align: center;
   font-family: "Quicksand", sans-serif;
+  background-color: #ffbbf2;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.comment:hover {
+  transform: scale(1.1); /* Aplicar el efecto de zoom al pasar el cursor */
 }
   
   .comment p {

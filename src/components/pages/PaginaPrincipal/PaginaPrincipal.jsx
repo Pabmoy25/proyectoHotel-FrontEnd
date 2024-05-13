@@ -161,7 +161,7 @@ const PaginaPrincipal = () => {
         </div>
       </div>
       <section class="container">
-        <h3 className="Comentarios">Comentarios de nuestros huéspedes</h3>
+        <h3 className=" my-4 Comentarios">Comentarios de nuestros huéspedes</h3>
       <div class="row mt-4">
         <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="comments-grid">
@@ -192,7 +192,7 @@ const PaginaPrincipal = () => {
             <div class="comment">
               <div class="rating"></div>
               <p>
-                Haku Huasi y todo el personal, me atendieron super bien a mi y a mi familia. Encontramos el mejor lugar para vacacionar y descansar. 100% Recomendado!
+                Haku Huasi y todo el personal, me atendieron super bien a mi y a mi familia. Encontramos el mejor lugar para vacacionar,descansar y seguir conociendo. 100% Recomendado!
               </p>
               <p class="author">Autor: Elsa Pallo</p>
             </div>
