@@ -58,7 +58,19 @@ const Menu = () => {
                   Login
                 </NavLink>
               </>
-            ) : (
+            ) : usuario.email === "admin@hakuhuasi.com.ar"?
+            (
+              <>
+                <NavLink end className="nav-link" to={"/administrador"}>
+                  Administrador
+                </NavLink>
+                <Button variant="link" onClick={logout} className="nav-link text-start">
+                  Logout
+                </Button>
+              </>
+            )
+            :
+            (
               <>
                 <Button
                   variant="link"
