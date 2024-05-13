@@ -160,7 +160,7 @@ const PaginaPrincipal = () => {
           </p>
         </div>
       </div>
-      <section class="container mb-4">
+      <section className="container mb-4">
         <h3 className=" my-4 Comentarios">Comentarios de nuestros huéspedes</h3>
       <div class="row mt-4">
         <div class="col-lg-4 col-md-4 col-sm-12">

@@ -63,9 +63,9 @@
 }
 
 .PetfriendlyImg {
-  width: 500px; /* Define el ancho deseado para la imagen */
-  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-  max-width: 100%; /* Evita que la imagen se desborde del contenedor */
+  width: 500px; 
+  height: auto; 
+  max-width: 100%; 
   object-fit: cover;
 }
 
@@ -227,8 +227,8 @@
 
 .sidebar-left {
   position: sticky;
-  top: 20px; /* Ajusta según tus necesidades */
-  height: 100%; /* Ocupa toda la altura disponible */
+  top: 20px; 
+  height: 100%; 
 }
 
 .sidebar-right .card {
@@ -244,7 +244,7 @@
   .rating::before {
     content: "★★★★★"; 
     letter-spacing: 3px;
-    color: #ffa600; /* Color de las estrellas amarillas */
+    color: #ffa600; 
     
     
   }
@@ -270,7 +270,7 @@
 }
 
 .comment:hover {
-  transform: scale(1.1); /* Aplicar el efecto de zoom al pasar el cursor */
+  transform: scale(1.1); 
 }
   
   .comment p {
