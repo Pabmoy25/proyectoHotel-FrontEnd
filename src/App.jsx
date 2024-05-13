@@ -29,7 +29,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu setLogueado={setLogueado}></Menu>
+      <Menu //logueado={logueado} setLogueado={setLogueado}
+      ></Menu>
 
       <Routes>
         <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
@@ -39,7 +40,7 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<Login setLogueado={setLogueado}></Login>}
+          element={<Login logueado={logueado} setLogueado={setLogueado}></Login>}
         >
           {" "}
         </Route>

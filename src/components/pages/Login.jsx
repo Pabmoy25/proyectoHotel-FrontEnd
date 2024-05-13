@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 
-const Login = ({ setLogueado }) => {
+const Login = ({ logueado, setLogueado }) => {
   const {
     register,
     handleSubmit,
@@ -29,7 +29,7 @@ const Login = ({ setLogueado }) => {
 
         const dato = await respuesta.json();
 
-        console.log(dato.roleAdmin);
+        //console.log("usu ",dato);
 
         if (dato.email === "admin@hakuhuasi.com.ar") {
           sessionStorage.setItem(
