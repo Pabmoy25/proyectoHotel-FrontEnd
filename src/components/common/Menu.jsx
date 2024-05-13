@@ -2,8 +2,11 @@ import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import logoHotel from "../../assets/logoHotel.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-const Menu = ({ logueado, setLogueado }) => {
+const Menu = ({ setLogueado }) => {
   const navegacion = useNavigate();
+
+  const usuario =
+    JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || null;
 
   const logout = () => {
     sessionStorage.removeItem("InicioSesionHaku");
@@ -46,11 +49,14 @@ const Menu = ({ logueado, setLogueado }) => {
               Galeria
             </NavLink>
 
-            {logueado.email ? (
+            {!usuario ? (
               <>
-                <NavLink end className="nav-link" to={"/administrador"}>
-                  Administrador
+                <NavLink end className="nav-link" to={"/login"}>
+                  Login
                 </NavLink>
+              </>
+            ) : (
+              <>
                 <Button
                   variant="link"
                   onClick={logout}
@@ -59,10 +65,6 @@ const Menu = ({ logueado, setLogueado }) => {
                   Logout
                 </Button>
               </>
-            ) : (
-              <NavLink end className="nav-link" to={"/login"}>
-                Login
-              </NavLink>
             )}
 
             <NavLink end className="nav-link" to={"/registro"}>
