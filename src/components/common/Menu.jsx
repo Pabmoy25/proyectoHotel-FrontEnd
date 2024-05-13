@@ -1,12 +1,15 @@
 import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import logoHotel from "../../assets/logoHotel.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const Menu = ({ setLogueado }) => {
+const Menu = () => {
   const navegacion = useNavigate();
 
   const usuario =
     JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || null;
+
+  const [logueado, setLogueado] = useState(usuario);
 
   const logout = () => {
     sessionStorage.removeItem("InicioSesionHaku");
