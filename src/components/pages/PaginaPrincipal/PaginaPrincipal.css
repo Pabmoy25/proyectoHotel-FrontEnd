@@ -244,7 +244,8 @@
   .rating::before {
     content: "★★★★★"; 
     letter-spacing: 3px;
-    color: #ffbf00; /* Color de las estrellas amarillas */
+    color: #ffa600; /* Color de las estrellas amarillas */
+    
     
   }
   
@@ -263,7 +264,7 @@
   margin: 10px 0;
   text-align: center;
   font-family: "Quicksand", sans-serif;
-  background-color: #ffbbf2;
+  background-color: #ffd4f7;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
