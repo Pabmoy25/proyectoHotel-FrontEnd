@@ -234,3 +234,41 @@
 .sidebar-right .card {
   width: 100%;
 }
+
+.rating {
+  font-size: 24px;
+  display: inline-block;
+  }
+  
+  .rating::before {
+  content: "★★★★★"; 
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #f7d500 0%, #f7d500 calc(20% - 0.5px), #f7d500 calc(20% - 0.5px),#f7d500 100%); /* Gradiente de color para las estrellas no seleccionadas */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  }
+  
+  
+  .comment {
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+  
+  .comment p {
+  margin: 0;
+  }
+  
+  .author {
+  font-style: italic;
+  color: #888;
+  }
+  
+  .Comentarios{
+    text-align: center;
+    color: #6d0d3d;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+    
