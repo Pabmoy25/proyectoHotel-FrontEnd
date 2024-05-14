@@ -74,11 +74,15 @@ const Login = ({ setLogueado }) => {
 
   return (
     <section className="container-registro Background-registro">
-      <div>
-        <h1 className="title-registro">Iniciar sesión</h1>
-        <hr />
-      </div>
-      <Form onSubmit={handleSubmit(onSubmit)} id="formRegistro" className="my-4 custom-form rounded">
+      <Form
+        onSubmit={handleSubmit(onSubmit)}
+        id="formRegistro"
+        className="my-4 custom-form rounded"
+      >
+        <div>
+          <h1 className="title-registro">Iniciar sesión</h1>
+          <hr />
+        </div>
         <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label className="sub_title-registro">E-mail</Form.Label>
           <Form.Control
@@ -131,17 +135,24 @@ const Login = ({ setLogueado }) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-          <Button className="text-center nav-link" variant="link"  as={Link} to="*"><h6>
-            Recuperar contraseña
-            </h6>
+          <Button
+            className="text-center nav-link"
+            variant="link"
+            as={Link}
+            to="*"
+          >
+            <h6>Recuperar contraseña</h6>
           </Button>{" "}
           <div className=" px-3">
             <h6> | </h6>
           </div>
-          <Button className="text-center nav-link" variant="link" as={Link} to='/registro'><h6>
-            {" "}
-            Registrarme
-            </h6>
+          <Button
+            className="text-center nav-link"
+            variant="link"
+            as={Link}
+            to="/registro"
+          >
+            <h6> Registrarme</h6>
           </Button>
         </Form.Group>
         <div className="d-flex justify-content-center">
@@ -150,10 +161,10 @@ const Login = ({ setLogueado }) => {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button id="btnGoogle" className="" as={Link} to='*'>
+          <Button id="btnGoogle" className="" as={Link} to="*">
             <i className="bi bi-google"></i>
           </Button>
-          <Button id="btnFaceb" className="" as={Link} to='*'>
+          <Button id="btnFaceb" className="" as={Link} to="*">
             <i className="bi bi-facebook"></i>
           </Button>
         </div>
