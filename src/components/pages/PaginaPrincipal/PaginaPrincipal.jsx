@@ -19,7 +19,7 @@ const PaginaPrincipal = () => {
       <section className="w-100 my-3">
         <Row className="fila m-0">
           <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="col p-0">
-            <div className="ImagenPetFriendly p-4">
+            <div className="ImagenPetFriendly p-4 pb-2">
               <img
                 src="https://images.pexels.com/photos/8939517/pexels-photo-8939517.jpeg"
                 className="PetfriendlyImg mb-1"
@@ -83,12 +83,12 @@ const PaginaPrincipal = () => {
         </Accordion.Item>
       </Accordion>
 
-      <h2 className="my-3 tituloAdmin text-center">Nuestras Propuestas</h2>
+      <h2 className="mt-3 tituloAdmin text-center fw-bold">Nuestras Propuestas</h2>
 
       <section>
-        <Row className="m-0 d-flex justify-content-around">
+        <Row className="m-0 d-flex justify-content-around my-3 px-2">
           <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
-            <Card className="custom-card w-30">
+            <Card className="custom-card w-30 mb-3">
               <Card.Img variant="top" src={Boda} className="custom-img" />
               <Card.Body>
                 <Card.Title>Noche de bodas Únicas</Card.Title>
@@ -103,7 +103,7 @@ const PaginaPrincipal = () => {
             </Card>
           </Col>
           <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
-            <Card className="custom-card w-30">
+            <Card className="custom-card w-30 mb-3">
               <Card.Img variant="top" src={Actividad} className="custom-img" />
               <Card.Body>
                 <Card.Title>Actividades al aire libre</Card.Title>
@@ -118,7 +118,7 @@ const PaginaPrincipal = () => {
             </Card>
           </Col>
           <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
-            <Card className="custom-card w-30">
+            <Card className="custom-card w-30 mb-3">
               <Card.Img
                 variant="top"
                 src={Habitaciones}
