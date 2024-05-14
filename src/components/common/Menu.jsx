@@ -1,12 +1,15 @@
 import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import logoHotel from "../../assets/logoHotel.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const Menu = ({ setLogueado }) => {
+const Menu = () => {
   const navegacion = useNavigate();
 
   const usuario =
     JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || null;
+
+  const [logueado, setLogueado] = useState(usuario);
 
   const logout = () => {
     sessionStorage.removeItem("InicioSesionHaku");
@@ -54,6 +57,19 @@ const Menu = ({ setLogueado }) => {
                 <NavLink end className="nav-link" to={"/login"}>
                   Login
                 </NavLink>
+              </>
+            ) : usuario.email === "admin@hakuhuasi.com.ar" ? (
+              <>
+                <NavLink end className="nav-link" to={"/administrador"}>
+                  Administrador
+                </NavLink>
+                <Button
+                  variant="link"
+                  onClick={logout}
+                  className="nav-link text-start"
+                >
+                  Logout
+                </Button>
               </>
             ) : (
               <>
