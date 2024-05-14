@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-<<<<<<< HEAD
-/*{
-  border: 1px solid red;
-}*/
-
-=======
->>>>>>> 56385fc9f6956da04ca161efb27a32832f51f6e8
 #root {
   display: flex;
   flex-direction: column;
@@ -26,10 +19,6 @@
 .subtAdmin,
 .titulo-administrador {
   color: #7c127b;
-}
-
-#tabla table thead {
-  background-color: #f7f6df;
 }
 
 h1,
@@ -699,15 +688,13 @@ tbody {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
 }
 
 #formRegistro input {
   border: 2px solid #adb5bd;
-  width: 250px;
 }
 
-#btnIngresar,
+#btn-registro,
 #formRegistro input:focus {
   transform: translateY(4px);
   border-color: #4b34a6;
@@ -743,6 +730,7 @@ tbody {
   font-weight: 900;
   font-size: 1.5em;
   margin-top: 20px;
+  text-align: center;
 }
 
 .sub_title-registro {
@@ -771,7 +759,7 @@ tbody {
 
 #btn-registro {
   padding: 15px;
-  margin: 25px 0px;
+  
   width: 200px;
   max-width: 290px;
   font-size: larger;
