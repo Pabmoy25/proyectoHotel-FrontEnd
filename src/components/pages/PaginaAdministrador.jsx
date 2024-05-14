@@ -6,7 +6,7 @@ import {
   leerHabitaciones,
   borrarHabitacion,
 } from "../../helpers/queriesHabitaciones";
-import { leerUsuarios } from "../../helpers/queriesUsuarios";
+import { leerUsuarios, borrarUsuario, editarUsuarios } from "../../helpers/queriesUsuarios";
 import UsuariosHuesped from "./usuario/UsuariosHuesped";
 import Reserva from "./Reservas/Reserva";
 import Accordion from "react-bootstrap/Accordion";
@@ -58,6 +58,15 @@ const PaginaAdministrador = () => {
       const listaUsuarios = await leerUsuarios();
       console.log(listaUsuarios);
       setUsuarios(listaUsuarios);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const borrarUsuario = async (id) => {
+    try {
+      await borrarUsuario(id);
+      setUsuarios(usuario.filter((usuario) => usuario._id !== id));
     } catch (error) {
       console.log(error);
     }
@@ -155,6 +164,7 @@ const PaginaAdministrador = () => {
                   <UsuariosHuesped
                     key={usuario._id}
                     usuario={usuario}
+                    onDelete={() => borrarUsuario(usuario._id)}
                   ></UsuariosHuesped>
                 ))}
               </tbody>
