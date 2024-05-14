@@ -73,12 +73,12 @@ const Login = ({ setLogueado }) => {
   };
 
   return (
-    <section className="contenLogin my-5">
+    <section className="container-registro Background-registro">
       <div>
         <h1 className="tituloAdmin">Iniciar sesión</h1>
         <hr />
       </div>
-      <Form onSubmit={handleSubmit(onSubmit)} id="formLogin">
+      <Form onSubmit={handleSubmit(onSubmit)} id="formRegistro" className="my-4 custom-form rounded">
         <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label>E-mail</Form.Label>
           <Form.Control
