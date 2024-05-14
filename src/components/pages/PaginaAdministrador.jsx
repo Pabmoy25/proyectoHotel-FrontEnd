@@ -6,13 +6,14 @@ import {
   leerHabitaciones,
   borrarHabitacion,
 } from "../../helpers/queriesHabitaciones";
-import { leerUsuarios, borrarUsuario, editarUsuarios } from "../../helpers/queriesUsuarios";
+import {
+  leerUsuarios,
+  borrarUsuario,
+} from "../../helpers/queriesUsuarios";
 import UsuariosHuesped from "./usuario/UsuariosHuesped";
 import Reserva from "./Reservas/Reserva";
 import Accordion from "react-bootstrap/Accordion";
 import { borrarReserva, leerReservas } from "../../helpers/queriesReserva";
-
-
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
@@ -42,16 +43,6 @@ const PaginaAdministrador = () => {
       console.log(error);
     }
   };
-  
-
-  const borrarReservas = async (id) => {
-    try {
-      await borrarReserva(id);
-      setReservas(reserva.filter((reserva) => reserva._id !== id));
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const traerUsuarios = async () => {
     try {
@@ -63,7 +54,7 @@ const PaginaAdministrador = () => {
     }
   };
 
-  const borrarUsuario = async (id) => {
+  const borrarUsuarios = async (id) => {
     try {
       await borrarUsuario(id);
       setUsuarios(usuario.filter((usuario) => usuario._id !== id));
@@ -77,6 +68,15 @@ const PaginaAdministrador = () => {
       const listaReservas = await leerReservas();
       console.log(listaReservas);
       setReservas(listaReservas);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const borrarReservas = async (id) => {
+    try {
+      await borrarReserva(id);
+      setReservas(reserva.filter((reserva) => reserva._id !== id));
     } catch (error) {
       console.log(error);
     }
@@ -164,7 +164,7 @@ const PaginaAdministrador = () => {
                   <UsuariosHuesped
                     key={usuario._id}
                     usuario={usuario}
-                    onDelete={() => borrarUsuario(usuario._id)}
+                    /* eliminarUsuario={borrarUsuarios} */
                   ></UsuariosHuesped>
                 ))}
               </tbody>
@@ -215,7 +215,11 @@ const PaginaAdministrador = () => {
               </thead>
               <tbody>
                 {reserva.map((reserva) => (
-                <Reserva key={reserva._id} reserva={reserva} eliminarReserva={borrarReservas}></Reserva>
+                  <Reserva
+                    key={reserva._id}
+                    reserva={reserva}
+                    eliminarReserva={borrarReservas}
+                  ></Reserva>
                 ))}
               </tbody>
             </Table>

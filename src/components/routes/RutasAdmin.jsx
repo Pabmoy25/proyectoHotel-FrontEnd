@@ -53,7 +53,6 @@ const RutasAdmin = () => {
           path="/registro/editar/:id"
           element={<Registro editar={true} titulo="Editar Usuario"></Registro>}
         ></Route>
-
       </Routes>
     </>
   );
