@@ -83,7 +83,9 @@ const PaginaPrincipal = () => {
         </Accordion.Item>
       </Accordion>
 
-      <h2 className="my-3 tituloAdmin text-center fw-bold">Nuestras Propuestas</h2>
+      <h2 className="my-3 tituloAdmin text-center fw-bold">
+        Nuestras Propuestas
+      </h2>
 
       <section>
         <Row className="m-0 d-flex justify-content-around my-3 px-2">
@@ -93,12 +95,14 @@ const PaginaPrincipal = () => {
               <Card.Body>
                 <Card.Title>Noche de bodas Únicas</Card.Title>
                 <Card.Text>El resto de tu vida comienza aquí.</Card.Text>
-                <Link
-                  className="search-button text-decoration-none"
-                  to={"/Propuestas"}
-                >
-                  Mas info
-                </Link>
+                <div className="d-flex justify-content-center">
+                  <Link
+                    className="search-button text-decoration-none"
+                    to={"/Propuestas"}
+                  >
+                    Mas info
+                  </Link>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -108,12 +112,14 @@ const PaginaPrincipal = () => {
               <Card.Body>
                 <Card.Title>Actividades al aire libre</Card.Title>
                 <Card.Text>Sé aventurero y conoce la ciudad.</Card.Text>
-                <Link
-                  className="search-button text-decoration-none"
-                  to={"/Propuestas"}
-                >
-                  Mas info
-                </Link>
+                <div className="d-flex justify-content-center">
+                  <Link
+                    className="search-button text-decoration-none"
+                    to={"/Propuestas"}
+                  >
+                    Mas info
+                  </Link>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -127,12 +133,14 @@ const PaginaPrincipal = () => {
               <Card.Body>
                 <Card.Title>Nuestras Habitaciones</Card.Title>
                 <Card.Text>Comodidades para todo los gustos</Card.Text>
-                <Link
-                  className="search-button text-decoration-none"
-                  to={"/CatalogoHabitaciones"}
-                >
-                  Mas info
-                </Link>
+                <div className="d-flex justify-content-center">
+                  <Link
+                    className="search-button text-decoration-none"
+                    to={"/CatalogoHabitaciones"}
+                  >
+                    Mas info
+                  </Link>
+                </div>
               </Card.Body>
             </Card>
           </Col>
