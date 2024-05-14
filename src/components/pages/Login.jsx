@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 
-
 const Login = ({ setLogueado }) => {
   const {
     register,
@@ -21,36 +20,46 @@ const Login = ({ setLogueado }) => {
 
       console.log(respuesta);
 
-      //console.log(respuesta); 
-
-
       if (respuesta.status === 200) {
         Swal.fire({
           title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });
-        
-        const dato = await respuesta.json();
-        
-        sessionStorage.setItem(
-          "InicioSesionHaku",
-          JSON.stringify({ email: dato.email, token: dato.token })
-        );
-        setLogueado(dato);
-        
 
-        if(dato.email==='admin@hakuhuasi.com.ar'){
-          Swal.fire({
-            title: "Por favor, guarda tu token para gestión durante tu jornada",
-            text: dato.token,
-            icon: "warning",
-          });
+        const dato = await respuesta.json();
+
+        console.log(dato.roleAdmin);
+
+        if (dato.email === "admin@hakuhuasi.com.ar") {
+          sessionStorage.setItem(
+            "InicioSesionHaku",
+            JSON.stringify({
+              email: dato.email,
+              rol: dato.roleAdmin,
+              nombre: dato.nombreCompleto,
+              token: dato.token,
+            })
+          );
+          setLogueado(
+            dato.email,
+            dato.roleAdmin,
+            dato.nombreCompleto,
+            dato.token
+          );
           navegacion("/administrador");
-        }else{
+        } else {
+          sessionStorage.setItem(
+            "InicioSesionHaku",
+            JSON.stringify({
+              email: dato.email,
+              rol: dato.roleAdmin,
+              nombre: dato.nombreCompleto,
+            })
+          );
+          setLogueado(dato.email, dato.roleAdmin, dato.nombreCompleto);
           navegacion("/");
         }
-
       } else {
         Swal.fire({
           title: "Error en login",
@@ -122,16 +131,18 @@ const Login = ({ setLogueado }) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-          <h6 className="text-center" as={Link} to={""}>
+          <Button className="text-center nav-link" variant="link"  as={Link} to="*"><h6>
             Recuperar contraseña
-          </h6>{" "}
+            </h6>
+          </Button>{" "}
           <div className=" px-3">
             <h6> | </h6>
           </div>
-          <h6 className="text-center" as={Link} to={"/registro"}>
+          <Button className="text-center nav-link" variant="link" as={Link} to='/registro'><h6>
             {" "}
             Registrarme
-          </h6>
+            </h6>
+          </Button>
         </Form.Group>
         <div className="d-flex justify-content-center">
           <Button type="submit" className="mb-3" id="btnIngresar">
@@ -139,10 +150,10 @@ const Login = ({ setLogueado }) => {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button id="btnGoogle">
+          <Button id="btnGoogle" className="" as={Link} to='*'>
             <i className="bi bi-google"></i>
           </Button>
-          <Button id="btnFaceb">
+          <Button id="btnFaceb" className="" as={Link} to='*'>
             <i className="bi bi-facebook"></i>
           </Button>
         </div>

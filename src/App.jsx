@@ -18,16 +18,18 @@ import Contacto from "./components/pages/Contacto";
 import Propuestas from "./components/pages/Propuestas";
 import FormularioHabitacion from "./components/pages/habitacion/FormularioHabitacion";
 import DetalleHabitacion from "./components/pages/DetalleHabitacion";
+import FormularioReservas from "./components/pages/Reservas/FormularioReservas";
+import ReservaUsuario from "./components/pages/Reservas/ReservaUsuario";
+import CardHabitacion from "./components/pages/habitacion/CardHabitacion";
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {}; //"";
+  const usuario = JSON.parse(sessionStorage.getItem("InicioSesionHaku")) || {};
 
   const [logueado, setLogueado] = useState(usuario);
 
   return (
-
     <BrowserRouter>
-      <Menu logueado={logueado} setLogueado={setLogueado}></Menu>
+      <Menu></Menu>
 
       <Routes>
         <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
@@ -67,9 +69,6 @@ function App() {
         <Route path="/Propuestas" element={<Propuestas></Propuestas>}>
           {" "}
         </Route>
-        <Route path="/error404" element={<Error404 />}>
-          {" "}
-        </Route>
 
         <Route
           exact
@@ -79,14 +78,20 @@ function App() {
           {" "}
         </Route>
 
-        <Route exact path="/registro" element={<Registro></Registro>}>
-          {" "}
-        </Route>
+        <Route
+          exact
+          path="/registro"
+          element={<Registro editar={false} titulo="REGISTRATE"></Registro>}
+        ></Route>
+        <Route
+          exact
+          path="/registro/editar/:id"
+          element={<Registro editar={true} titulo="Editar Usuario"></Registro>}
+        ></Route>
 
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
-
-        <Route
-
+        
+        {/*<Route
           exact
           path="/administrador/editar/:id"
           element={
@@ -95,18 +100,29 @@ function App() {
               titulo="Editar Habitacion"
             ></FormularioHabitacion>
           }
-        ></Route>
-
+        ></Route>*/}
         <Route
           exact
           path="/DetalleHabitacion/:id"
           element={<DetalleHabitacion></DetalleHabitacion>}
         ></Route>
+        <Route
+          exact
+          path="/reserva/:id"
+          element={
+            <ReservaUsuario
+              reservar={true}
+              titulo="Reservar Habitacion"
+            ></ReservaUsuario>
+          }
+        ></Route>
 
+        <Route path="*" element={<Error404 />}>
+          {" "}
+        </Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
- 
   );
 }
 

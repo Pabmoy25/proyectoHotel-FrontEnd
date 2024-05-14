@@ -1,39 +1,89 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import { crearUsuario, login } from "../../helpers/queriesUsuarios.js";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import {
+  editarUsuarios,
+  obtenerUsuarios,
+  crearUsuario,
+} from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
-import Fondo from "../../assets/Registr.png";
+import { useEffect, useState } from "react";
 
-const Registro = () => {
+const Registro = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
+    setValue,
+    getValues,
+    watch,
     formState: { errors },
-    reset,
   } = useForm();
 
+  const { id } = useParams();
   const navegacion = useNavigate();
 
-  const enviar = async (datos) => {
-    try {
-      console.log("Ingrso ", datos);
-      const respuesta = await crearUsuario(datos);
+  let validarPass;
 
-      if (respuesta.status === 201) {
-        Swal.fire({
-          title: "Huésped creado",
-          text: `El Huésped: ${datos.email} fue creado con éxito`,
-          icon: "success",
-        });
-        navegacion("/");
-        reset();
+  useEffect(() => {
+    if (editar) {
+      cargarDatosUsuario();
+    }
+  }, [editar]);
+
+  const cargarDatosUsuario = async () => {
+    const respuesta = await obtenerUsuarios(id);
+    if (respuesta.status === 200) {
+      const usuarioBuscado = await respuesta.json();
+
+      setValue("nombreCompleto", usuarioBuscado.nombreCompleto);
+      setValue("email", usuarioBuscado.email);
+    } else {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
+        icon: "error",
+      });
+    }
+  };
+
+  const usuarioValidado = async (usuario) => {
+    try {
+      if (editar) {
+        // Si estás editando un usuario, elimina el campo de contraseña del objeto usuario
+        delete usuario.password;
+        const respuesta = await editarUsuarios(id, usuario);
+        if (respuesta.status === 200) {
+          Swal.fire({
+            title: "Usuario editado",
+            text: `El usuario ${usuario.email} fue modificado con exito.`,
+            icon: "success",
+          });
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar el usuario en unos minutos.",
+            icon: "error",
+          });
+        }
       } else {
-        Swal.fire({
-          title: "Ocurrió un error",
-          text: "Intente ingresar en unos minutos",
-          icon: "error",
-        });
+        // Si estás creando un nuevo usuario, realiza la solicitud POST con el objeto usuario completo
+        console.log("registrado ", usuario);
+        const respuesta = await crearUsuario(usuario);
+        if (respuesta.status === 201) {
+          Swal.fire({
+            title: "Huésped creado",
+            text: `El Huésped: ${usuario.email} fue creado con éxito`,
+            icon: "success",
+          });
+          navegacion("/");
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente ingresar en unos minutos",
+            icon: "error",
+          });
+        }
       }
     } catch (error) {
       console.log(error);
@@ -42,14 +92,14 @@ const Registro = () => {
 
   return (
     <>
-      <div className="container-registro my-4 Background-registro">
+      <div className="container-registro Background-registro">
         <Form
-          onSubmit={handleSubmit(enviar)}
+          className="my-4 custom-form rounded"
+          onSubmit={handleSubmit(usuarioValidado)}
           id="formRegistro"
-          className="form_area-registro text-start"
         >
           <div>
-            <p className="title-registro">REGISTRATE</p>
+            <p className="title-registro">{titulo}</p>
           </div>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label className="sub_title-registro">
@@ -71,32 +121,10 @@ const Registro = () => {
                 },
               })}
             />
-            <Form.Text className="text-danger">
+            <Form.Text className="text-danger fw-bold">
               {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
-          {/* <Form.Group className="mb-3" controlId="formApellido">
-            <Form.Label className="sub_title-registro">Apellido</Form.Label>
-            <Form.Control
-              className="mb-2"
-              type="text"
-              placeholder="Apellido"
-              {...register("apellido", {
-                required: "El apellido es obligatorio",
-                minLength: {
-                  value: 3,
-                  message: "Debe ingresar al menos 3 caracteres",
-                },
-                maxLength: {
-                  value: 50,
-                  message: "Debe ingresar como máximo 50 caracteres",
-                },
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.apellido?.message}
-            </Form.Text>
-            </Form.Group>*/}
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label className="sub_title-registro">E-mail</Form.Label>
             <Form.Control
@@ -120,165 +148,91 @@ const Registro = () => {
                 },
               })}
             />
-            <Form.Text className="text-danger">
+            <Form.Text className="text-danger fw-bold">
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formPassword">
-            <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
-            <Form.Control
-              className="mb-2"
-              type="password"
-              placeholder="Contraseña"
-              {...register("password", {
-                required: "La contraseña es obligatoria",
-                minLength: {
-                  value: 3,
-                  message: "Ingrese un mínimo de 3 caracteres",
-                },
-                maxLength: {
-                  value: 10,
-                  message: "Ingrese un máximo de 10 caracteres",
-                },
-                pattern: {
-                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                  message:
-                    "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
-                },
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.password?.message}
-            </Form.Text>
-          </Form.Group>
-          +
-          {/*<Form.Group className="mb-3" controlId="formConfirmPassword">
+          {!editar && (
+            <Form.Group className="mb-3" controlId="formPassword">
+              <Form.Label className="sub_title-registro">Contraseña</Form.Label>
+              <Form.Control
+                controlid="password"
+                className="mb-2"
+                type="password"
+                placeholder="Contraseña"
+                {...register("password", {
+                  required: "La contraseña es obligatoria",
+                  minLength: {
+                    value: 3,
+                    message: "Ingrese un mínimo de 3 caracteres",
+                  },
+                  maxLength: {
+                    value: 10,
+                    message: "Ingrese un máximo de 10 caracteres",
+                  },
+                  pattern: {
+                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                    message:
+                      "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
+                  },
+                })}
+              />
+              <Form.Text className="text-danger fw-bold">
+                {errors?.password?.message}
+              </Form.Text>
+            </Form.Group>
+          )}
+          <Form.Group className="mb-3" controlId="formPasswordRepeat">
             <Form.Label className="sub_title-registro">
-              Confirmar contraseña
+              Reiterar contraseña
             </Form.Label>
-
             <Form.Control
+              controlid="password"
               className="mb-2"
               type="password"
               placeholder="Contraseña"
-              {...register("password", {
-                required: "La contraseña es obligatoria",
-                minLength: {
-                  value: 3,
-                  message: "Ingrese un mínimo de 6 caracteres",
-                },
-                maxLength: {
-                  value: 100,
-                  message: "Ingrese un máximo de 10 caracteres",
-                },
-                pattern: {
-                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                  message:
-                    "Ingresar al menos una letra mayùscula,una minùscula y un nùmero",
-                },
+              {...register("passwordRepeat", {
+                required: "Reiterar su contraseña es obligatorio",
               })}
-            />
-            <Form.Text className="text-danger">
-              {errors.password?.message}
-            </Form.Text>
-            </Form.Group>*/}
-          <Form.Group className="">
-            <div className="d-flex flex-row">
-              <p>Ya tienes una cuenta?</p>
-              <Button
-                variant="link"
-                className="nav-link fw-bold"
-                as={Link}
-                to={"/login"}
-              >
-                {" "}
-                Inicia sesión
-              </Button>
-            </div>
+            />{" "}
+            {watch("password") !== watch("passwordRepeat")
+              ? //watch("password_repeat") !== watch("password") && NO BORRAR HASTA NO PROBAR
+                //getValues("password_repeat")
+                ((validarPass = false),
+                (
+                  <p className="text-danger fw-bold">
+                    Las contraseñas no coinciden
+                  </p>
+                ))
+              : ((validarPass = true),
+                (<p className=" fw-bold">Las contraseñas coinciden</p>))}
           </Form.Group>
-          <div className="d-flex justify-content-center">
-            <Button type="submit" className="mb-3" id="btn-registro">
-              Ingresar
+          <div className="d-flex flex-row sub_title-registro ">
+            <p>¿Ya tienes una cuenta? &nbsp;</p>
+            <Button
+              variant="link"
+              className="nav-link fw-bold"
+              as={Link}
+              to={"/login"}
+            >
+              {" "}
+              Inicia sesión
             </Button>
+          </div>
+          <div className="d-flex justify-content-center">
+            {validarPass ? (
+              <Button type="submit" className="mb-5" id="btn-registro">
+                Ingresar
+              </Button>
+            ) : (
+              <Button type="submit" className="mb-5" id="btn-registro" disabled>
+                Ingresar
+              </Button>
+            )}
           </div>
         </Form>
       </div>
-
-      {/*<div className="form_area-registro">
-          <p className="title-registro">REGISTRATE</p>
-          <form action="">
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="name">
-                Nombre
-              </label>
-              <input
-                placeholder="Juan"
-                className="form_style-registro"
-                type="text"
-                required=""
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="apellido">
-                Apellido
-              </label>
-              <input
-                placeholder="Perez"
-                className="form_style-registro"
-                type="text"
-                required=""
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="email">
-                Email
-              </label>
-              <input
-                placeholder="JuanPerez@gmail.com"
-                id="email"
-                className="form_style-registro"
-                type="email"
-                required=""
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="password">
-                Contraseña
-              </label>
-              <input
-                placeholder="**********"
-                id="password"
-                className="form_style-registro"
-                type="password"
-              ></input>
-            </div>
-            <div className="form_group-registro">
-              <label className="sub_title-registro" htmlFor="confirmarPassword">
-                Confirmar Contraseña
-              </label>
-              <input
-                placeholder="**********"
-                id="confirmarPassword"
-                className="form_style-registro"
-                type="password"
-              ></input>
-            </div>
-            <div>
-              <button className="btn-registro">REGISTRAR</button>
-              <p>
-                Ya tienes una cuenta?{" "}
-                <a className="link-registro" href="">
-                  Inicia Sesion
-                </a>
-              </p>
-              <a className="link-registro" href=""></a>
-            </div>
-            <a className="link-registro" href=""></a>
-          </form>
-        </div>
-        <a className="link-registro" href=""></a>
-            </div>*/}
     </>
   );
 };

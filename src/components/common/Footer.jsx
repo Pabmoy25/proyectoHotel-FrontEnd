@@ -24,14 +24,17 @@ const Footer = () => {
                 Km 23, San Quintín
               </p>
               <p>
-                <span className="sutbtitulofooter">Codigo Postal:</span> 4101
+                <span className="sutbtitulofooter">Código Postal:</span> 4101
               </p>
               <p>
                 <span className="sutbtitulofooter">Localidad:</span> San
                 Quintín, Yerba Buena
               </p>
               <p>
-                <span className="sutbtitulofooter">Provincia:</span> País:
+                <span className="sutbtitulofooter">Provincia:</span> Tucumán
+              </p>
+              <p>
+                <span className="sutbtitulofooter">País: </span>
                 Argentina
               </p>
             </div>
@@ -46,7 +49,7 @@ const Footer = () => {
                 155-333333
               </p>
               <p>
-                <span className="sutbtitulofooter">e-mail: </span>{" "}
+                <span className="sutbtitulofooter">E-mail: </span>{" "}
                 hakuhuasihotel@gmail.com.ar
               </p>
             </div>
@@ -73,7 +76,7 @@ const Footer = () => {
                 Quiénes somos
               </Link>
               <Link
-                to="/error404"
+                to="/contacto"
                 className="footer-link text-decoration-none mb-2 fs-6"
               >
                 Contacto
@@ -131,7 +134,7 @@ const Footer = () => {
           </div>
 
           <div className="col-lg-3 col-md-6 col-sm-12 mt-3 d-flex flex-column align-items-center">
-            <h4>Seguínos</h4>
+            <h4>Síguenos</h4>
             <div className="d-flex flex-row justify-content-center">
               <Link
                 to="https://www.instagram.com/hakuhuasihotel?igsh=NHI5eDhod24zaTdz"

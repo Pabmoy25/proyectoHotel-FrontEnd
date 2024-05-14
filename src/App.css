@@ -21,10 +21,6 @@
   color: #7c127b;
 }
 
-#tabla table thead {
-  background-color: #f7f6df;
-}
-
 h1,
 h2,
 thead {
@@ -269,6 +265,11 @@ tbody {
   font-weight: bold;
   border: 2px solid #82376b;
 }
+.eligeOpcion {
+  font-weight: bold;
+  color: #82376b;
+}
+
 
 /*GALERIA*/
 
@@ -440,6 +441,9 @@ tbody {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos secundarios */
+  align-items: center;
 }
 
 .blur-container {
@@ -684,15 +688,13 @@ tbody {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
 }
 
 #formRegistro input {
   border: 2px solid #adb5bd;
-  width: 250px;
 }
 
-#btnIngresar,
+#btn-registro,
 #formRegistro input:focus {
   transform: translateY(4px);
   border-color: #4b34a6;
@@ -728,6 +730,7 @@ tbody {
   font-weight: 900;
   font-size: 1.5em;
   margin-top: 20px;
+  text-align: center;
 }
 
 .sub_title-registro {
@@ -756,7 +759,7 @@ tbody {
 
 #btn-registro {
   padding: 15px;
-  margin: 25px 0px;
+  
   width: 200px;
   max-width: 290px;
   font-size: larger;
@@ -813,6 +816,43 @@ tbody {
   background-size: cover;
   background-position: center;
   filter: blur(3px);
+}
+
+#tabla thead tr:first-child th {
+  background-color: #82376b;
+  color: white;
+}
+
+.custom-form {
+  background-color: #fdefff6c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btnguardar-pink {
+  background-color: #82376b !important;
+  border-color: #82376b !important;
+  color: #ffffff !important;
+}
+
+.btnguardar-pink:hover {
+  background-color: #ffe6f0 !important;
+  border-color: #fff1f7 !important;
+  color: #000000 !important;
+}
+
+.tituloAdminForm {
+  text-align: center;
+  margin-top: 5rem;
+  background: rgb(184, 48, 175);
+  background: radial-gradient(
+    circle,
+    rgba(184, 48, 175, 1) 11%,
+    rgba(150, 58, 143, 1) 58%,
+    rgba(238, 218, 237, 1) 100%
+  );
+  color: white;
 }
 
 .custom-button {
@@ -887,4 +927,13 @@ tbody {
 .card-container {
   display: flex;
   justify-content: center;
+}
+
+
+.custom-select-style {
+  background-color: #f1c5ff !important; /* rosa claro */
+  color: #000; /* color del texto */
+  border: 1px solid #760e65 !important; /* borde */
+  border-radius: 0.25rem; /* redondear esquinas */
+  width: 200px; /* ajusta el ancho según sea necesario */
 }

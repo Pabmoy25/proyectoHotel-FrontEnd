@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const DetalleHabitacion = () => {
   return (
     <>
-      <div className="portadaHabitaciones mb-5 text-center py-1">
+      <div className="portadaHabitaciones  text-center py-1">
         <div className=" Banner Pagina Detalles py-1" />
         <div>
           <h1 className="Titulo detalles text-white">
@@ -14,7 +14,7 @@ const DetalleHabitacion = () => {
         </div>
       </div>
 
-      <Container className="mt-5">
+      <Container className="mt-5 mb-4">
         <Row>
           <Col md={6}>
             <Carousel>
@@ -41,45 +41,60 @@ const DetalleHabitacion = () => {
               </Carousel.Item>
             </Carousel>
           </Col>
+          <Col md={6}>
+          <div>
+  <h2 className="Titulo Pregunta text-center">
+    ¿Qué incluye la habitación?
+  </h2>
+  <div className="row">
+    <div className="col">
+      <ul className="parrafo amenities text-start ">
+        <li>Hidromasaje para 2 personas</li>
+        <li>Escritorios de trabajo</li>
+        <li>Diseño exclusivo</li>
+        <li>Personal bar</li>
+        <li>Cafetera Nespresso</li>
+        <li>Batas y pantuflas</li>
+        <li>2 Smart TV</li>
+        <li>Teléfono inalámbrico</li>
+        <li>Conexión wi-fi sin cargo</li>
+        <li>Secador de pelo</li>
+      </ul>
+    </div>
+    <div className="col">
+      <ul className="parrafo amenities text-start ">
+        <li>Plancha de pelo (a pedido)</li>
+        <li>Amenities exclusivos</li>
+        <li>Caja de seguridad para notebook</li>
+        <li>Control de temperatura individual</li>
+        <li>Equipo de yoga (a pedido)</li>
+        <li>Mate & Tea Kit</li>
+        <li>Accessorios varios para mascotas</li>
+      </ul>
+    </div>
+  </div>
+</div>
+            <Row>
+                <Col md={8}>
+                  <Card.Title>Reserva tu Habitación</Card.Title>
+                  <Card.Text>
+                    ¡Asegura tu estancia ahora! Disfruta de nuestras increíbles
+                    instalaciones y servicios.
+                  </Card.Text>
+                </Col>
+                <Col md={4} className="d-flex align-items-center justify-content-center">
+                <Link
+                  className="search-button text-decoration-none"
+                  to={"/detalle"}
+                >
+                  Reservar
+                </Link>
+                </Col>
+              </Row>
+          </Col>
         </Row>
 
-        <Col md={6} className="order-md-last mt-md- mt-4">
-          <div>
-            <h2 className="Titulo Pregunta text-center">
-              ¿Qué incluye la habitación?
-            </h2>
-            <p className="parrafo amenities text-start ">
-              Hidromasaje para 2 personas, Escritorios de trabajo, Diseño
-              exclusivo, Personal bar, Cafetera Nespresso, Batas y pantuflas, 2
-              Smart TV, Teléfono inalámbrico, Conexión wi-fi sin cargo, Secador
-              de pelo, Plancha de pelo (a pedido), Amenities exclusivos, Caja de
-              seguridad para notebook, Control de temperatura individual, Equipo
-              de yoga (a pedido). Mate & Tea Kit. Accessorios varios para
-              mascotas.
-            </p>
-          </div>
-        </Col>
       </Container>
-
-      <Row>
-        <Col md={6} className="order-md-first">
-          <aside className="sidebar-left">
-            <Card>
-              <Card.Body>
-                <Card.Title>Reserva tu Habitación</Card.Title>
-                <Card.Text>
-                  ¡Asegura tu estancia ahora! Disfruta de nuestras increíbles
-                  instalaciones y servicios.
-                </Card.Text>
-
-                <Link to="/Contacto" className="btn btn-primary">
-                  Reservar Habitación
-                </Link>
-              </Card.Body>
-            </Card>
-          </aside>
-        </Col>
-      </Row>
     </>
   );
 };
