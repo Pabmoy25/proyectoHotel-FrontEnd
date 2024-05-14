@@ -90,7 +90,7 @@ function App() {
         ></Route>*/}
 
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
-
+        
         {/*<Route
           exact
           path="/administrador/editar/:id"

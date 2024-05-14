@@ -1,11 +1,10 @@
-import { Col, Card, ListGroup, Button } from "react-bootstrap";
+import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
 
 const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const [reservas, setReservas] = useState([]);
-  
 
   useEffect(() => {
     const traerReservas = async () => {
@@ -85,7 +84,6 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
         </Card>
       </div>
     </Col>
-
   ) : null;
 };
 
