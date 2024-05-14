@@ -16,16 +16,16 @@ const PaginaPrincipal = () => {
   return (
     <>
       <SliderCarrusel />
-      <section className="w-100 my-3">
+      <section className="w-100 mb-3 mt-1">
         <Row className="fila m-0">
           <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="col p-0">
-            <div className="ImagenPetFriendly p-4">
+            <div className="ImagenPetFriendly p-4 pb-2">
               <img
                 src="https://images.pexels.com/photos/8939517/pexels-photo-8939517.jpeg"
-                className="PetfriendlyImg mb-1"
+                className="PetfriendlyImg "
               />
             </div>
-            <div className="ImagenPetFriendly p-4">
+            <div className="ImagenPetFriendly p-4 ">
               <img
                 src={Pet}
                 className="d-md-block d-lg-none w-100"
