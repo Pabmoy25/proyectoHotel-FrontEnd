@@ -47,9 +47,9 @@ const UsuariosHuesped = ({ usuario, eliminarUsuario }) => {
         >
           <i className="bi bi-pencil-square"></i>
         </Link>
-        {/* <Button id="btnBorrar" onClick={borrarUsuarios}>
+        <Button id="btnBorrar" onClick={borrarUsuarios}>
           <i className="bi bi-trash-fill"></i>
-        </Button> */}
+        </Button>
       </td>
     </tr>
   );
