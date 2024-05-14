@@ -83,7 +83,7 @@ const PaginaPrincipal = () => {
         </Accordion.Item>
       </Accordion>
 
-      <h2 className="my-3 tituloAdmin text-center">Nuestras Propuestas</h2>
+      <h2 className="my-3 tituloAdmin text-center fw-bold">Nuestras Propuestas</h2>
 
       <section>
         <Row className="m-0 d-flex justify-content-around">
