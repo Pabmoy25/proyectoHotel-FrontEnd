@@ -63,7 +63,6 @@ const Menu = () => {
                 <NavLink end className="nav-link" to={"/administrador"}>
                   Administrador
                 </NavLink>
-
                 <Button
                   variant="link"
                   onClick={logout}
