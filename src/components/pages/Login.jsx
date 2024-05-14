@@ -75,12 +75,12 @@ const Login = ({ setLogueado }) => {
   return (
     <section className="container-registro Background-registro">
       <div>
-        <h1 className="tituloAdmin">Iniciar sesión</h1>
+        <h1 className="title-registro">Iniciar sesión</h1>
         <hr />
       </div>
       <Form onSubmit={handleSubmit(onSubmit)} id="formRegistro" className="my-4 custom-form rounded">
         <Form.Group className="mb-3" controlId="emailLogin">
-          <Form.Label>E-mail</Form.Label>
+          <Form.Label className="sub_title-registro">E-mail</Form.Label>
           <Form.Control
             type="email"
             placeholder="name@example.com"
@@ -104,7 +104,7 @@ const Login = ({ setLogueado }) => {
           <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="passwordLogin">
-          <Form.Label>Contraseña</Form.Label>
+          <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
           <Form.Control
             type="password"
