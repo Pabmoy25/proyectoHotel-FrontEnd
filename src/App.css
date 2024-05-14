@@ -68,11 +68,17 @@ tbody {
 
 #btnGoogle,
 #btnFaceb {
-  color: #646363;
+  
   width: 60px;
   margin: 8px;
   border: 2px outset #edefec;
   background-color: #ffffff;
+}
+#btnFaceb {
+  color: blue;
+}
+#btnGoogle{
+  color: red;
 }
 .contenLogin {
   width: 80%;
@@ -691,7 +697,7 @@ tbody {
 }
 
 #formRegistro input {
-  border: 2px solid #adb5bd;
+  border: 1px solid #adb5bd;
 }
 
 #btn-registro,
@@ -700,6 +706,7 @@ tbody {
   border-color: #4b34a6;
   outline: none;
   box-shadow: 1px 1px 3px #4b34a6, 0 0 8px #4b34a6;
+  
 }
 
 .form_area-registro {
@@ -744,7 +751,7 @@ tbody {
 
 .form_style-registro {
   outline: none;
-  border: 2px solid #495057;
+  border: 1px solid #495057;
 
   width: 100%;
   padding: 12px 10px;

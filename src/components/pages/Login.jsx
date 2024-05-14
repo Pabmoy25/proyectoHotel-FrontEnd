@@ -85,7 +85,7 @@ const Login = ({ setLogueado }) => {
         </div>
         <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label className="sub_title-registro">E-mail</Form.Label>
-          <Form.Control
+          <Form.Control className="formLogin"
             type="email"
             placeholder="name@example.com"
             {...register("email", {
@@ -134,14 +134,14 @@ const Login = ({ setLogueado }) => {
             {errors.password?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="d-flex justify-content-center subtAdmin my-4">
+        <Form.Group className="d-flex justify-content-center my-4 sub_title-registro">
           <Button
             className="text-center nav-link"
             variant="link"
             as={Link}
             to="*"
           >
-            <h6>Recuperar contraseña</h6>
+            <h6>Recuperar <br />contraseña</h6>
           </Button>{" "}
           <div className=" px-3">
             <h6> | </h6>
