@@ -29,7 +29,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu ></Menu>
+      <Menu></Menu>
 
       <Routes>
         <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
@@ -50,7 +50,6 @@ function App() {
           element={
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
-              <FormularioHabitacion></FormularioHabitacion>
             </RutasProtegidas>
           }
         >
@@ -84,14 +83,14 @@ function App() {
           path="/registro"
           element={<Registro editar={false} titulo="REGISTRATE"></Registro>}
         ></Route>
-        {/*<Route
+        <Route
           exact
           path="/registro/editar/:id"
           element={<Registro editar={true} titulo="Editar Usuario"></Registro>}
-        ></Route>*/}
+        ></Route>
 
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
-
+        
         {/*<Route
           exact
           path="/administrador/editar/:id"
