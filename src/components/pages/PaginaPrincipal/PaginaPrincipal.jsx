@@ -86,7 +86,7 @@ const PaginaPrincipal = () => {
       <h2 className="my-3 tituloAdmin text-center fw-bold">Nuestras Propuestas</h2>
 
       <section>
-        <Row className="m-0 d-flex justify-content-around">
+        <Row className="m-0 d-flex justify-content-around my-3 px-2">
           <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
             <Card className="custom-card w-30">
               <Card.Img variant="top" src={Boda} className="custom-img" />
