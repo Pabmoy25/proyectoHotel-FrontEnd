@@ -22,26 +22,6 @@ const Registro = ({ editar, titulo }) => {
   const { id } = useParams();
   const navegacion = useNavigate();
 
-  /*const [password, setPassword] = useState("");
-    const [repeatPassword, setRepeatPassword] = useState("");
-    const [passwordError, setPasswordError] = useState("");
-
-    const handlePasswordChange = (event) => {
-      setPassword(event.target.value);
-    };
-
-    const handleRepeatPasswordChange = (event) => {
-      setRepeatPassword(event.target.value);
-    };
-
-  const validatePasswords = () => {
-    if (password !== repeatPassword) {
-      setPasswordError("Las contraseñas no coinciden");
-    } else {
-      setPasswordError("");
-    }
-  };*/
-
   let validarPass;
 
   useEffect(() => {
@@ -180,9 +160,6 @@ const Registro = ({ editar, titulo }) => {
                 controlid="password"
                 className="mb-2"
                 type="password"
-                //value={password}
-                //onChange={handlePasswordChange}
-                //onBlur={validatePasswords}
                 placeholder="Contraseña"
                 {...register("password", {
                   required: "La contraseña es obligatoria",
@@ -214,16 +191,15 @@ const Registro = ({ editar, titulo }) => {
               controlid="password"
               className="mb-2"
               type="password"
-              //value={repeatPassword}
-              //onChange={handleRepeatPasswordChange}
-              //onBlur={validatePasswords}
               placeholder="Contraseña"
               {...register("passwordRepeat", {
                 required: "Reiterar su contraseña es obligatorio",
               })}
             />{" "}
             {watch("password") !== watch("passwordRepeat")
-              ? ((validarPass = false),
+              ? //watch("password_repeat") !== watch("password") && NO BORRAR HASTA NO PROBAR
+                //getValues("password_repeat")
+                ((validarPass = false),
                 (
                   <p className="text-danger fw-bold">
                     Las contraseñas no coinciden
@@ -231,12 +207,6 @@ const Registro = ({ editar, titulo }) => {
                 ))
               : ((validarPass = true),
                 (<p className=" fw-bold">Las contraseñas coinciden</p>))}
-            {/*
-            {passwordError && <p style={{ color: "red" }}>{passwordError}</p>} 
-           <p className="text-danger">Las contraseñas coinciden</p>}
-            {/*<Form.Text className="text-danger">
-              {errors.password?.message}
-          </Form.Text>*/}
           </Form.Group>
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
