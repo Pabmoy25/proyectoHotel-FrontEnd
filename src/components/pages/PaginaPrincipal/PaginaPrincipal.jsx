@@ -88,7 +88,7 @@ const PaginaPrincipal = () => {
       <section>
         <Row className="m-0 d-flex justify-content-around my-3 px-2">
           <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
-            <Card className="custom-card w-30">
+            <Card className="custom-card w-30 mb-3">
               <Card.Img variant="top" src={Boda} className="custom-img" />
               <Card.Body>
                 <Card.Title>Noche de bodas Únicas</Card.Title>
@@ -103,7 +103,7 @@ const PaginaPrincipal = () => {
             </Card>
           </Col>
           <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
-            <Card className="custom-card w-30">
+            <Card className="custom-card w-30 mb-3">
               <Card.Img variant="top" src={Actividad} className="custom-img" />
               <Card.Body>
                 <Card.Title>Actividades al aire libre</Card.Title>
@@ -118,7 +118,7 @@ const PaginaPrincipal = () => {
             </Card>
           </Col>
           <Col sm={12} md={4} lg={4} className=" d-flex justify-content-center">
-            <Card className="custom-card w-30">
+            <Card className="custom-card w-30 mb-3">
               <Card.Img
                 variant="top"
                 src={Habitaciones}
