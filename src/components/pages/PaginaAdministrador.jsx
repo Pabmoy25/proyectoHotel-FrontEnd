@@ -164,7 +164,7 @@ const PaginaAdministrador = () => {
                   <UsuariosHuesped
                     key={usuario._id}
                     usuario={usuario}
-                    /* eliminarUsuario={borrarUsuarios} */
+                    eliminarUsuario={borrarUsuarios}
                   ></UsuariosHuesped>
                 ))}
               </tbody>
