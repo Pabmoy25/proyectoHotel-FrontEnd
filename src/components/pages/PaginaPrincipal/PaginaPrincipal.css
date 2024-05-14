@@ -63,9 +63,9 @@
 }
 
 .PetfriendlyImg {
-  width: 500px; /* Define el ancho deseado para la imagen */
-  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-  max-width: 100%; /* Evita que la imagen se desborde del contenedor */
+  width: 500px; 
+  height: auto; 
+  max-width: 100%; 
   object-fit: cover;
 }
 
@@ -227,10 +227,64 @@
 
 .sidebar-left {
   position: sticky;
-  top: 20px; /* Ajusta según tus necesidades */
-  height: 100%; /* Ocupa toda la altura disponible */
+  top: 20px; 
+  height: 100%; 
 }
 
 .sidebar-right .card {
   width: 100%;
 }
+
+.rating {
+  font-size: 30px;
+  display: inline-block;
+  
+  }
+  
+  .rating::before {
+    content: "★★★★★"; 
+    letter-spacing: 3px;
+    color: #ffa600; 
+    
+    
+  }
+  
+  .rating::after {
+    content: "★★★★★"; 
+    letter-spacing: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+     z-index: -1;
+  }
+  
+  .comment {
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  background-color: #ffd4f7;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.comment:hover {
+  transform: scale(1.1); 
+}
+  
+  .comment p {
+  margin: 0;
+  }
+  
+  .author {
+  font-style: italic;
+  color: #888;
+  }
+  
+  .Comentarios{
+    text-align: center;
+    color: #6d0d3d;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+    
