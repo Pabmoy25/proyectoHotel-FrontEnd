@@ -42,6 +42,8 @@ const Registro = ({ editar, titulo }) => {
     }
   };*/
 
+  let validarPass;
+
   useEffect(() => {
     if (editar) {
       cargarDatosUsuario();
@@ -86,6 +88,7 @@ const Registro = ({ editar, titulo }) => {
         }
       } else {
         // Si estás creando un nuevo usuario, realiza la solicitud POST con el objeto usuario completo
+        console.log("registrado ", usuario);
         const respuesta = await crearUsuario(usuario);
         if (respuesta.status === 201) {
           Swal.fire({
@@ -219,12 +222,15 @@ const Registro = ({ editar, titulo }) => {
                 required: "Reiterar su contraseña es obligatorio",
               })}
             />{" "}
-            {watch("passwordRepeat") !== watch("password") &&
-            getValues("passwordRepeat") ? (
-              <p className="text-danger fw-bold">
-                Las contraseñas no coinciden
-              </p>
-            ) : null}
+            {watch("password") !== watch("passwordRepeat")
+              ? ((validarPass = false),
+                (
+                  <p className="text-danger fw-bold">
+                    Las contraseñas no coinciden
+                  </p>
+                ))
+              : ((validarPass = true),
+                (<p className=" fw-bold">Las contraseñas coinciden</p>))}
             {/*
             {passwordError && <p style={{ color: "red" }}>{passwordError}</p>} 
            <p className="text-danger">Las contraseñas coinciden</p>}
@@ -234,7 +240,6 @@ const Registro = ({ editar, titulo }) => {
           </Form.Group>
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
-
             <Button
               variant="link"
               className="nav-link fw-bold"
@@ -246,9 +251,15 @@ const Registro = ({ editar, titulo }) => {
             </Button>
           </div>
           <div className="d-flex justify-content-center">
-            <Button type="submit" className="mb-5" id="btn-registro">
-              Ingresar
-            </Button>
+            {validarPass ? (
+              <Button type="submit" className="mb-5" id="btn-registro">
+                Ingresar
+              </Button>
+            ) : (
+              <Button type="submit" className="mb-5" id="btn-registro" disabled>
+                Ingresar
+              </Button>
+            )}
           </div>
         </Form>
       </div>
