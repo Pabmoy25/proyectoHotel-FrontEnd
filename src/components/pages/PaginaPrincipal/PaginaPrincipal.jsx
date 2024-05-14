@@ -162,6 +162,7 @@ const PaginaPrincipal = () => {
       </div>
       <section className="container mb-4">
         <h3 className=" my-4 Comentarios">Comentarios de nuestros huéspedes</h3>
+
       <div className="row mt-4">
         <div className="col-lg-4 col-md-4 col-sm-12">
           <div className="comments-grid">
@@ -171,9 +172,21 @@ const PaginaPrincipal = () => {
                 Excelente todo!! Tuve una estadía de excelente calidad con toda mi familia. Viajamos con mi perro y el hotel nos brindó todo el servicio y la atención correspondiente.
               </p>
               <p className="author">Autor: Armando Casas</p>
+
+      <div className="row mt-4">
+        <div className="col-lg-4 col-md-4 col-sm-12">
+          <div className="comments-grid">
+            <div className="comment">
+              <div className="rating"></div>
+              <p>
+                Excelente todo!! Tuve una estadía de excelente calidad con toda mi familia. Viajamos con mi perro y el hotel nos brindó todo el servicio y la atención correspondiente.
+              </p>
+              <p className="author">Autor: Armando Casas</p>
+
             </div>
           </div>
         </div>
+
 
         <div className="col-lg-4 col-md-4 col-sm-12">
           <div className="comments-grid">
@@ -183,9 +196,20 @@ const PaginaPrincipal = () => {
                 Me encantó hospedarme en Haku Huasi! Tuve una gran experiencia en este lugar rodeado de naturaleza y tranquilidad. Sin dudas un hotel para desconectarse de la rutina del trabajo y de la ciudad. 
               </p>
               <p className="author">Autor: Susana Oria</p>
+
+        <div className="col-lg-4 col-md-4 col-sm-12">
+          <div className="comments-grid">
+            <div className="comment">
+              <div className="rating"></div>
+              <p>
+                Me encantó hospedarme en Haku Huasi! Tuve una gran experiencia en este lugar rodeado de naturaleza y tranquilidad. Sin dudas un hotel para desconectarse de la rutina del trabajo y de la ciudad. 
+              </p>
+              <p className="author">Autor: Susana Oria</p>
+
             </div>
           </div>
         </div>
+
 
         <div className="col-lg-4 col-md-4 col-sm-12">
           <div className="comments-grid">
@@ -195,6 +219,16 @@ const PaginaPrincipal = () => {
                 Haku Huasi y todo el personal, me atendieron super bien a mi y a mi familia. Encontramos el mejor lugar para vacacionar,descansar y seguir conociendo. 100% Recomendado!
               </p>
               <p className="author">Autor: Elsa Pallo</p>
+
+        <div className="col-lg-4 col-md-4 col-sm-12">
+          <div className="comments-grid">
+            <div className="comment">
+              <div className="rating"></div>
+              <p>
+                Haku Huasi y todo el personal, me atendieron super bien a mi y a mi familia. Encontramos el mejor lugar para vacacionar,descansar y seguir conociendo. 100% Recomendado!
+              </p>
+              <p className="author">Autor: Elsa Pallo</p>
+
             </div>
           </div>
         </div>
