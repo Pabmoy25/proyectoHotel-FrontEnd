@@ -16,7 +16,7 @@ const UsuariosHuesped = ({ usuario }) => {
         </Link>
         <Button id="btnBorrar">
           {" "}
-          {/*</td>onClick={borrarHabitaciones}>*/}
+          {/*</td>onClick={borrar}>*/}
           <i className="bi bi-trash-fill"></i>
         </Button>
       </td>

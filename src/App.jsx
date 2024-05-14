@@ -29,7 +29,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu ></Menu>
+      <Menu></Menu>
 
       <Routes>
         <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}>
@@ -50,7 +50,6 @@ function App() {
           element={
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
-              <FormularioHabitacion></FormularioHabitacion>
             </RutasProtegidas>
           }
         >
