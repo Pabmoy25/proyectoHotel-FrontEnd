@@ -10,7 +10,6 @@ import {
   obtenerHabitacion,
 } from "../../../helpers/queriesHabitaciones";
 
-
 const FormularioHabitacion = ({ editar, titulo }) => {
   const {
     register,
@@ -32,14 +31,12 @@ const FormularioHabitacion = ({ editar, titulo }) => {
     const respuesta = await obtenerHabitacion(id);
     if (respuesta.status === 200) {
       const habitacionBuscada = await respuesta.json();
-      //  Mostrar datos en el formulario:
       setValue("habitacion", habitacionBuscada.habitacion);
       setValue("imagen", habitacionBuscada.imagen);
       setValue("tipoDeHabitacion", habitacionBuscada.tipoDeHabitacion);
       setValue("descripcion_breve", habitacionBuscada.descripcion_breve);
       setValue("descripcion_amplia", habitacionBuscada.descripcion_amplia);
       setValue("precio", habitacionBuscada.precio);
-      setValue("estado", habitacionBuscada.estado);
     } else {
       Swal.fire({
         title: "Ocurrió un error",
@@ -91,7 +88,6 @@ const FormularioHabitacion = ({ editar, titulo }) => {
     }
   };
 
-  
   return (
     <Container className="container-fluid">
       <section className="container mainpage contenFormHabitacion my-5">
@@ -237,22 +233,6 @@ const FormularioHabitacion = ({ editar, titulo }) => {
             />
             <Form.Text className="text-danger">
               {errors.precio?.message}
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formEstado">
-            <Form.Label>Estado de la Habitación*</Form.Label>
-            <Form.Select
-              {...register("estado", {
-                required:
-                  "Debe seleccionar un estado (Disponible o No disponible)",
-              })}
-            >
-              <option value="">Seleccione una opcion</option>
-              <option value="Disponible">Disponible</option>
-              <option value="No disponible">No disponible</option>
-            </Form.Select>
-            <Form.Text className="text-danger">
-              {errors.estado?.message}
             </Form.Text>
           </Form.Group>
           <Button type="submit" className="btnguardar-pink w-100" id="btnAdmin">

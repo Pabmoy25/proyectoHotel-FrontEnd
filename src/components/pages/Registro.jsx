@@ -183,6 +183,8 @@ const Registro = ({ editar, titulo }) => {
               </Form.Text>
             </Form.Group>
           )}
+
+          {!editar && (
           <Form.Group className="mb-3" controlId="formPasswordRepeat">
             <Form.Label className="sub_title-registro">
               Reiterar contraseña
@@ -208,6 +210,7 @@ const Registro = ({ editar, titulo }) => {
               : ((validarPass = true),
                 (<p className=" fw-bold">Las contraseñas coinciden</p>))}
           </Form.Group>
+        )}
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
             <Button
@@ -226,7 +229,7 @@ const Registro = ({ editar, titulo }) => {
                 Ingresar
               </Button>
             ) : (
-              <Button type="submit" className="mb-5" id="btn-registro" disabled>
+              <Button type="submit" className="mb-5" id="btn-registro">
                 Ingresar
               </Button>
             )}
