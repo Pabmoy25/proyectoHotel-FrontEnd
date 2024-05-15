@@ -6,13 +6,14 @@ import {
   leerHabitaciones,
   borrarHabitacion,
 } from "../../helpers/queriesHabitaciones";
-import { leerUsuarios } from "../../helpers/queriesUsuarios";
+import {
+  leerUsuarios,
+  borrarUsuario,
+} from "../../helpers/queriesUsuarios";
 import UsuariosHuesped from "./usuario/UsuariosHuesped";
 import Reserva from "./Reservas/Reserva";
 import Accordion from "react-bootstrap/Accordion";
 import { borrarReserva, leerReservas } from "../../helpers/queriesReserva";
-
-
 
 const PaginaAdministrador = () => {
   const [habitacion, setHabitaciones] = useState([]);
@@ -42,22 +43,21 @@ const PaginaAdministrador = () => {
       console.log(error);
     }
   };
-  
-
-  const borrarReservas = async (id) => {
-    try {
-      await borrarReserva(id);
-      setReservas(reserva.filter((reserva) => reserva._id !== id));
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const traerUsuarios = async () => {
     try {
       const listaUsuarios = await leerUsuarios();
       console.log(listaUsuarios);
       setUsuarios(listaUsuarios);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const borrarUsuarios = async (id) => {
+    try {
+      await borrarUsuario(id);
+      setUsuarios(usuario.filter((usuario) => usuario._id !== id));
     } catch (error) {
       console.log(error);
     }
@@ -73,6 +73,15 @@ const PaginaAdministrador = () => {
     }
   };
 
+  const borrarReservas = async (id) => {
+    try {
+      await borrarReserva(id);
+      setReservas(reserva.filter((reserva) => reserva._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Container className="my-3">
       <div>
@@ -82,9 +91,9 @@ const PaginaAdministrador = () => {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
-            <h2 className="d-flex justify-content-between align-items-center subtAdmin">
+            <h3 className="d-flex justify-content-between align-items-center subtAdmin">
               Habitaciones
-            </h2>
+            </h3>
           </Accordion.Header>
           <Accordion.Body>
             <Button
@@ -102,7 +111,7 @@ const PaginaAdministrador = () => {
               bordered
               hover
               id="tabla"
-              className="mb-5 mt-2"
+              className="mb-4 mt-2"
             >
               <thead className="text-center ">
                 <tr>
@@ -110,7 +119,6 @@ const PaginaAdministrador = () => {
                   <th>Descripción Breve</th>
                   <th>Tipo</th>
                   <th>Url Imagen</th>
-                  <th>Estado</th>
                   <th>Tarifa</th>
                   <th>Opciones</th>
                 </tr>
@@ -131,9 +139,9 @@ const PaginaAdministrador = () => {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
-            <h2 className="d-flex justify-content-between align-items-center subtAdmin">
+            <h3 className="d-flex justify-content-between align-items-center subtAdmin">
               Usuarios
-            </h2>
+            </h3>
           </Accordion.Header>
           <Accordion.Body>
             <Table
@@ -142,7 +150,7 @@ const PaginaAdministrador = () => {
               bordered
               hover
               id="tabla"
-              className="mb-5"
+              className="mb-4"
             >
               <thead className="text-center">
                 <tr>
@@ -156,6 +164,7 @@ const PaginaAdministrador = () => {
                   <UsuariosHuesped
                     key={usuario._id}
                     usuario={usuario}
+                    eliminarUsuario={borrarUsuarios}
                   ></UsuariosHuesped>
                 ))}
               </tbody>
@@ -167,9 +176,9 @@ const PaginaAdministrador = () => {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
-            <h2 className="d-flex justify-content-between align-items-center subtAdmin ">
+            <h3 className="d-flex justify-content-between align-items-center subtAdmin ">
               Reservas
-            </h2>
+            </h3>
           </Accordion.Header>
           <Accordion.Body>
             <Button
@@ -183,12 +192,12 @@ const PaginaAdministrador = () => {
             </Button>
 
             <Table
-              responsive="sm"
+              responsive
               striped
               bordered
               hover
               id="tabla"
-              className="mb-5"
+              className="mb-4"
             >
               <thead className="text-center">
                 <tr>
@@ -206,7 +215,11 @@ const PaginaAdministrador = () => {
               </thead>
               <tbody>
                 {reserva.map((reserva) => (
-                <Reserva key={reserva._id} reserva={reserva} eliminarReserva={borrarReservas}></Reserva>
+                  <Reserva
+                    key={reserva._id}
+                    reserva={reserva}
+                    eliminarReserva={borrarReservas}
+                  ></Reserva>
                 ))}
               </tbody>
             </Table>

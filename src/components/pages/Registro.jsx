@@ -1,19 +1,28 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { editarUsuarios, obtenerUsuarios, crearUsuario } from "../../helpers/queriesUsuarios.js";
+import {
+  editarUsuarios,
+  obtenerUsuarios,
+  crearUsuario,
+} from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const Registro = ({ editar, titulo}) => {
+const Registro = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
     setValue,
+    getValues,
+    watch,
     formState: { errors },
   } = useForm();
+
   const { id } = useParams();
   const navegacion = useNavigate();
+
+  let validarPass;
 
   useEffect(() => {
     if (editar) {
@@ -59,6 +68,7 @@ const Registro = ({ editar, titulo}) => {
         }
       } else {
         // Si estás creando un nuevo usuario, realiza la solicitud POST con el objeto usuario completo
+        console.log("registrado ", usuario);
         const respuesta = await crearUsuario(usuario);
         if (respuesta.status === 201) {
           Swal.fire({
@@ -66,7 +76,7 @@ const Registro = ({ editar, titulo}) => {
             text: `El Huésped: ${usuario.email} fue creado con éxito`,
             icon: "success",
           });
-          navegacion("/administrador");
+          navegacion("/");
         } else {
           Swal.fire({
             title: "Ocurrió un error",
@@ -82,11 +92,11 @@ const Registro = ({ editar, titulo}) => {
 
   return (
     <>
-      <div className="container-registro my-4 Background-registro">
+      <div className="container-registro Background-registro">
         <Form
           className="my-4 custom-form rounded"
           onSubmit={handleSubmit(usuarioValidado)}
-          id="formHabitacion"
+          id="formRegistro" 
         >
           <div>
             <p className="title-registro">{titulo}</p>
@@ -95,8 +105,8 @@ const Registro = ({ editar, titulo}) => {
             <Form.Label className="sub_title-registro">
               Nombre y apellido
             </Form.Label>
-            <Form.Control
-              className="mb-2"
+            <Form.Control 
+              className="mb-2 "
               type="text"
               placeholder="Nombre"
               {...register("nombreCompleto", {
@@ -111,7 +121,7 @@ const Registro = ({ editar, titulo}) => {
                 },
               })}
             />
-            <Form.Text className="text-danger">
+            <Form.Text className="text-danger fw-bold">
               {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
@@ -138,15 +148,16 @@ const Registro = ({ editar, titulo}) => {
                 },
               })}
             />
-            <Form.Text className="text-danger">
+            <Form.Text className="text-danger fw-bold">
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
-        
+
           {!editar && (
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label className="sub_title-registro">Contraseña</Form.Label>
               <Form.Control
+                controlid="password"
                 className="mb-2"
                 type="password"
                 placeholder="Contraseña"
@@ -167,13 +178,41 @@ const Registro = ({ editar, titulo}) => {
                   },
                 })}
               />
-              <Form.Text className="text-danger">
-                {errors.password?.message}
+              <Form.Text className="text-danger fw-bold">
+                {errors?.password?.message}
               </Form.Text>
             </Form.Group>
           )}
-          <div className="d-flex flex-row">
-            <p>Ya tienes una cuenta?</p>
+
+          {!editar && (
+          <Form.Group className="mb-3" controlId="formPasswordRepeat">
+            <Form.Label className="sub_title-registro">
+              Reiterar contraseña
+            </Form.Label>
+            <Form.Control
+              controlid="password"
+              className="mb-2"
+              type="password"
+              placeholder="Contraseña"
+              {...register("passwordRepeat", {
+                required: "Reiterar su contraseña es obligatorio",
+              })}
+            />{" "}
+            {watch("password") !== watch("passwordRepeat")
+              ? //watch("password_repeat") !== watch("password") && NO BORRAR HASTA NO PROBAR
+                //getValues("password_repeat")
+                ((validarPass = false),
+                (
+                  <p className="text-danger fw-bold">
+                    Las contraseñas no coinciden
+                  </p>
+                ))
+              : ((validarPass = true),
+                (<p className=" fw-bold">Las contraseñas coinciden</p>))}
+          </Form.Group>
+        )}
+          <div className="d-flex flex-row sub_title-registro ">
+            <p>¿Ya tienes una cuenta? &nbsp;</p>
             <Button
               variant="link"
               className="nav-link fw-bold"
@@ -185,9 +224,15 @@ const Registro = ({ editar, titulo}) => {
             </Button>
           </div>
           <div className="d-flex justify-content-center">
-            <Button type="submit" className="mb-3" id="btn-registro">
-              Ingresar
-            </Button>
+            {validarPass ? (
+              <Button type="submit" className="mb-5" id="btn-registro">
+                Ingresar
+              </Button>
+            ) : (
+              <Button type="submit" className="mb-5" id="btn-registro">
+                Ingresar
+              </Button>
+            )}
           </div>
         </Form>
       </div>
@@ -196,4 +241,3 @@ const Registro = ({ editar, titulo}) => {
 };
 
 export default Registro;
-

@@ -1,3 +1,4 @@
+
 import {
   Col,
   Card,
@@ -7,6 +8,7 @@ import {
   Container,
   Row,
 } from "react-bootstrap";
+import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
@@ -19,14 +21,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const [reservas, setReservas] = useState([]);
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   
-
-
   useEffect(() => {
     const traerReservas = async () => {
       try {
@@ -171,7 +169,6 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
         </Card>
       </div>
     </Col>
-
   ) : null;
 };
 
