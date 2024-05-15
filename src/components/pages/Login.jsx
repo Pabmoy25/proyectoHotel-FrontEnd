@@ -73,7 +73,7 @@ const Login = ({ setLogueado }) => {
   };
 
   return (
-    <section className="container-registro Background-registro">
+    <section className="container-registro Background-login">
       <Form
         onSubmit={handleSubmit(onSubmit)}
         id="formRegistro"
@@ -85,7 +85,8 @@ const Login = ({ setLogueado }) => {
         </div>
         <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label className="sub_title-registro">E-mail</Form.Label>
-          <Form.Control className="formLogin"
+          <Form.Control
+            className="formLogin"
             type="email"
             placeholder="name@example.com"
             {...register("email", {
@@ -141,7 +142,10 @@ const Login = ({ setLogueado }) => {
             as={Link}
             to="*"
           >
-            <h6>Recuperar <br />contraseña</h6>
+            <h6>
+              Recuperar <br />
+              contraseña
+            </h6>
           </Button>{" "}
           <div className=" px-3">
             <h6> | </h6>
@@ -163,6 +167,7 @@ const Login = ({ setLogueado }) => {
         <div className="d-flex justify-content-center">
           <Button id="btnGoogle" className="" as={Link} to="*">
             <i className="bi bi-google"></i>
+            
           </Button>
           <Button id="btnFaceb" className="" as={Link} to="*">
             <i className="bi bi-facebook"></i>

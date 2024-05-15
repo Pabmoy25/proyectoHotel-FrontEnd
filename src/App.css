@@ -70,16 +70,23 @@ tbody {
 #btnFaceb {
   
   width: 60px;
+  height: 40px;
   margin: 8px;
   border: 2px outset #edefec;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
 #btnFaceb {
-  color: blue;
+  background-color:#1657e3 ;
 }
+
 #btnGoogle{
-  color: red;
+  background-color:red;
 }
+
+.imgGoogle{
+  object-fit: cover;
+}
+
 .contenLogin {
   width: 80%;
   margin: auto;
@@ -782,6 +789,13 @@ tbody {
 #btn-registro:hover {
   opacity: 0.9;
 }
+
+.Background-login {
+  background-image: url("https://www.tucumanturismo.gob.ar/carga/image/sanjavier001.jpg");
+  background-size: cover;
+  opacity: 0.9;
+}
+
 
 .Background-registro {
   background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");
