@@ -68,12 +68,25 @@ tbody {
 
 #btnGoogle,
 #btnFaceb {
-  color: #646363;
+  
   width: 60px;
+  height: 40px;
   margin: 8px;
   border: 2px outset #edefec;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
+#btnFaceb {
+  background-color:#1657e3 ;
+}
+
+#btnGoogle{
+  background-color:red;
+}
+
+.imgGoogle{
+  object-fit: cover;
+}
+
 .contenLogin {
   width: 80%;
   margin: auto;
@@ -691,7 +704,7 @@ tbody {
 }
 
 #formRegistro input {
-  border: 2px solid #adb5bd;
+  border: 1px solid #adb5bd;
 }
 
 #btn-registro,
@@ -700,6 +713,7 @@ tbody {
   border-color: #4b34a6;
   outline: none;
   box-shadow: 1px 1px 3px #4b34a6, 0 0 8px #4b34a6;
+  
 }
 
 .form_area-registro {
@@ -744,7 +758,7 @@ tbody {
 
 .form_style-registro {
   outline: none;
-  border: 2px solid #495057;
+  border: 1px solid #495057;
 
   width: 100%;
   padding: 12px 10px;
@@ -775,6 +789,13 @@ tbody {
 #btn-registro:hover {
   opacity: 0.9;
 }
+
+.Background-login {
+  background-image: url("https://www.tucumanturismo.gob.ar/carga/image/sanjavier001.jpg");
+  background-size: cover;
+  opacity: 0.9;
+}
+
 
 .Background-registro {
   background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");

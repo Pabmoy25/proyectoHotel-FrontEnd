@@ -73,15 +73,20 @@ const Login = ({ setLogueado }) => {
   };
 
   return (
-    <section className="contenLogin my-5">
-      <div>
-        <h1 className="tituloAdmin">Iniciar sesión</h1>
-        <hr />
-      </div>
-      <Form onSubmit={handleSubmit(onSubmit)} id="formLogin">
+    <section className="container-registro Background-login">
+      <Form
+        onSubmit={handleSubmit(onSubmit)}
+        id="formRegistro"
+        className="my-4 custom-form rounded"
+      >
+        <div>
+          <h1 className="title-registro">Iniciar sesión</h1>
+          <hr />
+        </div>
         <Form.Group className="mb-3" controlId="emailLogin">
-          <Form.Label>E-mail</Form.Label>
+          <Form.Label className="sub_title-registro">E-mail</Form.Label>
           <Form.Control
+            className="formLogin"
             type="email"
             placeholder="name@example.com"
             {...register("email", {
@@ -104,7 +109,7 @@ const Login = ({ setLogueado }) => {
           <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="passwordLogin">
-          <Form.Label>Contraseña</Form.Label>
+          <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
           <Form.Control
             type="password"
@@ -130,18 +135,28 @@ const Login = ({ setLogueado }) => {
             {errors.password?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-          <Button className="text-center nav-link" variant="link"  as={Link} to="*"><h6>
-            Recuperar contraseña
+        <Form.Group className="d-flex justify-content-center my-4 sub_title-registro">
+          <Button
+            className="text-center nav-link"
+            variant="link"
+            as={Link}
+            to="*"
+          >
+            <h6>
+              Recuperar <br />
+              contraseña
             </h6>
           </Button>{" "}
           <div className=" px-3">
             <h6> | </h6>
           </div>
-          <Button className="text-center nav-link" variant="link" as={Link} to='/registro'><h6>
-            {" "}
-            Registrarme
-            </h6>
+          <Button
+            className="text-center nav-link"
+            variant="link"
+            as={Link}
+            to="/registro"
+          >
+            <h6> Registrarme</h6>
           </Button>
         </Form.Group>
         <div className="d-flex justify-content-center">
@@ -150,10 +165,11 @@ const Login = ({ setLogueado }) => {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button id="btnGoogle" className="" as={Link} to='*'>
+          <Button id="btnGoogle" className="" as={Link} to="*">
             <i className="bi bi-google"></i>
+            
           </Button>
-          <Button id="btnFaceb" className="" as={Link} to='*'>
+          <Button id="btnFaceb" className="" as={Link} to="*">
             <i className="bi bi-facebook"></i>
           </Button>
         </div>

@@ -96,7 +96,7 @@ const Registro = ({ editar, titulo }) => {
         <Form
           className="my-4 custom-form rounded"
           onSubmit={handleSubmit(usuarioValidado)}
-          id="formRegistro"
+          id="formRegistro" 
         >
           <div>
             <p className="title-registro">{titulo}</p>
@@ -105,8 +105,8 @@ const Registro = ({ editar, titulo }) => {
             <Form.Label className="sub_title-registro">
               Nombre y apellido
             </Form.Label>
-            <Form.Control
-              className="mb-2"
+            <Form.Control 
+              className="mb-2 "
               type="text"
               placeholder="Nombre"
               {...register("nombreCompleto", {
