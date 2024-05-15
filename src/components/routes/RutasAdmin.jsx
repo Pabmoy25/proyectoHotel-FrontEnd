@@ -48,11 +48,11 @@ const RutasAdmin = () => {
           element={<FormularioReservas editar={true} titulo="Editar Reserva" />}
         />
 
-        <Route
+        {/* <Route
           exact
           path="/registro/editar/:id"
           element={<Registro editar={true} titulo="Editar Usuario"></Registro>}
-        ></Route>
+        ></Route> */}
       </Routes>
     </>
   );

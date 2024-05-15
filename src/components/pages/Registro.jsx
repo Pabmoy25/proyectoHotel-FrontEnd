@@ -229,7 +229,7 @@ const Registro = ({ editar, titulo }) => {
                 Ingresar
               </Button>
             ) : (
-              <Button type="submit" className="mb-5" id="btn-registro" disabled>
+              <Button type="submit" className="mb-5" id="btn-registro">
                 Ingresar
               </Button>
             )}
