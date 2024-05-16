@@ -1,3 +1,4 @@
+
 import {
   Col,
   Card,
@@ -7,6 +8,7 @@ import {
   Container,
   Row,
 } from "react-bootstrap";
+import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
@@ -17,12 +19,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const CardHabitacion = ({ cardHabitacion }) => {
+const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const [reservas, setReservas] = useState([]);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  
   useEffect(() => {
     const traerReservas = async () => {
       try {
@@ -40,7 +42,17 @@ const CardHabitacion = ({ cardHabitacion }) => {
   );
   console.log(habitacionReservada);
 
-  return (
+  const mostrarHabitacion = () => {
+    if (filtroDisponibilidad === "todos") {
+      return true;
+    } else if (filtroDisponibilidad === "disponible") {
+      return !habitacionReservada;
+    } else {
+      return habitacionReservada;
+    }
+  };
+
+  return mostrarHabitacion() ? (
     <Col md={4} lg={3} className="my-4 d-flex justify-content-center">
       <div className="card-container">
         <Card className="h-100 card-custom-rounded">
@@ -157,7 +169,7 @@ const CardHabitacion = ({ cardHabitacion }) => {
         </Card>
       </div>
     </Col>
-  );
+  ) : null;
 };
 
 export default CardHabitacion;

@@ -65,6 +65,19 @@ export const obtenerUsuarios = async (id) => {
   }
 };
 
+export const borrarUsuario = async (id) => {
+  try {
+    const respuesta = await fetch(`${URI_USUARIOS}/${id}`, {
+      method: "DELETE",
+    });
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URI_USUARIOS, {

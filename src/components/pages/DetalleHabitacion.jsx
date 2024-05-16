@@ -14,7 +14,7 @@ const DetalleHabitacion = () => {
         </div>
       </div>
 
-      <Container className="mt-5 mb-5">
+      <Container className="mt-5 mb-4">
         <Row>
           <Col md={6}>
             <Carousel>
@@ -42,20 +42,38 @@ const DetalleHabitacion = () => {
             </Carousel>
           </Col>
           <Col md={6}>
-            <div className="mt-4">
-              <h2 className="Titulo Pregunta text-center">
-                ¿Qué incluye la habitación?
-              </h2>
-              <p className="parrafo amenities text-start ">
-                Hidromasaje para 2 personas, Escritorios de trabajo, Diseño
-                exclusivo, Personal bar, Cafetera Nespresso, Batas y pantuflas,
-                2 Smart TV, Teléfono inalámbrico, Conexión wi-fi sin cargo,
-                Secador de pelo, Plancha de pelo (a pedido), Amenities
-                exclusivos, Caja de seguridad para notebook, Control de
-                temperatura individual, Equipo de yoga (a pedido). Mate & Tea
-                Kit. Accessorios varios para mascotas.
-              </p>
-            </div>
+          <div>
+  <h2 className="Titulo Pregunta text-center">
+    ¿Qué incluye la habitación?
+  </h2>
+  <div className="row">
+    <div className="col">
+      <ul className="parrafo amenities text-start ">
+        <li>Hidromasaje para 2 personas</li>
+        <li>Escritorios de trabajo</li>
+        <li>Diseño exclusivo</li>
+        <li>Personal bar</li>
+        <li>Cafetera Nespresso</li>
+        <li>Batas y pantuflas</li>
+        <li>2 Smart TV</li>
+        <li>Teléfono inalámbrico</li>
+        <li>Conexión wi-fi sin cargo</li>
+        <li>Secador de pelo</li>
+      </ul>
+    </div>
+    <div className="col">
+      <ul className="parrafo amenities text-start ">
+        <li>Plancha de pelo (a pedido)</li>
+        <li>Amenities exclusivos</li>
+        <li>Caja de seguridad para notebook</li>
+        <li>Control de temperatura individual</li>
+        <li>Equipo de yoga (a pedido)</li>
+        <li>Mate & Tea Kit</li>
+        <li>Accessorios varios para mascotas</li>
+      </ul>
+    </div>
+  </div>
+</div>
             <Row>
                 <Col md={8}>
                   <Card.Title>Reserva tu Habitación</Card.Title>

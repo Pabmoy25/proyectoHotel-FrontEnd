@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
 
-
 const Login = ({ setLogueado }) => {
   const {
     register,
@@ -21,36 +20,46 @@ const Login = ({ setLogueado }) => {
 
       console.log(respuesta);
 
-      //console.log(respuesta); 
-
-
       if (respuesta.status === 200) {
         Swal.fire({
           title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
           icon: "success",
         });
-        
-        const dato = await respuesta.json();
-        
-        sessionStorage.setItem(
-          "InicioSesionHaku",
-          JSON.stringify({ email: dato.email, token: dato.token })
-        );
-        setLogueado(dato);
-        
 
-        if(dato.email==='admin@hakuhuasi.com.ar'){
-          Swal.fire({
-            title: "Por favor, guarda tu token para gestión durante tu jornada",
-            text: dato.token,
-            icon: "warning",
-          });
+        const dato = await respuesta.json();
+
+        console.log(dato.roleAdmin);
+
+        if (dato.email === "admin@hakuhuasi.com.ar") {
+          sessionStorage.setItem(
+            "InicioSesionHaku",
+            JSON.stringify({
+              email: dato.email,
+              rol: dato.roleAdmin,
+              nombre: dato.nombreCompleto,
+              token: dato.token,
+            })
+          );
+          setLogueado(
+            dato.email,
+            dato.roleAdmin,
+            dato.nombreCompleto,
+            dato.token
+          );
           navegacion("/administrador");
-        }else{
+        } else {
+          sessionStorage.setItem(
+            "InicioSesionHaku",
+            JSON.stringify({
+              email: dato.email,
+              rol: dato.roleAdmin,
+              nombre: dato.nombreCompleto,
+            })
+          );
+          setLogueado(dato.email, dato.roleAdmin, dato.nombreCompleto);
           navegacion("/");
         }
-
       } else {
         Swal.fire({
           title: "Error en login",
@@ -64,15 +73,20 @@ const Login = ({ setLogueado }) => {
   };
 
   return (
-    <section className="contenLogin my-5">
-      <div>
-        <h1 className="tituloAdmin">Iniciar sesión</h1>
-        <hr />
-      </div>
-      <Form onSubmit={handleSubmit(onSubmit)} id="formLogin">
+    <section className="container-registro Background-login">
+      <Form
+        onSubmit={handleSubmit(onSubmit)}
+        id="formRegistro"
+        className="my-4 custom-form rounded"
+      >
+        <div>
+          <h1 className="title-registro">Iniciar sesión</h1>
+          <hr />
+        </div>
         <Form.Group className="mb-3" controlId="emailLogin">
-          <Form.Label>E-mail</Form.Label>
+          <Form.Label className="sub_title-registro">E-mail</Form.Label>
           <Form.Control
+            className="formLogin"
             type="email"
             placeholder="name@example.com"
             {...register("email", {
@@ -95,7 +109,7 @@ const Login = ({ setLogueado }) => {
           <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="passwordLogin">
-          <Form.Label>Contraseña</Form.Label>
+          <Form.Label className="sub_title-registro">Contraseña</Form.Label>
 
           <Form.Control
             type="password"
@@ -121,17 +135,29 @@ const Login = ({ setLogueado }) => {
             {errors.password?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="d-flex justify-content-center subtAdmin my-4">
-          <h6 className="text-center" as={Link} to={""}>
-            Recuperar contraseña
-          </h6>{" "}
+        <Form.Group className="d-flex justify-content-center my-4 sub_title-registro">
+          <Button
+            className="text-center nav-link"
+            variant="link"
+            as={Link}
+            to="*"
+          >
+            <h6>
+              Recuperar <br />
+              contraseña
+            </h6>
+          </Button>{" "}
           <div className=" px-3">
             <h6> | </h6>
           </div>
-          <h6 className="text-center" as={Link} to={"/registro"}>
-            {" "}
-            Registrarme
-          </h6>
+          <Button
+            className="text-center nav-link"
+            variant="link"
+            as={Link}
+            to="/registro"
+          >
+            <h6> Registrarme</h6>
+          </Button>
         </Form.Group>
         <div className="d-flex justify-content-center">
           <Button type="submit" className="mb-3" id="btnIngresar">
@@ -139,10 +165,11 @@ const Login = ({ setLogueado }) => {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button id="btnGoogle">
+          <Button id="btnGoogle" className="" as={Link} to="*">
             <i className="bi bi-google"></i>
+            
           </Button>
-          <Button id="btnFaceb">
+          <Button id="btnFaceb" className="" as={Link} to="*">
             <i className="bi bi-facebook"></i>
           </Button>
         </div>
