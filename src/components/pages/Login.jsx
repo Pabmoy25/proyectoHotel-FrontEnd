@@ -3,8 +3,6 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
-import google from "../../assets/google.png";
-import facebook from "../../assets/facebook.png";
 
 const Login = ({ setLogueado }) => {
   const {
