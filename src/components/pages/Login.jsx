@@ -76,7 +76,7 @@ const Login = ({ setLogueado }) => {
         className="my-4 custom-form rounded"
       >
         <div>
-          <h1 className="title-registro">Iniciar sesión</h1>
+          <p className="title-registro">INICIAR SESION</p>
           <hr />
         </div>
         <Form.Group className="mb-3" controlId="emailLogin">
