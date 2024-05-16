@@ -25,8 +25,8 @@ export const crearHabitacion = async (nuevaHabitacion) => {
   try {
     const respuesta = await fetch(URI_HABITACIONES, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-
+      headers: { "Content-Type": "application/json",
+      "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token},
       body: JSON.stringify(nuevaHabitacion),
     });
     console.log(respuesta);
@@ -42,7 +42,7 @@ export const editarHabitacion = async (id, habitacion) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-      },
+        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token},
       body: JSON.stringify(habitacion),
     });
     return respuesta;
