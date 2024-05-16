@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
+import google from "../../assets/google.png";
+import facebook from "../../assets/facebook.png";
 
 const Login = ({ setLogueado }) => {
   const {
@@ -18,7 +20,7 @@ const Login = ({ setLogueado }) => {
     try {
       const respuesta = await login(usuario);
 
-        if (respuesta.status === 200) {
+      if (respuesta.status === 200) {
         Swal.fire({
           title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
@@ -27,7 +29,7 @@ const Login = ({ setLogueado }) => {
 
         const dato = await respuesta.json();
 
-         if (dato.email === "admin@hakuhuasi.com.ar") {
+        if (dato.email === "admin@hakuhuasi.com.ar") {
           sessionStorage.setItem(
             "InicioSesionHaku",
             JSON.stringify({
@@ -77,7 +79,6 @@ const Login = ({ setLogueado }) => {
       >
         <div>
           <p className="title-registro">INICIAR SESION</p>
-          <hr />
         </div>
         <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label className="sub_title-registro">E-mail</Form.Label>
@@ -163,7 +164,6 @@ const Login = ({ setLogueado }) => {
         <div className="d-flex justify-content-center">
           <Button id="btnGoogle" className="" as={Link} to="*">
             <i className="bi bi-google"></i>
-            
           </Button>
           <Button id="btnFaceb" className="" as={Link} to="*">
             <i className="bi bi-facebook"></i>

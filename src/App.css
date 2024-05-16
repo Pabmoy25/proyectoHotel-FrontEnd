@@ -72,18 +72,16 @@ tbody {
   height: 40px;
   margin: 8px;
   border: 2px outset #edefec;
-  /*background-color: #ffffff;*/
+ 
 }
 #btnFaceb {
-  background-color: #1657e3;
+  
+  background-color: blue;
 }
 
 #btnGoogle {
+  
   background-color: red;
-}
-
-.imgGoogle {
-  object-fit: cover;
 }
 
 .contenLogin {
