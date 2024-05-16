@@ -1,7 +1,5 @@
 const URI_RESERVAS = import.meta.env.VITE_API_RESERVAS;
 
-console.log(URI_RESERVAS);
-
 
 export const leerReservas = async () => {
     try {
@@ -17,7 +15,8 @@ export const leerReservas = async () => {
     try {
       const respuesta = await fetch(URI_RESERVAS, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token},
         body: JSON.stringify(nuevaReserva),
       });
       console.log(respuesta);
@@ -41,6 +40,9 @@ export const leerReservas = async () => {
     try {
       const respuesta = await fetch(`${URI_RESERVAS}/${id}`, {
         method: "DELETE",
+        headers: {
+          "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token
+        }
       });
       console.log(respuesta);
       return respuesta;
@@ -56,6 +58,7 @@ export const leerReservas = async () => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token
         },
         body: JSON.stringify(reserva),
       });

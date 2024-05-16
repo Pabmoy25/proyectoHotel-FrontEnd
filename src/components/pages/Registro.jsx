@@ -68,7 +68,7 @@ const Registro = ({ editar, titulo }) => {
         }
       } else {
         // Si estás creando un nuevo usuario, realiza la solicitud POST con el objeto usuario completo
-        console.log("registrado ", usuario);
+      
         const respuesta = await crearUsuario(usuario);
         if (respuesta.status === 201) {
           Swal.fire({
@@ -96,7 +96,7 @@ const Registro = ({ editar, titulo }) => {
         <Form
           className="my-4 custom-form rounded"
           onSubmit={handleSubmit(usuarioValidado)}
-          id="formRegistro"
+          id="formRegistro" 
         >
           <div>
             <p className="title-registro">{titulo}</p>
@@ -105,8 +105,8 @@ const Registro = ({ editar, titulo }) => {
             <Form.Label className="sub_title-registro">
               Nombre y apellido
             </Form.Label>
-            <Form.Control
-              className="mb-2"
+            <Form.Control 
+              className="mb-2 "
               type="text"
               placeholder="Nombre"
               {...register("nombreCompleto", {
@@ -183,6 +183,8 @@ const Registro = ({ editar, titulo }) => {
               </Form.Text>
             </Form.Group>
           )}
+
+          {!editar && (
           <Form.Group className="mb-3" controlId="formPasswordRepeat">
             <Form.Label className="sub_title-registro">
               Reiterar contraseña
@@ -208,6 +210,7 @@ const Registro = ({ editar, titulo }) => {
               : ((validarPass = true),
                 (<p className=" fw-bold">Las contraseñas coinciden</p>))}
           </Form.Group>
+        )}
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
             <Button
@@ -226,7 +229,7 @@ const Registro = ({ editar, titulo }) => {
                 Ingresar
               </Button>
             ) : (
-              <Button type="submit" className="mb-5" id="btn-registro" disabled>
+              <Button type="submit" className="mb-5" id="btn-registro">
                 Ingresar
               </Button>
             )}

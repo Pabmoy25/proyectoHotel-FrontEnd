@@ -68,12 +68,24 @@ tbody {
 
 #btnGoogle,
 #btnFaceb {
-  color: #646363;
   width: 60px;
+  height: 40px;
   margin: 8px;
   border: 2px outset #edefec;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
+#btnFaceb {
+  background-color: #1657e3;
+}
+
+#btnGoogle {
+  background-color: red;
+}
+
+.imgGoogle {
+  object-fit: cover;
+}
+
 .contenLogin {
   width: 80%;
   margin: auto;
@@ -270,7 +282,6 @@ tbody {
   color: #82376b;
 }
 
-
 /*GALERIA*/
 
 .galeria-moviles {
@@ -437,7 +448,7 @@ tbody {
 
 /* contacto*/
 .background-container {
-  background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg");
+  background-image: url("../src/assets/lomabola.jpg");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -691,7 +702,7 @@ tbody {
 }
 
 #formRegistro input {
-  border: 2px solid #adb5bd;
+  border: 1px solid #adb5bd;
 }
 
 #btn-registro,
@@ -744,7 +755,7 @@ tbody {
 
 .form_style-registro {
   outline: none;
-  border: 2px solid #495057;
+  border: 1px solid #495057;
 
   width: 100%;
   padding: 12px 10px;
@@ -759,7 +770,7 @@ tbody {
 
 #btn-registro {
   padding: 15px;
-  
+
   width: 200px;
   max-width: 290px;
   font-size: larger;
@@ -773,6 +784,12 @@ tbody {
 }
 
 #btn-registro:hover {
+  opacity: 0.9;
+}
+
+.Background-login {
+  background-image: url("https://www.tucumanturismo.gob.ar/carga/image/sanjavier001.jpg");
+  background-size: cover;
   opacity: 0.9;
 }
 
@@ -910,7 +927,7 @@ tbody {
 }
 
 .search-button {
-  background-color: rgb(130, 25, 119);
+  background-color: rgb(130, 25, 119) !important;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -929,6 +946,28 @@ tbody {
   justify-content: center;
 }
 
+.imagenDetalleHabitacion {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.fondoModal {
+  background: #fde6ff;
+}
+.modalHabitacionTexto{
+  color:#4b104f;
+}
+.modal-footer .btnCerrarModal{
+  background: #471a4e;
+  color: white;
+  border: #471a4e 0.1em solid;
+  font-family: "Rubik", sans-serif;
+}
+.modal-footer .btnCerrarModal:hover{
+background: #f7c2ff;
+color: rgb(31, 30, 30);
+border: #f7c2ff 0.1em solid;
+}
 
 .custom-select-style {
   background-color: #f1c5ff !important; /* rosa claro */
@@ -937,3 +976,4 @@ tbody {
   border-radius: 0.25rem; /* redondear esquinas */
   width: 200px; /* ajusta el ancho según sea necesario */
 }
+
