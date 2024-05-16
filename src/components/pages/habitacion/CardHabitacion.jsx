@@ -128,7 +128,7 @@ const CardHabitacion = ({ cardHabitacion }) => {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={handleClose} className="btnCerrarModal">
-                CERRAR
+                Cerrar
               </Button>
             </Modal.Footer>
           </Modal>
