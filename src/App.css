@@ -68,7 +68,6 @@ tbody {
 
 #btnGoogle,
 #btnFaceb {
-  
   width: 60px;
   height: 40px;
   margin: 8px;
@@ -76,14 +75,14 @@ tbody {
   /*background-color: #ffffff;*/
 }
 #btnFaceb {
-  background-color:#1657e3 ;
+  background-color: #1657e3;
 }
 
-#btnGoogle{
-  background-color:red;
+#btnGoogle {
+  background-color: red;
 }
 
-.imgGoogle{
+.imgGoogle {
   object-fit: cover;
 }
 
@@ -283,7 +282,6 @@ tbody {
   color: #82376b;
 }
 
-
 /*GALERIA*/
 
 .galeria-moviles {
@@ -450,7 +448,7 @@ tbody {
 
 /* contacto*/
 .background-container {
-  background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/secciones/parapente-loma-bola-tucuman.jpg");
+  background-image: url("../src/assets/lomabola.jpg");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -713,7 +711,6 @@ tbody {
   border-color: #4b34a6;
   outline: none;
   box-shadow: 1px 1px 3px #4b34a6, 0 0 8px #4b34a6;
-  
 }
 
 .form_area-registro {
@@ -773,7 +770,7 @@ tbody {
 
 #btn-registro {
   padding: 15px;
-  
+
   width: 200px;
   max-width: 290px;
   font-size: larger;
@@ -795,7 +792,6 @@ tbody {
   background-size: cover;
   opacity: 0.9;
 }
-
 
 .Background-registro {
   background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");
@@ -949,8 +945,6 @@ tbody {
   display: flex;
   justify-content: center;
 }
-
-
 
 .imagenDetalleHabitacion {
   height: 500px;

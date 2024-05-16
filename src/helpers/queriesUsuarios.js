@@ -15,11 +15,12 @@ const URI_USUARIOS = import.meta.env.VITE_API_USUARIOS;
 
 export const crearUsuario = async (nuevoUsuario) => {
   try {
-
-    const respuesta = await fetch(URI_USUARIOS+'/crear', { 
+    const respuesta = await fetch(URI_USUARIOS + "/crear", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      
+      headers: {
+        "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token,
+      },
       body: JSON.stringify(nuevoUsuario),
     });
     console.log(respuesta);
@@ -31,7 +32,7 @@ export const crearUsuario = async (nuevoUsuario) => {
 
 export const leerUsuarios = async () => {
   try {
-    const respuesta = await fetch(URI_USUARIOS+'/listar');
+    const respuesta = await fetch(URI_USUARIOS + "/listar");
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -46,6 +47,7 @@ export const editarUsuarios = async (id, usuario) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token,
       },
       body: JSON.stringify(usuarioSinPassword),
     });
@@ -69,6 +71,9 @@ export const borrarUsuario = async (id) => {
   try {
     const respuesta = await fetch(`${URI_USUARIOS}/${id}`, {
       method: "DELETE",
+      headers: {
+        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token,
+      },
     });
     console.log(respuesta);
     return respuesta;
@@ -76,7 +81,6 @@ export const borrarUsuario = async (id) => {
     console.log(error);
   }
 };
-
 
 export const login = async (usuario) => {
   try {
@@ -90,6 +94,5 @@ export const login = async (usuario) => {
     return respuesta;
   } catch (error) {
     console.log(error);
-   
   }
 };
