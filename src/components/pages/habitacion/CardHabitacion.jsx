@@ -1,11 +1,29 @@
-import { Col, Card, Button } from "react-bootstrap";
+
+import {
+  Col,
+  Card,
+  ListGroup,
+  Button,
+  Modal,
+  Container,
+  Row,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
+import {
+  faWifi,
+  faPaw,
+  faWaterLadder,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const [reservas, setReservas] = useState([]);
-
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
   useEffect(() => {
     const traerReservas = async () => {
       try {
@@ -53,12 +71,78 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
               <br className="mb-2" />
             </Card.Text>
           </Card.Body>
-          <Link
-            className="search-button text-decoration-none"
-            to={"/detalleHabitacion/" + cardHabitacion._id}
-          >
-            Ver Habitación
-          </Link>
+
+          <Button className="search-button fw-semibold" onClick={handleShow}>
+            VER DETALLES
+          </Button>
+
+          <Modal show={show} onHide={handleClose} animation={false}>
+            <Modal.Header
+              closeButton
+              className="modalHabitacionTexto fondoModal"
+            >
+              <Modal.Title className="titulos fs-2">
+                {cardHabitacion.tipoDeHabitacion}
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="fondoModal">
+              <Container>
+                <Row>
+                  <Col xs={12}>
+                    <img
+                      src={cardHabitacion.imagen}
+                      className="imagenDetalleHabitacion"
+                    />
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col xs={12}>
+                    <div className="text-start mx-lg-5 mt-4 text-center modalHabitacionTexto">
+                      <h5 className="titulos fw-semibold">
+                        Servicios que Incluye
+                      </h5>
+                      <div>
+                        <span>
+                          <FontAwesomeIcon icon={faWifi} /> Wifi
+                        </span>
+                        <span className="mx-4">
+                          <FontAwesomeIcon icon={faWaterLadder} /> Piscina
+                        </span>
+
+                        <span className="mx-4">
+                          <FontAwesomeIcon icon={faPaw} /> PetFriendly
+                        </span>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={12}>
+                    <p className="textos my-3 fw-bold ">
+                      <span className="fs-5">Habitacion: </span>
+                      {cardHabitacion.habitacion}
+                    </p>
+                  </Col>
+                  <Col xs={12}>
+                    <p className="textos fw-bold ">
+                      <span className="fs-5">Descripción: </span>
+                      {cardHabitacion.descripcion_amplia}
+                    </p>
+                  </Col>
+                  <Col xs={12}>
+                    <p className="textos fw-bold ">
+                      <span className="fs-5">Precio por Noche: $ </span>
+                      {cardHabitacion.precio}
+                    </p>
+                  </Col>
+                </Row>
+              </Container>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={handleClose} className="btnCerrarModal">
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
 
           <div className="text-center">
             {habitacionReservada ? (
