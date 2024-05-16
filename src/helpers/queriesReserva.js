@@ -1,7 +1,5 @@
 const URI_RESERVAS = import.meta.env.VITE_API_RESERVAS;
 
-/* console.log(URI_RESERVAS); */
-
 
 export const leerReservas = async () => {
     try {

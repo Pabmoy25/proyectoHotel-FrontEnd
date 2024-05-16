@@ -66,7 +66,7 @@ const PaginaAdministrador = () => {
   const traerReservas = async () => {
     try {
       const listaReservas = await leerReservas();
-      console.log(listaReservas);
+    
       setReservas(listaReservas);
     } catch (error) {
       console.log(error);

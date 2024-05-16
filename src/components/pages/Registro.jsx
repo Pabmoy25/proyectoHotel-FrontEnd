@@ -68,7 +68,7 @@ const Registro = ({ editar, titulo }) => {
         }
       } else {
         // Si estás creando un nuevo usuario, realiza la solicitud POST con el objeto usuario completo
-        console.log("registrado ", usuario);
+      
         const respuesta = await crearUsuario(usuario);
         if (respuesta.status === 201) {
           Swal.fire({
