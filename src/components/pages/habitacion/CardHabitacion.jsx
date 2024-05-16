@@ -1,8 +1,6 @@
-
 import {
   Col,
   Card,
-  ListGroup,
   Button,
   Modal,
   Container,
@@ -24,7 +22,7 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   useEffect(() => {
     const traerReservas = async () => {
       try {
@@ -40,8 +38,7 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const habitacionReservada = reservas.some(
     (reserva) => reserva.habitacion === cardHabitacion.habitacion
   );
-  console.log(habitacionReservada);
-
+  
   const mostrarHabitacion = () => {
     if (filtroDisponibilidad === "todos") {
       return true;
@@ -89,29 +86,28 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
               <Container>
                 <Row>
                   <Col xs={12}>
-                  <Carousel>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://images.pexels.com/photos/7623568/pexels-photo-7623568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="First slide"
-                />
-               
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://images.pexels.com/photos/14859259/pexels-photo-14859259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Second slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://images.pexels.com/photos/15195270/pexels-photo-15195270/free-photo-of-relajacion-hotel-cama-habitacion.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                />
-              </Carousel.Item>
-            </Carousel>
+                    <Carousel>
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          src="https://images.pexels.com/photos/7623568/pexels-photo-7623568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                          alt="First slide"
+                        />
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          src="https://images.pexels.com/photos/14859259/pexels-photo-14859259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                          alt="Second slide"
+                        />
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          src="https://images.pexels.com/photos/15195270/pexels-photo-15195270/free-photo-of-relajacion-hotel-cama-habitacion.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        />
+                      </Carousel.Item>
+                    </Carousel>
                   </Col>
                 </Row>
 
