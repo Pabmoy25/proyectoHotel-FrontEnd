@@ -794,7 +794,7 @@ tbody {
 }
 
 .Background-registro {
-  background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");
+  background-image: url("../src/assets/Registr.png");
   background-size: cover;
   opacity: 0.9;
 }
