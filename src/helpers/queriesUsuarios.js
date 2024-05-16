@@ -6,7 +6,6 @@ export const crearUsuario = async (nuevoUsuario) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token,
       },
       body: JSON.stringify(nuevoUsuario),
     });
