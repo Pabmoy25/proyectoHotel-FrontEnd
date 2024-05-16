@@ -8,7 +8,6 @@ import {
   Container,
   Row,
 } from "react-bootstrap";
-import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
