@@ -55,6 +55,9 @@ export const borrarHabitacion = async (id) => {
   try {
     const respuesta = await fetch(`${URI_HABITACIONES}/${id}`, {
       method: "DELETE",
+      headers: {
+        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token
+      }
     });
     console.log(respuesta);
     return respuesta;
