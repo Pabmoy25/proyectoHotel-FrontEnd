@@ -49,7 +49,7 @@ const Contacto = () => {
 
   return (
     <div className="background-container">
-      <div className="blur-container my-4">
+      <div className="blur-container">
         <h1 className="tituloAdmin text-center mt-4"><strong>Contactate con Hotel Haku Wasi</strong></h1>
         <h5 className="text-center mt-4 mb-5"> <strong>Complete el formulario y le responderemos a la mayor brevedad posible. Desde ya, muchas gracias.</strong></h5>
         <form onSubmit={handleSubmit} ref={form}>
