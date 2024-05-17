@@ -14,7 +14,7 @@ import {
   faWifi,
   faPaw,
   faTv,
-  faMugHot,faSnowflake,faShower,
+  faMugHot,faSnowflake,faShower,faCookieBite
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaShower } from "react-icons/fa";
@@ -119,25 +119,27 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                       <h5 className="titulos fw-semibold mb-4">
                         Servicios que Incluye
                       </h5>
-                      <div className="iconContainer mb-4 d-flex flex-wrap justify-content-center align-items-center">
-                        <span className="mx-4">
+                      <div className="iconContainer mb-4 d-flex flex-wrap justify-content-center align-items-center" style={{height: '230px'}}>
+                        <span className="iconWrapper mx-4">
                           <FontAwesomeIcon icon={faWifi}/>Wifi
                         </span>
-                        <span className="mx-4">
+                        <span className="iconWrapper mx-4">
                           <FontAwesomeIcon icon={faTv}/>TV
                         </span>
-                        <span className="mx-4">
-                          <FontAwesomeIcon icon={faSnowflake}/>Aire Acondicionado
+                        <span className="iconWrapper mx-4">
+                          <FontAwesomeIcon icon={faSnowflake}/>Aire AA
                         </span>
-                        <span className="mx-4">
+                        <span className="iconWrapper mx-4">
+                          <FontAwesomeIcon icon={faShower}/>Ducha 
+                        </span>
+                        <span className="iconWrapper mx-4">
                           <FontAwesomeIcon icon={faMugHot}/>Desayuno
                         </span>
-
-                        <span className="mx-4">
-                          <FontAwesomeIcon icon={faPaw} />PetFriendly
+                        <span className="iconWrapper mx-4">
+                          <FontAwesomeIcon icon={faCookieBite}/>MiniBar
                         </span>
-                        <span className="mx-4">
-                          <FontAwesomeIcon icon={faShower}/>Baño Completo 
+                        <span className="iconWrapper mx-4">
+                        <FontAwesomeIcon icon={faPaw}/>PetFriendly
                         </span>
                       </div>
                     </div>
