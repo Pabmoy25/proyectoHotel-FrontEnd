@@ -453,7 +453,7 @@ tbody {
   background-position: center;
   overflow: hidden;
   display: flex;
-  justify-content: center; /* Centra horizontalmente los elementos secundarios */
+  justify-content: center; 
   align-items: center;
 }
 
@@ -958,6 +958,11 @@ tbody {
   color:#4b104f;
   font-family: "quicksand", sans-serif;
 }
+
+.tituloServicios{
+  font-family: "Montserrat Alternates", sans-serif;
+  color:#4b104f;
+}
 .palabraHabitacion{
   font-family: "Montserrat Alternates", sans-serif;
   color:#4b104f;
@@ -988,24 +993,24 @@ font-family: "quicksand", sans-serif;
 }
 
 .custom-select-style {
-  background-color: #f1c5ff !important; /* rosa claro */
-  color: #000; /* color del texto */
-  border: 1px solid #760e65 !important; /* borde */
-  border-radius: 0.25rem; /* redondear esquinas */
-  width: 200px; /* ajusta el ancho según sea necesario */
+  background-color: #f1c5ff !important; 
+  color: #000; 
+  border: 1px solid #760e65 !important;
+  border-radius: 0.25rem; 
+  width: 200px; 
 }
 
 .iconContainer {
-  max-width: 900px; /* Establece el ancho máximo del contenedor */
+  max-width: 1000px; 
   background-color: #f1c5ff
-}
-.iconWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem; /* Espaciado entre las filas */
+ 
 }
 
-.iconWrapper span {
-  margin-top: 0.5rem; /* Espaciado entre el icono y el texto */
+.iconName{
+  font-family: "quicksand", sans-serif;
+  color:#4b104f;
+}
+.iconColor{
+
+  color:#4b104f;
 }
