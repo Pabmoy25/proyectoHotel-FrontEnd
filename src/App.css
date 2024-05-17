@@ -958,12 +958,22 @@ tbody {
   color:#4b104f;
   font-family: "quicksand", sans-serif;
 }
-
+.palabraHabitacion{
+  font-family: "Montserrat Alternates", sans-serif;
+  color:#4b104f;
+}
 .textoDescripcion{
   font-family: "quicksand", sans-serif;
+  color:#4b104f;
   text-align: justify;
 
 }
+
+.textoPrecioNoche{
+  font-family: "Montserrat Alternates", sans-serif;
+  color:#4b104f;
+}
+
 .modal-footer .btnCerrarModal{
   background: #471a4e;
   color: white;
