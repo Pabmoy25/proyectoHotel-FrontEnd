@@ -18,7 +18,7 @@ const Login = ({ setLogueado }) => {
     try {
       const respuesta = await login(usuario);
 
-        if (respuesta.status === 200) {
+      if (respuesta.status === 200) {
         Swal.fire({
           title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
@@ -27,7 +27,7 @@ const Login = ({ setLogueado }) => {
 
         const dato = await respuesta.json();
 
-         if (dato.email === "admin@hakuhuasi.com.ar") {
+        if (dato.email === "admin@hakuhuasi.com.ar") {
           sessionStorage.setItem(
             "InicioSesionHaku",
             JSON.stringify({
@@ -76,8 +76,7 @@ const Login = ({ setLogueado }) => {
         className="my-4 custom-form rounded"
       >
         <div>
-          <h1 className="title-registro">Iniciar sesión</h1>
-          <hr />
+          <p className="title-registro">INICIAR SESION</p>
         </div>
         <Form.Group className="mb-3" controlId="emailLogin">
           <Form.Label className="sub_title-registro">E-mail</Form.Label>
@@ -163,7 +162,6 @@ const Login = ({ setLogueado }) => {
         <div className="d-flex justify-content-center">
           <Button id="btnGoogle" className="" as={Link} to="*">
             <i className="bi bi-google"></i>
-            
           </Button>
           <Button id="btnFaceb" className="" as={Link} to="*">
             <i className="bi bi-facebook"></i>

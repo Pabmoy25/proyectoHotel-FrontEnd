@@ -72,18 +72,16 @@ tbody {
   height: 40px;
   margin: 8px;
   border: 2px outset #edefec;
-  /*background-color: #ffffff;*/
+ 
 }
 #btnFaceb {
-  background-color: #1657e3;
+  
+  background-color: blue;
 }
 
 #btnGoogle {
+  
   background-color: red;
-}
-
-.imgGoogle {
-  object-fit: cover;
 }
 
 .contenLogin {
@@ -788,7 +786,7 @@ tbody {
 }
 
 .Background-login {
-  background-image: url("https://www.tucumanturismo.gob.ar/carga/image/sanjavier001.jpg");
+  background-image: url("../src/assets/Registr.png");
   background-size: cover;
   opacity: 0.9;
 }
