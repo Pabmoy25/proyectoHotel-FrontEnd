@@ -41,10 +41,6 @@ npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
 
 ## Deploy del Proyecto
 
-## Deploy y Githud del Backend del Proyecto
-
-=======
-
 - https://protecto-hotel-frontend.netlify.app/
 
 ## Deploy y Githud del Backend del Proyecto
