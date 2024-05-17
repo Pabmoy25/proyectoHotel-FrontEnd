@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import PaginaAdministrador from "../pages/PaginaAdministrador";
 import FormularioHabitacion from "../pages/habitacion/FormularioHabitacion";
 import FormularioReservas from "../pages/Reservas/FormularioReservas";
-import Registro from "../pages/Registro.jsx"
 
 const RutasAdmin = () => {
   return (
@@ -47,12 +46,6 @@ const RutasAdmin = () => {
           path="/editarReserva/:id"
           element={<FormularioReservas editar={true} titulo="Editar Reserva" />}
         />
-
-        {/* <Route
-          exact
-          path="/registro/editar/:id"
-          element={<Registro editar={true} titulo="Editar Usuario"></Registro>}
-        ></Route> */}
       </Routes>
     </>
   );

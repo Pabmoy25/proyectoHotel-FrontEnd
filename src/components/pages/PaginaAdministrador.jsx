@@ -47,7 +47,6 @@ const PaginaAdministrador = () => {
   const traerUsuarios = async () => {
     try {
       const listaUsuarios = await leerUsuarios();
-      console.log(listaUsuarios);
       setUsuarios(listaUsuarios);
     } catch (error) {
       console.log(error);
