@@ -956,17 +956,25 @@ tbody {
 }
 .modalHabitacionTexto{
   color:#4b104f;
+  font-family: "quicksand", sans-serif;
+}
+
+.textoDescripcion{
+  font-family: "quicksand", sans-serif;
+  text-align: justify;
+
 }
 .modal-footer .btnCerrarModal{
   background: #471a4e;
   color: white;
   border: #471a4e 0.1em solid;
-  font-family: "Rubik", sans-serif;
+  font-family: "quicksand", sans-serif;
 }
 .modal-footer .btnCerrarModal:hover{
 background: #f7c2ff;
 color: rgb(31, 30, 30);
 border: #f7c2ff 0.1em solid;
+font-family: "quicksand", sans-serif;
 }
 
 .custom-select-style {

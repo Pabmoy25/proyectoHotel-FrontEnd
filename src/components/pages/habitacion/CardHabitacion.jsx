@@ -14,6 +14,7 @@ import {
   faWifi,
   faPaw,
   faWaterLadder,
+  faTv,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -122,12 +123,16 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                           <FontAwesomeIcon icon={faWifi} /> Wifi
                         </span>
                         <span className="mx-4">
+                          <FontAwesomeIcon icon={faTv} /> TV
+                        </span>
+                        <span className="mx-4">
                           <FontAwesomeIcon icon={faWaterLadder} /> Piscina
                         </span>
 
                         <span className="mx-4">
                           <FontAwesomeIcon icon={faPaw} /> PetFriendly
                         </span>
+                        
                       </div>
                     </div>
                   </Col>
@@ -138,7 +143,7 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                     </p>
                   </Col>
                   <Col xs={12}>
-                    <p className="textos fw-bold ">
+                    <p className="textoDescripcion ">
                       <span className="fs-5">Descripción: </span>
                       {cardHabitacion.descripcion_amplia}
                     </p>
