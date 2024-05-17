@@ -13,10 +13,11 @@ import { leerReservas } from "../../../helpers/queriesReserva";
 import {
   faWifi,
   faPaw,
-  faWaterLadder,
   faTv,
+  faMugHot,faSnowflake,faShower,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaShower } from "react-icons/fa";
 
 const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const [reservas, setReservas] = useState([]);
@@ -115,25 +116,28 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                 <Row>
                   <Col xs={12}>
                     <div className="text-start mx-lg-5 mt-4 text-center modalHabitacionTexto">
-                      <h5 className="titulos fw-semibold">
+                      <h5 className="titulos fw-semibold mb-4">
                         Servicios que Incluye
                       </h5>
-                      <div>
-                        <span>
-                          <FontAwesomeIcon icon={faWifi} /> Wifi
+                      <div className="iconContainer mb-4 d-flex flex-wrap justify-content-center align-items-center">
+                        <span className="mx-4">
+                          <FontAwesomeIcon icon={faWifi}/>Wifi
                         </span>
                         <span className="mx-4">
-                          <FontAwesomeIcon icon={faTv} /> TV
+                          <FontAwesomeIcon icon={faTv}/>TV
                         </span>
                         <span className="mx-4">
-                          <FontAwesomeIcon icon={faWaterLadder} /> Piscina
+                          <FontAwesomeIcon icon={faSnowflake}/>Aire Acondicionado
+                        </span>
+                        <span className="mx-4">
+                          <FontAwesomeIcon icon={faMugHot}/>Desayuno
                         </span>
 
                         <span className="mx-4">
-                          <FontAwesomeIcon icon={faPaw} /> PetFriendly
+                          <FontAwesomeIcon icon={faPaw} />PetFriendly
                         </span>
                         <span className="mx-4">
-                          <FontAwesomeIcon icon={faWaterLadder} /> Piscina
+                          <FontAwesomeIcon icon={faShower}/>Baño Completo 
                         </span>
                       </div>
                     </div>
