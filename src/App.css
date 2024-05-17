@@ -794,7 +794,7 @@ tbody {
 }
 
 .Background-registro {
-  background-image: url("http://www.hotelsolsanjavier.com.ar/public/images/galerias-de-fotos/2-vistas-aereas-de-san-javier-tucuman.jpg");
+  background-image: url("../src/assets/Registr.png");
   background-size: cover;
   opacity: 0.9;
 }
@@ -954,26 +954,23 @@ tbody {
 .fondoModal {
   background: #fde6ff;
 }
-.modalHabitacionTexto{
-  color:#4b104f;
+.modalHabitacionTexto {
+  color: #4b104f;
 }
-.modal-footer .btnCerrarModal{
+.modal-footer .btnCerrarModal {
   background: #471a4e;
   color: white;
   border: #471a4e 0.1em solid;
   font-family: "Rubik", sans-serif;
 }
-.modal-footer .btnCerrarModal:hover{
-background: #f7c2ff;
-color: rgb(31, 30, 30);
-border: #f7c2ff 0.1em solid;
+.modal-footer .btnCerrarModal:hover {
+  background: #f7c2ff;
+  color: rgb(31, 30, 30);
+  border: #f7c2ff 0.1em solid;
 }
 
 .custom-select-style {
-  background-color: #f1c5ff !important; /* rosa claro */
-  color: #000; /* color del texto */
-  border: 1px solid #760e65 !important; /* borde */
-  border-radius: 0.25rem; /* redondear esquinas */
-  width: 200px; /* ajusta el ancho según sea necesario */
+  background-color: #f1c5ff !important; 
+  color: #000;  
+  width: 200px; 
 }
-

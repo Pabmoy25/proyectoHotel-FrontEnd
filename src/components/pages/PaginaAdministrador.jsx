@@ -6,10 +6,7 @@ import {
   leerHabitaciones,
   borrarHabitacion,
 } from "../../helpers/queriesHabitaciones";
-import {
-  leerUsuarios,
-  borrarUsuario,
-} from "../../helpers/queriesUsuarios";
+import { leerUsuarios, borrarUsuario } from "../../helpers/queriesUsuarios";
 import UsuariosHuesped from "./usuario/UsuariosHuesped";
 import Reserva from "./Reservas/Reserva";
 import Accordion from "react-bootstrap/Accordion";
@@ -47,7 +44,6 @@ const PaginaAdministrador = () => {
   const traerUsuarios = async () => {
     try {
       const listaUsuarios = await leerUsuarios();
-      console.log(listaUsuarios);
       setUsuarios(listaUsuarios);
     } catch (error) {
       console.log(error);
@@ -66,7 +62,7 @@ const PaginaAdministrador = () => {
   const traerReservas = async () => {
     try {
       const listaReservas = await leerReservas();
-    
+
       setReservas(listaReservas);
     } catch (error) {
       console.log(error);

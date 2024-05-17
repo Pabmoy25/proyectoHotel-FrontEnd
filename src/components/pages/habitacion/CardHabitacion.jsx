@@ -38,7 +38,7 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
   const habitacionReservada = reservas.some(
     (reserva) => reserva.habitacion === cardHabitacion.habitacion
   );
-  
+
   const mostrarHabitacion = () => {
     if (filtroDisponibilidad === "todos") {
       return true;

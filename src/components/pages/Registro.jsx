@@ -49,7 +49,6 @@ const Registro = ({ editar, titulo }) => {
   const usuarioValidado = async (usuario) => {
     try {
       if (editar) {
-        // Si estás editando un usuario, elimina el campo de contraseña del objeto usuario
         delete usuario.password;
         const respuesta = await editarUsuarios(id, usuario);
         if (respuesta.status === 200) {
@@ -67,8 +66,6 @@ const Registro = ({ editar, titulo }) => {
           });
         }
       } else {
-        // Si estás creando un nuevo usuario, realiza la solicitud POST con el objeto usuario completo
-      
         const respuesta = await crearUsuario(usuario);
         if (respuesta.status === 201) {
           Swal.fire({
@@ -96,7 +93,7 @@ const Registro = ({ editar, titulo }) => {
         <Form
           className="my-4 custom-form rounded"
           onSubmit={handleSubmit(usuarioValidado)}
-          id="formRegistro" 
+          id="formRegistro"
         >
           <div>
             <p className="title-registro">{titulo}</p>
@@ -105,7 +102,7 @@ const Registro = ({ editar, titulo }) => {
             <Form.Label className="sub_title-registro">
               Nombre y apellido
             </Form.Label>
-            <Form.Control 
+            <Form.Control
               className="mb-2 "
               type="text"
               placeholder="Nombre"
@@ -185,32 +182,30 @@ const Registro = ({ editar, titulo }) => {
           )}
 
           {!editar && (
-          <Form.Group className="mb-3" controlId="formPasswordRepeat">
-            <Form.Label className="sub_title-registro">
-              Reiterar contraseña
-            </Form.Label>
-            <Form.Control
-              controlid="password"
-              className="mb-2"
-              type="password"
-              placeholder="Contraseña"
-              {...register("passwordRepeat", {
-                required: "Reiterar su contraseña es obligatorio",
-              })}
-            />{" "}
-            {watch("password") !== watch("passwordRepeat")
-              ? //watch("password_repeat") !== watch("password") && NO BORRAR HASTA NO PROBAR
-                //getValues("password_repeat")
-                ((validarPass = false),
-                (
-                  <p className="text-danger fw-bold">
-                    Las contraseñas no coinciden
-                  </p>
-                ))
-              : ((validarPass = true),
-                (<p className=" fw-bold">Las contraseñas coinciden</p>))}
-          </Form.Group>
-        )}
+            <Form.Group className="mb-3" controlId="formPasswordRepeat">
+              <Form.Label className="sub_title-registro">
+                Reiterar contraseña
+              </Form.Label>
+              <Form.Control
+                controlid="password"
+                className="mb-2"
+                type="password"
+                placeholder="Contraseña"
+                {...register("passwordRepeat", {
+                  required: "Reiterar su contraseña es obligatorio",
+                })}
+              />{" "}
+              {watch("password") !== watch("passwordRepeat")
+                ? ((validarPass = false),
+                  (
+                    <p className="text-danger fw-bold">
+                      Las contraseñas no coinciden
+                    </p>
+                  ))
+                : ((validarPass = true),
+                  (<p className=" fw-bold">Las contraseñas coinciden</p>))}
+            </Form.Group>
+          )}
           <div className="d-flex flex-row sub_title-registro ">
             <p>¿Ya tienes una cuenta? &nbsp;</p>
             <Button
