@@ -220,11 +220,11 @@ const Registro = ({ editar, titulo }) => {
           </div>
           <div className="d-flex justify-content-center">
             {validarPass ? (
-              <Button type="submit" className="mb-5" id="btn-registro">
+              <Button type="submit" className="mb-5" id="btn-registro" >
                 Ingresar
               </Button>
             ) : (
-              <Button type="submit" className="mb-5" id="btn-registro">
+              <Button type="submit" className="mb-5" id="btn-registro" disabled={!editar && !validarPass}>
                 Ingresar
               </Button>
             )}
