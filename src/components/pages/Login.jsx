@@ -18,7 +18,7 @@ const Login = ({ setLogueado }) => {
     try {
       const respuesta = await login(usuario);
 
-        if (respuesta.status === 200) {
+      if (respuesta.status === 200) {
         Swal.fire({
           title: `¡Bienvenido ${usuario.email}!`,
           text: "Sesión iniciada exitosamente",
@@ -27,7 +27,7 @@ const Login = ({ setLogueado }) => {
 
         const dato = await respuesta.json();
 
-         if (dato.email === "admin@hakuhuasi.com.ar") {
+        if (dato.email === "admin@hakuhuasi.com.ar") {
           sessionStorage.setItem(
             "InicioSesionHaku",
             JSON.stringify({
@@ -163,7 +163,6 @@ const Login = ({ setLogueado }) => {
         <div className="d-flex justify-content-center">
           <Button id="btnGoogle" className="" as={Link} to="*">
             <i className="bi bi-google"></i>
-            
           </Button>
           <Button id="btnFaceb" className="" as={Link} to="*">
             <i className="bi bi-facebook"></i>

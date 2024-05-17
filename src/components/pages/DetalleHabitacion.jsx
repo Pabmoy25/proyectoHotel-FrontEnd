@@ -42,58 +42,60 @@ const DetalleHabitacion = () => {
             </Carousel>
           </Col>
           <Col md={6}>
-          <div>
-  <h2 className="Titulo Pregunta text-center">
-    ¿Qué incluye la habitación?
-  </h2>
-  <div className="row">
-    <div className="col">
-      <ul className="parrafo amenities text-start ">
-        <li>Hidromasaje para 2 personas</li>
-        <li>Escritorios de trabajo</li>
-        <li>Diseño exclusivo</li>
-        <li>Personal bar</li>
-        <li>Cafetera Nespresso</li>
-        <li>Batas y pantuflas</li>
-        <li>2 Smart TV</li>
-        <li>Teléfono inalámbrico</li>
-        <li>Conexión wi-fi sin cargo</li>
-        <li>Secador de pelo</li>
-      </ul>
-    </div>
-    <div className="col">
-      <ul className="parrafo amenities text-start ">
-        <li>Plancha de pelo (a pedido)</li>
-        <li>Amenities exclusivos</li>
-        <li>Caja de seguridad para notebook</li>
-        <li>Control de temperatura individual</li>
-        <li>Equipo de yoga (a pedido)</li>
-        <li>Mate & Tea Kit</li>
-        <li>Accessorios varios para mascotas</li>
-      </ul>
-    </div>
-  </div>
-</div>
+            <div>
+              <h2 className="Titulo Pregunta text-center">
+                ¿Qué incluye la habitación?
+              </h2>
+              <div className="row">
+                <div className="col">
+                  <ul className="parrafo amenities text-start ">
+                    <li>Hidromasaje para 2 personas</li>
+                    <li>Escritorios de trabajo</li>
+                    <li>Diseño exclusivo</li>
+                    <li>Personal bar</li>
+                    <li>Cafetera Nespresso</li>
+                    <li>Batas y pantuflas</li>
+                    <li>2 Smart TV</li>
+                    <li>Teléfono inalámbrico</li>
+                    <li>Conexión wi-fi sin cargo</li>
+                    <li>Secador de pelo</li>
+                  </ul>
+                </div>
+                <div className="col">
+                  <ul className="parrafo amenities text-start ">
+                    <li>Plancha de pelo (a pedido)</li>
+                    <li>Amenities exclusivos</li>
+                    <li>Caja de seguridad para notebook</li>
+                    <li>Control de temperatura individual</li>
+                    <li>Equipo de yoga (a pedido)</li>
+                    <li>Mate & Tea Kit</li>
+                    <li>Accessorios varios para mascotas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <Row>
-                <Col md={8}>
-                  <Card.Title>Reserva tu Habitación</Card.Title>
-                  <Card.Text>
-                    ¡Asegura tu estancia ahora! Disfruta de nuestras increíbles
-                    instalaciones y servicios.
-                  </Card.Text>
-                </Col>
-                <Col md={4} className="d-flex align-items-center justify-content-center">
+              <Col md={8}>
+                <Card.Title>Reserva tu Habitación</Card.Title>
+                <Card.Text>
+                  ¡Asegura tu estancia ahora! Disfruta de nuestras increíbles
+                  instalaciones y servicios.
+                </Card.Text>
+              </Col>
+              <Col
+                md={4}
+                className="d-flex align-items-center justify-content-center"
+              >
                 <Link
                   className="search-button text-decoration-none"
                   to={"/detalle"}
                 >
                   Reservar
                 </Link>
-                </Col>
-              </Row>
+              </Col>
+            </Row>
           </Col>
         </Row>
-
       </Container>
     </>
   );
