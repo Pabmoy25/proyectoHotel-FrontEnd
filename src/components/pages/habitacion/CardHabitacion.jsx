@@ -11,9 +11,13 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
 import {
-  faWifi,
-  faPaw,
-  faWaterLadder,
+  faWifi, faPaw,
+  faTv,
+  faMugHot,
+  faSnowflake,
+  faShower,
+  faCookieBite,
+
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
