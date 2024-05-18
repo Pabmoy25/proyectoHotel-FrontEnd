@@ -173,19 +173,19 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                     </Col>
                   </Row>
                   <Col xs={12}>
-                    <p className="textos my-3 fw-bold ">
+                    <p className="palabraHabitacion">
                       <span className="fs-5">Habitacion: </span>
                       {cardHabitacion.habitacion}
                     </p>
                   </Col>
                   <Col xs={12}>
-                    <p className="textos fw-bold ">
-                      <span className="fs-5">Descripción: </span>
+                    <p className="textoDescripcion">
+                      <span className="fw-bold">Descripción: </span>
                       {cardHabitacion.descripcion_amplia}
                     </p>
                   </Col>
                   <Col xs={12}>
-                    <p className="textos fw-bold ">
+                    <p className="textoPrecioNoche">
                       <span className="fs-5">Precio por Noche: $ </span>
                       {cardHabitacion.precio}
                     </p>
