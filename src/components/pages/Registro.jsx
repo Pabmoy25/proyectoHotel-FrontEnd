@@ -165,8 +165,8 @@ const Registro = ({ editar, titulo }) => {
                     message: "Ingrese un mínimo de 3 caracteres",
                   },
                   maxLength: {
-                    value: 10,
-                    message: "Ingrese un máximo de 10 caracteres",
+                    value: 8,
+                    message: "Ingrese un máximo de 8 caracteres",
                   },
                   pattern: {
                     value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
@@ -202,8 +202,11 @@ const Registro = ({ editar, titulo }) => {
                       Las contraseñas no coinciden
                     </p>
                   ))
-                : ((validarPass = true),
-                  (<p className=" fw-bold">Las contraseñas coinciden</p>))}
+                : watch("password") === watch("passwordRepeat") &&
+                  getValues("passwordRepeat")
+                ? ((validarPass = true),
+                  (<p className=" fw-bold">Las contraseñas coinciden</p>))
+                : null}
             </Form.Group>
           )}
           <div className="d-flex flex-row sub_title-registro ">
@@ -220,11 +223,16 @@ const Registro = ({ editar, titulo }) => {
           </div>
           <div className="d-flex justify-content-center">
             {validarPass ? (
-              <Button type="submit" className="mb-5" id="btn-registro" >
+              <Button type="submit" className="mb-5" id="btn-registro">
                 Ingresar
               </Button>
             ) : (
-              <Button type="submit" className="mb-5" id="btn-registro" disabled={!editar && !validarPass}>
+              <Button
+                type="submit"
+                className="mb-5"
+                id="btn-registro"
+                disabled={!editar && !validarPass}
+              >
                 Ingresar
               </Button>
             )}
