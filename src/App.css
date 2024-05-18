@@ -999,18 +999,14 @@ font-family: "quicksand", sans-serif;
   border-radius: 0.25rem; 
   width: 200px; 
 }
-
 .iconContainer {
   max-width: 1000px; 
-  background-color: #f1c5ff
- 
+  background-color: #f1c5ff;
 }
-
 .iconName{
   font-family: "quicksand", sans-serif;
   color:#4b104f;
 }
 .iconColor{
-
-  color:#4b104f;
+ color:#4b104f;
 }
