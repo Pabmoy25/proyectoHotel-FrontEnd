@@ -146,8 +146,8 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                     </Col>
                   </Row>
 
-                  <Row className="text-center mb-4">
-                    <Col xs={12} md={4}>
+                   <Row className="text-center mb-4">
+                     <Col xs={12} md={4}>
                       <div className="iconContainer">
                         <FontAwesomeIcon
                           icon={faSnowflake}
@@ -172,6 +172,7 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                       </div>
                     </Col>
                   </Row>
+                
                   <Col xs={12}>
                     <p className="palabraHabitacion">
                       <span className="fs-5">Habitacion: </span>
