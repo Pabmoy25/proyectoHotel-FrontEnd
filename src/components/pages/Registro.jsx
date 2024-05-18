@@ -165,8 +165,8 @@ const Registro = ({ editar, titulo }) => {
                     message: "Ingrese un mínimo de 3 caracteres",
                   },
                   maxLength: {
-                    value: 10,
-                    message: "Ingrese un máximo de 10 caracteres",
+                    value: 8,
+                    message: "Ingrese un máximo de 8 caracteres",
                   },
                   pattern: {
                     value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
