@@ -202,8 +202,12 @@ const Registro = ({ editar, titulo }) => {
                       Las contraseñas no coinciden
                     </p>
                   ))
-                : ((validarPass = true),
-                  (<p className=" fw-bold">Las contraseñas coinciden</p>))}
+                : watch("password") === watch("passwordRepeat") && getValues("passwordRepeat")?
+                ((validarPass = true),
+                  (<p className=" fw-bold">Las contraseñas coinciden</p>))
+                :
+                 null 
+               }
             </Form.Group>
           )}
           <div className="d-flex flex-row sub_title-registro ">
