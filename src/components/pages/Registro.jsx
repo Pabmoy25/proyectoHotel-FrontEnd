@@ -202,12 +202,11 @@ const Registro = ({ editar, titulo }) => {
                       Las contraseñas no coinciden
                     </p>
                   ))
-                : watch("password") === watch("passwordRepeat") && getValues("passwordRepeat")?
-                ((validarPass = true),
+                : watch("password") === watch("passwordRepeat") &&
+                  getValues("passwordRepeat")
+                ? ((validarPass = true),
                   (<p className=" fw-bold">Las contraseñas coinciden</p>))
-                :
-                 null 
-               }
+                : null}
             </Form.Group>
           )}
           <div className="d-flex flex-row sub_title-registro ">
@@ -224,11 +223,16 @@ const Registro = ({ editar, titulo }) => {
           </div>
           <div className="d-flex justify-content-center">
             {validarPass ? (
-              <Button type="submit" className="mb-5" id="btn-registro" >
+              <Button type="submit" className="mb-5" id="btn-registro">
                 Ingresar
               </Button>
             ) : (
-              <Button type="submit" className="mb-5" id="btn-registro" disabled={!editar && !validarPass}>
+              <Button
+                type="submit"
+                className="mb-5"
+                id="btn-registro"
+                disabled={!editar && !validarPass}
+              >
                 Ingresar
               </Button>
             )}
