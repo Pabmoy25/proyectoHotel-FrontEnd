@@ -11,13 +11,13 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerReservas } from "../../../helpers/queriesReserva";
 import {
-  faWifi, faPaw,
+  faWifi,
+  faPaw,
   faTv,
   faMugHot,
   faSnowflake,
   faShower,
   faCookieBite,
-
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -116,25 +116,62 @@ const CardHabitacion = ({ cardHabitacion, filtroDisponibilidad }) => {
                 </Row>
 
                 <Row>
-                  <Col xs={12}>
-                    <div className="text-start mx-lg-5 mt-4 text-center modalHabitacionTexto">
-                      <h5 className="titulos fw-semibold">
-                        Servicios que Incluye
-                      </h5>
-                      <div>
-                        <span>
-                          <FontAwesomeIcon icon={faWifi} /> Wifi
-                        </span>
-                        <span className="mx-4">
-                          <FontAwesomeIcon icon={faWaterLadder} /> Piscina
-                        </span>
-
-                        <span className="mx-4">
-                          <FontAwesomeIcon icon={faPaw} /> PetFriendly
-                        </span>
-                      </div>
-                    </div>
+                  <Col xs={12} className="text-center mt-4">
+                    <h5 className="tituloServicios mb-4">
+                      Servicios que Incluye
+                    </h5>
                   </Col>
+
+                  <Row className="text-center mb-4">
+                    <Col xs={12} md={4}>
+                      <div className="iconContainer">
+                        <FontAwesomeIcon icon={faWifi} className="iconColor" />
+                        <span className="iconName">Wifi</span>
+                      </div>
+                    </Col>
+                    <Col xs={12} md={4}>
+                      <div className="iconContainer">
+                        <FontAwesomeIcon icon={faTv} className="iconColor" />
+                        <span className="iconName">TV</span>
+                      </div>
+                    </Col>
+                    <Col xs={12} md={4}>
+                      <div className="iconContainer">
+                        <FontAwesomeIcon
+                          icon={faMugHot}
+                          className="iconColor"
+                        />
+                        <span className="iconName">Desayuno</span>
+                      </div>
+                    </Col>
+                  </Row>
+
+                  <Row className="text-center mb-4">
+                    <Col xs={12} md={4}>
+                      <div className="iconContainer">
+                        <FontAwesomeIcon
+                          icon={faSnowflake}
+                          className="iconColor"
+                        />
+                        <span className="iconName">Aire AA</span>
+                      </div>
+                    </Col>
+                    <Col xs={12} md={4}>
+                      <div className="iconContainer">
+                        <FontAwesomeIcon
+                          icon={faShower}
+                          className="iconColor"
+                        />
+                        <span className="iconName">Ducha</span>
+                      </div>
+                    </Col>
+                    <Col xs={12} md={4}>
+                      <div className="iconContainer">
+                        <FontAwesomeIcon icon={faPaw} className="iconColor" />
+                        <span className="iconName">Mascotas</span>
+                      </div>
+                    </Col>
+                  </Row>
                   <Col xs={12}>
                     <p className="textos my-3 fw-bold ">
                       <span className="fs-5">Habitacion: </span>
