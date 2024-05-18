@@ -954,23 +954,59 @@ tbody {
 .fondoModal {
   background: #fde6ff;
 }
-.modalHabitacionTexto {
-  color: #4b104f;
+.modalHabitacionTexto{
+  color:#4b104f;
+  font-family: "quicksand", sans-serif;
 }
-.modal-footer .btnCerrarModal {
+
+.tituloServicios{
+  font-family: "Montserrat Alternates", sans-serif;
+  color:#4b104f;
+}
+.palabraHabitacion{
+  font-family: "Montserrat Alternates", sans-serif;
+  color:#4b104f;
+}
+.textoDescripcion{
+  font-family: "quicksand", sans-serif;
+  color:#4b104f;
+  text-align: justify;
+
+}
+
+.textoPrecioNoche{
+  font-family: "Montserrat Alternates", sans-serif;
+  color:#4b104f;
+}
+
+.modal-footer .btnCerrarModal{
   background: #471a4e;
   color: white;
   border: #471a4e 0.1em solid;
-  font-family: "Rubik", sans-serif;
+  font-family: "quicksand", sans-serif;
 }
-.modal-footer .btnCerrarModal:hover {
-  background: #f7c2ff;
-  color: rgb(31, 30, 30);
-  border: #f7c2ff 0.1em solid;
+.modal-footer .btnCerrarModal:hover{
+background: #f7c2ff;
+color: rgb(31, 30, 30);
+border: #f7c2ff 0.1em solid;
+font-family: "quicksand", sans-serif;
 }
 
 .custom-select-style {
   background-color: #f1c5ff !important; 
-  color: #000;  
+  color: #000; 
+  border: 1px solid #760e65 !important;
+  border-radius: 0.25rem; 
   width: 200px; 
+}
+.iconContainer {
+  max-width: 1000px; 
+  background-color: #f1c5ff;
+}
+.iconName{
+  font-family: "quicksand", sans-serif;
+  color:#4b104f;
+}
+.iconColor{
+ color:#4b104f;
 }
