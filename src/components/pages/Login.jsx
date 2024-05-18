@@ -27,8 +27,6 @@ const Login = ({ setLogueado }) => {
 
         const dato = await respuesta.json();
 
-        console.log("ROL", dato)
-
         if (dato.email === "admin@hakuhuasi.com.ar") {
           sessionStorage.setItem(
             "InicioSesionHaku",
@@ -47,8 +45,6 @@ const Login = ({ setLogueado }) => {
           );
           navegacion("/administrador");
         } else {
-          console.log("usu", dato)
-
           sessionStorage.setItem(
             "InicioSesionHaku",
             JSON.stringify({
