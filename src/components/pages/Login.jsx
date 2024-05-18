@@ -114,11 +114,11 @@ const Login = ({ setLogueado }) => {
               required: "La contraseña es obligatoria",
               minLength: {
                 value: 3,
-                message: "Ingrese un mínimo de 3 caracteres",
+                message: "Debe ingresar 8 caracteres",
               },
               maxLength: {
                 value: 100,
-                message: "debe ingresar 8 caracteres",
+                message: "Debe ingresar 8 caracteres",
               },
               pattern: {
                 value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,8}$/,
