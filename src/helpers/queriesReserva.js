@@ -16,7 +16,7 @@ export const crearReservas = async (nuevaReserva) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-token": JSON.parse(sessionStorage.getItem("InicioSesionHaku")).token,
+        
       },
       body: JSON.stringify(nuevaReserva),
     });
