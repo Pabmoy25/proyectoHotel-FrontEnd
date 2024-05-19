@@ -88,8 +88,8 @@ const Login = ({ setLogueado }) => {
             {...register("email", {
               required: "El e-mail es obligatorio",
               minLength: {
-                value: 15,
-                message: "El e-mail debe tener al menos 15 caracteres",
+                value: 13,
+                message: "El e-mail debe tener al menos 13 caracteres",
               },
               maxLength: {
                 value: 40,
