@@ -82,6 +82,8 @@ const Contacto = () => {
                     placeholder="Ingrese su nombre"
                     maxLength="60"
                     minLength="3"
+                    pattern="^[a-zA-Z\s]+$"
+                    title="Ingrese un nombre válido sin números o signos"
                     value={formData.nombreContacto}
                     onChange={handleChange}
                     required

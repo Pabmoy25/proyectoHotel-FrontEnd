@@ -7,7 +7,7 @@ import {
   crearUsuario,
 } from "../../helpers/queriesUsuarios.js";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Registro = ({ editar, titulo }) => {
   const {
@@ -115,6 +115,10 @@ const Registro = ({ editar, titulo }) => {
                 maxLength: {
                   value: 50,
                   message: "Debe ingresar como máximo 50 caracteres",
+                },
+                pattern: {
+                  value: /^[a-zA-Z\s]+$/,
+                  message: "Ingrese un nombre válido",
                 },
               })}
             />
