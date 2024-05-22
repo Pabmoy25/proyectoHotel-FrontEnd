@@ -9,7 +9,6 @@ export const crearUsuario = async (nuevoUsuario) => {
       },
       body: JSON.stringify(nuevoUsuario),
     });
-    console.log(respuesta);
     return respuesta;
   } catch (error) {
     console.log(error);
