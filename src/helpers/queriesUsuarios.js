@@ -36,7 +36,6 @@ export const editarUsuarios = async (id, usuario) => {
       },
       body: JSON.stringify(usuarioSinPassword),
     });
-    console.log(respuesta);
     return respuesta;
   } catch (error) {
     console.log(error);
