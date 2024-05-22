@@ -15,7 +15,7 @@ export const crearReservas = async (nuevaReserva) => {
     const respuesta = await fetch(URI_RESERVAS, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",      
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(nuevaReserva),
     });
